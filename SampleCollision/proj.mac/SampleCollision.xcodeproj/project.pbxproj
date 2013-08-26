@@ -247,6 +247,11 @@
 		41BC70E815BF81A5006A0A6C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 41BC70E115BF81A5006A0A6C /* main.m */; };
 		8C583FAD169DB6D500F63A10 /* CCEditBox.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8C583FA8169DB6D500F63A10 /* CCEditBox.cpp */; };
 		8C583FAE169DB6D500F63A10 /* CCEditBoxImplMac.mm in Sources */ = {isa = PBXBuildFile; fileRef = 8C583FAC169DB6D500F63A10 /* CCEditBoxImplMac.mm */; };
+		F81A8F5B17CB6F7A00F2263F /* GLES-Render.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F81A8F5717CB6F7A00F2263F /* GLES-Render.cpp */; };
+		F81A8F5C17CB6F7A00F2263F /* TestColliderDetector.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F81A8F5917CB6F7A00F2263F /* TestColliderDetector.cpp */; };
+		F81A8F6017CB6F8300F2263F /* Cowboy.ExportJson in Resources */ = {isa = PBXBuildFile; fileRef = F81A8F5D17CB6F8300F2263F /* Cowboy.ExportJson */; };
+		F81A8F6117CB6F8300F2263F /* Cowboy0.plist in Resources */ = {isa = PBXBuildFile; fileRef = F81A8F5E17CB6F8300F2263F /* Cowboy0.plist */; };
+		F81A8F6217CB6F8300F2263F /* Cowboy0.png in Resources */ = {isa = PBXBuildFile; fileRef = F81A8F5F17CB6F8300F2263F /* Cowboy0.png */; };
 		F860A60417C710CF005BF4C9 /* libcocos2dx.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F860A60317C710C3005BF4C9 /* libcocos2dx.a */; };
 		F860A60B17C71204005BF4C9 /* libcurl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F860A60D17C71204005BF4C9 /* libcurl.a */; };
 /* End PBXBuildFile section */
@@ -743,6 +748,13 @@
 		8C583FAA169DB6D500F63A10 /* CCEditBoxImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CCEditBoxImpl.h; path = CCEditBox/CCEditBoxImpl.h; sourceTree = "<group>"; };
 		8C583FAB169DB6D500F63A10 /* CCEditBoxImplMac.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CCEditBoxImplMac.h; path = CCEditBox/CCEditBoxImplMac.h; sourceTree = "<group>"; };
 		8C583FAC169DB6D500F63A10 /* CCEditBoxImplMac.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = CCEditBoxImplMac.mm; path = CCEditBox/CCEditBoxImplMac.mm; sourceTree = "<group>"; };
+		F81A8F5717CB6F7A00F2263F /* GLES-Render.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "GLES-Render.cpp"; path = "../Classes/GLES-Render.cpp"; sourceTree = "<group>"; };
+		F81A8F5817CB6F7A00F2263F /* GLES-Render.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "GLES-Render.h"; path = "../Classes/GLES-Render.h"; sourceTree = "<group>"; };
+		F81A8F5917CB6F7A00F2263F /* TestColliderDetector.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TestColliderDetector.cpp; path = ../Classes/TestColliderDetector.cpp; sourceTree = "<group>"; };
+		F81A8F5A17CB6F7A00F2263F /* TestColliderDetector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TestColliderDetector.h; path = ../Classes/TestColliderDetector.h; sourceTree = "<group>"; };
+		F81A8F5D17CB6F8300F2263F /* Cowboy.ExportJson */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cowboy.ExportJson; sourceTree = "<group>"; };
+		F81A8F5E17CB6F8300F2263F /* Cowboy0.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Cowboy0.plist; sourceTree = "<group>"; };
+		F81A8F5F17CB6F8300F2263F /* Cowboy0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Cowboy0.png; sourceTree = "<group>"; };
 		F860A5FE17C710C3005BF4C9 /* cocos2dx.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = cocos2dx.xcodeproj; path = "../../cocos2d-x/cocos2dx/proj.mac/cocos2dx.xcodeproj"; sourceTree = "<group>"; };
 		F860A60C17C71204005BF4C9 /* en */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = en; path = en.lproj/libcurl.a; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -773,6 +785,10 @@
 		15AA9C4015B7EC450033D6C2 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				F81A8F5717CB6F7A00F2263F /* GLES-Render.cpp */,
+				F81A8F5817CB6F7A00F2263F /* GLES-Render.h */,
+				F81A8F5917CB6F7A00F2263F /* TestColliderDetector.cpp */,
+				F81A8F5A17CB6F7A00F2263F /* TestColliderDetector.h */,
 				1AFAF8C616D3886000DB1158 /* AppDelegate.cpp */,
 				1AFAF8C716D3886000DB1158 /* AppDelegate.h */,
 				1AFAF8C816D3886000DB1158 /* HelloWorldScene.cpp */,
@@ -1671,6 +1687,9 @@
 		78C7DDAA14EBA5050085D0C2 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				F81A8F5D17CB6F8300F2263F /* Cowboy.ExportJson */,
+				F81A8F5E17CB6F8300F2263F /* Cowboy0.plist */,
+				F81A8F5F17CB6F8300F2263F /* Cowboy0.png */,
 				1AFAF8C016D3884900DB1158 /* CloseNormal.png */,
 				1AFAF8C116D3884900DB1158 /* CloseSelected.png */,
 				1AFAF8C216D3884900DB1158 /* HelloWorld.png */,
@@ -1779,6 +1798,9 @@
 				376663CE17B8E0E8007606BB /* json_internalmap.inl in Resources */,
 				376663D117B8E0E8007606BB /* json_valueiterator.inl in Resources */,
 				376663D317B8E0E8007606BB /* sconscript in Resources */,
+				F81A8F6017CB6F8300F2263F /* Cowboy.ExportJson in Resources */,
+				F81A8F6117CB6F8300F2263F /* Cowboy0.plist in Resources */,
+				F81A8F6217CB6F8300F2263F /* Cowboy0.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2008,6 +2030,8 @@
 				376663D817B8E0E8007606BB /* CCTransformHelp.cpp in Sources */,
 				376663D917B8E0E8007606BB /* CCTweenFunction.cpp in Sources */,
 				376663DA17B8E0E8007606BB /* CCUtilMath.cpp in Sources */,
+				F81A8F5B17CB6F7A00F2263F /* GLES-Render.cpp in Sources */,
+				F81A8F5C17CB6F7A00F2263F /* TestColliderDetector.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

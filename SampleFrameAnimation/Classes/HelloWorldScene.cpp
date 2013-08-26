@@ -1,4 +1,5 @@
 #include "HelloWorldScene.h"
+#include "Fishes.h"
 
 USING_NS_CC;
 
@@ -51,22 +52,56 @@ bool HelloWorld::init()
 
     /////////////////////////////
     // 3. add your codes below...
+	//create a fish without action
+	Fish01* fish1 = new Fish01();
+	this->addChild(fish1,2);
+	
+	//create a fish rotate forever
+	Fish02* fish2 = new Fish02();
+	this->addChild(fish2,2);
 
+	//create a fish swim around
+	Fish06* fish6 = new Fish06();
+	this->addChild(fish6,1);
+	
+	//create a fish fade out
+	Fish07* fish7 = new Fish07();
+	this->addChild(fish7,2);
+	
+	//create a fish group
+	Fish05* fish5 = new Fish05();
+	this->addChild(fish5,1);
+
+	Fish05* fish51 = new Fish05();
+	fish51->setPosition(ccp(30,20));
+	this->addChild(fish51,1);
+
+	Fish05* fish52 = new Fish05();
+	fish52->setPosition(ccp(30,-20));
+	this->addChild(fish52,1);
+	//create a fish with a call back
+	Fish04* fish40 = new Fish04();
+	this->addChild(fish40,2);
+
+	Fish04* fish41 = new Fish04();
+	fish41->setPosition(ccp(0,-50));
+	this->addChild(fish41,2);
+
+	Fish04* fish42 = new Fish04();
+	fish42->setPosition(ccp(0,-100));
+	this->addChild(fish42,2);
+
+	Fish04* fish43 = new Fish04();
+	fish43->setPosition(ccp(0,-150));
+	this->addChild(fish43,2);
     // add a label shows "Hello World"
     // create and initialize a label
-    
-    CCLabelTTF* pLabel = CCLabelTTF::create("Hello World", "Arial", 24);
-    
-    // position the label on the center of the screen
-    pLabel->setPosition(ccp(origin.x + visibleSize.width/2,
-                            origin.y + visibleSize.height - pLabel->getContentSize().height));
 
-    // add the label as a child to this layer
-    this->addChild(pLabel, 1);
-
-    // add "HelloWorld" splash screen"
-    CCSprite* pSprite = CCSprite::create("HelloWorld.png");
-
+    // add backGround splash screen"
+    CCSprite* pSprite = CCSprite::create("2048.png");
+	//scale background
+	pSprite->setScaleX(visibleSize.width/2048);
+	pSprite->setScaleY(visibleSize.height/1536);
     // position the sprite on the center of the screen
     pSprite->setPosition(ccp(visibleSize.width/2 + origin.x, visibleSize.height/2 + origin.y));
 
