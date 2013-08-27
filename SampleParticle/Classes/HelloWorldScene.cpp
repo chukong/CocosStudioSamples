@@ -1,5 +1,5 @@
 #include "HelloWorldScene.h"
-
+#include "ParticleCowboy.h"
 USING_NS_CC;
 
 CCScene* HelloWorld::scene()
@@ -51,25 +51,17 @@ bool HelloWorld::init()
 
     /////////////////////////////
     // 3. add your codes below...
+	ParticleCowboy* cowboy = new ParticleCowboy();
+	addChild(cowboy,1);
 
-    // add a label shows "Hello World"
-    // create and initialize a label
-    
-    CCLabelTTF* pLabel = CCLabelTTF::create("Hello World", "Arial", 24);
-    
-    // position the label on the center of the screen
-    pLabel->setPosition(ccp(origin.x + visibleSize.width/2,
-                            origin.y + visibleSize.height - pLabel->getContentSize().height));
-
-    // add the label as a child to this layer
-    this->addChild(pLabel, 1);
 
     // add "HelloWorld" splash screen"
-    CCSprite* pSprite = CCSprite::create("HelloWorld.png");
+    CCSprite* pSprite = CCSprite::create("list_enemy.png");
 
     // position the sprite on the center of the screen
     pSprite->setPosition(ccp(visibleSize.width/2 + origin.x, visibleSize.height/2 + origin.y));
-
+    pSprite->setScaleX(visibleSize.width / 500);
+    pSprite->setScaleY(visibleSize.height/391);
     // add the sprite as a child to this layer
     this->addChild(pSprite, 0);
     
