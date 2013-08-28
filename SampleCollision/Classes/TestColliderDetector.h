@@ -1,11 +1,3 @@
-//
-//  TestColliderDetector.h
-//  SampleCollision
-//
-//  Created by Solo on 13-8-23.
-//
-//
-
 #ifndef __SampleCollision__TestColliderDetector__
 #define __SampleCollision__TestColliderDetector__
 
@@ -28,7 +20,7 @@ using namespace cocos2d::extension;
 
 class ContactListener;
 
-class TestColliderDetector : public CCLayer, public sigslot::has_slots<>
+class TestColliderDetector : public CCLayer
 {
 public:
 	~TestColliderDetector();
@@ -58,14 +50,13 @@ public:
 #elif ENABLE_PHYSICS_CHIPMUNK_DETECT
 
 
-class TestColliderDetector : public CCLayer, public sigslot::has_slots<>
+class TestColliderDetector : public CCLayer
 {
 public:
 	~TestColliderDetector();
     
 	virtual void onEnter();
 	virtual void onExit();
-	virtual std::string title();
 	virtual void update(float delta);
     
 	void onFrameEvent(cocos2d::extension::CCBone *bone, const char *evt, int originFrameIndex, int currentFrameIndex);

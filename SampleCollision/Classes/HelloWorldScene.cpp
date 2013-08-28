@@ -51,7 +51,6 @@ bool HelloWorld::init()
     this->addChild(pMenu, 1);
     
     ////////////////////////////////////////
-    // Add two 
     TestColliderDetector* collisionTest = new TestColliderDetector();
     this->addChild(collisionTest);
     ////////////////////////////////////////
