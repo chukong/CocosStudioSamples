@@ -12,11 +12,26 @@ AppDelegate::~AppDelegate()
 }
 
 bool AppDelegate::applicationDidFinishLaunching() {
-    // initialize director
-    CCDirector* pDirector = CCDirector::sharedDirector();
-    CCEGLView* pEGLView = CCEGLView::sharedOpenGLView();
+	// initialize director
+	CCDirector *pDirector = CCDirector::sharedDirector();
+	pDirector->setOpenGLView(CCEGLView::sharedOpenGLView());
 
-    pDirector->setOpenGLView(pEGLView);
+	CCSize screenSize = CCEGLView::sharedOpenGLView()->getFrameSize();
+
+	CCSize designSize = CCSizeMake(480, 320);
+
+	CCFileUtils* pFileUtils = CCFileUtils::sharedFileUtils();
+
+	if (screenSize.height > 320)
+	{
+		CCSize resourceSize = CCSizeMake(960, 640);
+		std::vector<std::string> searchPaths;
+		searchPaths.push_back("hd");
+		pFileUtils->setSearchPaths(searchPaths);
+		pDirector->setContentScaleFactor(resourceSize.height/designSize.height);
+	}
+
+	CCEGLView::sharedOpenGLView()->setDesignResolutionSize(designSize.width, designSize.height, kResolutionNoBorder);
 	
     // turn on display FPS
     pDirector->setDisplayStats(true);

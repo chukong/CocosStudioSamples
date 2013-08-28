@@ -1,58 +1,53 @@
-//
-//  TestColliderDetector.cpp
-//  SampleCollision
-//
-//  Created by Solo on 13-8-23.
-//
-//
-
 #include "TestColliderDetector.h"
 
 
 
 TestColliderDetector::~TestColliderDetector()
 {
+	CCArmatureDataManager::purge();
 }
 void TestColliderDetector::onEnter()
 {
 	CCLayer::onEnter();
-    
 	scheduleUpdate();
-    // create armature
-    CCArmatureDataManager::sharedArmatureDataManager()->addArmatureFileInfo("Cowboy0.png","Cowboy0.plist" , "Cowboy.ExportJson");
+    
+	//! load data
+	CCArmatureDataManager::sharedArmatureDataManager()->addArmatureFileInfo("Cowboy.ExportJson");
+
+	//! create armature
 	armature = cocos2d::extension::CCArmature::create("Cowboy");
 	armature->getAnimation()->play("FireWithoutBullet");
 	armature->getAnimation()->setSpeedScale(0.2f);
 	armature->setScaleX(-0.2f);
 	armature->setScaleY(0.2f);
 	armature->setPosition(ccp(CCDirector::sharedDirector()->getVisibleSize().width * 0.2, CCDirector::sharedDirector()->getVisibleSize().height * 0.5));
-    // bind armature's frame event to onFrameEvent
-	armature->getAnimation()->FrameEventSignal.connect(this, &TestColliderDetector::onFrameEvent);
+    
+	//! bind armature's frame event to onFrameEvent
+	armature->getAnimation()->setFrameEventCallFunc(this, frameEvent_selector(TestColliderDetector::onFrameEvent));
     
 	addChild(armature);
-    //create armature2
+    
+	//! create armature2
 	armature2 = cocos2d::extension::CCArmature::create("Cowboy");
 	armature2->getAnimation()->play("Walk");
 	armature2->setScaleX(-0.2f);
 	armature2->setScaleY(0.2f);
 	armature2->setPosition(ccp(CCDirector::sharedDirector()->getVisibleSize().width * 0.8, CCDirector::sharedDirector()->getVisibleSize().height * 0.5));
 	addChild(armature2);
-	//add a CCPhysicsSprite,will show in FrameEvent
+	
+	//! add a CCPhysicsSprite,will show in FrameEvent
 	bullet = CCPhysicsSprite::createWithSpriteFrameName("25.png");
 	addChild(bullet);
     
 	initWorld();
 }
-std::string TestColliderDetector::title()
-{
-	return "Test Collider Detector";
-}
 
 void TestColliderDetector::onFrameEvent(CCBone *bone, const char *evt, int originFrameIndex, int currentFrameIndex)
 {
-    //get position of gun(layer126)
+    //! get position of gun(layer126)
 	CCPoint p = armature->getBone("Layer126")->getDisplayRenderNode()->convertToWorldSpaceAR(ccp(0, 0));
-    //add position and action to bullet
+    
+	//! add position and action to bullet
 	bullet->setPosition(ccp(p.x + 60, p.y));
 	bullet->stopAllActions();
 	bullet->runAction(CCMoveBy::create(1.5f, ccp(350, 0)));
@@ -76,7 +71,7 @@ class ContactListener : public b2ContactListener
 	{
 		if (contact)
 		{
-            //add contact's fixture into list
+            //! add contact's fixture into list
 			Contact c;
 			c.fixtureA = contact->GetFixtureA();
 			c.fixtureB = contact->GetFixtureB();
@@ -87,7 +82,7 @@ class ContactListener : public b2ContactListener
 	}
 	virtual void EndContact(b2Contact *contact)
 	{
-        //clear list at end
+        //! clear list at end
 		contact_list.clear();
 		B2_NOT_USED(contact);
 	}
@@ -131,7 +126,7 @@ void TestColliderDetector::update(float delta)
 	for (std::list<Contact>::iterator it = listener->contact_list.begin(); it != listener->contact_list.end(); ++it)
 	{
 		Contact &contact = *it;
-        // get armature by fixtrue's user data
+        //! get armature by fixtrue's user data
 		CCBone *ba = (CCBone *)contact.fixtureA->GetUserData();
 		CCBone *bb = (CCBone *)contact.fixtureB->GetUserData();
 
@@ -140,7 +135,7 @@ void TestColliderDetector::update(float delta)
 }
 void TestColliderDetector::initWorld()
 {
-    //init physic world
+    //! init physic world
 	b2Vec2 noGravity(0, 0);
     
 	world = new b2World(noGravity);
@@ -161,25 +156,25 @@ void TestColliderDetector::initWorld()
 	debugDraw->SetFlags(flags);
     
     
-	// Define the dynamic body.
-	//Set up a 1m squared box in the physics world
+	//! Define the dynamic body.
+	//! Set up a 1m squared box in the physics world
 	b2BodyDef bodyDef;
 	bodyDef.type = b2_dynamicBody;
     
 	b2Body *body = world->CreateBody(&bodyDef);
     
-	// Define another box shape for our dynamic body.
+	//! Define another box shape for our dynamic body.
 	b2PolygonShape dynamicBox;
     //define bullet's body shape
 	dynamicBox.SetAsBox(.5f, .5f);
     
-	// Define the dynamic body fixture.
+	//! Define the dynamic body fixture.
 	b2FixtureDef fixtureDef;
 	fixtureDef.shape = &dynamicBox;
 	fixtureDef.isSensor = true;
 	body->CreateFixture(&fixtureDef);
     
-    //set body to bullet and add it to world
+    //! set body to bullet and add it to world
 	bullet->setB2Body(body);
 	bullet->setPTMRatio(PT_RATIO);
 	bullet->setPosition( ccp( -100, -100) );
@@ -248,19 +243,19 @@ void TestColliderDetector::update(float delta)
 }
 void TestColliderDetector::initWorld()
 {
-    //create physic space
+    //! create physic space
 	space = cpSpaceNew();
-    //set space gravity as no gravity
+    //! set space gravity as no gravity
 	space->gravity = cpv(0, 0);
     
-	// Physics debug layer
+	//! Physics debug layer
 	CCPhysicsDebugNode *debugLayer = CCPhysicsDebugNode::create(space);
 	this->addChild(debugLayer, INT_MAX);
     
-    //get size of bullet
+    //! get size of bullet
 	CCSize size = bullet->getContentSize();
     
-    //define bullet's collider body
+    //! define bullet's collider body
 	int num = 4;
 	cpVect verts[] = {
 		cpv(-size.width/2,-size.height/2),
@@ -269,7 +264,7 @@ void TestColliderDetector::initWorld()
 		cpv(size.width/2,-size.height/2),
 	};
     
-    //build body as verts' shape
+    //! build body as verts' shape
 	cpBody *body = cpBodyNew(1.0f, cpMomentForPoly(1.0f, num, verts, cpvzero));
 	cpSpaceAddBody(space, body);
     
@@ -279,7 +274,7 @@ void TestColliderDetector::initWorld()
     
 	bullet->setCPBody(body);
     
-    //define armature2's body,get shape from armature data
+    //! define armature2's body,get shape from armature data
 	body = cpBodyNew(INFINITY, INFINITY);
 	cpSpaceAddBody(space, body);
 	armature2->setCPBody(body);

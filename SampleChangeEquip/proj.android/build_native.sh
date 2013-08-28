@@ -1,4 +1,4 @@
-APPNAME="SampleChangeEquip"
+APPNAME="TestCpp"
 
 # options
 
@@ -28,10 +28,24 @@ exit 0
 esac
 done
 
+# read local.properties
+
+_LOCALPROPERTIES_FILE=$(dirname "$0")"/local.properties"
+if [ -f "$_LOCALPROPERTIES_FILE" ]
+then
+    [ -r "$_LOCALPROPERTIES_FILE" ] || die "Fatal Error: $_LOCALPROPERTIES_FILE exists but is unreadable"
+
+    # strip out entries with a "." because Bash cannot process variables with a "."
+    _PROPERTIES=`sed '/\./d' "$_LOCALPROPERTIES_FILE"`
+    for line in "$_PROPERTIES"; do
+        declare "$line";
+    done
+fi
+
 # paths
 
 if [ -z "${NDK_ROOT+aaa}" ];then
-echo "please define NDK_ROOT"
+echo "NDK_ROOT not defined. Please define NDK_ROOT in your environment or in local.properties"
 exit 1
 fi
 
@@ -65,7 +79,13 @@ if [ -f "$file" ]; then
 fi
 done
 
-# run ndk-build
+# remove test_image_rgba4444.pvr.gz
+rm -f "$APP_ANDROID_ROOT"/assets/Images/test_image_rgba4444.pvr.gz
+rm -f "$APP_ANDROID_ROOT"/assets/Images/test_1021x1024_rgba8888.pvr.gz
+rm -f "$APP_ANDROID_ROOT"/assets/Images/test_1021x1024_rgb888.pvr.gz
+rm -f "$APP_ANDROID_ROOT"/assets/Images/test_1021x1024_rgba4444.pvr.gz
+rm -f "$APP_ANDROID_ROOT"/assets/Images/test_1021x1024_a8.pvr.gz
+
 if [[ "$buildexternalsfromsource" ]]; then
     echo "Building external dependencies from source"
     "$NDK_ROOT"/ndk-build -C "$APP_ANDROID_ROOT" $* \
