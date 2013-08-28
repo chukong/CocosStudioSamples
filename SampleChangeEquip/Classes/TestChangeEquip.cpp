@@ -266,7 +266,7 @@ void TestChangeEquip::ccTouchEnded(CCTouch *pTouch, CCEvent *pEvent)
 			m_pSelectedGrid->getContainerNode()->addChild(m_pCurrentIcon, 0, ICON_TAG);
 		}
 
-		if (m_pSelectedGrid->getWidgetTag() == EQUIP_WEAPON && m_pCurrentGrid->getWidgetTag() == -1)
+		if (m_pSelectedGrid->getWidgetTag() == EQUIP_WEAPON && m_pCurrentGrid && m_pCurrentGrid->getWidgetTag() == -1)
 		{
 			m_pArmature->getBone("weapon")->changeDisplayByIndex(-1, true);
 		}
