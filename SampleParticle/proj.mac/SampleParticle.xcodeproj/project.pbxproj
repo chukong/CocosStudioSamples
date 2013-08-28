@@ -238,7 +238,6 @@
 		376663D917B8E0E8007606BB /* CCTweenFunction.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 376663BC17B8E0E8007606BB /* CCTweenFunction.cpp */; };
 		376663DA17B8E0E8007606BB /* CCUtilMath.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 376663BE17B8E0E8007606BB /* CCUtilMath.cpp */; };
 		37B1CE3917A0D9E3004CAFC4 /* CCComRender.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 37B1CE3717A0D9E3004CAFC4 /* CCComRender.cpp */; };
-		37B1CEB817A0D9FD004CAFC4 /* CCJsonReader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 37B1CEB417A0D9FD004CAFC4 /* CCJsonReader.cpp */; };
 		37B1CEB917A0D9FD004CAFC4 /* DictionaryHelper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 37B1CEB617A0D9FD004CAFC4 /* DictionaryHelper.cpp */; };
 		41BC70E415BF81A5006A0A6C /* AppController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 41BC70DA15BF81A5006A0A6C /* AppController.mm */; };
 		41BC70E515BF81A5006A0A6C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 41BC70DC15BF81A5006A0A6C /* InfoPlist.strings */; };
@@ -249,6 +248,16 @@
 		8C583FAE169DB6D500F63A10 /* CCEditBoxImplMac.mm in Sources */ = {isa = PBXBuildFile; fileRef = 8C583FAC169DB6D500F63A10 /* CCEditBoxImplMac.mm */; };
 		F860A60417C710CF005BF4C9 /* libcocos2dx.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F860A60317C710C3005BF4C9 /* libcocos2dx.a */; };
 		F860A60B17C71204005BF4C9 /* libcurl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F860A60D17C71204005BF4C9 /* libcurl.a */; };
+		F8C4F69C17CCB5BD00F05428 /* ParticleCowboy.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F8C4F69A17CCB5BD00F05428 /* ParticleCowboy.cpp */; };
+		F8C4F6A617CCB5C500F05428 /* BoilingFoam.plist in Resources */ = {isa = PBXBuildFile; fileRef = F8C4F69E17CCB5C500F05428 /* BoilingFoam.plist */; };
+		F8C4F6A717CCB5C500F05428 /* BurstPipe.plist in Resources */ = {isa = PBXBuildFile; fileRef = F8C4F69F17CCB5C500F05428 /* BurstPipe.plist */; };
+		F8C4F6A817CCB5C500F05428 /* Flower.plist in Resources */ = {isa = PBXBuildFile; fileRef = F8C4F6A017CCB5C500F05428 /* Flower.plist */; };
+		F8C4F6A917CCB5C500F05428 /* list_enemy.png in Resources */ = {isa = PBXBuildFile; fileRef = F8C4F6A117CCB5C500F05428 /* list_enemy.png */; };
+		F8C4F6AA17CCB5C500F05428 /* Sample.ExportJson in Resources */ = {isa = PBXBuildFile; fileRef = F8C4F6A217CCB5C500F05428 /* Sample.ExportJson */; };
+		F8C4F6AB17CCB5C500F05428 /* Sample0.plist in Resources */ = {isa = PBXBuildFile; fileRef = F8C4F6A317CCB5C500F05428 /* Sample0.plist */; };
+		F8C4F6AC17CCB5C500F05428 /* Sample0.png in Resources */ = {isa = PBXBuildFile; fileRef = F8C4F6A417CCB5C500F05428 /* Sample0.png */; };
+		F8C4F6AD17CCB5C500F05428 /* SmallSun.plist in Resources */ = {isa = PBXBuildFile; fileRef = F8C4F6A517CCB5C500F05428 /* SmallSun.plist */; };
+		F8C4F6B017CCB67B00F05428 /* CCSSceneReader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F8C4F6AE17CCB67B00F05428 /* CCSSceneReader.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -726,8 +735,6 @@
 		376663BF17B8E0E8007606BB /* CCUtilMath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCUtilMath.h; sourceTree = "<group>"; };
 		37B1CE3717A0D9E3004CAFC4 /* CCComRender.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CCComRender.cpp; sourceTree = "<group>"; };
 		37B1CE3817A0D9E3004CAFC4 /* CCComRender.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCComRender.h; sourceTree = "<group>"; };
-		37B1CEB417A0D9FD004CAFC4 /* CCJsonReader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CCJsonReader.cpp; sourceTree = "<group>"; };
-		37B1CEB517A0D9FD004CAFC4 /* CCJsonReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCJsonReader.h; sourceTree = "<group>"; };
 		37B1CEB617A0D9FD004CAFC4 /* DictionaryHelper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DictionaryHelper.cpp; sourceTree = "<group>"; };
 		37B1CEB717A0D9FD004CAFC4 /* DictionaryHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DictionaryHelper.h; sourceTree = "<group>"; };
 		41BC70D915BF81A5006A0A6C /* AppController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppController.h; sourceTree = SOURCE_ROOT; };
@@ -745,6 +752,18 @@
 		8C583FAC169DB6D500F63A10 /* CCEditBoxImplMac.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = CCEditBoxImplMac.mm; path = CCEditBox/CCEditBoxImplMac.mm; sourceTree = "<group>"; };
 		F860A5FE17C710C3005BF4C9 /* cocos2dx.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = cocos2dx.xcodeproj; path = "../../cocos2d-x/cocos2dx/proj.mac/cocos2dx.xcodeproj"; sourceTree = "<group>"; };
 		F860A60C17C71204005BF4C9 /* en */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = en; path = en.lproj/libcurl.a; sourceTree = "<group>"; };
+		F8C4F69A17CCB5BD00F05428 /* ParticleCowboy.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ParticleCowboy.cpp; path = ../Classes/ParticleCowboy.cpp; sourceTree = "<group>"; };
+		F8C4F69B17CCB5BD00F05428 /* ParticleCowboy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ParticleCowboy.h; path = ../Classes/ParticleCowboy.h; sourceTree = "<group>"; };
+		F8C4F69E17CCB5C500F05428 /* BoilingFoam.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = BoilingFoam.plist; sourceTree = "<group>"; };
+		F8C4F69F17CCB5C500F05428 /* BurstPipe.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = BurstPipe.plist; sourceTree = "<group>"; };
+		F8C4F6A017CCB5C500F05428 /* Flower.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Flower.plist; sourceTree = "<group>"; };
+		F8C4F6A117CCB5C500F05428 /* list_enemy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = list_enemy.png; sourceTree = "<group>"; };
+		F8C4F6A217CCB5C500F05428 /* Sample.ExportJson */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Sample.ExportJson; sourceTree = "<group>"; };
+		F8C4F6A317CCB5C500F05428 /* Sample0.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Sample0.plist; sourceTree = "<group>"; };
+		F8C4F6A417CCB5C500F05428 /* Sample0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Sample0.png; sourceTree = "<group>"; };
+		F8C4F6A517CCB5C500F05428 /* SmallSun.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = SmallSun.plist; sourceTree = "<group>"; };
+		F8C4F6AE17CCB67B00F05428 /* CCSSceneReader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CCSSceneReader.cpp; sourceTree = "<group>"; };
+		F8C4F6AF17CCB67B00F05428 /* CCSSceneReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCSSceneReader.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -773,6 +792,8 @@
 		15AA9C4015B7EC450033D6C2 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				F8C4F69A17CCB5BD00F05428 /* ParticleCowboy.cpp */,
+				F8C4F69B17CCB5BD00F05428 /* ParticleCowboy.h */,
 				1AFAF8C616D3886000DB1158 /* AppDelegate.cpp */,
 				1AFAF8C716D3886000DB1158 /* AppDelegate.h */,
 				1AFAF8C816D3886000DB1158 /* HelloWorldScene.cpp */,
@@ -1636,8 +1657,8 @@
 		37B1CEB317A0D9FD004CAFC4 /* CocostudioReader */ = {
 			isa = PBXGroup;
 			children = (
-				37B1CEB417A0D9FD004CAFC4 /* CCJsonReader.cpp */,
-				37B1CEB517A0D9FD004CAFC4 /* CCJsonReader.h */,
+				F8C4F6AE17CCB67B00F05428 /* CCSSceneReader.cpp */,
+				F8C4F6AF17CCB67B00F05428 /* CCSSceneReader.h */,
 				37B1CEB617A0D9FD004CAFC4 /* DictionaryHelper.cpp */,
 				37B1CEB717A0D9FD004CAFC4 /* DictionaryHelper.h */,
 			);
@@ -1671,6 +1692,14 @@
 		78C7DDAA14EBA5050085D0C2 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				F8C4F69E17CCB5C500F05428 /* BoilingFoam.plist */,
+				F8C4F69F17CCB5C500F05428 /* BurstPipe.plist */,
+				F8C4F6A017CCB5C500F05428 /* Flower.plist */,
+				F8C4F6A117CCB5C500F05428 /* list_enemy.png */,
+				F8C4F6A217CCB5C500F05428 /* Sample.ExportJson */,
+				F8C4F6A317CCB5C500F05428 /* Sample0.plist */,
+				F8C4F6A417CCB5C500F05428 /* Sample0.png */,
+				F8C4F6A517CCB5C500F05428 /* SmallSun.plist */,
 				1AFAF8C016D3884900DB1158 /* CloseNormal.png */,
 				1AFAF8C116D3884900DB1158 /* CloseSelected.png */,
 				1AFAF8C216D3884900DB1158 /* HelloWorld.png */,
@@ -1779,6 +1808,14 @@
 				376663CE17B8E0E8007606BB /* json_internalmap.inl in Resources */,
 				376663D117B8E0E8007606BB /* json_valueiterator.inl in Resources */,
 				376663D317B8E0E8007606BB /* sconscript in Resources */,
+				F8C4F6A617CCB5C500F05428 /* BoilingFoam.plist in Resources */,
+				F8C4F6A717CCB5C500F05428 /* BurstPipe.plist in Resources */,
+				F8C4F6A817CCB5C500F05428 /* Flower.plist in Resources */,
+				F8C4F6A917CCB5C500F05428 /* list_enemy.png in Resources */,
+				F8C4F6AA17CCB5C500F05428 /* Sample.ExportJson in Resources */,
+				F8C4F6AB17CCB5C500F05428 /* Sample0.plist in Resources */,
+				F8C4F6AC17CCB5C500F05428 /* Sample0.png in Resources */,
+				F8C4F6AD17CCB5C500F05428 /* SmallSun.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1947,7 +1984,6 @@
 				1A9CE9A51765A7FA000E3062 /* LocalStorage.cpp in Sources */,
 				1A9CE9A61765A7FA000E3062 /* LocalStorageAndroid.cpp in Sources */,
 				37B1CE3917A0D9E3004CAFC4 /* CCComRender.cpp in Sources */,
-				37B1CEB817A0D9FD004CAFC4 /* CCJsonReader.cpp in Sources */,
 				37B1CEB917A0D9FD004CAFC4 /* DictionaryHelper.cpp in Sources */,
 				3766635917B8E0D9007606BB /* UIAction.cpp in Sources */,
 				3766635A17B8E0D9007606BB /* UIActionFrame.cpp in Sources */,
@@ -2008,6 +2044,8 @@
 				376663D817B8E0E8007606BB /* CCTransformHelp.cpp in Sources */,
 				376663D917B8E0E8007606BB /* CCTweenFunction.cpp in Sources */,
 				376663DA17B8E0E8007606BB /* CCUtilMath.cpp in Sources */,
+				F8C4F69C17CCB5BD00F05428 /* ParticleCowboy.cpp in Sources */,
+				F8C4F6B017CCB67B00F05428 /* CCSSceneReader.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

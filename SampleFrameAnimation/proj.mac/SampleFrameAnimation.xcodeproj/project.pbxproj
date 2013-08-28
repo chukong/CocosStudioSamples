@@ -247,6 +247,30 @@
 		41BC70E815BF81A5006A0A6C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 41BC70E115BF81A5006A0A6C /* main.m */; };
 		8C583FAD169DB6D500F63A10 /* CCEditBox.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8C583FA8169DB6D500F63A10 /* CCEditBox.cpp */; };
 		8C583FAE169DB6D500F63A10 /* CCEditBoxImplMac.mm in Sources */ = {isa = PBXBuildFile; fileRef = 8C583FAC169DB6D500F63A10 /* CCEditBoxImplMac.mm */; };
+		F81A8F2517CB67AF00F2263F /* Fishes.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F81A8F2317CB67AF00F2263F /* Fishes.cpp */; };
+		F81A8F3F17CB67B800F2263F /* 2048.png in Resources */ = {isa = PBXBuildFile; fileRef = F81A8F2717CB67B800F2263F /* 2048.png */; };
+		F81A8F4017CB67B800F2263F /* fish01.ExportJson in Resources */ = {isa = PBXBuildFile; fileRef = F81A8F2817CB67B800F2263F /* fish01.ExportJson */; };
+		F81A8F4117CB67B800F2263F /* fish02.ExportJson in Resources */ = {isa = PBXBuildFile; fileRef = F81A8F2917CB67B800F2263F /* fish02.ExportJson */; };
+		F81A8F4217CB67B800F2263F /* fish03.ExportJson in Resources */ = {isa = PBXBuildFile; fileRef = F81A8F2A17CB67B800F2263F /* fish03.ExportJson */; };
+		F81A8F4317CB67B800F2263F /* fish04.ExportJson in Resources */ = {isa = PBXBuildFile; fileRef = F81A8F2B17CB67B800F2263F /* fish04.ExportJson */; };
+		F81A8F4417CB67B800F2263F /* fish05.ExportJson in Resources */ = {isa = PBXBuildFile; fileRef = F81A8F2C17CB67B800F2263F /* fish05.ExportJson */; };
+		F81A8F4517CB67B800F2263F /* fish06.ExportJson in Resources */ = {isa = PBXBuildFile; fileRef = F81A8F2D17CB67B800F2263F /* fish06.ExportJson */; };
+		F81A8F4617CB67B800F2263F /* fish07.ExportJson in Resources */ = {isa = PBXBuildFile; fileRef = F81A8F2E17CB67B800F2263F /* fish07.ExportJson */; };
+		F81A8F4717CB67B800F2263F /* fish010.plist in Resources */ = {isa = PBXBuildFile; fileRef = F81A8F2F17CB67B800F2263F /* fish010.plist */; };
+		F81A8F4817CB67B800F2263F /* fish010.png in Resources */ = {isa = PBXBuildFile; fileRef = F81A8F3017CB67B800F2263F /* fish010.png */; };
+		F81A8F4917CB67B800F2263F /* fish020.plist in Resources */ = {isa = PBXBuildFile; fileRef = F81A8F3117CB67B800F2263F /* fish020.plist */; };
+		F81A8F4A17CB67B800F2263F /* fish020.png in Resources */ = {isa = PBXBuildFile; fileRef = F81A8F3217CB67B800F2263F /* fish020.png */; };
+		F81A8F4B17CB67B800F2263F /* fish030.plist in Resources */ = {isa = PBXBuildFile; fileRef = F81A8F3317CB67B800F2263F /* fish030.plist */; };
+		F81A8F4C17CB67B800F2263F /* fish030.png in Resources */ = {isa = PBXBuildFile; fileRef = F81A8F3417CB67B800F2263F /* fish030.png */; };
+		F81A8F4D17CB67B800F2263F /* fish040.plist in Resources */ = {isa = PBXBuildFile; fileRef = F81A8F3517CB67B800F2263F /* fish040.plist */; };
+		F81A8F4E17CB67B800F2263F /* fish040.png in Resources */ = {isa = PBXBuildFile; fileRef = F81A8F3617CB67B800F2263F /* fish040.png */; };
+		F81A8F4F17CB67B800F2263F /* fish050.plist in Resources */ = {isa = PBXBuildFile; fileRef = F81A8F3717CB67B800F2263F /* fish050.plist */; };
+		F81A8F5017CB67B800F2263F /* fish050.png in Resources */ = {isa = PBXBuildFile; fileRef = F81A8F3817CB67B800F2263F /* fish050.png */; };
+		F81A8F5117CB67B800F2263F /* fish060.plist in Resources */ = {isa = PBXBuildFile; fileRef = F81A8F3917CB67B800F2263F /* fish060.plist */; };
+		F81A8F5217CB67B800F2263F /* fish060.png in Resources */ = {isa = PBXBuildFile; fileRef = F81A8F3A17CB67B800F2263F /* fish060.png */; };
+		F81A8F5317CB67B800F2263F /* fish070.plist in Resources */ = {isa = PBXBuildFile; fileRef = F81A8F3B17CB67B800F2263F /* fish070.plist */; };
+		F81A8F5417CB67B800F2263F /* fish070.png in Resources */ = {isa = PBXBuildFile; fileRef = F81A8F3C17CB67B800F2263F /* fish070.png */; };
+		F81A8F5517CB67B800F2263F /* Marker Felt.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F81A8F3E17CB67B800F2263F /* Marker Felt.ttf */; };
 		F860A60417C710CF005BF4C9 /* libcocos2dx.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F860A60317C710C3005BF4C9 /* libcocos2dx.a */; };
 		F860A60B17C71204005BF4C9 /* libcurl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F860A60D17C71204005BF4C9 /* libcurl.a */; };
 /* End PBXBuildFile section */
@@ -743,6 +767,31 @@
 		8C583FAA169DB6D500F63A10 /* CCEditBoxImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CCEditBoxImpl.h; path = CCEditBox/CCEditBoxImpl.h; sourceTree = "<group>"; };
 		8C583FAB169DB6D500F63A10 /* CCEditBoxImplMac.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CCEditBoxImplMac.h; path = CCEditBox/CCEditBoxImplMac.h; sourceTree = "<group>"; };
 		8C583FAC169DB6D500F63A10 /* CCEditBoxImplMac.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = CCEditBoxImplMac.mm; path = CCEditBox/CCEditBoxImplMac.mm; sourceTree = "<group>"; };
+		F81A8F2317CB67AF00F2263F /* Fishes.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Fishes.cpp; path = ../Classes/Fishes.cpp; sourceTree = "<group>"; };
+		F81A8F2417CB67AF00F2263F /* Fishes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Fishes.h; path = ../Classes/Fishes.h; sourceTree = "<group>"; };
+		F81A8F2717CB67B800F2263F /* 2048.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2048.png; sourceTree = "<group>"; };
+		F81A8F2817CB67B800F2263F /* fish01.ExportJson */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = fish01.ExportJson; sourceTree = "<group>"; };
+		F81A8F2917CB67B800F2263F /* fish02.ExportJson */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = fish02.ExportJson; sourceTree = "<group>"; };
+		F81A8F2A17CB67B800F2263F /* fish03.ExportJson */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = fish03.ExportJson; sourceTree = "<group>"; };
+		F81A8F2B17CB67B800F2263F /* fish04.ExportJson */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = fish04.ExportJson; sourceTree = "<group>"; };
+		F81A8F2C17CB67B800F2263F /* fish05.ExportJson */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = fish05.ExportJson; sourceTree = "<group>"; };
+		F81A8F2D17CB67B800F2263F /* fish06.ExportJson */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = fish06.ExportJson; sourceTree = "<group>"; };
+		F81A8F2E17CB67B800F2263F /* fish07.ExportJson */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = fish07.ExportJson; sourceTree = "<group>"; };
+		F81A8F2F17CB67B800F2263F /* fish010.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = fish010.plist; sourceTree = "<group>"; };
+		F81A8F3017CB67B800F2263F /* fish010.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fish010.png; sourceTree = "<group>"; };
+		F81A8F3117CB67B800F2263F /* fish020.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = fish020.plist; sourceTree = "<group>"; };
+		F81A8F3217CB67B800F2263F /* fish020.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fish020.png; sourceTree = "<group>"; };
+		F81A8F3317CB67B800F2263F /* fish030.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = fish030.plist; sourceTree = "<group>"; };
+		F81A8F3417CB67B800F2263F /* fish030.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fish030.png; sourceTree = "<group>"; };
+		F81A8F3517CB67B800F2263F /* fish040.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = fish040.plist; sourceTree = "<group>"; };
+		F81A8F3617CB67B800F2263F /* fish040.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fish040.png; sourceTree = "<group>"; };
+		F81A8F3717CB67B800F2263F /* fish050.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = fish050.plist; sourceTree = "<group>"; };
+		F81A8F3817CB67B800F2263F /* fish050.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fish050.png; sourceTree = "<group>"; };
+		F81A8F3917CB67B800F2263F /* fish060.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = fish060.plist; sourceTree = "<group>"; };
+		F81A8F3A17CB67B800F2263F /* fish060.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fish060.png; sourceTree = "<group>"; };
+		F81A8F3B17CB67B800F2263F /* fish070.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = fish070.plist; sourceTree = "<group>"; };
+		F81A8F3C17CB67B800F2263F /* fish070.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fish070.png; sourceTree = "<group>"; };
+		F81A8F3E17CB67B800F2263F /* Marker Felt.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Marker Felt.ttf"; sourceTree = "<group>"; };
 		F860A5FE17C710C3005BF4C9 /* cocos2dx.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = cocos2dx.xcodeproj; path = "../../cocos2d-x/cocos2dx/proj.mac/cocos2dx.xcodeproj"; sourceTree = "<group>"; };
 		F860A60C17C71204005BF4C9 /* en */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = en; path = en.lproj/libcurl.a; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -773,6 +822,8 @@
 		15AA9C4015B7EC450033D6C2 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				F81A8F2317CB67AF00F2263F /* Fishes.cpp */,
+				F81A8F2417CB67AF00F2263F /* Fishes.h */,
 				1AFAF8C616D3886000DB1158 /* AppDelegate.cpp */,
 				1AFAF8C716D3886000DB1158 /* AppDelegate.h */,
 				1AFAF8C816D3886000DB1158 /* HelloWorldScene.cpp */,
@@ -1671,6 +1722,29 @@
 		78C7DDAA14EBA5050085D0C2 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				F81A8F2717CB67B800F2263F /* 2048.png */,
+				F81A8F2817CB67B800F2263F /* fish01.ExportJson */,
+				F81A8F2917CB67B800F2263F /* fish02.ExportJson */,
+				F81A8F2A17CB67B800F2263F /* fish03.ExportJson */,
+				F81A8F2B17CB67B800F2263F /* fish04.ExportJson */,
+				F81A8F2C17CB67B800F2263F /* fish05.ExportJson */,
+				F81A8F2D17CB67B800F2263F /* fish06.ExportJson */,
+				F81A8F2E17CB67B800F2263F /* fish07.ExportJson */,
+				F81A8F2F17CB67B800F2263F /* fish010.plist */,
+				F81A8F3017CB67B800F2263F /* fish010.png */,
+				F81A8F3117CB67B800F2263F /* fish020.plist */,
+				F81A8F3217CB67B800F2263F /* fish020.png */,
+				F81A8F3317CB67B800F2263F /* fish030.plist */,
+				F81A8F3417CB67B800F2263F /* fish030.png */,
+				F81A8F3517CB67B800F2263F /* fish040.plist */,
+				F81A8F3617CB67B800F2263F /* fish040.png */,
+				F81A8F3717CB67B800F2263F /* fish050.plist */,
+				F81A8F3817CB67B800F2263F /* fish050.png */,
+				F81A8F3917CB67B800F2263F /* fish060.plist */,
+				F81A8F3A17CB67B800F2263F /* fish060.png */,
+				F81A8F3B17CB67B800F2263F /* fish070.plist */,
+				F81A8F3C17CB67B800F2263F /* fish070.png */,
+				F81A8F3D17CB67B800F2263F /* fonts */,
 				1AFAF8C016D3884900DB1158 /* CloseNormal.png */,
 				1AFAF8C116D3884900DB1158 /* CloseSelected.png */,
 				1AFAF8C216D3884900DB1158 /* HelloWorld.png */,
@@ -1689,6 +1763,14 @@
 				8C583FAC169DB6D500F63A10 /* CCEditBoxImplMac.mm */,
 			);
 			name = CCEditBox;
+			sourceTree = "<group>";
+		};
+		F81A8F3D17CB67B800F2263F /* fonts */ = {
+			isa = PBXGroup;
+			children = (
+				F81A8F3E17CB67B800F2263F /* Marker Felt.ttf */,
+			);
+			path = fonts;
 			sourceTree = "<group>";
 		};
 		F860A5FF17C710C3005BF4C9 /* Products */ = {
@@ -1779,6 +1861,29 @@
 				376663CE17B8E0E8007606BB /* json_internalmap.inl in Resources */,
 				376663D117B8E0E8007606BB /* json_valueiterator.inl in Resources */,
 				376663D317B8E0E8007606BB /* sconscript in Resources */,
+				F81A8F3F17CB67B800F2263F /* 2048.png in Resources */,
+				F81A8F4017CB67B800F2263F /* fish01.ExportJson in Resources */,
+				F81A8F4117CB67B800F2263F /* fish02.ExportJson in Resources */,
+				F81A8F4217CB67B800F2263F /* fish03.ExportJson in Resources */,
+				F81A8F4317CB67B800F2263F /* fish04.ExportJson in Resources */,
+				F81A8F4417CB67B800F2263F /* fish05.ExportJson in Resources */,
+				F81A8F4517CB67B800F2263F /* fish06.ExportJson in Resources */,
+				F81A8F4617CB67B800F2263F /* fish07.ExportJson in Resources */,
+				F81A8F4717CB67B800F2263F /* fish010.plist in Resources */,
+				F81A8F4817CB67B800F2263F /* fish010.png in Resources */,
+				F81A8F4917CB67B800F2263F /* fish020.plist in Resources */,
+				F81A8F4A17CB67B800F2263F /* fish020.png in Resources */,
+				F81A8F4B17CB67B800F2263F /* fish030.plist in Resources */,
+				F81A8F4C17CB67B800F2263F /* fish030.png in Resources */,
+				F81A8F4D17CB67B800F2263F /* fish040.plist in Resources */,
+				F81A8F4E17CB67B800F2263F /* fish040.png in Resources */,
+				F81A8F4F17CB67B800F2263F /* fish050.plist in Resources */,
+				F81A8F5017CB67B800F2263F /* fish050.png in Resources */,
+				F81A8F5117CB67B800F2263F /* fish060.plist in Resources */,
+				F81A8F5217CB67B800F2263F /* fish060.png in Resources */,
+				F81A8F5317CB67B800F2263F /* fish070.plist in Resources */,
+				F81A8F5417CB67B800F2263F /* fish070.png in Resources */,
+				F81A8F5517CB67B800F2263F /* Marker Felt.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2008,6 +2113,7 @@
 				376663D817B8E0E8007606BB /* CCTransformHelp.cpp in Sources */,
 				376663D917B8E0E8007606BB /* CCTweenFunction.cpp in Sources */,
 				376663DA17B8E0E8007606BB /* CCUtilMath.cpp in Sources */,
+				F81A8F2517CB67AF00F2263F /* Fishes.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
