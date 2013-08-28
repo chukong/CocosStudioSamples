@@ -105,6 +105,7 @@ void TestChangeEquip::initUI()
 
 void TestChangeEquip::initEquip()
 {
+	//! create EquipIcon, and add them to equip grid.
 	CCArray *grids = m_pCurrentGridPage->getChildren();
 
 	std::string weapon[] = {"weapon_f-sword.png", "weapon_f-sword2.png", "weapon_f-sword3.png", "weapon_f-sword4.png", "weapon_f-sword5.png", "weapon_f-knife.png", "weapon_f-hammer.png"};
@@ -125,6 +126,7 @@ void TestChangeEquip::initEquip()
 
 UIWidget *TestChangeEquip::getGridAtPoint(CCPoint point)
 {
+	//! judge clicked which grid
 	CCArray *grids = m_pCurrentGridPage->getChildren();
 	UIWidget *touchedGrid = NULL;
 
@@ -160,6 +162,7 @@ UIWidget *TestChangeEquip::getGridAtPoint(CCPoint point)
 
 void TestChangeEquip::adaptToSize(CCNode *target, CCSize size, float sizeScale)
 {
+	//! resize target to size
 	CCSize targetize = target->boundingBox().size;
 	float scaleX = size.width * sizeScale / targetize.width;
 	float scaleY = size.height * sizeScale / targetize.height;
@@ -177,9 +180,10 @@ bool TestChangeEquip::ccTouchBegan(CCTouch *pTouch, CCEvent *pEvent)
 	CCPoint touchPoint = pTouch->getLocation();
 	m_pSelectedGrid = m_pCurrentGrid = getGridAtPoint(touchPoint);
 
-	if (m_pCurrentGrid)
+	//! if click at a grid, then scale it and move its EquipIcon
+	if (m_pSelectedGrid)
 	{
-		m_pCurrentGrid->runAction(CCScaleTo::create(0.05f, 1.2f));
+		m_pSelectedGrid->runAction(CCScaleTo::create(0.05f, 1.2f));
 		m_pCurrentIcon = (EquipIcon*)(m_pSelectedGrid->getContainerNode()->getChildByTag(ICON_TAG));
 		
 		if (m_pCurrentIcon)
@@ -199,6 +203,7 @@ void TestChangeEquip::ccTouchMoved(CCTouch *pTouch, CCEvent *pEvent)
 
 	UIWidget *grid = getGridAtPoint(touchPoint);
 
+	//! if moved on a grid, then scale it
 	if (grid != m_pCurrentGrid)
 	{
 		if (m_pCurrentGrid)
@@ -212,6 +217,7 @@ void TestChangeEquip::ccTouchMoved(CCTouch *pTouch, CCEvent *pEvent)
 		m_pCurrentGrid = grid;
 	}
 
+	//! set CurrentIcon to touchPoint
 	if (m_pCurrentIcon)
 	{
 		m_pCurrentIcon->setPosition(touchPoint);
@@ -220,6 +226,7 @@ void TestChangeEquip::ccTouchMoved(CCTouch *pTouch, CCEvent *pEvent)
 
 void TestChangeEquip::ccTouchEnded(CCTouch *pTouch, CCEvent *pEvent)
 {
+	//! scale current grid
 	if (m_pCurrentGrid)
 	{
 		m_pCurrentGrid->runAction(CCScaleTo::create(0.05f, 1.0f));
@@ -251,7 +258,7 @@ void TestChangeEquip::ccTouchEnded(CCTouch *pTouch, CCEvent *pEvent)
 					icon->release();
 				}
 
-
+				//! if current icon exist, then change armature's equip
 				EquipIcon *equip = EquipIcon::createWithSpriteFrameName(m_pCurrentIcon->getIconName().c_str());
 				m_pArmature->getBone("weapon")->addDisplay(equip, 0);
 				m_pArmature->getBone("weapon")->changeDisplayByIndex(0, true);
