@@ -1,6 +1,7 @@
 #include "HelloWorldScene.h"
 
 USING_NS_CC;
+using namespace cocos2d::extension;
 
 CCScene* HelloWorld::scene()
 {
@@ -50,30 +51,39 @@ bool HelloWorld::init()
     this->addChild(pMenu, 1);
 
     /////////////////////////////
-    // 3. add your codes below...
-
-    // add a label shows "Hello World"
-    // create and initialize a label
+    //init info
+	setTouchEnabled(true);
+	count = 0;
+	//add armature
+	CCArmatureDataManager::sharedArmatureDataManager()->addArmatureFileInfo("100.png","100.plist","10.ExportJson");
+	armature = CCArmature::create("10");
+	armature->setPosition(ccp(visibleSize.width * 0.8,visibleSize.height * 0.5));
+	armature->getAnimation()->playByIndex(0);
+	armature->setScale(0.25);
+	this->addChild(armature);
     
-    CCLabelTTF* pLabel = CCLabelTTF::create("Hello World", "Arial", 24);
+	// create and initialize a label
+    CCLabelTTF* pLabel = CCLabelTTF::create("Touch Screen to Change Animation", "Arial", 20);
     
     // position the label on the center of the screen
-    pLabel->setPosition(ccp(origin.x + visibleSize.width/2,
-                            origin.y + visibleSize.height - pLabel->getContentSize().height));
+    pLabel->setPosition(ccp(origin.x + visibleSize.width*0.5,
+                            origin.y + visibleSize.height * 0.2));
+	this->addChild(pLabel,0);
 
-    // add the label as a child to this layer
-    this->addChild(pLabel, 1);
-
-    // add "HelloWorld" splash screen"
-    CCSprite* pSprite = CCSprite::create("HelloWorld.png");
-
-    // position the sprite on the center of the screen
-    pSprite->setPosition(ccp(visibleSize.width/2 + origin.x, visibleSize.height/2 + origin.y));
-
-    // add the sprite as a child to this layer
-    this->addChild(pSprite, 0);
-    
     return true;
+}
+
+bool HelloWorld::ccTouchBegan(cocos2d::CCTouch *pTouch, cocos2d::CCEvent *pEvent)
+{
+	count++;
+	count = count% armature->getAnimation()->getMovementCount();
+	armature->getAnimation()->playByIndex(count);
+	return false;
+}
+
+void HelloWorld::registerWithTouchDispatcher()
+{
+	CCDirector::sharedDirector()->getTouchDispatcher()->addTargetedDelegate(this, INT_MIN+1, true);
 }
 
 
