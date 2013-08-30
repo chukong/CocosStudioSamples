@@ -247,6 +247,14 @@
 		41BC70E815BF81A5006A0A6C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 41BC70E115BF81A5006A0A6C /* main.m */; };
 		8C583FAD169DB6D500F63A10 /* CCEditBox.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8C583FA8169DB6D500F63A10 /* CCEditBox.cpp */; };
 		8C583FAE169DB6D500F63A10 /* CCEditBoxImplMac.mm in Sources */ = {isa = PBXBuildFile; fileRef = 8C583FAC169DB6D500F63A10 /* CCEditBoxImplMac.mm */; };
+		F83C35C217D080A500F5E253 /* bg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F83C35BB17D080A500F5E253 /* bg.jpg */; };
+		F83C35C317D080A500F5E253 /* ChangeEquipUI_1 in Resources */ = {isa = PBXBuildFile; fileRef = F83C35BC17D080A500F5E253 /* ChangeEquipUI_1 */; };
+		F83C35C417D080A500F5E253 /* ChangeEquipUI_2 in Resources */ = {isa = PBXBuildFile; fileRef = F83C35BD17D080A500F5E253 /* ChangeEquipUI_2 */; };
+		F83C35C517D080A500F5E253 /* hd in Resources */ = {isa = PBXBuildFile; fileRef = F83C35BE17D080A500F5E253 /* hd */; };
+		F83C35C617D080A500F5E253 /* KnightWithWeapons.ExportJson in Resources */ = {isa = PBXBuildFile; fileRef = F83C35BF17D080A500F5E253 /* KnightWithWeapons.ExportJson */; };
+		F83C35C717D080A500F5E253 /* KnightWithWeapons0.plist in Resources */ = {isa = PBXBuildFile; fileRef = F83C35C017D080A500F5E253 /* KnightWithWeapons0.plist */; };
+		F83C35C817D080A500F5E253 /* KnightWithWeapons0.png in Resources */ = {isa = PBXBuildFile; fileRef = F83C35C117D080A500F5E253 /* KnightWithWeapons0.png */; };
+		F83C35CC17D080AF00F5E253 /* TestChangeEquip.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F83C35CA17D080AF00F5E253 /* TestChangeEquip.cpp */; };
 		F860A60417C710CF005BF4C9 /* libcocos2dx.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F860A60317C710C3005BF4C9 /* libcocos2dx.a */; };
 		F860A60B17C71204005BF4C9 /* libcurl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F860A60D17C71204005BF4C9 /* libcurl.a */; };
 /* End PBXBuildFile section */
@@ -743,6 +751,15 @@
 		8C583FAA169DB6D500F63A10 /* CCEditBoxImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CCEditBoxImpl.h; path = CCEditBox/CCEditBoxImpl.h; sourceTree = "<group>"; };
 		8C583FAB169DB6D500F63A10 /* CCEditBoxImplMac.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CCEditBoxImplMac.h; path = CCEditBox/CCEditBoxImplMac.h; sourceTree = "<group>"; };
 		8C583FAC169DB6D500F63A10 /* CCEditBoxImplMac.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = CCEditBoxImplMac.mm; path = CCEditBox/CCEditBoxImplMac.mm; sourceTree = "<group>"; };
+		F83C35BB17D080A500F5E253 /* bg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bg.jpg; sourceTree = "<group>"; };
+		F83C35BC17D080A500F5E253 /* ChangeEquipUI_1 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ChangeEquipUI_1; sourceTree = "<group>"; };
+		F83C35BD17D080A500F5E253 /* ChangeEquipUI_2 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ChangeEquipUI_2; sourceTree = "<group>"; };
+		F83C35BE17D080A500F5E253 /* hd */ = {isa = PBXFileReference; lastKnownFileType = folder; path = hd; sourceTree = "<group>"; };
+		F83C35BF17D080A500F5E253 /* KnightWithWeapons.ExportJson */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = KnightWithWeapons.ExportJson; sourceTree = "<group>"; };
+		F83C35C017D080A500F5E253 /* KnightWithWeapons0.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = KnightWithWeapons0.plist; sourceTree = "<group>"; };
+		F83C35C117D080A500F5E253 /* KnightWithWeapons0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = KnightWithWeapons0.png; sourceTree = "<group>"; };
+		F83C35CA17D080AF00F5E253 /* TestChangeEquip.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TestChangeEquip.cpp; path = ../Classes/TestChangeEquip.cpp; sourceTree = "<group>"; };
+		F83C35CB17D080AF00F5E253 /* TestChangeEquip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TestChangeEquip.h; path = ../Classes/TestChangeEquip.h; sourceTree = "<group>"; };
 		F860A5FE17C710C3005BF4C9 /* cocos2dx.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = cocos2dx.xcodeproj; path = "../../cocos2d-x/cocos2dx/proj.mac/cocos2dx.xcodeproj"; sourceTree = "<group>"; };
 		F860A60C17C71204005BF4C9 /* en */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = en; path = en.lproj/libcurl.a; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -773,6 +790,8 @@
 		15AA9C4015B7EC450033D6C2 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				F83C35CA17D080AF00F5E253 /* TestChangeEquip.cpp */,
+				F83C35CB17D080AF00F5E253 /* TestChangeEquip.h */,
 				1AFAF8C616D3886000DB1158 /* AppDelegate.cpp */,
 				1AFAF8C716D3886000DB1158 /* AppDelegate.h */,
 				1AFAF8C816D3886000DB1158 /* HelloWorldScene.cpp */,
@@ -1671,6 +1690,13 @@
 		78C7DDAA14EBA5050085D0C2 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				F83C35BB17D080A500F5E253 /* bg.jpg */,
+				F83C35BC17D080A500F5E253 /* ChangeEquipUI_1 */,
+				F83C35BD17D080A500F5E253 /* ChangeEquipUI_2 */,
+				F83C35BE17D080A500F5E253 /* hd */,
+				F83C35BF17D080A500F5E253 /* KnightWithWeapons.ExportJson */,
+				F83C35C017D080A500F5E253 /* KnightWithWeapons0.plist */,
+				F83C35C117D080A500F5E253 /* KnightWithWeapons0.png */,
 				1AFAF8C016D3884900DB1158 /* CloseNormal.png */,
 				1AFAF8C116D3884900DB1158 /* CloseSelected.png */,
 				1AFAF8C216D3884900DB1158 /* HelloWorld.png */,
@@ -1779,6 +1805,13 @@
 				376663CE17B8E0E8007606BB /* json_internalmap.inl in Resources */,
 				376663D117B8E0E8007606BB /* json_valueiterator.inl in Resources */,
 				376663D317B8E0E8007606BB /* sconscript in Resources */,
+				F83C35C217D080A500F5E253 /* bg.jpg in Resources */,
+				F83C35C317D080A500F5E253 /* ChangeEquipUI_1 in Resources */,
+				F83C35C417D080A500F5E253 /* ChangeEquipUI_2 in Resources */,
+				F83C35C517D080A500F5E253 /* hd in Resources */,
+				F83C35C617D080A500F5E253 /* KnightWithWeapons.ExportJson in Resources */,
+				F83C35C717D080A500F5E253 /* KnightWithWeapons0.plist in Resources */,
+				F83C35C817D080A500F5E253 /* KnightWithWeapons0.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2008,6 +2041,7 @@
 				376663D817B8E0E8007606BB /* CCTransformHelp.cpp in Sources */,
 				376663D917B8E0E8007606BB /* CCTweenFunction.cpp in Sources */,
 				376663DA17B8E0E8007606BB /* CCUtilMath.cpp in Sources */,
+				F83C35CC17D080AF00F5E253 /* TestChangeEquip.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

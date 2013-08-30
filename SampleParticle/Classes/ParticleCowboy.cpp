@@ -8,8 +8,8 @@ void ParticleCowboy::onEnter()
 
 	armature = cocos2d::extension::CCArmature::create("Sample");
 	armature->getAnimation()->play("Fire");
-	armature->setScaleX(-0.15f);
-	armature->setScaleY(0.15f);
+	armature->setScaleX(-0.25f);
+	armature->setScaleY(0.25f);
 	armature->setPosition(ccp(50, size.height * 0.5));
 
 	/*
@@ -28,14 +28,14 @@ void ParticleCowboy::animationEvent(cocos2d::extension::CCArmature *armature, Mo
 	{
 		if (id.compare("Fire") == 0)
 		{
-			CCActionInterval *actionToRight = CCMoveTo::create(5, ccp(size.width - 50, size.height * 0.5));
+			CCActionInterval *actionToRight = CCMoveTo::create(5, ccp(size.width - 150, size.height * 0.5));
 			armature->stopAllActions();
 			armature->runAction(CCSequence::create(actionToRight,  CCCallFunc::create(this, callfunc_selector(ParticleCowboy::callback1)), NULL));
 			armature->getAnimation()->play("Walk");
 		}
 		else if (id.compare("FireMax") == 0)
 		{
-			CCActionInterval *actionToLeft = CCMoveTo::create(5, ccp(50,size.height * 0.5));
+			CCActionInterval *actionToLeft = CCMoveTo::create(5, ccp(150,size.height * 0.5));
 			armature->stopAllActions();
 			armature->runAction(CCSequence::create(actionToLeft,  CCCallFunc::create(this, callfunc_selector(ParticleCowboy::callback2)), NULL));
 			armature->getAnimation()->play("Walk");
@@ -44,12 +44,12 @@ void ParticleCowboy::animationEvent(cocos2d::extension::CCArmature *armature, Mo
 }
 void ParticleCowboy::callback1()
 {
-	armature->runAction(CCScaleTo::create(0.3f, 0.15f, 0.15f));
+	armature->runAction(CCScaleTo::create(0.3f, 0.25f, 0.25f));
 	armature->getAnimation()->play("FireMax");
 }
 void ParticleCowboy::callback2()
 {
-	armature->runAction(CCScaleTo::create(0.3f, -0.15f, 0.15f));
+	armature->runAction(CCScaleTo::create(0.3f, -0.25f, 0.25f));
 	armature->getAnimation()->play("Fire");
 }
 

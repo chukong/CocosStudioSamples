@@ -236,7 +236,6 @@
 		376662EC17B8DF12007606BB /* CCTweenFunction.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 376662CF17B8DF12007606BB /* CCTweenFunction.cpp */; };
 		376662ED17B8DF12007606BB /* CCUtilMath.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 376662D117B8DF12007606BB /* CCUtilMath.cpp */; };
 		37B1CD4417A0D835004CAFC4 /* CCComRender.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 37B1CD4217A0D835004CAFC4 /* CCComRender.cpp */; };
-		37B1CDC317A0D886004CAFC4 /* CCJsonReader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 37B1CDBF17A0D886004CAFC4 /* CCJsonReader.cpp */; };
 		37B1CDC417A0D886004CAFC4 /* DictionaryHelper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 37B1CDC117A0D886004CAFC4 /* DictionaryHelper.cpp */; };
 		7855E0E1153FEF240059DD9A /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 7855E0DF153FEF240059DD9A /* Default.png */; };
 		BF171245129291EC00B8313A /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB012928DE900B8313A /* OpenGLES.framework */; };
@@ -259,6 +258,7 @@
 		F86D6BF817C7554400C726D1 /* Cowboy0.plist in Resources */ = {isa = PBXBuildFile; fileRef = F86D6BF517C7554400C726D1 /* Cowboy0.plist */; };
 		F86D6BF917C7554400C726D1 /* Cowboy0.png in Resources */ = {isa = PBXBuildFile; fileRef = F86D6BF617C7554400C726D1 /* Cowboy0.png */; };
 		F8AE527617C749A8009DAE24 /* libcocos2dx.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F8AE527317C7495D009DAE24 /* libcocos2dx.a */; };
+		F8DFE44517CEF4AA00E6EF1D /* CCSSceneReader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F8DFE44317CEF4AA00E6EF1D /* CCSSceneReader.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -741,8 +741,6 @@
 		376662D217B8DF12007606BB /* CCUtilMath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCUtilMath.h; sourceTree = "<group>"; };
 		37B1CD4217A0D835004CAFC4 /* CCComRender.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CCComRender.cpp; sourceTree = "<group>"; };
 		37B1CD4317A0D835004CAFC4 /* CCComRender.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCComRender.h; sourceTree = "<group>"; };
-		37B1CDBF17A0D886004CAFC4 /* CCJsonReader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CCJsonReader.cpp; sourceTree = "<group>"; };
-		37B1CDC017A0D886004CAFC4 /* CCJsonReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCJsonReader.h; sourceTree = "<group>"; };
 		37B1CDC117A0D886004CAFC4 /* DictionaryHelper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DictionaryHelper.cpp; sourceTree = "<group>"; };
 		37B1CDC217A0D886004CAFC4 /* DictionaryHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DictionaryHelper.h; sourceTree = "<group>"; };
 		7855E0DF153FEF240059DD9A /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = SOURCE_ROOT; };
@@ -769,6 +767,8 @@
 		F86D6BF417C7554400C726D1 /* Cowboy.ExportJson */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cowboy.ExportJson; sourceTree = "<group>"; };
 		F86D6BF517C7554400C726D1 /* Cowboy0.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Cowboy0.plist; sourceTree = "<group>"; };
 		F86D6BF617C7554400C726D1 /* Cowboy0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Cowboy0.png; sourceTree = "<group>"; };
+		F8DFE44317CEF4AA00E6EF1D /* CCSSceneReader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CCSSceneReader.cpp; sourceTree = "<group>"; };
+		F8DFE44417CEF4AA00E6EF1D /* CCSSceneReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCSSceneReader.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1718,8 +1718,8 @@
 		37B1CDBE17A0D886004CAFC4 /* CocostudioReader */ = {
 			isa = PBXGroup;
 			children = (
-				37B1CDBF17A0D886004CAFC4 /* CCJsonReader.cpp */,
-				37B1CDC017A0D886004CAFC4 /* CCJsonReader.h */,
+				F8DFE44317CEF4AA00E6EF1D /* CCSSceneReader.cpp */,
+				F8DFE44417CEF4AA00E6EF1D /* CCSSceneReader.h */,
 				37B1CDC117A0D886004CAFC4 /* DictionaryHelper.cpp */,
 				37B1CDC217A0D886004CAFC4 /* DictionaryHelper.h */,
 			);
@@ -2009,7 +2009,6 @@
 				1A9CE8991765A12C000E3062 /* CCComController.cpp in Sources */,
 				1A9CE89A1765A12C000E3062 /* CCInputDelegate.cpp in Sources */,
 				37B1CD4417A0D835004CAFC4 /* CCComRender.cpp in Sources */,
-				37B1CDC317A0D886004CAFC4 /* CCJsonReader.cpp in Sources */,
 				37B1CDC417A0D886004CAFC4 /* DictionaryHelper.cpp in Sources */,
 				3766626C17B8DF02007606BB /* UIAction.cpp in Sources */,
 				3766626D17B8DF02007606BB /* UIActionFrame.cpp in Sources */,
@@ -2072,6 +2071,7 @@
 				376662ED17B8DF12007606BB /* CCUtilMath.cpp in Sources */,
 				F86D6BF117C753B200C726D1 /* GLES-Render.cpp in Sources */,
 				F86D6BF217C753B200C726D1 /* TestColliderDetector.cpp in Sources */,
+				F8DFE44517CEF4AA00E6EF1D /* CCSSceneReader.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
