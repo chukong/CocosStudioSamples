@@ -73,26 +73,27 @@ bool HelloWorld::init()
 	this->addChild(fish5,1);
 
 	Fish05* fish51 = new Fish05();
-	fish51->setPosition(ccp(30,20));
+	fish51->setPosition(ccp(30,30));
 	this->addChild(fish51,1);
 
 	Fish05* fish52 = new Fish05();
-	fish52->setPosition(ccp(30,-20));
+	fish52->setPosition(ccp(30,-30));
 	this->addChild(fish52,1);
+    
 	//create a fish with a call back
 	Fish04* fish40 = new Fish04();
 	this->addChild(fish40,2);
 
 	Fish04* fish41 = new Fish04();
-	fish41->setPosition(ccp(0,-50));
+	fish41->setPosition(ccp(0,-70));
 	this->addChild(fish41,2);
 
 	Fish04* fish42 = new Fish04();
-	fish42->setPosition(ccp(0,-100));
+	fish42->setPosition(ccp(0,-140));
 	this->addChild(fish42,2);
 
 	Fish04* fish43 = new Fish04();
-	fish43->setPosition(ccp(0,-150));
+	fish43->setPosition(ccp(0,-210));
 	this->addChild(fish43,2);
     // add a label shows "Hello World"
     // create and initialize a label

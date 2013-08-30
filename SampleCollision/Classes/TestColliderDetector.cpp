@@ -50,7 +50,7 @@ void TestColliderDetector::onFrameEvent(CCBone *bone, const char *evt, int origi
 	//! add position and action to bullet
 	bullet->setPosition(ccp(p.x + 60, p.y));
 	bullet->stopAllActions();
-	bullet->runAction(CCMoveBy::create(1.5f, ccp(350, 0)));
+	bullet->runAction(CCMoveBy::create(2.5f, ccp(CCDirector::sharedDirector()->getVisibleSize().width, 0)));
 }
 
 

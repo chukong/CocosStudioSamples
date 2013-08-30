@@ -254,6 +254,14 @@
 		D4EF94A015BD2D9800D803EB /* Icon-144.png in Resources */ = {isa = PBXBuildFile; fileRef = D4EF949F15BD2D9800D803EB /* Icon-144.png */; };
 		F860A61117C712FE005BF4C9 /* libcurl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F860A61017C712FE005BF4C9 /* libcurl.a */; };
 		F8AE527617C749A8009DAE24 /* libcocos2dx.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F8AE527317C7495D009DAE24 /* libcocos2dx.a */; };
+		F8BE05E417D07FD100D91749 /* TestChangeEquip.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F8BE05E217D07FD100D91749 /* TestChangeEquip.cpp */; };
+		F8BE05ED17D07FE500D91749 /* bg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F8BE05E617D07FE500D91749 /* bg.jpg */; };
+		F8BE05EE17D07FE500D91749 /* ChangeEquipUI_1 in Resources */ = {isa = PBXBuildFile; fileRef = F8BE05E717D07FE500D91749 /* ChangeEquipUI_1 */; };
+		F8BE05EF17D07FE500D91749 /* ChangeEquipUI_2 in Resources */ = {isa = PBXBuildFile; fileRef = F8BE05E817D07FE500D91749 /* ChangeEquipUI_2 */; };
+		F8BE05F017D07FE500D91749 /* hd in Resources */ = {isa = PBXBuildFile; fileRef = F8BE05E917D07FE500D91749 /* hd */; };
+		F8BE05F117D07FE500D91749 /* KnightWithWeapons.ExportJson in Resources */ = {isa = PBXBuildFile; fileRef = F8BE05EA17D07FE500D91749 /* KnightWithWeapons.ExportJson */; };
+		F8BE05F217D07FE500D91749 /* KnightWithWeapons0.plist in Resources */ = {isa = PBXBuildFile; fileRef = F8BE05EB17D07FE500D91749 /* KnightWithWeapons0.plist */; };
+		F8BE05F317D07FE500D91749 /* KnightWithWeapons0.png in Resources */ = {isa = PBXBuildFile; fileRef = F8BE05EC17D07FE500D91749 /* KnightWithWeapons0.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -757,6 +765,15 @@
 		D4F9F37B12E54555005CA6D2 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = SOURCE_ROOT; };
 		F860A5E617C70A1E005BF4C9 /* cocos2dx.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = cocos2dx.xcodeproj; path = "../../cocos2d-x/cocos2dx/proj.ios/cocos2dx.xcodeproj"; sourceTree = "<group>"; };
 		F860A61017C712FE005BF4C9 /* libcurl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcurl.a; path = "../../cocos2d-x/cocos2dx/platform/third_party/ios/libraries/libcurl.a"; sourceTree = "<group>"; };
+		F8BE05E217D07FD100D91749 /* TestChangeEquip.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TestChangeEquip.cpp; path = ../Classes/TestChangeEquip.cpp; sourceTree = "<group>"; };
+		F8BE05E317D07FD100D91749 /* TestChangeEquip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TestChangeEquip.h; path = ../Classes/TestChangeEquip.h; sourceTree = "<group>"; };
+		F8BE05E617D07FE500D91749 /* bg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bg.jpg; sourceTree = "<group>"; };
+		F8BE05E717D07FE500D91749 /* ChangeEquipUI_1 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ChangeEquipUI_1; sourceTree = "<group>"; };
+		F8BE05E817D07FE500D91749 /* ChangeEquipUI_2 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ChangeEquipUI_2; sourceTree = "<group>"; };
+		F8BE05E917D07FE500D91749 /* hd */ = {isa = PBXFileReference; lastKnownFileType = folder; path = hd; sourceTree = "<group>"; };
+		F8BE05EA17D07FE500D91749 /* KnightWithWeapons.ExportJson */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = KnightWithWeapons.ExportJson; sourceTree = "<group>"; };
+		F8BE05EB17D07FE500D91749 /* KnightWithWeapons0.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = KnightWithWeapons0.plist; sourceTree = "<group>"; };
+		F8BE05EC17D07FE500D91749 /* KnightWithWeapons0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = KnightWithWeapons0.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1270,6 +1287,8 @@
 		15AA9C4015B7EC450033D6C2 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				F8BE05E217D07FD100D91749 /* TestChangeEquip.cpp */,
+				F8BE05E317D07FD100D91749 /* TestChangeEquip.h */,
 				1AFAF8B316D35DE700DB1158 /* AppDelegate.cpp */,
 				1AFAF8B416D35DE700DB1158 /* AppDelegate.h */,
 				1AFAF8B516D35DE700DB1158 /* HelloWorldScene.cpp */,
@@ -1713,6 +1732,13 @@
 		78C7DDAA14EBA5050085D0C2 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				F8BE05E617D07FE500D91749 /* bg.jpg */,
+				F8BE05E717D07FE500D91749 /* ChangeEquipUI_1 */,
+				F8BE05E817D07FE500D91749 /* ChangeEquipUI_2 */,
+				F8BE05E917D07FE500D91749 /* hd */,
+				F8BE05EA17D07FE500D91749 /* KnightWithWeapons.ExportJson */,
+				F8BE05EB17D07FE500D91749 /* KnightWithWeapons0.plist */,
+				F8BE05EC17D07FE500D91749 /* KnightWithWeapons0.png */,
 				1AFAF8B916D35E4900DB1158 /* CloseNormal.png */,
 				1AFAF8BA16D35E4900DB1158 /* CloseSelected.png */,
 				1AFAF8BB16D35E4900DB1158 /* HelloWorld.png */,
@@ -1819,6 +1845,13 @@
 				376662E117B8DF12007606BB /* json_internalmap.inl in Resources */,
 				376662E417B8DF12007606BB /* json_valueiterator.inl in Resources */,
 				376662E617B8DF12007606BB /* sconscript in Resources */,
+				F8BE05ED17D07FE500D91749 /* bg.jpg in Resources */,
+				F8BE05EE17D07FE500D91749 /* ChangeEquipUI_1 in Resources */,
+				F8BE05EF17D07FE500D91749 /* ChangeEquipUI_2 in Resources */,
+				F8BE05F017D07FE500D91749 /* hd in Resources */,
+				F8BE05F117D07FE500D91749 /* KnightWithWeapons.ExportJson in Resources */,
+				F8BE05F217D07FE500D91749 /* KnightWithWeapons0.plist in Resources */,
+				F8BE05F317D07FE500D91749 /* KnightWithWeapons0.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2048,6 +2081,7 @@
 				376662EB17B8DF12007606BB /* CCTransformHelp.cpp in Sources */,
 				376662EC17B8DF12007606BB /* CCTweenFunction.cpp in Sources */,
 				376662ED17B8DF12007606BB /* CCUtilMath.cpp in Sources */,
+				F8BE05E417D07FD100D91749 /* TestChangeEquip.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

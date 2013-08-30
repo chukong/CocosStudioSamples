@@ -60,11 +60,10 @@ void TestChangeEquip::onEnter()
 	addChild(bg);
 
 	//! load data
-	CCArmatureDataManager::sharedArmatureDataManager()->addArmatureFileInfo("knight.png", "knight.plist", "knight.xml");
-	CCArmatureDataManager::sharedArmatureDataManager()->addArmatureFileInfo("weapon.png", "weapon.plist", "weapon.xml");
+	CCArmatureDataManager::sharedArmatureDataManager()->addArmatureFileInfo("KnightWithWeapons0.png", "KnightWithWeapons0.plist", "KnightWithWeapons.ExportJson");
 
 	//! create armature
-	m_pArmature = cocos2d::extension::CCArmature::create("Knight_f/Knight");
+	m_pArmature = cocos2d::extension::CCArmature::create("KnightWithWeapons");
 	m_pArmature->getAnimation()->playByIndex(0);
 	m_pArmature->getBone("weapon")->changeDisplayByIndex(-1, true);
 
@@ -133,8 +132,8 @@ UIWidget *TestChangeEquip::getGridAtPoint(CCPoint point)
 	CCObject *object = NULL;
 	CCARRAY_FOREACH(grids, object)
 	{
-		UIWidget *grid = (UIWidget*)object;
-		bool touched = grid->pointAtSelfBody(point);
+		UIWidget *grid = (UIWidget*)object;		
+		bool touched = grid->hitTest(point);
 		if (touched)
 		{
 			touchedGrid = grid;
@@ -148,7 +147,7 @@ UIWidget *TestChangeEquip::getGridAtPoint(CCPoint point)
 		CCARRAY_FOREACH(slots, object)
 		{
 			UIWidget *slot = (UIWidget*)object;
-			bool touched = slot->pointAtSelfBody(point);
+			bool touched = slot->hitTest(point);
 			if (touched)
 			{
 				touchedGrid = slot;
