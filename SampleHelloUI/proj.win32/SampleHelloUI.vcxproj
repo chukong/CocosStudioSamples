@@ -129,11 +129,49 @@ xcopy /Y /Q "$(ProjectDir)..\..\..\external\libwebsockets\win32\lib\*.*" "$(OutD
   <ItemGroup>
     <ClCompile Include="..\Classes\AppDelegate.cpp" />
     <ClCompile Include="..\Classes\HelloWorldScene.cpp" />
+    <ClCompile Include="..\Classes\UIButtonTest\UIButtonTest.cpp" />
+    <ClCompile Include="..\Classes\UICheckBoxTest\UICheckBoxTest.cpp" />
+    <ClCompile Include="..\Classes\UIDragPanelTest\UIDragPanelTest.cpp" />
+    <ClCompile Include="..\Classes\UIImageViewTest\UIImageViewTest.cpp" />
+    <ClCompile Include="..\Classes\UILabelAtlasTest\UILabelAtlasTest.cpp" />
+    <ClCompile Include="..\Classes\UILabelBMFontTest\UILabelBMFontTest.cpp" />
+    <ClCompile Include="..\Classes\UILabelTest\UILabelTest.cpp" />
+    <ClCompile Include="..\Classes\UIListViewTest\UIListViewTest.cpp" />
+    <ClCompile Include="..\Classes\UILoadingBarTest\UILoadingBarTest.cpp" />
+    <ClCompile Include="..\Classes\UINodeContainerTest\UINodeContainerTest.cpp" />
+    <ClCompile Include="..\Classes\UIPageViewTest\UIPageViewTest.cpp" />
+    <ClCompile Include="..\Classes\UIPanelTest\UIPanelTest.cpp" />
+    <ClCompile Include="..\Classes\UIScene.cpp" />
+    <ClCompile Include="..\Classes\UISceneManager.cpp" />
+    <ClCompile Include="..\Classes\UIScrollViewTest\UIScrollViewTest.cpp" />
+    <ClCompile Include="..\Classes\UISliderTest\UISliderTest.cpp" />
+    <ClCompile Include="..\Classes\UITextAreaTest\UITextAreaTest.cpp" />
+    <ClCompile Include="..\Classes\UITextButtonTest\UITextButtonTest.cpp" />
+    <ClCompile Include="..\Classes\UITextFieldTest\UITextFieldTest.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Classes\AppDelegate.h" />
     <ClInclude Include="..\Classes\HelloWorldScene.h" />
+    <ClInclude Include="..\Classes\UIButtonTest\UIButtonTest.h" />
+    <ClInclude Include="..\Classes\UICheckBoxTest\UICheckBoxTest.h" />
+    <ClInclude Include="..\Classes\UIDragPanelTest\UIDragPanelTest.h" />
+    <ClInclude Include="..\Classes\UIImageViewTest\UIImageViewTest.h" />
+    <ClInclude Include="..\Classes\UILabelAtlasTest\UILabelAtlasTest.h" />
+    <ClInclude Include="..\Classes\UILabelBMFontTest\UILabelBMFontTest.h" />
+    <ClInclude Include="..\Classes\UILabelTest\UILabelTest.h" />
+    <ClInclude Include="..\Classes\UIListViewTest\UIListViewTest.h" />
+    <ClInclude Include="..\Classes\UILoadingBarTest\UILoadingBarTest.h" />
+    <ClInclude Include="..\Classes\UINodeContainerTest\UINodeContainerTest.h" />
+    <ClInclude Include="..\Classes\UIPageViewTest\UIPageViewTest.h" />
+    <ClInclude Include="..\Classes\UIPanelTest\UIPanelTest.h" />
+    <ClInclude Include="..\Classes\UIScene.h" />
+    <ClInclude Include="..\Classes\UISceneManager.h" />
+    <ClInclude Include="..\Classes\UIScrollViewTest\UIScrollViewTest.h" />
+    <ClInclude Include="..\Classes\UISliderTest\UISliderTest.h" />
+    <ClInclude Include="..\Classes\UITextAreaTest\UITextAreaTest.h" />
+    <ClInclude Include="..\Classes\UITextButtonTest\UITextButtonTest.h" />
+    <ClInclude Include="..\Classes\UITextFieldTest\UITextFieldTest.h" />
     <ClInclude Include="main.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
