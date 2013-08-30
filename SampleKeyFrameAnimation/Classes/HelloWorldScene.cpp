@@ -41,7 +41,6 @@ bool HelloWorld::init()
                                         "CloseSelected.png",
                                         this,
                                         menu_selector(HelloWorld::menuCloseCallback));
-    
 	pCloseItem->setPosition(ccp(origin.x + visibleSize.width - pCloseItem->getContentSize().width/2 ,
                                 origin.y + pCloseItem->getContentSize().height/2));
 
@@ -63,7 +62,7 @@ bool HelloWorld::init()
 	this->addChild(armature);
     
 	// create and initialize a label
-    CCLabelTTF* pLabel = CCLabelTTF::create("Touch Screen to Change Animation", "Arial", 20);
+    CCLabelTTF* pLabel = CCLabelTTF::create("Touch Screen to Change Animation", "Arial", 30);
     
     // position the label on the center of the screen
     pLabel->setPosition(ccp(origin.x + visibleSize.width*0.5,
