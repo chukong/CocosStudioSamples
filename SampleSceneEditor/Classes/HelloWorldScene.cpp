@@ -1,6 +1,8 @@
 #include "HelloWorldScene.h"
+#include "cocos-ext.h"
 
 USING_NS_CC;
+USING_NS_CC_EXT;
 
 CCScene* HelloWorld::scene()
 {
@@ -26,52 +28,25 @@ bool HelloWorld::init()
     {
         return false;
     }
+	m_pGameScene = NULL;
     
-    CCSize visibleSize = CCDirector::sharedDirector()->getVisibleSize();
-    CCPoint origin = CCDirector::sharedDirector()->getVisibleOrigin();
+	CCNode *pGameScene = CCSSceneReader::sharedSceneReader()->createNodeWithSceneFile("ComponentTest.json");
+	m_pGameScene = pGameScene;
+	this->addChild(pGameScene);
 
-    /////////////////////////////
-    // 2. add a menu item with "X" image, which is clicked to quit the program
-    //    you may modify it.
+	CCComRender *pUIRender = static_cast<CCComRender*>(pGameScene->getChildByTag(10014)->getComponent("GUIComponent"));
+	UILayer *pUILayer = static_cast<UILayer*>(pUIRender->getRender());
 
-    // add a "close" icon to exit the progress. it's an autorelease object
-    CCMenuItemImage *pCloseItem = CCMenuItemImage::create(
-                                        "CloseNormal.png",
-                                        "CloseSelected.png",
-                                        this,
-                                        menu_selector(HelloWorld::menuCloseCallback));
-    
-	pCloseItem->setPosition(ccp(origin.x + visibleSize.width - pCloseItem->getContentSize().width/2 ,
-                                origin.y + pCloseItem->getContentSize().height/2));
+	UIButton *pExitButton = static_cast<UIButton*>(pUILayer->getWidgetByName("Button"));
+	pExitButton->addReleaseEvent(this, coco_releaseselector(HelloWorld::menuCloseCallback));
 
-    // create menu, it's an autorelease object
-    CCMenu* pMenu = CCMenu::create(pCloseItem, NULL);
-    pMenu->setPosition(CCPointZero);
-    this->addChild(pMenu, 1);
+	UILabel *pLabel = NULL;
+	pLabel = static_cast<UILabel*>(pUILayer->getWidgetByName("SpriteComponentTest"));
+	pLabel->addReleaseEvent(this, coco_releaseselector(HelloWorld::menuSpriteComponentTestCallback));
 
-    /////////////////////////////
-    // 3. add your codes below...
 
-    // add a label shows "Hello World"
-    // create and initialize a label
-    
-    CCLabelTTF* pLabel = CCLabelTTF::create("Hello World", "Arial", 24);
-    
-    // position the label on the center of the screen
-    pLabel->setPosition(ccp(origin.x + visibleSize.width/2,
-                            origin.y + visibleSize.height - pLabel->getContentSize().height));
-
-    // add the label as a child to this layer
-    this->addChild(pLabel, 1);
-
-    // add "HelloWorld" splash screen"
-    CCSprite* pSprite = CCSprite::create("HelloWorld.png");
-
-    // position the sprite on the center of the screen
-    pSprite->setPosition(ccp(visibleSize.width/2 + origin.x, visibleSize.height/2 + origin.y));
-
-    // add the sprite as a child to this layer
-    this->addChild(pSprite, 0);
+	pLabel = static_cast<UILabel*>(pUILayer->getWidgetByName("UIComponentTest"));
+	pLabel->addReleaseEvent(this, coco_releaseselector(HelloWorld::menuUIComponentTestCallback));
     
     return true;
 }
@@ -79,9 +54,68 @@ bool HelloWorld::init()
 
 void HelloWorld::menuCloseCallback(CCObject* pSender)
 {
+	CCArmatureDataManager::purge();
+	CCSSceneReader::sharedSceneReader()->purgeSceneReader();
+	cocos2d::extension::UIActionManager::shareManager()->purgeUIActionManager();
+	cocos2d::extension::UIHelper::instance()->purgeUIHelper();
+
     CCDirector::sharedDirector()->end();
 
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
     exit(0);
 #endif
+}
+
+// a selector callback
+void HelloWorld::menuSpriteComponentTestCallback(CCObject* pSender)
+{
+	/*CCSprite *pNartoIcon = static_cast<CCSprite*>(m_pGameScene->getChildByTag(10003)->getChildByTag(10004)->getComponent("CCSprite")->getNode());
+	CCSprite *pSaukeIcon = static_cast<CCSprite*>(m_pGameScene->getChildByTag(10003)->getChildByTag(10005)->getComponent("CCSprite")->getNode());
+	pNartoIcon->runAction(CCRotateBy::create(0.5, 3));*/
+	
+}
+
+// a selector callback
+void HelloWorld::menuMapComponentTestCallback(CCObject* pSender)
+{
+
+}
+
+// a selector callback
+void HelloWorld::menuParticleComponentTestCallback(CCObject* pSender)
+{
+
+}
+
+// a selector callback
+void HelloWorld::menuArmatureTestCallback(CCObject* pSender)
+{
+
+}
+
+// a selector callback
+void HelloWorld::menuEffectComponentTestCallback(CCObject* pSender)
+{
+
+}
+
+// a selector callback
+void HelloWorld::menuUIComponentTestCallback(CCObject* pSender)
+{
+	CCComRender *pUIRender = static_cast<CCComRender*>(m_pGameScene->getChildByTag(10003)->getComponent("GUIComponent"));
+	UILayer *pUILayer = static_cast<UILayer*>(pUIRender->getRender());
+	UILoadingBar *pHPLoadingBar = static_cast<UILoadingBar*>(pUILayer->getWidgetByName("HP"));
+	pHPLoadingBar->setPercent(30);
+}
+
+// a selector callback
+void HelloWorld::menuAttributeComponentCallback(CCObject* pSender)
+{
+
+}
+
+// a selector callback
+void HelloWorld::menuBackgroundMusicComponentTestCallback(CCObject* pSender)
+{
+
 }

@@ -14,9 +14,36 @@ public:
     
     // a selector callback
     void menuCloseCallback(CCObject* pSender);
+
+	// a selector callback
+	void menuSpriteComponentTestCallback(CCObject* pSender);
+
+	// a selector callback
+	void menuMapComponentTestCallback(CCObject* pSender);
+
+	// a selector callback
+	void menuParticleComponentTestCallback(CCObject* pSender);
     
+	// a selector callback
+	void menuArmatureTestCallback(CCObject* pSender);
+
+	// a selector callback
+	void menuEffectComponentTestCallback(CCObject* pSender);
+
+	// a selector callback
+	void menuUIComponentTestCallback(CCObject* pSender);
+
+	// a selector callback
+	void menuAttributeComponentCallback(CCObject* pSender);
+
+	// a selector callback
+	void menuBackgroundMusicComponentTestCallback(CCObject* pSender);
+
     // implement the "static node()" method manually
     CREATE_FUNC(HelloWorld);
+
+private:
+	cocos2d::CCNode *m_pGameScene;
 };
 
 #endif // __HELLOWORLD_SCENE_H__
