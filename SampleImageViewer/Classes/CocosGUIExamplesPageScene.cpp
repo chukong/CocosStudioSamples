@@ -73,7 +73,7 @@ void CocosGUIExamplesPageScene::onEnter()
     // exit button
     UIButton* exit_button = UIButton::create();
     exit_button->setTouchEnabled(true);
-    exit_button->setTextures("CloseNormal.png", "CloseSelected.png", "");
+    exit_button->loadTextures("CloseNormal.png", "CloseSelected.png", "");
     exit_button->setPosition(ccp(m_pUILayer->getContentSize().width - exit_button->getContentSize().width, exit_button->getContentSize().height));
     exit_button->addReleaseEvent(this, coco_releaseselector(CocosGUIExamplesPageScene::menuCloseCallback));
     m_pUILayer->addWidget(exit_button);
@@ -83,7 +83,7 @@ void CocosGUIExamplesPageScene::onExit()
 {
     m_pUILayer->removeFromParent();
     
-    CCSSceneReader::purgeSceneReader();
+    CCSSceneReader::sharedSceneReader()->purgeSceneReader();
     UIHelper::purgeUIHelper();
     UIActionManager::purgeUIActionManager();
     
@@ -131,7 +131,7 @@ void CocosGUIExamplesPageScene::PageInit()
     
     // page view add to page layout
     UIPageView* pageView = UIPageView::create();
-    pageView->setTouchEnable(true);
+    pageView->setTouchEnabled(true);
     pageView->setSize(page_layout->getContentSize());
     
     // layout add to page view
@@ -141,7 +141,7 @@ void CocosGUIExamplesPageScene::PageInit()
         layout->setSize(pageView->getContentSize());
         
         UIImageView* imageView = UIImageView::create();
-        imageView->setTouchEnable(true);
+        imageView->setTouchEnabled(true);
         imageView->loadTexture(page_image_textures[i]);
         imageView->setPosition(ccp(layout->getContentSize().width / 2, layout->getContentSize().height / 2));
         layout->addChild(imageView);                

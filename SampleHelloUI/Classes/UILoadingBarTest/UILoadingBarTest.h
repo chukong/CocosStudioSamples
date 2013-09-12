@@ -34,6 +34,10 @@ public:
     ~UILoadingBarTest_Left();
     bool init();
     void update(float delta);
+
+	virtual void previousCallback(CCObject* sender);
+	virtual void restartCallback(CCObject* sender);
+	virtual void nextCallback(CCObject* sender);
     
 protected:
     UI_SCENE_CREATE_FUNC(UILoadingBarTest_Left)
@@ -47,6 +51,10 @@ public:
     ~UILoadingBarTest_Right();
     bool init();
     void update(float delta);
+
+	virtual void previousCallback(CCObject* sender);
+	virtual void restartCallback(CCObject* sender);
+	virtual void nextCallback(CCObject* sender);
     
 protected:
     UI_SCENE_CREATE_FUNC(UILoadingBarTest_Right)
@@ -60,6 +68,10 @@ public:
     ~UILoadingBarTest_Left_Scale9();
     bool init();
     void update(float delta);
+
+	virtual void previousCallback(CCObject* sender);
+	virtual void restartCallback(CCObject* sender);
+	virtual void nextCallback(CCObject* sender);
     
 protected:
     UI_SCENE_CREATE_FUNC(UILoadingBarTest_Left_Scale9)
@@ -73,6 +85,10 @@ public:
     ~UILoadingBarTest_Right_Scale9();
     bool init();
     void update(float delta);
+
+	virtual void previousCallback(CCObject* sender);
+	virtual void restartCallback(CCObject* sender);
+	virtual void nextCallback(CCObject* sender);
     
 protected:
     UI_SCENE_CREATE_FUNC(UILoadingBarTest_Right_Scale9)

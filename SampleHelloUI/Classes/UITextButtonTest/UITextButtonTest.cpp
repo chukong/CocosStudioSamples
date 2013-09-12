@@ -6,7 +6,7 @@ const char* font_UITextButtonTest =
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
 "Marker Felt";
 #else
-"fonts/Marker Felt.ttf";
+"cocosgui/Marker Felt.ttf";
 #endif
 
 // UITextButtonTest
@@ -24,7 +24,7 @@ bool UITextButtonTest::init()
 {
     if (UIScene::init())
     {
-        CCSize widgetSize = m_pWidget->getRect().size;
+        CCSize widgetSize = m_pWidget->getSize();
         
         // Add a label in which the text button events will be displayed
         m_pDisplayValueLabel = UILabel::create();
@@ -41,14 +41,14 @@ bool UITextButtonTest::init()
         alert->setFontName(font_UITextButtonTest);
         alert->setFontSize(30);
         alert->setColor(ccc3(159, 168, 176));
-        alert->setPosition(ccp(widgetSize.width / 2.0f, widgetSize.height / 2.0f - alert->getRect().size.height * 1.75));
+        alert->setPosition(ccp(widgetSize.width / 2.0f, widgetSize.height / 2.0f - alert->getSize().height * 1.75));
         m_pUiLayer->addWidget(alert);        
         
         // Create the text button
         UITextButton* textButton = UITextButton::create();
-        textButton->setTouchEnable(true);
+        textButton->setTouchEnabled(true);
         textButton->loadTextures("cocosgui/backtotopnormal.png", "cocosgui/backtotoppressed.png", "");
-        textButton->setText("Text Button");
+        textButton->setTitleText("Text Button");
         textButton->setPosition(ccp(widgetSize.width / 2.0f, widgetSize.height / 2.0f));
         textButton->addPushDownEvent(this, coco_pushselector(UITextButtonTest::touchBeganEvent));
         textButton->addMoveEvent(this, coco_moveselector(UITextButtonTest::touchMovedEvent));
@@ -91,7 +91,7 @@ bool UITextButtonTest_Scale9::init()
 {
     if (UIScene::init())
     {
-        CCSize widgetSize = m_pWidget->getRect().size;
+        CCSize widgetSize = m_pWidget->getSize();
         
         // Add a label in which the text button events will be displayed
         m_pDisplayValueLabel = UILabel::create();
@@ -108,16 +108,16 @@ bool UITextButtonTest_Scale9::init()
         alert->setFontName(font_UITextButtonTest);
         alert->setFontSize(30);
         alert->setColor(ccc3(159, 168, 176));
-        alert->setPosition(ccp(widgetSize.width / 2.0f, widgetSize.height / 2.0f - alert->getRect().size.height * 1.75));
+        alert->setPosition(ccp(widgetSize.width / 2.0f, widgetSize.height / 2.0f - alert->getSize().height * 1.75));
         m_pUiLayer->addWidget(alert);
         
         // Create the text button
         UITextButton* textButton = UITextButton::create();
-        textButton->setTouchEnable(true);
+        textButton->setTouchEnabled(true);
         textButton->setScale9Enabled(true);
         textButton->loadTextures("cocosgui/button.png", "cocosgui/buttonHighlighted.png", "");
         textButton->setSize(CCSizeMake(180, textButton->getContentSize().height * 1.5f));
-        textButton->setText("Text Button scale9 render");
+        textButton->setTitleText("Text Button scale9 render");
         textButton->setPosition(ccp(widgetSize.width / 2.0f, widgetSize.height / 2.0f));
         textButton->addPushDownEvent(this, coco_pushselector(UITextButtonTest::touchBeganEvent));
         textButton->addMoveEvent(this, coco_moveselector(UITextButtonTest::touchMovedEvent));

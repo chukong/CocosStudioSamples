@@ -26,7 +26,7 @@
 #define __TestCpp__UIScene__
 
 #include "cocos2d.h"
-#include "CocoGUILIB/System/CocosGUI.h"
+#include "cocos-ext.h"
 
 USING_NS_CC;
 USING_NS_CC_EXT;
@@ -76,10 +76,9 @@ public:
     ~UIScene();
     bool init();
     // Menu Callbacks
-    void toExtensionsMainLayer(CCObject* sender);
-    void previousCallback(CCObject* sender);
-    void restartCallback(CCObject* sender);
-    void nextCallback(CCObject* sender);
+    virtual void previousCallback(CCObject* sender);
+    virtual void restartCallback(CCObject* sender);
+    virtual void nextCallback(CCObject* sender);
     
     /** Title label of the scene. */
 //    CC_SYNTHESIZE_RETAIN(CCLabelTTF*, m_pSceneTitleLabel, SceneTitleLabel)

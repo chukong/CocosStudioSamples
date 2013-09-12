@@ -6,7 +6,7 @@ const char* font_UIButtonTest =
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
 "Marker Felt";
 #else
-"fonts/Marker Felt.ttf";
+"cocosgui/Marker Felt.ttf";
 #endif
 
 // UIButtonTest
@@ -23,7 +23,7 @@ bool UIButtonTest::init()
 {
     if (UIScene::init())
     {
-        CCSize widgetSize = m_pWidget->getRect().size;
+        CCSize widgetSize = m_pWidget->getSize();
         
         // Add a label in which the button events will be displayed
         m_pDisplayValueLabel = UILabel::create();
@@ -41,12 +41,12 @@ bool UIButtonTest::init()
         alert->setFontSize(30);
         alert->setColor(ccc3(159, 168, 176));                
         
-        alert->setPosition(ccp(widgetSize.width / 2.0f, widgetSize.height / 2.0f - alert->getRect().size.height * 1.75));
+        alert->setPosition(ccp(widgetSize.width / 2.0f, widgetSize.height / 2.0f - alert->getSize().height * 1.75));
         m_pUiLayer->addWidget(alert);        
         
         // Create the button
         UIButton *button = UIButton::create();
-        button->setTouchEnable(true);
+        button->setTouchEnabled(true);
         button->loadTextures("cocosgui/animationbuttonnormal.png", "cocosgui/animationbuttonpressed.png", "");
         button->setPosition(ccp(widgetSize.width / 2.0f, widgetSize.height / 2.0f));
         button->addPushDownEvent(this, coco_pushselector(UIButtonTest::touchBeganEvent));
@@ -91,7 +91,7 @@ bool UIButtonTest_Scale9::init()
 {
     if (UIScene::init())
     {
-        CCSize widgetSize = m_pWidget->getRect().size;
+        CCSize widgetSize = m_pWidget->getSize();
         
         // Add a label in which the button events will be displayed
         m_pDisplayValueLabel = UILabel::create();
@@ -108,12 +108,12 @@ bool UIButtonTest_Scale9::init()
         alert->setFontName(font_UIButtonTest);
         alert->setFontSize(30);
         alert->setColor(ccc3(159, 168, 176));
-        alert->setPosition(ccp(widgetSize.width / 2.0f, widgetSize.height / 2.0f - alert->getRect().size.height * 1.75));
+        alert->setPosition(ccp(widgetSize.width / 2.0f, widgetSize.height / 2.0f - alert->getSize().height * 1.75));
         m_pUiLayer->addWidget(alert);        
         
         // Create the button
         UIButton *button = UIButton::create();
-        button->setTouchEnable(true);
+        button->setTouchEnabled(true);
         // open scale9 render
         button->setScale9Enabled(true);
         button->loadTextures("cocosgui/button.png", "cocosgui/buttonHighlighted.png", "");
@@ -158,7 +158,7 @@ bool UIButtonTest_PressedAction::init()
 {
     if (UIScene::init())
     {
-        CCSize widgetSize = m_pWidget->getRect().size;
+        CCSize widgetSize = m_pWidget->getSize();
         
         // Add a label in which the button events will be displayed
         m_pDisplayValueLabel = UILabel::create();
@@ -176,12 +176,12 @@ bool UIButtonTest_PressedAction::init()
         alert->setFontSize(30);
         alert->setColor(ccc3(159, 168, 176));
         
-        alert->setPosition(ccp(widgetSize.width / 2.0f, widgetSize.height / 2.0f - alert->getRect().size.height * 1.75));
+        alert->setPosition(ccp(widgetSize.width / 2.0f, widgetSize.height / 2.0f - alert->getSize().height * 1.75));
         m_pUiLayer->addWidget(alert);
         
         // Create the button
         UIButton *button = UIButton::create();
-        button->setTouchEnable(true);
+        button->setTouchEnabled(true);
         button->setPressedActionEnabled(true);
         button->loadTextures("cocosgui/animationbuttonnormal.png", "cocosgui/animationbuttonpressed.png", "");
         button->setPosition(ccp(widgetSize.width / 2.0f, widgetSize.height / 2.0f));
