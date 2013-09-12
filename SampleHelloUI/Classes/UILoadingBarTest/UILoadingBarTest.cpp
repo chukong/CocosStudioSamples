@@ -6,7 +6,7 @@ const char* font_UILoadingBarTest =
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
 "Marker Felt";
 #else
-"fonts/Marker Felt.ttf";
+"cocosgui/Marker Felt.ttf";
 #endif
 
 // UILoadingBarTest_Left
@@ -28,7 +28,7 @@ bool UILoadingBarTest_Left::init()
     {
         scheduleUpdate();
         
-        CCSize widgetSize = m_pWidget->getRect().size;
+        CCSize widgetSize = m_pWidget->getSize();
         
         // Add the alert
         UILabel *alert = UILabel::create();
@@ -36,7 +36,7 @@ bool UILoadingBarTest_Left::init()
         alert->setFontName(font_UILoadingBarTest);
         alert->setFontSize(30);
         alert->setColor(ccc3(159, 168, 176));
-        alert->setPosition(ccp(widgetSize.width / 2.0f, widgetSize.height / 2.0f - alert->getRect().size.height * 1.75));
+        alert->setPosition(ccp(widgetSize.width / 2.0f, widgetSize.height / 2.0f - alert->getSize().height * 1.75));
         m_pUiLayer->addWidget(alert);
         
         // Create the loading bar
@@ -45,7 +45,7 @@ bool UILoadingBarTest_Left::init()
         loadingBar->setTexture("cocosgui/sliderProgress.png");        
         loadingBar->setPercent(0);
         
-        loadingBar->setPosition(ccp(widgetSize.width / 2.0f, widgetSize.height / 2.0f + loadingBar->getRect().size.height / 4.0f));
+        loadingBar->setPosition(ccp(widgetSize.width / 2.0f, widgetSize.height / 2.0f + loadingBar->getSize().height / 4.0f));
         m_pUiLayer->addWidget(loadingBar);
         
         return true;
@@ -63,6 +63,24 @@ void UILoadingBarTest_Left::update(float delta)
         
     UILoadingBar* loadingBar = dynamic_cast<UILoadingBar*>(m_pUiLayer->getWidgetByName("LoadingBar"));
     loadingBar->setPercent(m_nCount);
+}
+
+void UILoadingBarTest_Left::previousCallback(CCObject* sender)
+{
+	unscheduleUpdate();
+	UIScene::previousCallback(sender);
+}
+
+void UILoadingBarTest_Left::restartCallback(CCObject* sender)
+{
+	unscheduleUpdate();
+	UIScene::restartCallback(sender);
+}
+
+void UILoadingBarTest_Left::nextCallback(CCObject* sender)
+{
+	unscheduleUpdate();
+	UIScene::nextCallback(sender);
 }
 
 // UILoadingBarTest_Right
@@ -84,7 +102,7 @@ bool UILoadingBarTest_Right::init()
     {
         scheduleUpdate();
         
-        CCSize widgetSize = m_pWidget->getRect().size;
+        CCSize widgetSize = m_pWidget->getSize();
         
         // Add the alert
         UILabel *alert = UILabel::create();
@@ -92,7 +110,7 @@ bool UILoadingBarTest_Right::init()
         alert->setFontName(font_UILoadingBarTest);
         alert->setFontSize(30);
         alert->setColor(ccc3(159, 168, 176));
-        alert->setPosition(ccp(widgetSize.width / 2.0f, widgetSize.height / 2.0f - alert->getRect().size.height * 1.75));
+        alert->setPosition(ccp(widgetSize.width / 2.0f, widgetSize.height / 2.0f - alert->getSize().height * 1.75));
         m_pUiLayer->addWidget(alert);
         
         // Create the loading bar
@@ -102,7 +120,7 @@ bool UILoadingBarTest_Right::init()
         loadingBar->setDirection(LoadingBarTypeRight);
         loadingBar->setPercent(0);
         
-        loadingBar->setPosition(ccp(widgetSize.width / 2.0f, widgetSize.height / 2.0f + loadingBar->getRect().size.height / 4.0f));
+        loadingBar->setPosition(ccp(widgetSize.width / 2.0f, widgetSize.height / 2.0f + loadingBar->getSize().height / 4.0f));
         m_pUiLayer->addWidget(loadingBar);
         
         return true;
@@ -120,6 +138,24 @@ void UILoadingBarTest_Right::update(float delta)
     
     UILoadingBar* loadingBar = dynamic_cast<UILoadingBar*>(m_pUiLayer->getWidgetByName("LoadingBar"));
     loadingBar->setPercent(m_nCount);
+}
+
+void UILoadingBarTest_Right::previousCallback(CCObject* sender)
+{
+	unscheduleUpdate();
+	UIScene::previousCallback(sender);
+}
+
+void UILoadingBarTest_Right::restartCallback(CCObject* sender)
+{
+	unscheduleUpdate();
+	UIScene::restartCallback(sender);
+}
+
+void UILoadingBarTest_Right::nextCallback(CCObject* sender)
+{
+	unscheduleUpdate();
+	UIScene::nextCallback(sender);
 }
 
 // UILoadingBarTest_Left_Scale9
@@ -141,15 +177,15 @@ bool UILoadingBarTest_Left_Scale9::init()
     {
         scheduleUpdate();
         
-        CCSize widgetSize = m_pWidget->getRect().size;
+        CCSize widgetSize = m_pWidget->getSize();
         
         // Add the alert
         UILabel *alert = UILabel::create();
-        alert->setText("LoadingBar");
+        alert->setText("LoadingBar Scale9 Render");
         alert->setFontName(font_UILoadingBarTest);
         alert->setFontSize(30);
         alert->setColor(ccc3(159, 168, 176));
-        alert->setPosition(ccp(widgetSize.width / 2.0f, widgetSize.height / 2.0f - alert->getRect().size.height * 1.75));
+        alert->setPosition(ccp(widgetSize.width / 2.0f, widgetSize.height / 2.0f - alert->getSize().height * 1.75));
         m_pUiLayer->addWidget(alert);
         
         // Create the loading bar
@@ -161,7 +197,7 @@ bool UILoadingBarTest_Left_Scale9::init()
         loadingBar->setSize(CCSizeMake(300, 30));
         loadingBar->setPercent(0);
         
-        loadingBar->setPosition(ccp(widgetSize.width / 2.0f, widgetSize.height / 2.0f + loadingBar->getRect().size.height / 4.0f));
+        loadingBar->setPosition(ccp(widgetSize.width / 2.0f, widgetSize.height / 2.0f + loadingBar->getSize().height / 4.0f));
         m_pUiLayer->addWidget(loadingBar);
         
         return true;
@@ -179,6 +215,24 @@ void UILoadingBarTest_Left_Scale9::update(float delta)
     
     UILoadingBar* loadingBar = dynamic_cast<UILoadingBar*>(m_pUiLayer->getWidgetByName("LoadingBar"));
     loadingBar->setPercent(m_nCount);
+}
+
+void UILoadingBarTest_Left_Scale9::previousCallback(CCObject* sender)
+{
+	unscheduleUpdate();
+	UIScene::previousCallback(sender);
+}
+
+void UILoadingBarTest_Left_Scale9::restartCallback(CCObject* sender)
+{
+	unscheduleUpdate();
+	UIScene::restartCallback(sender);
+}
+
+void UILoadingBarTest_Left_Scale9::nextCallback(CCObject* sender)
+{
+	unscheduleUpdate();
+	UIScene::nextCallback(sender);
 }
 
 // UILoadingBarTest_Right_Scale9
@@ -200,15 +254,15 @@ bool UILoadingBarTest_Right_Scale9::init()
     {
         scheduleUpdate();
         
-        CCSize widgetSize = m_pWidget->getRect().size;
+        CCSize widgetSize = m_pWidget->getSize();
         
         // Add the alert
         UILabel *alert = UILabel::create();
-        alert->setText("LoadingBar");
+        alert->setText("LoadingBar Scale9 Render");
         alert->setFontName(font_UILoadingBarTest);
         alert->setFontSize(30);
         alert->setColor(ccc3(159, 168, 176));
-        alert->setPosition(ccp(widgetSize.width / 2.0f, widgetSize.height / 2.0f - alert->getRect().size.height * 1.75));
+        alert->setPosition(ccp(widgetSize.width / 2.0f, widgetSize.height / 2.0f - alert->getSize().height * 1.75));
         m_pUiLayer->addWidget(alert);
         
         // Create the loading bar
@@ -221,7 +275,7 @@ bool UILoadingBarTest_Right_Scale9::init()
         loadingBar->setDirection(LoadingBarTypeRight);        
         loadingBar->setPercent(0);
         
-        loadingBar->setPosition(ccp(widgetSize.width / 2.0f, widgetSize.height / 2.0f + loadingBar->getRect().size.height / 4.0f));
+        loadingBar->setPosition(ccp(widgetSize.width / 2.0f, widgetSize.height / 2.0f + loadingBar->getSize().height / 4.0f));
         m_pUiLayer->addWidget(loadingBar);
         
         return true;
@@ -239,4 +293,22 @@ void UILoadingBarTest_Right_Scale9::update(float delta)
     
     UILoadingBar* loadingBar = dynamic_cast<UILoadingBar*>(m_pUiLayer->getWidgetByName("LoadingBar"));
     loadingBar->setPercent(m_nCount);
+}
+
+void UILoadingBarTest_Right_Scale9::previousCallback(CCObject* sender)
+{
+	unscheduleUpdate();
+	UIScene::previousCallback(sender);
+}
+
+void UILoadingBarTest_Right_Scale9::restartCallback(CCObject* sender)
+{
+	unscheduleUpdate();
+	UIScene::restartCallback(sender);
+}
+
+void UILoadingBarTest_Right_Scale9::nextCallback(CCObject* sender)
+{
+	unscheduleUpdate();
+	UIScene::nextCallback(sender);
 }

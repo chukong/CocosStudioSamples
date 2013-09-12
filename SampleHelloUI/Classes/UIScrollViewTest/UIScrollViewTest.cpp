@@ -6,9 +6,8 @@ const char* font_UIScrollViewTest =
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
 "Marker Felt";
 #else
-"fonts/Marker Felt.ttf";
+"cocosgui/Marker Felt.ttf";
 #endif
-
 
 // UIScrollViewTest_Vertical
 
@@ -25,7 +24,7 @@ bool UIScrollViewTest_Vertical::init()
 {
     if (UIScene::init())
     {
-        CCSize widgetSize = m_pWidget->getRect().size;
+        CCSize widgetSize = m_pWidget->getSize();
         
         // Add a label in which the scrollview alert will be displayed
         m_pDisplayValueLabel = UILabel::create();
@@ -42,52 +41,52 @@ bool UIScrollViewTest_Vertical::init()
         alert->setFontName(font_UIScrollViewTest);
         alert->setFontSize(30);
         alert->setColor(ccc3(159, 168, 176));
-        alert->setPosition(ccp(widgetSize.width / 2.0f, widgetSize.height / 2.0f - alert->getRect().size.height * 2.925));
+        alert->setPosition(ccp(widgetSize.width / 2.0f, widgetSize.height / 2.0f - alert->getSize().height * 2.925));
         m_pUiLayer->addWidget(alert);
         
         Layout *background = dynamic_cast<Layout*>(m_pUiLayer->getWidgetByName("background_Panel"));
         
         // Create the scrollview by vertical
         UIScrollView* scrollView = UIScrollView::create();
-        scrollView->setTouchEnable(true);
+        scrollView->setTouchEnabled(true);
         scrollView->setSize(CCSizeMake(280, 150));        
         CCSize backgroundSize = background->getContentSize();
         scrollView->setPosition(ccp((widgetSize.width - backgroundSize.width) / 2 +
-                               (backgroundSize.width - scrollView->getRect().size.width) / 2,
+                               (backgroundSize.width - scrollView->getSize().width) / 2,
                                (widgetSize.height - backgroundSize.height) / 2 +
-                               (backgroundSize.height - scrollView->getRect().size.height) / 2));
+                               (backgroundSize.height - scrollView->getSize().height) / 2));
         m_pUiLayer->addWidget(scrollView);
         
         UIImageView* imageView = UIImageView::create();
         imageView->setTexture("cocosgui/ccicon.png");
         
-        float innerWidth = scrollView->getRect().size.width;
-        float innerHeight = scrollView->getRect().size.height + imageView->getRect().size.height;
+        float innerWidth = scrollView->getSize().width;
+        float innerHeight = scrollView->getSize().height + imageView->getSize().height;
         
         scrollView->setInnerContainerSize(CCSizeMake(innerWidth, innerHeight));                
         
         UIButton* button = UIButton::create();
-        button->setTouchEnable(true);
+        button->setTouchEnabled(true);
         button->loadTextures("cocosgui/animationbuttonnormal.png", "cocosgui/animationbuttonpressed.png", "");
-        button->setPosition(ccp(innerWidth / 2, scrollView->getInnerContainerSize().height - button->getRect().size.height / 2));
+        button->setPosition(ccp(innerWidth / 2, scrollView->getInnerContainerSize().height - button->getSize().height / 2));
         scrollView->addChild(button);
         
         UITextButton* textButton = UITextButton::create();
-        textButton->setTouchEnable(true);
+        textButton->setTouchEnabled(true);
         textButton->loadTextures("cocosgui/backtotopnormal.png", "cocosgui/backtotoppressed.png", "");
-        textButton->setText("Text Button");
-        textButton->setPosition(ccp(innerWidth / 2, button->getRelativeBottomPos() - button->getRect().size.height));
+        textButton->setTitleText("Text Button");
+        textButton->setPosition(ccp(innerWidth / 2, button->getBottomInParent() - button->getSize().height));
         scrollView->addChild(textButton);
         
         UIButton* button_scale9 = UIButton::create();
-        button_scale9->setTouchEnable(true);
+        button_scale9->setTouchEnabled(true);
         button_scale9->setScale9Enabled(true);
         button_scale9->loadTextures("cocosgui/button.png", "cocosgui/buttonHighlighted.png", "");
         button_scale9->setSize(CCSizeMake(100, button_scale9->getContentSize().height));
-        button_scale9->setPosition(ccp(innerWidth / 2, textButton->getRelativeBottomPos() - textButton->getRect().size.height));
+        button_scale9->setPosition(ccp(innerWidth / 2, textButton->getBottomInParent() - textButton->getSize().height));
         scrollView->addChild(button_scale9);
         
-        imageView->setPosition(ccp(innerWidth / 2, imageView->getRect().size.height / 2));
+        imageView->setPosition(ccp(innerWidth / 2, imageView->getSize().height / 2));
         scrollView->addChild(imageView);
         
         return true;
@@ -111,7 +110,7 @@ bool UIScrollViewTest_Horizontal::init()
 {
     if (UIScene::init())
     {
-        CCSize widgetSize = m_pWidget->getRect().size;
+        CCSize widgetSize = m_pWidget->getSize();
         
         // Add a label in which the scrollview alert will be displayed
         m_pDisplayValueLabel = UILabel::create();
@@ -127,7 +126,7 @@ bool UIScrollViewTest_Horizontal::init()
         alert->setFontName(font_UIScrollViewTest);
         alert->setFontSize(30);
         alert->setColor(ccc3(159, 168, 176));
-        alert->setPosition(ccp(widgetSize.width / 2.0f, widgetSize.height / 2.0f - alert->getRect().size.height * 2.925));
+        alert->setPosition(ccp(widgetSize.width / 2.0f, widgetSize.height / 2.0f - alert->getSize().height * 2.925));
         m_pUiLayer->addWidget(alert);
         
         Layout *background = dynamic_cast<Layout*>(m_pUiLayer->getWidgetByName("background_Panel"));
@@ -135,50 +134,50 @@ bool UIScrollViewTest_Horizontal::init()
         // Create the scrollview by horizontal
         UIScrollView* scrollView = UIScrollView::create();        
         scrollView->setDirection(SCROLLVIEW_DIR_HORIZONTAL);
-        scrollView->setTouchEnable(true);
+        scrollView->setTouchEnabled(true);
         scrollView->setSize(CCSizeMake(280, 150));
-        scrollView->setInnerContainerSize(scrollView->getRect().size);
+        scrollView->setInnerContainerSize(scrollView->getSize());
         CCSize backgroundSize = background->getContentSize();
         scrollView->setPosition(ccp((widgetSize.width - backgroundSize.width) / 2 +
-                                    (backgroundSize.width - scrollView->getRect().size.width) / 2,
+                                    (backgroundSize.width - scrollView->getSize().width) / 2,
                                     (widgetSize.height - backgroundSize.height) / 2 +
-                                    (backgroundSize.height - scrollView->getRect().size.height) / 2));
+                                    (backgroundSize.height - scrollView->getSize().height) / 2));
         m_pUiLayer->addWidget(scrollView);
         
         UIImageView* imageView = UIImageView::create();
         imageView->setTexture("cocosgui/ccicon.png");
         
-        float innerWidth = scrollView->getRect().size.width + imageView->getRect().size.width;
-        float innerHeight = scrollView->getRect().size.height;
+        float innerWidth = scrollView->getSize().width + imageView->getSize().width;
+        float innerHeight = scrollView->getSize().height;
         
         scrollView->setInnerContainerSize(CCSizeMake(innerWidth, innerHeight));
         
         UIButton* button = UIButton::create();
-        button->setTouchEnable(true);
+        button->setTouchEnabled(true);
         button->loadTextures("cocosgui/animationbuttonnormal.png", "cocosgui/animationbuttonpressed.png", "");
-        button->setPosition(ccp(button->getRect().size.width / 2,
-                                scrollView->getInnerContainerSize().height - button->getRect().size.height / 2));
+        button->setPosition(ccp(button->getSize().width / 2,
+                                scrollView->getInnerContainerSize().height - button->getSize().height / 2));
         scrollView->addChild(button);
         
         UITextButton* textButton = UITextButton::create();
-        textButton->setTouchEnable(true);
+        textButton->setTouchEnabled(true);
         textButton->loadTextures("cocosgui/backtotopnormal.png", "cocosgui/backtotoppressed.png", "");
-        textButton->setText("Text Button");
-        textButton->setPosition(ccp(button->getRelativeRightPos() + button->getRect().size.width / 2,
-                                    button->getRelativeBottomPos() - button->getRect().size.height / 2));
+        textButton->setTitleText("Text Button");
+        textButton->setPosition(ccp(button->getRightInParent() + button->getSize().width / 2,
+                                    button->getBottomInParent() - button->getSize().height / 2));
         scrollView->addChild(textButton);
         
         UIButton* button_scale9 = UIButton::create();
-        button_scale9->setTouchEnable(true);
+        button_scale9->setTouchEnabled(true);
         button_scale9->setScale9Enabled(true);
         button_scale9->loadTextures("cocosgui/button.png", "cocosgui/buttonHighlighted.png", "");
         button_scale9->setSize(CCSizeMake(100, button_scale9->getContentSize().height));
-        button_scale9->setPosition(ccp(textButton->getRelativeRightPos() + textButton->getRect().size.width / 2,
-                                       textButton->getRelativeBottomPos() - textButton->getRect().size.height / 2));
+        button_scale9->setPosition(ccp(textButton->getRightInParent() + textButton->getSize().width / 2,
+                                       textButton->getBottomInParent() - textButton->getSize().height / 2));
         scrollView->addChild(button_scale9);                
                 
-        imageView->setPosition(ccp(innerWidth - imageView->getRect().size.width / 2,
-                                   button_scale9->getRelativeBottomPos() - button_scale9->getRect().size.height / 2));
+        imageView->setPosition(ccp(innerWidth - imageView->getSize().width / 2,
+                                   button_scale9->getBottomInParent() - button_scale9->getSize().height / 2));
         scrollView->addChild(imageView);                
         
         return true;

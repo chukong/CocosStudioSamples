@@ -6,7 +6,7 @@ const char* font_UILabelAtlasTest =
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
 "Marker Felt";
 #else
-"fonts/Marker Felt.ttf";
+"cocosgui/Marker Felt.ttf";
 #endif
 
 // UILabelAtlasTest
@@ -15,7 +15,7 @@ bool UILabelAtlasTest::init()
 {
     if (UIScene::init())
     {
-        CCSize widgetSize = m_pWidget->getRect().size;
+        CCSize widgetSize = m_pWidget->getSize();
         
         // Add the alert
         UILabel *alert = UILabel::create();
@@ -23,7 +23,7 @@ bool UILabelAtlasTest::init()
         alert->setFontName(font_UILabelAtlasTest);
         alert->setFontSize(30);
         alert->setColor(ccc3(159, 168, 176));
-        alert->setPosition(ccp(widgetSize.width / 2.0f, widgetSize.height / 2.0f - alert->getRect().size.height * 1.75));
+        alert->setPosition(ccp(widgetSize.width / 2.0f, widgetSize.height / 2.0f - alert->getSize().height * 1.75));
         m_pUiLayer->addWidget(alert);
         
         // Create the label atlas

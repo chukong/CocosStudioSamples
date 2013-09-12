@@ -6,7 +6,7 @@ const char* font_UIListViewTest =
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
 "Marker Felt";
 #else
-"fonts/Marker Felt.ttf";
+"cocosgui/Marker Felt.ttf";
 #endif
 
 // UIListViewTest_Vertical
@@ -26,7 +26,7 @@ bool UIListViewTest_Vertical::init()
 {
     if (UIScene::init())
     {
-        CCSize widgetSize = m_pWidget->getRect().size;
+        CCSize widgetSize = m_pWidget->getSize();
         
         // Add a label in which the button events will be displayed
         m_pDisplayValueLabel = UILabel::create();
@@ -42,7 +42,7 @@ bool UIListViewTest_Vertical::init()
         alert->setFontName(font_UIListViewTest);
         alert->setFontSize(30);
         alert->setColor(ccc3(159, 168, 176));
-        alert->setPosition(ccp(widgetSize.width / 2.0f, widgetSize.height / 2.0f - alert->getRect().size.height * 2.925));
+        alert->setPosition(ccp(widgetSize.width / 2.0f, widgetSize.height / 2.0f - alert->getSize().height * 2.925));
         m_pUiLayer->addWidget(alert);
         
         Layout *background = dynamic_cast<Layout*>(m_pUiLayer->getWidgetByName("background_Panel"));
@@ -58,33 +58,33 @@ bool UIListViewTest_Vertical::init()
         }
         
         UIListView *listView = UIListView::create();
-        listView->setTouchEnable(true);
+        listView->setTouchEnabled(true);
         listView->setBackGroundImageScale9Enabled(true);
         listView->setBackGroundImage("cocosgui/green_edit.png");
         listView->setSize(CCSizeMake(240, 130));
         CCSize backgroundSize = background->getContentSize();
         listView->setPosition(ccp((widgetSize.width - backgroundSize.width) / 2 +
-                              (backgroundSize.width - listView->getRect().size.width) / 2,
+                              (backgroundSize.width - listView->getSize().width) / 2,
                               (widgetSize.height - backgroundSize.height) / 2 +
-                              (backgroundSize.height - listView->getRect().size.height) / 2));                
+                              (backgroundSize.height - listView->getSize().height) / 2));
         
-        float listWidth = listView->getRect().size.width;
-        float listHeight = listView->getRect().size.height;                
+        float listWidth = listView->getSize().width;
+        float listHeight = listView->getSize().height;
          
         for (int i = 0; i < 5; ++i)
         {
             UITextButton* textButton = UITextButton::create();
             textButton->setName("TextButton");
-            textButton->setTouchEnable(true);
+            textButton->setTouchEnabled(true);
             textButton->loadTextures("cocosgui/backtotoppressed.png", "cocosgui/backtotopnormal.png", "");
             
             Layout *layout = Layout::create();
             layout->setName(CCString::createWithFormat("panel_%i", i)->getCString());
-            layout->setSize(CCSizeMake(textButton->getRect().size.width, textButton->getRect().size.height));
-            textButton->setPosition(ccp(layout->getRect().size.width / 2, layout->getRect().size.height / 2));            
+            layout->setSize(CCSizeMake(textButton->getSize().width, textButton->getSize().height));
+            textButton->setPosition(ccp(layout->getSize().width / 2, layout->getSize().height / 2));
             layout->addChild(textButton);
             
-            CCSize panel_size = layout->getRect().size;
+            CCSize panel_size = layout->getSize();
             layout->setPosition(ccp((listWidth - panel_size.width) / 2,
                                    (listHeight - (panel_size.height + panel_size.height * 0.25)) - i * (panel_size.height + panel_size.height * 0.25)));
             
@@ -108,7 +108,7 @@ void UIListViewTest_Vertical::initChildEvent(CCObject *pSender)
     
     Layout* layout = dynamic_cast<Layout*>(list->getUpdateChild());
     UITextButton* textButton = dynamic_cast<UITextButton*>(layout->getChildByName("TextButton"));
-    textButton->setText(ccstr->getCString());    
+    textButton->setTitleText(ccstr->getCString());
     
     m_nCount++;
 }
@@ -126,7 +126,7 @@ void UIListViewTest_Vertical::updateChildEvent(CCObject *pSender)
     CCString* ccstr = static_cast<CCString*>(m_array->objectAtIndex(index));
     Layout* layout = dynamic_cast<Layout*>(list->getUpdateChild());
     UITextButton* textButton = dynamic_cast<UITextButton*>(layout->getChildByName("TextButton"));
-    textButton->setText(ccstr->getCString()); 
+    textButton->setTitleText(ccstr->getCString());
     list->setUpdateSuccess(true);    
 }
 
@@ -147,7 +147,7 @@ bool UIListViewTest_Horizontal::init()
 {
     if (UIScene::init())
     {
-        CCSize widgetSize = m_pWidget->getRect().size;
+        CCSize widgetSize = m_pWidget->getSize();
         
         // Add a label in which the button events will be displayed
         m_pDisplayValueLabel = UILabel::create();
@@ -163,7 +163,7 @@ bool UIListViewTest_Horizontal::init()
         alert->setFontName(font_UIListViewTest);
         alert->setFontSize(30);
         alert->setColor(ccc3(159, 168, 176));
-        alert->setPosition(ccp(widgetSize.width / 2.0f, widgetSize.height / 2.0f - alert->getRect().size.height * 2.925));
+        alert->setPosition(ccp(widgetSize.width / 2.0f, widgetSize.height / 2.0f - alert->getSize().height * 2.925));
         m_pUiLayer->addWidget(alert);
         
         Layout *background = dynamic_cast<Layout*>(m_pUiLayer->getWidgetByName("background_Panel"));
@@ -186,11 +186,11 @@ bool UIListViewTest_Horizontal::init()
         listView->setSize(CCSizeMake(240, 130));
         CCSize backgroundSize = background->getContentSize();
         listView->setPosition(ccp((widgetSize.width - backgroundSize.width) / 2 +
-                              (backgroundSize.width - listView->getRect().size.width) / 2,
+                              (backgroundSize.width - listView->getSize().width) / 2,
                               (widgetSize.height - backgroundSize.height) / 2 +
-                              (backgroundSize.height - listView->getRect().size.height) / 2));
+                              (backgroundSize.height - listView->getSize().height) / 2));
         
-        float listHeight = listView->getRect().size.height;
+        float listHeight = listView->getSize().height;
         
         for (int i = 0; i < 3; ++i)
         {
@@ -201,11 +201,11 @@ bool UIListViewTest_Horizontal::init()
             
             Layout *layout = Layout::create();
             layout->setName(CCString::createWithFormat("panel_%i", i)->getCString());
-            layout->setSize(CCSizeMake(textButton->getRect().size.width, textButton->getRect().size.height));
-            textButton->setPosition(ccp(layout->getRect().size.width / 2, layout->getRect().size.height / 2));
+            layout->setSize(CCSizeMake(textButton->getSize().width, textButton->getSize().height));
+            textButton->setPosition(ccp(layout->getSize().width / 2, layout->getSize().height / 2));
             layout->addChild(textButton);
             
-            CCSize layout_size = layout->getRect().size;
+            CCSize layout_size = layout->getSize();
             layout->setPosition(ccp(0 + (layout_size.width * 0.2) + i * (layout_size.width + layout_size.width * 0.2),
                                     (listHeight - layout_size.height) / 2));
             
@@ -229,7 +229,7 @@ void UIListViewTest_Horizontal::initChildEvent(CCObject *pSender)
     
     Layout* layout = dynamic_cast<Layout*>(list->getUpdateChild());
     UITextButton* textButton = dynamic_cast<UITextButton*>(layout->getChildByName("TextButton"));
-    textButton->setText(ccstr->getCString());
+    textButton->setTitleText(ccstr->getCString());
     
     m_nCount++;
 }
@@ -247,6 +247,6 @@ void UIListViewTest_Horizontal::updateChildEvent(CCObject *pSender)
     CCString* ccstr = static_cast<CCString*>(m_array->objectAtIndex(index));
     Layout* layout = dynamic_cast<Layout*>(list->getUpdateChild());
     UITextButton* textButton = dynamic_cast<UITextButton*>(layout->getChildByName("TextButton"));
-    textButton->setText(ccstr->getCString());
+    textButton->setTitleText(ccstr->getCString());
     list->setUpdateSuccess(true);
 }

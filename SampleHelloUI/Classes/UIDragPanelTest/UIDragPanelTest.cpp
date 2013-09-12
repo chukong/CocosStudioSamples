@@ -6,7 +6,7 @@ const char* font_UIDragPanelTest =
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
 "Marker Felt";
 #else
-"fonts/Marker Felt.ttf";
+"cocosgui/Marker Felt.ttf";
 #endif
 
 // UIDragPanelTest
@@ -24,7 +24,7 @@ bool UIDragPanelTest::init()
 {
     if (UIScene::init())
     {
-        CCSize widgetSize = m_pWidget->getRect().size;
+        CCSize widgetSize = m_pWidget->getSize();
         
         // Add a label in which the dragpanel events will be displayed
         m_pDisplayValueLabel = UILabel::create();
@@ -32,7 +32,7 @@ bool UIDragPanelTest::init()
         m_pDisplayValueLabel->setFontName(font_UIDragPanelTest);
         m_pDisplayValueLabel->setFontSize(32);
         m_pDisplayValueLabel->setAnchorPoint(ccp(0.5f, -1));
-        m_pDisplayValueLabel->setPosition(ccp(widgetSize.width / 2.0f, widgetSize.height / 2.0f + m_pDisplayValueLabel->getRect().size.height * 1.5));
+        m_pDisplayValueLabel->setPosition(ccp(widgetSize.width / 2.0f, widgetSize.height / 2.0f + m_pDisplayValueLabel->getSize().height * 1.5));
         m_pUiLayer->addWidget(m_pDisplayValueLabel);
         
         // Add the alert
@@ -41,22 +41,22 @@ bool UIDragPanelTest::init()
         alert->setFontName(font_UIDragPanelTest);
         alert->setFontSize(30);
         alert->setColor(ccc3(159, 168, 176));
-        alert->setPosition(ccp(widgetSize.width / 2.0f, widgetSize.height / 2.0f - alert->getRect().size.height * 2.925));
+        alert->setPosition(ccp(widgetSize.width / 2.0f, widgetSize.height / 2.0f - alert->getSize().height * 2.925));
         m_pUiLayer->addWidget(alert);
         
         Layout *background = dynamic_cast<Layout*>(m_pUiLayer->getWidgetByName("background_Panel"));
         
         // Create the dragpanel
         UIDragPanel* dragPanel = UIDragPanel::create();
-        dragPanel->setTouchEnable(true);
+        dragPanel->setTouchEnabled(true);
         dragPanel->setBackGroundImageScale9Enabled(true);
         dragPanel->setBackGroundImage("cocosgui/scrollviewbg.png");
         dragPanel->setSize(CCSizeMake(210, 122.5));        
         CCSize backgroundSize = background->getContentSize();
         dragPanel->setPosition(ccp((widgetSize.width - backgroundSize.width) / 2 +
-                                   (backgroundSize.width - dragPanel->getRect().size.width) / 2,
+                                   (backgroundSize.width - dragPanel->getSize().width) / 2,
                                    (widgetSize.height - backgroundSize.height) / 2 +
-                                   (backgroundSize.height - dragPanel->getRect().size.height) / 2));
+                                   (backgroundSize.height - dragPanel->getSize().height) / 2));
         dragPanel->addBerthToLeftBottomEvent(this, coco_DragPane_BerthToLeftBottom_selector(UIDragPanelTest::berthToLeftBottomEvent));
         dragPanel->addBerthToLeftTopEvent(this, coco_DragPanel_BerthToLeftTop_selector(UIDragPanelTest::berthToLeftTopEvent));
         dragPanel->addBerthToRightBottomEvent(this, coco_DragPanel_BerthToRightBottom_selector(UIDragPanelTest::berthToRightBottomEvent));
@@ -67,8 +67,8 @@ bool UIDragPanelTest::init()
         dragPanel->addBerthToBottomEvent(this, coco_DragPanel_BerthToBottom_selector(UIDragPanelTest::berthToBottomEvent));
         
         UIImageView* imageView = UIImageView::create();
-        imageView->setTouchEnable(true);
-        imageView->setTexture("cocosgui/b11.png");
+        imageView->setTouchEnabled(true);
+        imageView->loadTexture("cocosgui/b11.png");
         dragPanel->addChild(imageView);
         
         dragPanel->setInnerContainerSize(imageView->getContentSize());
@@ -137,7 +137,7 @@ bool UIDragPanelTest_Bounce::init()
 {
     if (UIScene::init())
     {
-        CCSize widgetSize = m_pWidget->getRect().size;;
+        CCSize widgetSize = m_pWidget->getSize();
         
         // Add a label in which the dragpanel events will be displayed
         m_pDisplayValueLabel = UILabel::create();
@@ -145,7 +145,7 @@ bool UIDragPanelTest_Bounce::init()
         m_pDisplayValueLabel->setFontName(font_UIDragPanelTest);
         m_pDisplayValueLabel->setFontSize(32);
         m_pDisplayValueLabel->setAnchorPoint(ccp(0.5f, -1));
-        m_pDisplayValueLabel->setPosition(ccp(widgetSize.width / 2.0f, widgetSize.height / 2.0f + m_pDisplayValueLabel->getRect().size.height * 1.5));
+        m_pDisplayValueLabel->setPosition(ccp(widgetSize.width / 2.0f, widgetSize.height / 2.0f + m_pDisplayValueLabel->getSize().height * 1.5));
         m_pUiLayer->addWidget(m_pDisplayValueLabel);        
         
         // Add the alert
@@ -154,23 +154,23 @@ bool UIDragPanelTest_Bounce::init()
         alert->setFontName(font_UIDragPanelTest);
         alert->setFontSize(30);
         alert->setColor(ccc3(159, 168, 176));
-        alert->setPosition(ccp(widgetSize.width / 2.0f, widgetSize.height / 2.0f - alert->getRect().size.height * 2.925));
+        alert->setPosition(ccp(widgetSize.width / 2.0f, widgetSize.height / 2.0f - alert->getSize().height * 2.925));
         m_pUiLayer->addWidget(alert);
         
         Layout *background = dynamic_cast<Layout*>(m_pUiLayer->getWidgetByName("background_Panel"));
         
         // Create the dragpanel
         UIDragPanel* dragPanel = UIDragPanel::create();
-        dragPanel->setTouchEnable(true);
+        dragPanel->setTouchEnabled(true);
         dragPanel->setBounceEnable(true);
         dragPanel->setBackGroundImageScale9Enabled(true);
         dragPanel->setBackGroundImage("cocosgui/green_edit.png");
         dragPanel->setSize(CCSizeMake(210, 122.5));
         CCSize backgroundSize = background->getContentSize();
         dragPanel->setPosition(ccp((widgetSize.width - backgroundSize.width) / 2 +
-                                   (backgroundSize.width - dragPanel->getRect().size.width) / 2,
+                                   (backgroundSize.width - dragPanel->getSize().width) / 2,
                                    (widgetSize.height - backgroundSize.height) / 2 +
-                                   (backgroundSize.height - dragPanel->getRect().size.height) / 2));
+                                   (backgroundSize.height - dragPanel->getSize().height) / 2));
         dragPanel->addBounceToLeftBottomEvent(this, coco_DragPanel_BounceToLeftBottom_selector(UIDragPanelTest_Bounce::bounceToLeftBottomEvent));
         dragPanel->addBounceToLeftTopEvent(this, coco_DragPanel_BounceToLeftTop_selector(UIDragPanelTest_Bounce::bounceToLeftTopEvent));
         dragPanel->addBounceToRightBottomEvent(this, coco_DragPanel_BounceToRightBottom_selector(UIDragPanelTest_Bounce::bounceToRightBottomEvent));
@@ -181,8 +181,8 @@ bool UIDragPanelTest_Bounce::init()
         dragPanel->addBounceToBottomEvent(this, coco_DragPanel_BounceToBottom_selector(UIDragPanelTest_Bounce::bounceToBottomEvent));
         
         UIImageView* imageView = UIImageView::create();
-        imageView->setTouchEnable(true);
-        imageView->setTexture("cocosgui/b11.png");
+        imageView->setTouchEnabled(true);
+        imageView->loadTexture("cocosgui/b11.png");
         dragPanel->addChild(imageView);
         
         dragPanel->setInnerContainerSize(imageView->getContentSize());
