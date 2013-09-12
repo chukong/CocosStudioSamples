@@ -4,7 +4,7 @@
 
 TestColliderDetector::~TestColliderDetector()
 {
-	CCArmatureDataManager::purge();
+	//CCArmatureDataManager::purge();
 }
 void TestColliderDetector::onEnter()
 {
@@ -12,10 +12,10 @@ void TestColliderDetector::onEnter()
 	scheduleUpdate();
     
 	//! load data
-	CCArmatureDataManager::sharedArmatureDataManager()->addArmatureFileInfo("Cowboy.ExportJson");
+	CCArmatureDataManager::sharedArmatureDataManager()->addArmatureFileInfo("Cowboy0.png", "Cowboy0.plist", "Cowboy.ExportJson");
 
 	//! create armature
-	armature = cocos2d::extension::CCArmature::create("Cowboy");
+	armature = CCArmature::create("Cowboy");
 	armature->getAnimation()->play("FireWithoutBullet");
 	armature->getAnimation()->setSpeedScale(0.2f);
 	armature->setScaleX(-0.2f);

@@ -6,7 +6,7 @@ const char* font_UISliderTest =
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
 "Marker Felt";
 #else
-"fonts/Marker Felt.ttf";
+"cocosgui/Marker Felt.ttf";
 #endif
 
 // UISliderTest
@@ -25,7 +25,7 @@ bool UISliderTest::init()
 {
     if (UIScene::init())
     {
-        CCSize widgetSize = m_pWidget->getRect().size;
+        CCSize widgetSize = m_pWidget->getSize();
         
         // Add a label in which the slider alert will be displayed
         m_pDisplayValueLabel = UILabel::create();
@@ -42,12 +42,12 @@ bool UISliderTest::init()
         alert->setFontName(font_UISliderTest);
         alert->setFontSize(30);
         alert->setColor(ccc3(159, 168, 176));
-        alert->setPosition(ccp(widgetSize.width / 2.0f, widgetSize.height / 2.0f - alert->getRect().size.height * 1.75));
+        alert->setPosition(ccp(widgetSize.width / 2.0f, widgetSize.height / 2.0f - alert->getSize().height * 1.75));
         m_pUiLayer->addWidget(alert);        
         
         // Create the slider
         UISlider* slider = UISlider::create();
-        slider->setTouchEnable(true);
+        slider->setTouchEnabled(true);
         slider->loadBarTexture("cocosgui/sliderTrack.png");
         slider->loadSlidBallTextures("cocosgui/sliderThumb.png", "cocosgui/sliderThumb.png", "");
         slider->loadProgressBarTexture("cocosgui/sliderProgress.png");
@@ -83,7 +83,7 @@ bool UISliderTest_Scale9::init()
 {
     if (UIScene::init())
     {
-        CCSize widgetSize = m_pWidget->getRect().size;
+        CCSize widgetSize = m_pWidget->getSize();
         
         // Add a label in which the slider alert will be displayed
         m_pDisplayValueLabel = UILabel::create();
@@ -100,18 +100,18 @@ bool UISliderTest_Scale9::init()
         alert->setFontName(font_UISliderTest);
         alert->setFontSize(30);
         alert->setColor(ccc3(159, 168, 176));
-        alert->setPosition(ccp(widgetSize.width / 2.0f, widgetSize.height / 2.0f - alert->getRect().size.height * 1.75));
+        alert->setPosition(ccp(widgetSize.width / 2.0f, widgetSize.height / 2.0f - alert->getSize().height * 1.75));
         m_pUiLayer->addWidget(alert);
         
         // Create the slider
         UISlider* slider = UISlider::create();
-        slider->setTouchEnable(true);        
+        slider->setTouchEnabled(true);
         slider->loadBarTexture("cocosgui/sliderTrack2.png");
         slider->loadSlidBallTextures("cocosgui/sliderThumb.png", "cocosgui/sliderThumb.png", "");
         slider->loadProgressBarTexture("cocosgui/slider_bar_active_9patch.png");
         slider->setScale9Enabled(true);
         slider->setCapInsets(CCRectMake(0, 0, 0, 0));
-        slider->setSize(CCSizeMake(250, slider->getRect().size.height));
+        slider->setSize(CCSizeMake(250, 10));
         slider->setPosition(ccp(widgetSize.width / 2.0f, widgetSize.height / 2.0f));
         slider->addPercentChangedEvent(this, coco_percentchangedselector(UISliderTest_Scale9::percentChangedEvent));
         m_pUiLayer->addWidget(slider);

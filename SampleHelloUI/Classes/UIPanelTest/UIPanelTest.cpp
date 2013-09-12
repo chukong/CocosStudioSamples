@@ -6,7 +6,7 @@ const char* font_UIPanelTest =
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
 "Marker Felt";
 #else
-"fonts/Marker Felt.ttf";
+"cocosgui/Marker Felt.ttf";
 #endif
 
 // UIPanelTest
@@ -23,7 +23,7 @@ bool UIPanelTest::init()
 {
     if (UIScene::init())
     {
-        CCSize widgetSize = m_pWidget->getRect().size;
+        CCSize widgetSize = m_pWidget->getSize();
         
         // Add the alert
         UILabel *alert = UILabel::create();
@@ -31,7 +31,7 @@ bool UIPanelTest::init()
         alert->setFontName(font_UIPanelTest);
         alert->setFontSize(30);
         alert->setColor(ccc3(159, 168, 176));
-        alert->setPosition(ccp(widgetSize.width / 2.0f, widgetSize.height / 2.0f - alert->getRect().size.height * 2.925));
+        alert->setPosition(ccp(widgetSize.width / 2.0f, widgetSize.height / 2.0f - alert->getSize().height * 2.925));
         m_pUiLayer->addWidget(alert);
         
         Layout *background = dynamic_cast<Layout*>(m_pUiLayer->getWidgetByName("background_Panel"));
@@ -39,32 +39,32 @@ bool UIPanelTest::init()
         // Create the layout
         Layout* layout = Layout::create();
         layout->setSize(CCSizeMake(280, 150));
-        CCSize backgroundSize = background->getRect().size;
+        CCSize backgroundSize = background->getSize();
         layout->setPosition(ccp((widgetSize.width - backgroundSize.width) / 2 +
-                                (backgroundSize.width - layout->getRect().size.width) / 2,
+                                (backgroundSize.width - layout->getSize().width) / 2,
                                 (widgetSize.height - backgroundSize.height) / 2 +
-                                (backgroundSize.height - layout->getRect().size.height) / 2));
+                                (backgroundSize.height - layout->getSize().height) / 2));
         m_pUiLayer->addWidget(layout);
         
         UIButton* button = UIButton::create();
-        button->setTouchEnable(true);
+        button->setTouchEnabled(true);
         button->loadTextures("cocosgui/animationbuttonnormal.png", "cocosgui/animationbuttonpressed.png", "");
-        button->setPosition(ccp(button->getRect().size.width / 2, layout->getRect().size.height - button->getRect().size.height / 2));
+        button->setPosition(ccp(button->getSize().width / 2, layout->getSize().height - button->getSize().height / 2));
         layout->addChild(button);
         
         UITextButton* textButton = UITextButton::create();
-        textButton->setTouchEnable(true);
+        textButton->setTouchEnabled(true);
         textButton->loadTextures("cocosgui/backtotopnormal.png", "cocosgui/backtotoppressed.png", "");
-        textButton->setText("Text Button");
-        textButton->setPosition(ccp(layout->getRect().size.width / 2, layout->getRect().size.height / 2));
+        textButton->setTitleText("Text Button");
+        textButton->setPosition(ccp(layout->getSize().width / 2, layout->getSize().height / 2));
         layout->addChild(textButton);
         
         UIButton* button_scale9 = UIButton::create();
-        button_scale9->setTouchEnable(true);
+        button_scale9->setTouchEnabled(true);
         button_scale9->loadTextures("cocosgui/button.png", "cocosgui/buttonHighlighted.png", "");
         button_scale9->setScale9Enabled(true);
         button_scale9->setSize(CCSizeMake(100, button_scale9->getContentSize().height));
-        button_scale9->setPosition(ccp(layout->getRect().size.width - button_scale9->getRect().size.width / 2, button_scale9->getRect().size.height / 2));
+        button_scale9->setPosition(ccp(layout->getSize().width - button_scale9->getSize().width / 2, button_scale9->getSize().height / 2));
         layout->addChild(button_scale9);        
         
         return true;
@@ -87,7 +87,7 @@ bool UIPanelTest_Color::init()
 {
     if (UIScene::init())
     {
-        CCSize widgetSize = m_pWidget->getRect().size;
+        CCSize widgetSize = m_pWidget->getSize();
         
         // Add the alert
         UILabel *alert = UILabel::create();
@@ -95,7 +95,7 @@ bool UIPanelTest_Color::init()
         alert->setFontName(font_UIPanelTest);
         alert->setFontSize(30);
         alert->setColor(ccc3(159, 168, 176));
-        alert->setPosition(ccp(widgetSize.width / 2.0f, widgetSize.height / 2.0f - alert->getRect().size.height * 2.925));
+        alert->setPosition(ccp(widgetSize.width / 2.0f, widgetSize.height / 2.0f - alert->getSize().height * 2.925));
         m_pUiLayer->addWidget(alert);
         
         Layout *background = dynamic_cast<Layout*>(m_pUiLayer->getWidgetByName("background_Panel"));
@@ -107,30 +107,30 @@ bool UIPanelTest_Color::init()
         layout->setSize(CCSizeMake(280, 150));
         CCSize backgroundSize = background->getContentSize();
         layout->setPosition(ccp((widgetSize.width - backgroundSize.width) / 2 +
-                                (backgroundSize.width - layout->getRect().size.width) / 2,
+                                (backgroundSize.width - layout->getSize().width) / 2,
                                 (widgetSize.height - backgroundSize.height) / 2 +
-                                (backgroundSize.height - layout->getRect().size.height) / 2));
+                                (backgroundSize.height - layout->getSize().height) / 2));
         m_pUiLayer->addWidget(layout);
         
         UIButton* button = UIButton::create();
-        button->setTouchEnable(true);
+        button->setTouchEnabled(true);
         button->loadTextures("cocosgui/animationbuttonnormal.png", "cocosgui/animationbuttonpressed.png", "");
-        button->setPosition(ccp(button->getRect().size.width / 2, layout->getRect().size.height - button->getRect().size.height / 2));
+        button->setPosition(ccp(button->getSize().width / 2, layout->getSize().height - button->getSize().height / 2));
         layout->addChild(button);
         
         UITextButton* textButton = UITextButton::create();
-        textButton->setTouchEnable(true);
+        textButton->setTouchEnabled(true);
         textButton->loadTextures("cocosgui/backtotopnormal.png", "cocosgui/backtotoppressed.png", "");
-        textButton->setText("Text Button");
-        textButton->setPosition(ccp(layout->getRect().size.width / 2, layout->getRect().size.height / 2));
+        textButton->setTitleText("Text Button");
+        textButton->setPosition(ccp(layout->getSize().width / 2, layout->getSize().height / 2));
         layout->addChild(textButton);
         
         UIButton* button_scale9 = UIButton::create();
-        button_scale9->setTouchEnable(true);
+        button_scale9->setTouchEnabled(true);
         button_scale9->loadTextures("cocosgui/button.png", "cocosgui/buttonHighlighted.png", "");
         button_scale9->setScale9Enabled(true);
         button_scale9->setSize(CCSizeMake(100, button_scale9->getContentSize().height));
-        button_scale9->setPosition(ccp(layout->getRect().size.width - button_scale9->getRect().size.width / 2, button_scale9->getRect().size.height / 2));
+        button_scale9->setPosition(ccp(layout->getSize().width - button_scale9->getSize().width / 2, button_scale9->getSize().height / 2));
         layout->addChild(button_scale9);        
         
         return true;
@@ -152,7 +152,7 @@ bool UIPanelTest_Gradient::init()
 {
     if (UIScene::init())
     {
-        CCSize widgetSize = m_pWidget->getRect().size;
+        CCSize widgetSize = m_pWidget->getSize();
         
         // Add the alert
         UILabel *alert = UILabel::create();
@@ -160,7 +160,7 @@ bool UIPanelTest_Gradient::init()
         alert->setFontName(font_UIPanelTest);
         alert->setFontSize(30);
         alert->setColor(ccc3(159, 168, 176));
-        alert->setPosition(ccp(widgetSize.width / 2.0f, widgetSize.height / 2.0f - alert->getRect().size.height * 2.925));
+        alert->setPosition(ccp(widgetSize.width / 2.0f, widgetSize.height / 2.0f - alert->getSize().height * 2.925));
         m_pUiLayer->addWidget(alert);
         
         Layout *background = dynamic_cast<Layout*>(m_pUiLayer->getWidgetByName("background_Panel"));
@@ -172,30 +172,30 @@ bool UIPanelTest_Gradient::init()
         layout->setSize(CCSizeMake(280, 150));
         CCSize backgroundSize = background->getContentSize();
         layout->setPosition(ccp((widgetSize.width - backgroundSize.width) / 2 +
-                                (backgroundSize.width - layout->getRect().size.width) / 2,
+                                (backgroundSize.width - layout->getSize().width) / 2,
                                 (widgetSize.height - backgroundSize.height) / 2 +
-                                (backgroundSize.height - layout->getRect().size.height) / 2));
+                                (backgroundSize.height - layout->getSize().height) / 2));
         m_pUiLayer->addWidget(layout);
         
         UIButton* button = UIButton::create();
-        button->setTouchEnable(true);
+        button->setTouchEnabled(true);
         button->loadTextures("cocosgui/animationbuttonnormal.png", "cocosgui/animationbuttonpressed.png", "");
-        button->setPosition(ccp(button->getRect().size.width / 2, layout->getRect().size.height - button->getRect().size.height / 2));
+        button->setPosition(ccp(button->getSize().width / 2, layout->getSize().height - button->getSize().height / 2));
         layout->addChild(button);
         
         UITextButton* textButton = UITextButton::create();
-        textButton->setTouchEnable(true);
+        textButton->setTouchEnabled(true);
         textButton->loadTextures("cocosgui/backtotopnormal.png", "cocosgui/backtotoppressed.png", "");
-        textButton->setText("Text Button");
-        textButton->setPosition(ccp(layout->getRect().size.width / 2, layout->getRect().size.height / 2));
+        textButton->setTitleText("Text Button");
+        textButton->setPosition(ccp(layout->getSize().width / 2, layout->getSize().height / 2));
         layout->addChild(textButton);
         
         UIButton* button_scale9 = UIButton::create();
-        button_scale9->setTouchEnable(true);
+        button_scale9->setTouchEnabled(true);
         button_scale9->loadTextures("cocosgui/button.png", "cocosgui/buttonHighlighted.png", "");
         button_scale9->setScale9Enabled(true);
         button_scale9->setSize(CCSizeMake(100, button_scale9->getContentSize().height));
-        button_scale9->setPosition(ccp(layout->getRect().size.width - button_scale9->getRect().size.width / 2, button_scale9->getRect().size.height / 2));
+        button_scale9->setPosition(ccp(layout->getSize().width - button_scale9->getSize().width / 2, button_scale9->getSize().height / 2));
         layout->addChild(button_scale9);        
         
         return true;
@@ -217,7 +217,7 @@ bool UIPanelTest_BackGroundImage::init()
 {
     if (UIScene::init())
     {
-        CCSize widgetSize = m_pWidget->getRect().size;
+        CCSize widgetSize = m_pWidget->getSize();
         
         // Add the alert
         UILabel *alert = UILabel::create();
@@ -225,7 +225,7 @@ bool UIPanelTest_BackGroundImage::init()
         alert->setFontName(font_UIPanelTest);
         alert->setFontSize(30);
         alert->setColor(ccc3(159, 168, 176));
-        alert->setPosition(ccp(widgetSize.width / 2.0f, widgetSize.height / 2.0f - alert->getRect().size.height * 2.925));
+        alert->setPosition(ccp(widgetSize.width / 2.0f, widgetSize.height / 2.0f - alert->getSize().height * 2.925));
         m_pUiLayer->addWidget(alert);
         
         Layout *background = dynamic_cast<Layout*>(m_pUiLayer->getWidgetByName("background_Panel"));
@@ -237,30 +237,30 @@ bool UIPanelTest_BackGroundImage::init()
         layout->setSize(CCSizeMake(280, 150));
         CCSize backgroundSize = background->getContentSize();
         layout->setPosition(ccp((widgetSize.width - backgroundSize.width) / 2 +
-                                (backgroundSize.width - layout->getRect().size.width) / 2,
+                                (backgroundSize.width - layout->getSize().width) / 2,
                                 (widgetSize.height - backgroundSize.height) / 2 +
-                                (backgroundSize.height - layout->getRect().size.height) / 2));
+                                (backgroundSize.height - layout->getSize().height) / 2));
         m_pUiLayer->addWidget(layout);
         
         UIButton* button = UIButton::create();
-        button->setTouchEnable(true);
+        button->setTouchEnabled(true);
         button->loadTextures("cocosgui/animationbuttonnormal.png", "cocosgui/animationbuttonpressed.png", "");
-        button->setPosition(ccp(button->getRect().size.width / 2, layout->getRect().size.height - button->getRect().size.height / 2));
+        button->setPosition(ccp(button->getSize().width / 2, layout->getSize().height - button->getSize().height / 2));
         layout->addChild(button);
         
         UITextButton* textButton = UITextButton::create();
-        textButton->setTouchEnable(true);
+        textButton->setTouchEnabled(true);
         textButton->loadTextures("cocosgui/backtotopnormal.png", "cocosgui/backtotoppressed.png", "");
-        textButton->setText("Text Button");
-        textButton->setPosition(ccp(layout->getRect().size.width / 2, layout->getRect().size.height / 2));
+        textButton->setTitleText("Text Button");
+        textButton->setPosition(ccp(layout->getSize().width / 2, layout->getSize().height / 2));
         layout->addChild(textButton);
         
         UIButton* button_scale9 = UIButton::create();
-        button_scale9->setTouchEnable(true);
+        button_scale9->setTouchEnabled(true);
         button_scale9->loadTextures("cocosgui/button.png", "cocosgui/buttonHighlighted.png", "");
         button_scale9->setScale9Enabled(true);
         button_scale9->setSize(CCSizeMake(100, button_scale9->getContentSize().height));
-        button_scale9->setPosition(ccp(layout->getRect().size.width - button_scale9->getRect().size.width / 2, button_scale9->getRect().size.height / 2));
+        button_scale9->setPosition(ccp(layout->getSize().width - button_scale9->getSize().width / 2, button_scale9->getSize().height / 2));
         layout->addChild(button_scale9);        
         
         return true;
@@ -282,7 +282,7 @@ bool UIPanelTest_BackGroundImage_Scale9::init()
 {
     if (UIScene::init())
     {
-        CCSize widgetSize = m_pWidget->getRect().size;
+        CCSize widgetSize = m_pWidget->getSize();
         
         // Add the alert
         UILabel *alert = UILabel::create();
@@ -290,7 +290,7 @@ bool UIPanelTest_BackGroundImage_Scale9::init()
         alert->setFontName(font_UIPanelTest);
         alert->setFontSize(30);
         alert->setColor(ccc3(159, 168, 176));
-        alert->setPosition(ccp(widgetSize.width / 2.0f, widgetSize.height / 2.0f - alert->getRect().size.height * 2.925));
+        alert->setPosition(ccp(widgetSize.width / 2.0f, widgetSize.height / 2.0f - alert->getSize().height * 2.925));
         m_pUiLayer->addWidget(alert);
         
         Layout *background = dynamic_cast<Layout*>(m_pUiLayer->getWidgetByName("background_Panel"));
@@ -302,30 +302,30 @@ bool UIPanelTest_BackGroundImage_Scale9::init()
         layout->setSize(CCSizeMake(280, 150));
         CCSize backgroundSize = background->getContentSize();
         layout->setPosition(ccp((widgetSize.width - backgroundSize.width) / 2 +
-                                (backgroundSize.width - layout->getRect().size.width) / 2,
+                                (backgroundSize.width - layout->getSize().width) / 2,
                                 (widgetSize.height - backgroundSize.height) / 2 +
-                                (backgroundSize.height - layout->getRect().size.height) / 2));
+                                (backgroundSize.height - layout->getSize().height) / 2));
         m_pUiLayer->addWidget(layout);
         
         UIButton* button = UIButton::create();
-        button->setTouchEnable(true);
+        button->setTouchEnabled(true);
         button->loadTextures("cocosgui/animationbuttonnormal.png", "cocosgui/animationbuttonpressed.png", "");
-        button->setPosition(ccp(button->getRect().size.width / 2, layout->getRect().size.height - button->getRect().size.height / 2));
+        button->setPosition(ccp(button->getSize().width / 2, layout->getSize().height - button->getSize().height / 2));
         layout->addChild(button);
         
         UITextButton* textButton = UITextButton::create();
-        textButton->setTouchEnable(true);
+        textButton->setTouchEnabled(true);
         textButton->loadTextures("cocosgui/backtotopnormal.png", "cocosgui/backtotoppressed.png", "");
-        textButton->setText("Text Button");
-        textButton->setPosition(ccp(layout->getRect().size.width / 2, layout->getRect().size.height / 2));
+        textButton->setTitleText("Text Button");
+        textButton->setPosition(ccp(layout->getSize().width / 2, layout->getSize().height / 2));
         layout->addChild(textButton);
         
         UIButton* button_scale9 = UIButton::create();
-        button_scale9->setTouchEnable(true);
+        button_scale9->setTouchEnabled(true);
         button_scale9->loadTextures("cocosgui/button.png", "cocosgui/buttonHighlighted.png", "");
         button_scale9->setScale9Enabled(true);
         button_scale9->setSize(CCSizeMake(100, button_scale9->getContentSize().height));
-        button_scale9->setPosition(ccp(layout->getRect().size.width - button_scale9->getRect().size.width / 2, button_scale9->getRect().size.height / 2));
+        button_scale9->setPosition(ccp(layout->getSize().width - button_scale9->getSize().width / 2, button_scale9->getSize().height / 2));
         layout->addChild(button_scale9);        
         
         return true;
@@ -347,7 +347,7 @@ bool UIPanelTest_Layout_Linear_Vertical::init()
 {
     if (UIScene::init())
     {
-        CCSize widgetSize = m_pWidget->getRect().size;
+        CCSize widgetSize = m_pWidget->getSize();
         
         // Add the alert
         UILabel *alert = UILabel::create();
@@ -355,7 +355,7 @@ bool UIPanelTest_Layout_Linear_Vertical::init()
         alert->setFontName(font_UIPanelTest);
         alert->setFontSize(30);
         alert->setColor(ccc3(159, 168, 176));
-        alert->setPosition(ccp(widgetSize.width / 2.0f, widgetSize.height / 2.0f - alert->getRect().size.height * 2.925));
+        alert->setPosition(ccp(widgetSize.width / 2.0f, widgetSize.height / 2.0f - alert->getSize().height * 2.925));
         m_pUiLayer->addWidget(alert);
         
         Layout *background = dynamic_cast<Layout*>(m_pUiLayer->getWidgetByName("background_Panel"));
@@ -363,16 +363,16 @@ bool UIPanelTest_Layout_Linear_Vertical::init()
         // Create the layout
         Layout* layout = Layout::create();
         layout->setSize(CCSizeMake(280, 150));        
-        CCSize backgroundSize = background->getRect().size;
+        CCSize backgroundSize = background->getSize();
         layout->setPosition(ccp((widgetSize.width - backgroundSize.width) / 2 +
-                                (backgroundSize.width - layout->getRect().size.width) / 2,
+                                (backgroundSize.width - layout->getSize().width) / 2,
                                 (widgetSize.height - backgroundSize.height) / 2 +
-                                (backgroundSize.height - layout->getRect().size.height) / 2));
+                                (backgroundSize.height - layout->getSize().height) / 2));
         m_pUiLayer->addWidget(layout);
         
         
         UIButton* button = UIButton::create();
-        button->setTouchEnable(true);
+        button->setTouchEnabled(true);
         button->loadTextures("cocosgui/animationbuttonnormal.png", "cocosgui/animationbuttonpressed.png", "");
         layout->addChild(button);
         
@@ -383,9 +383,9 @@ bool UIPanelTest_Layout_Linear_Vertical::init()
         
         
         UITextButton* textButton = UITextButton::create();
-        textButton->setTouchEnable(true);
+        textButton->setTouchEnabled(true);
         textButton->loadTextures("cocosgui/backtotopnormal.png", "cocosgui/backtotoppressed.png", "");
-        textButton->setText("Text Button");
+        textButton->setTitleText("Text Button");
         layout->addChild(textButton);
         
         LinearLayoutParameter* lp2 = LinearLayoutParameter::create();
@@ -395,7 +395,7 @@ bool UIPanelTest_Layout_Linear_Vertical::init()
         
         
         UIButton* button_scale9 = UIButton::create();
-        button_scale9->setTouchEnable(true);
+        button_scale9->setTouchEnabled(true);
         button_scale9->loadTextures("cocosgui/button.png", "cocosgui/buttonHighlighted.png", "");
         button_scale9->setScale9Enabled(true);
         button_scale9->setSize(CCSizeMake(100, button_scale9->getContentSize().height));
@@ -431,7 +431,7 @@ bool UIPanelTest_Layout_Linear_Horizontal::init()
 {
     if (UIScene::init())
     {
-        CCSize widgetSize = m_pWidget->getRect().size;
+        CCSize widgetSize = m_pWidget->getSize();
         
         // Add the alert
         UILabel *alert = UILabel::create();
@@ -439,7 +439,7 @@ bool UIPanelTest_Layout_Linear_Horizontal::init()
         alert->setFontName(font_UIPanelTest);
         alert->setFontSize(30);
         alert->setColor(ccc3(159, 168, 176));
-        alert->setPosition(ccp(widgetSize.width / 2.0f, widgetSize.height / 2.0f - alert->getRect().size.height * 2.925));
+        alert->setPosition(ccp(widgetSize.width / 2.0f, widgetSize.height / 2.0f - alert->getSize().height * 2.925));
         m_pUiLayer->addWidget(alert);
         
         Layout *background = dynamic_cast<Layout*>(m_pUiLayer->getWidgetByName("background_Panel"));
@@ -448,15 +448,15 @@ bool UIPanelTest_Layout_Linear_Horizontal::init()
         Layout* layout = Layout::create();
         layout->setClippingEnabled(true);
         layout->setSize(CCSizeMake(280, 150));        
-        CCSize backgroundSize = background->getRect().size;
+        CCSize backgroundSize = background->getSize();
         layout->setPosition(ccp((widgetSize.width - backgroundSize.width) / 2 +
-                                (backgroundSize.width - layout->getRect().size.width) / 2,
+                                (backgroundSize.width - layout->getSize().width) / 2,
                                 (widgetSize.height - backgroundSize.height) / 2 +
-                                (backgroundSize.height - layout->getRect().size.height) / 2));
+                                (backgroundSize.height - layout->getSize().height) / 2));
         m_pUiLayer->addWidget(layout);
         
         UIButton* button = UIButton::create();
-        button->setTouchEnable(true);
+        button->setTouchEnabled(true);
         button->loadTextures("cocosgui/animationbuttonnormal.png", "cocosgui/animationbuttonpressed.png", "");
         layout->addChild(button);
         
@@ -467,9 +467,9 @@ bool UIPanelTest_Layout_Linear_Horizontal::init()
         
         
         UITextButton* textButton = UITextButton::create();
-        textButton->setTouchEnable(true);
+        textButton->setTouchEnabled(true);
         textButton->loadTextures("cocosgui/backtotopnormal.png", "cocosgui/backtotoppressed.png", "");
-        textButton->setText("Text Button");
+        textButton->setTitleText("Text Button");
         layout->addChild(textButton);
         
         LinearLayoutParameter* lp2 = LinearLayoutParameter::create();
@@ -479,7 +479,7 @@ bool UIPanelTest_Layout_Linear_Horizontal::init()
         
         
         UIButton* button_scale9 = UIButton::create();
-        button_scale9->setTouchEnable(true);
+        button_scale9->setTouchEnabled(true);
         button_scale9->loadTextures("cocosgui/button.png", "cocosgui/buttonHighlighted.png", "");
         button_scale9->setScale9Enabled(true);
         button_scale9->setSize(CCSizeMake(100, button_scale9->getContentSize().height));
@@ -515,7 +515,7 @@ bool UIPanelTest_Layout_Relative::init()
 {
     if (UIScene::init())
     {
-        CCSize widgetSize = m_pWidget->getRect().size;
+        CCSize widgetSize = m_pWidget->getSize();
         
         // Add the alert
         UILabel *alert = UILabel::create();
@@ -523,7 +523,7 @@ bool UIPanelTest_Layout_Relative::init()
         alert->setFontName(font_UIPanelTest);
         alert->setFontSize(30);
         alert->setColor(ccc3(159, 168, 176));
-        alert->setPosition(ccp(widgetSize.width / 2.0f, widgetSize.height / 2.0f - alert->getRect().size.height * 2.925));
+        alert->setPosition(ccp(widgetSize.width / 2.0f, widgetSize.height / 2.0f - alert->getSize().height * 2.925));
         m_pUiLayer->addWidget(alert);
         
         Layout *background = dynamic_cast<Layout*>(m_pUiLayer->getWidgetByName("background_Panel"));
@@ -533,15 +533,15 @@ bool UIPanelTest_Layout_Relative::init()
         layout->setSize(CCSizeMake(280, 150));
         layout->setBackGroundColorType(LAYOUT_COLOR_SOLID);
         layout->setBackGroundColor(ccGREEN);
-        CCSize backgroundSize = background->getRect().size;
+        CCSize backgroundSize = background->getSize();
         layout->setPosition(ccp((widgetSize.width - backgroundSize.width) / 2 +
-                                (backgroundSize.width - layout->getRect().size.width) / 2,
+                                (backgroundSize.width - layout->getSize().width) / 2,
                                 (widgetSize.height - backgroundSize.height) / 2 +
-                                (backgroundSize.height - layout->getRect().size.height) / 2));
+                                (backgroundSize.height - layout->getSize().height) / 2));
         m_pUiLayer->addWidget(layout);
         
         UIButton* button = UIButton::create();
-        button->setTouchEnable(true);
+        button->setTouchEnabled(true);
         button->loadTextures("cocosgui/animationbuttonnormal.png", "cocosgui/animationbuttonpressed.png", "");
         layout->addChild(button);
         
@@ -552,9 +552,9 @@ bool UIPanelTest_Layout_Relative::init()
         
         
         UITextButton* textButton = UITextButton::create();
-        textButton->setTouchEnable(true);
+        textButton->setTouchEnabled(true);
         textButton->loadTextures("cocosgui/backtotopnormal.png", "cocosgui/backtotoppressed.png", "");
-        textButton->setText("Text Button");
+        textButton->setTitleText("Text Button");
         layout->addChild(textButton);
         
         RelativeLayoutParameter* rp2 = RelativeLayoutParameter::create();
@@ -563,7 +563,7 @@ bool UIPanelTest_Layout_Relative::init()
         
         
         UIButton* button_scale9 = UIButton::create();
-        button_scale9->setTouchEnable(true);
+        button_scale9->setTouchEnabled(true);
         button_scale9->loadTextures("cocosgui/button.png", "cocosgui/buttonHighlighted.png", "");
         button_scale9->setScale9Enabled(true);
         button_scale9->setSize(CCSizeMake(100, button_scale9->getContentSize().height));

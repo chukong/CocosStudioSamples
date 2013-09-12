@@ -60,11 +60,12 @@ void TestChangeEquip::onEnter()
 	addChild(bg);
 
 	//! load data
-	CCArmatureDataManager::sharedArmatureDataManager()->addArmatureFileInfo("KnightWithWeapons0.png", "KnightWithWeapons0.plist", "KnightWithWeapons.ExportJson");
+	CCArmatureDataManager::sharedArmatureDataManager()->addArmatureFileInfo("100.png", "100.plist", "10.ExportJson");
 
 	//! create armature
-	m_pArmature = cocos2d::extension::CCArmature::create("KnightWithWeapons");
-	m_pArmature->getAnimation()->playByIndex(0);
+	m_pArmature = cocos2d::extension::CCArmature::create("10");
+	m_pArmature->setPosition(ccp(0,-20));
+	m_pArmature->getAnimation()->playByIndex(4);
 	m_pArmature->getBone("weapon")->changeDisplayByIndex(-1, true);
 
 	initUI();

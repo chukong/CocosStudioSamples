@@ -6,7 +6,7 @@ const char* font_UITextFieldTest =
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
 "Marker Felt";
 #else
-"fonts/Marker Felt.ttf";
+"cocosgui/Marker Felt.ttf";
 #endif
 
 // UITextFieldTest
@@ -24,7 +24,7 @@ bool UITextFieldTest::init()
 {
     if (UIScene::init())
     {
-        CCSize widgetSize = m_pWidget->getRect().size;
+        CCSize widgetSize = m_pWidget->getSize();
         
         // Add a label in which the textfield events will be displayed
         m_pDisplayValueLabel = UILabel::create();
@@ -32,7 +32,7 @@ bool UITextFieldTest::init()
         m_pDisplayValueLabel->setFontName(font_UITextFieldTest);
         m_pDisplayValueLabel->setFontSize(32);
         m_pDisplayValueLabel->setAnchorPoint(ccp(0.5f, -1));
-        m_pDisplayValueLabel->setPosition(ccp(widgetSize.width / 2.0f, widgetSize.height / 2.0f + m_pDisplayValueLabel->getRect().size.height * 1.5));
+        m_pDisplayValueLabel->setPosition(ccp(widgetSize.width / 2.0f, widgetSize.height / 2.0f + m_pDisplayValueLabel->getSize().height * 1.5));
         m_pUiLayer->addWidget(m_pDisplayValueLabel);        
         
         // Add the alert
@@ -41,12 +41,12 @@ bool UITextFieldTest::init()
         alert->setFontName(font_UITextFieldTest);
         alert->setFontSize(30);
         alert->setColor(ccc3(159, 168, 176));
-        alert->setPosition(ccp(widgetSize.width / 2.0f, widgetSize.height / 2.0f - alert->getRect().size.height * 2.925));
+        alert->setPosition(ccp(widgetSize.width / 2.0f, widgetSize.height / 2.0f - alert->getSize().height * 2.925));
         m_pUiLayer->addWidget(alert);
         
         // Create the textfield
         UITextField* textField = UITextField::create();
-        textField->setTouchEnable(true);
+        textField->setTouchEnabled(true);
         textField->setFontName(font_UITextFieldTest);
         textField->setFontSize(30);
         textField->setPlaceHolder("input words here");
@@ -112,7 +112,7 @@ bool UITextFieldTest_MaxLength::init()
         m_pDisplayValueLabel->setFontName(font_UITextFieldTest);
         m_pDisplayValueLabel->setFontSize(32);
         m_pDisplayValueLabel->setAnchorPoint(ccp(0.5f, -1));
-        m_pDisplayValueLabel->setPosition(ccp(screenSize.width / 2.0f, screenSize.height / 2.0f + m_pDisplayValueLabel->getRect().size.height * 1.5));
+        m_pDisplayValueLabel->setPosition(ccp(screenSize.width / 2.0f, screenSize.height / 2.0f + m_pDisplayValueLabel->getSize().height * 1.5));
         m_pUiLayer->addWidget(m_pDisplayValueLabel);
         
         // Add the alert
@@ -121,14 +121,14 @@ bool UITextFieldTest_MaxLength::init()
         alert->setFontName(font_UITextFieldTest);
         alert->setFontSize(30);
         alert->setColor(ccc3(159, 168, 176));
-        alert->setPosition(ccp(screenSize.width / 2.0f, screenSize.height / 2.0f - alert->getRect().size.height * 2.925));
+        alert->setPosition(ccp(screenSize.width / 2.0f, screenSize.height / 2.0f - alert->getSize().height * 2.925));
         m_pUiLayer->addWidget(alert);
         
         // Create the textfield
         UITextField* textField = UITextField::create();
         textField->setMaxLengthEnable(true);
         textField->setMaxLength(3);
-        textField->setTouchEnable(true);
+        textField->setTouchEnabled(true);
         textField->setFontName(font_UITextFieldTest);
         textField->setFontSize(30);
         textField->setPlaceHolder("input words here");
@@ -196,7 +196,7 @@ bool UITextFieldTest_Password::init()
         m_pDisplayValueLabel->setFontName(font_UITextFieldTest);
         m_pDisplayValueLabel->setFontSize(32);
         m_pDisplayValueLabel->setAnchorPoint(ccp(0.5f, -1));
-        m_pDisplayValueLabel->setPosition(ccp(screenSize.width / 2.0f, screenSize.height / 2.0f + m_pDisplayValueLabel->getRect().size.height * 1.5));
+        m_pDisplayValueLabel->setPosition(ccp(screenSize.width / 2.0f, screenSize.height / 2.0f + m_pDisplayValueLabel->getSize().height * 1.5));
         m_pUiLayer->addWidget(m_pDisplayValueLabel);
         
         // Add the alert
@@ -205,14 +205,14 @@ bool UITextFieldTest_Password::init()
         alert->setFontName(font_UITextFieldTest);
         alert->setFontSize(30);
         alert->setColor(ccc3(159, 168, 176));
-        alert->setPosition(ccp(screenSize.width / 2.0f, screenSize.height / 2.0f - alert->getRect().size.height * 2.925));
+        alert->setPosition(ccp(screenSize.width / 2.0f, screenSize.height / 2.0f - alert->getSize().height * 2.925));
         m_pUiLayer->addWidget(alert);
         
         // Create the textfield
         UITextField* textField = UITextField::create();
         textField->setPasswordEnable(true);
         textField->setPasswordStyleText("*");
-        textField->setTouchEnable(true);
+        textField->setTouchEnabled(true);
         textField->setFontName(font_UITextFieldTest);
         textField->setFontSize(30);
         textField->setPlaceHolder("input password here");

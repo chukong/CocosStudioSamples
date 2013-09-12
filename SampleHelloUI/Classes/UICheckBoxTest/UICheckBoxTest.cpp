@@ -6,7 +6,7 @@ const char* font_UICheckBoxTest =
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
 "Marker Felt";
 #else
-"fonts/Marker Felt.ttf";
+"cocosgui/Marker Felt.ttf";
 #endif
 
 // UICheckBoxTest
@@ -24,7 +24,7 @@ bool UICheckBoxTest::init()
 {
     if (UIScene::init())
     {
-        CCSize widgetSize = m_pWidget->getRect().size;;
+        CCSize widgetSize = m_pWidget->getSize();;
         
         // Add a label in which the checkbox events will be displayed
         m_pDisplayValueLabel = UILabel::create();
@@ -41,17 +41,17 @@ bool UICheckBoxTest::init()
         alert->setFontName(font_UICheckBoxTest);
         alert->setFontSize(30);
         alert->setColor(ccc3(159, 168, 176));
-        alert->setPosition(ccp(widgetSize.width / 2.0f, widgetSize.height / 2.0f - alert->getRect().size.height * 1.75));
+        alert->setPosition(ccp(widgetSize.width / 2.0f, widgetSize.height / 2.0f - alert->getSize().height * 1.75));
         m_pUiLayer->addWidget(alert);        
         
         // Create the checkbox
         UICheckBox* checkBox = UICheckBox::create();
-        checkBox->setTouchEnable(true);
+        checkBox->setTouchEnabled(true);
         checkBox->loadTextures("cocosgui/check_box_normal.png",
-                              "cocosgui/check_box_normal_press.png",
-                              "cocosgui/check_box_active.png",
-                              "cocosgui/check_box_normal_disable.png",
-                              "cocosgui/check_box_active_disable.png");
+                               "cocosgui/check_box_normal_press.png",
+                               "cocosgui/check_box_active.png",
+                               "cocosgui/check_box_normal_disable.png",
+                               "cocosgui/check_box_active_disable.png");
         checkBox->setPosition(ccp(widgetSize.width / 2.0f, widgetSize.height / 2.0f));
         checkBox->addSelectEvent(this, coco_selectselector(UICheckBoxTest::selectedEvent));
         checkBox->addUnSelectEvent(this, coco_selectselector(UICheckBoxTest::unSelectedEvent));
