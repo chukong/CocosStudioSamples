@@ -11,10 +11,6 @@
 #include "chipmunk.h"
 #endif
 
-using namespace cocos2d;
-using namespace cocos2d::extension;
-
-
 
 #if ENABLE_PHYSICS_BOX2D_DETECT
 
@@ -50,7 +46,7 @@ public:
 #elif ENABLE_PHYSICS_CHIPMUNK_DETECT
 
 
-class TestColliderDetector : public CCLayer
+class TestColliderDetector : public cocos2d::CCLayer
 {
 public:
 	~TestColliderDetector();

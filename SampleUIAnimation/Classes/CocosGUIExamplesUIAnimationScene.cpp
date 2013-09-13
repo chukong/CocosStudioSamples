@@ -1,7 +1,4 @@
-
-
 #include "CocosGUIExamplesUIAnimationScene.h"
-//#include "CocosGUIExamplesPageSpecialScene.h"
 
 CocosGUIExamplesUIAnimationScene::CocosGUIExamplesUIAnimationScene()
 {
@@ -35,17 +32,6 @@ void CocosGUIExamplesUIAnimationScene::onEnter()
     start_textbutton->addReleaseEvent(this, coco_releaseselector(CocosGUIExamplesUIAnimationScene::startUIAnimation));
     m_pUILayer->addWidget(start_textbutton);
     
-    /*
-    // left button
-    UIButton* left_button = UIButton::create();
-    left_button->setTouchEnable(true);
-    left_button->loadTextures("cocosgui/UITest/b1.png", "cocosgui/UITest/b2.png", "");
-    float left_button_width = left_button->getContentSize().width;
-    left_button->setPosition(ccp(left_button_width + left_button_width / 2, left_button->getContentSize().height / 1.5));
-    left_button->addReleaseEvent(this, coco_releaseselector(CocosGUIExamplesUIAnimationScene::toCocosGUIExamplesPageSpecialScene));
-    m_pUILayer->addWidget(left_button);
-     */
-    
     // exit button
     UIButton* exit_button = UIButton::create();
     exit_button->setTouchEnabled(true);
@@ -58,36 +44,20 @@ void CocosGUIExamplesUIAnimationScene::onEnter()
 void CocosGUIExamplesUIAnimationScene::onExit()
 {
     m_pUILayer->removeFromParent();
-    
-    CCSSceneReader::sharedSceneReader()->purgeSceneReader();
-    UIHelper::purgeUIHelper();
-    UIActionManager::purgeUIActionManager();
-    
     CCScene::onExit();
 }
 
 void CocosGUIExamplesUIAnimationScene::menuCloseCallback(CCObject* pSender)
 {
+	cocos2d::extension::CCSSceneReader::sharedSceneReader()->purgeSceneReader();
+	cocos2d::extension::UIActionManager::shareManager()->purgeUIActionManager();
+	cocos2d::extension::UIHelper::instance()->purgeUIHelper();
     CCDirector::sharedDirector()->end();
     
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
     exit(0);
 #endif
 }
-
-/*
-void CocosGUIExamplesUIAnimationScene::runThisTest()
-{
-    CCDirector::sharedDirector()->replaceScene(this);
-}
-
-void CocosGUIExamplesUIAnimationScene::toCocosGUIExamplesPageSpecialScene(CCObject *pSender)
-{
-    CocosGUIExamplesPageSpecialScene* pScene = new CocosGUIExamplesPageSpecialScene();
-    pScene->runThisTest();
-    pScene->release();
-}
- */
 
 void CocosGUIExamplesUIAnimationScene::UIAnimationInit()
 {
