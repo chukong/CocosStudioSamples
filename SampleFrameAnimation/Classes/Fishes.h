@@ -4,16 +4,14 @@
 #include "cocos2d.h"
 #include "cocos-ext.h"
 
-using namespace cocos2d;
-using namespace cocos2d::extension;
 
-class Fishes : public CCLayer
+class Fishes : public cocos2d::CCLayer
 {
 public:
 	virtual void onExit();
 	virtual void onEnter();
 
-	CCSize size;
+	cocos2d::CCSize size;
 };
 
 class Fish01 : public Fishes
@@ -40,7 +38,7 @@ public:
 	virtual void onEnter();
 private:
 	void callback();
-	CCArmature* armature;
+	cocos2d::extension::CCArmature* armature;
 };
 
 class Fish05 : public Fishes
@@ -62,6 +60,6 @@ public:
 private:
 	void callback();
 	void removeSelf();
-	CCArmature* armature;
+	cocos2d::extension::CCArmature* armature;
 };
 #endif
