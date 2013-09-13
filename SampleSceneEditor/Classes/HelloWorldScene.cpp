@@ -35,7 +35,7 @@ bool HelloWorld::init()
 	this->addChild(pGameScene);
 
 	CCComRender *pUIRender = static_cast<CCComRender*>(pGameScene->getChildByTag(10014)->getComponent("GUIComponent"));
-	UILayer *pUILayer = static_cast<UILayer*>(pUIRender->getRender());
+	UILayer *pUILayer = static_cast<UILayer*>(pUIRender->getNode());
 
 	UIButton *pExitButton = static_cast<UIButton*>(pUILayer->getWidgetByName("Button"));
 	pExitButton->addReleaseEvent(this, coco_releaseselector(HelloWorld::menuCloseCallback));
@@ -103,7 +103,7 @@ void HelloWorld::menuEffectComponentTestCallback(CCObject* pSender)
 void HelloWorld::menuUIComponentTestCallback(CCObject* pSender)
 {
 	CCComRender *pUIRender = static_cast<CCComRender*>(m_pGameScene->getChildByTag(10003)->getComponent("GUIComponent"));
-	UILayer *pUILayer = static_cast<UILayer*>(pUIRender->getRender());
+	UILayer *pUILayer = static_cast<UILayer*>(pUIRender->getNode());
 	UILoadingBar *pHPLoadingBar = static_cast<UILoadingBar*>(pUILayer->getWidgetByName("HP"));
 	pHPLoadingBar->setPercent(30);
 }

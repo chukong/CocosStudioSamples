@@ -34,7 +34,7 @@ bool HelloWorld::init()
     cocos2d::extension::UIActionManager::shareManager()->PlayActionByName("startMenu.json","Animation1");
 
 	CCComRender *pUIRender = static_cast<CCComRender*>(pFishJoyScene->getChildByTag(10009)->getComponent("GUIComponent"));
-	UILayer *pUILayer = static_cast<UILayer*>(pUIRender->getRender());
+	UILayer *pUILayer = static_cast<UILayer*>(pUIRender->getNode());
 	UIButton *pButton = static_cast<UIButton*>(pUILayer->getWidgetByName("exit_button"));
 	pButton->addReleaseEvent(this, coco_releaseselector(HelloWorld::menuCloseCallback));
 	CCLOG("pButton name = %s", pButton->getName());
