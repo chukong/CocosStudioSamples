@@ -28,29 +28,35 @@ bool HelloWorld::init()
     {
         return false;
     }
+	m_bStart = false;
+	HP = 100.0f;
+
 	m_pGameScene = NULL;
     
 	CCNode *pGameScene = CCSSceneReader::sharedSceneReader()->createNodeWithSceneFile("ComponentTest.json");
 	m_pGameScene = pGameScene;
 	this->addChild(pGameScene);
 
-	CCComRender *pUIRender = static_cast<CCComRender*>(pGameScene->getChildByTag(10014)->getComponent("GUIComponent"));
+	CCArmature *pArmature = (CCArmature*)(m_pGameScene->getChildByTag(10007)->getComponent("CCArmature")->getNode());
+	pArmature->getAnimation()->play("Animation0");
+
+	CCComRender *pUIRender = static_cast<CCComRender*>(pGameScene->getChildByTag(10003)->getComponent("GUIComponent"));
 	UILayer *pUILayer = static_cast<UILayer*>(pUIRender->getNode());
 
-	UIButton *pExitButton = static_cast<UIButton*>(pUILayer->getWidgetByName("Button"));
-	pExitButton->addReleaseEvent(this, coco_releaseselector(HelloWorld::menuCloseCallback));
+	UIButton *pExitButton = static_cast<UIButton*>(pUILayer->getWidgetByName("return_Button"));
+	pExitButton->addReleaseEvent(this, coco_releaseselector(HelloWorld::menuAttackCallback));
 
-	UILabel *pLabel = NULL;
-	pLabel = static_cast<UILabel*>(pUILayer->getWidgetByName("SpriteComponentTest"));
-	pLabel->addReleaseEvent(this, coco_releaseselector(HelloWorld::menuSpriteComponentTestCallback));
-
-
-	pLabel = static_cast<UILabel*>(pUILayer->getWidgetByName("UIComponentTest"));
-	pLabel->addReleaseEvent(this, coco_releaseselector(HelloWorld::menuUIComponentTestCallback));
+    CCMenuItemFont *itemBack = CCMenuItemFont::create("End", this, menu_selector(HelloWorld::menuCloseCallback));
+    itemBack->setColor(ccc3(255, 255, 255));
+    itemBack->setPosition(960 - 15, 30);
+    CCMenu *menuBack = CCMenu::create(itemBack, NULL);
+    menuBack->setPosition(CCPointZero);
+    menuBack->setZOrder(4);
     
+    this->addChild(menuBack);
+
     return true;
 }
-
 
 void HelloWorld::menuCloseCallback(CCObject* pSender)
 {
@@ -58,64 +64,45 @@ void HelloWorld::menuCloseCallback(CCObject* pSender)
 	CCSSceneReader::sharedSceneReader()->purgeSceneReader();
 	cocos2d::extension::UIActionManager::shareManager()->purgeUIActionManager();
 	cocos2d::extension::UIHelper::instance()->purgeUIHelper();
-
     CCDirector::sharedDirector()->end();
-
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
     exit(0);
 #endif
 }
 
-// a selector callback
-void HelloWorld::menuSpriteComponentTestCallback(CCObject* pSender)
+void HelloWorld::menuAttackCallback(cocos2d::CCObject* pSender)
 {
-	/*CCSprite *pNartoIcon = static_cast<CCSprite*>(m_pGameScene->getChildByTag(10003)->getChildByTag(10004)->getComponent("CCSprite")->getNode());
-	CCSprite *pSaukeIcon = static_cast<CCSprite*>(m_pGameScene->getChildByTag(10003)->getChildByTag(10005)->getComponent("CCSprite")->getNode());
-	pNartoIcon->runAction(CCRotateBy::create(0.5, 3));*/
-	
+    CCArmature *pArmature = (CCArmature*)(m_pGameScene->getChildByTag(10007)->getComponent("CCArmature")->getNode());
+	pArmature->getAnimation()->play("Animation1");
+	pArmature->getAnimation()->setMovementEventCallFunc(this,
+                                                        movementEvent_selector(HelloWorld::animationEvent));
 }
 
-// a selector callback
-void HelloWorld::menuMapComponentTestCallback(CCObject* pSender)
+void HelloWorld::animationEvent(CCArmature *pArmature,
+					MovementEventType movementType, const char *movementID)
 {
+	if (movementType == COMPLETE)
+	{
+		CCArmature *pArmature = (CCArmature*)(m_pGameScene->getChildByTag(10008)->getComponent("CCArmature")->getNode());
+		pArmature->getAnimation()->play("Animation1");
 
+		m_bStart = true;
+		scheduleUpdate();
+	}
 }
 
-// a selector callback
-void HelloWorld::menuParticleComponentTestCallback(CCObject* pSender)
+void HelloWorld::update(float delta)
 {
+	if (m_bStart)
+	{
+		CCComRender *pUIRender = static_cast<CCComRender*>(m_pGameScene->getChildByTag(10003)->getComponent("GUIComponent"));
+		UILayer *pUILayer = static_cast<UILayer*>(pUIRender->getNode());
+		UILoadingBar *pHPLoadingBar = static_cast<UILoadingBar*>(pUILayer->getWidgetByName("HP1"));
+		UILoadingBar *pMPLoadingBar = static_cast<UILoadingBar*>(pUILayer->getWidgetByName("Chakras1"));
 
-}
+		pHPLoadingBar->setPercent(HP);
+		pMPLoadingBar->setPercent(HP);
 
-// a selector callback
-void HelloWorld::menuArmatureTestCallback(CCObject* pSender)
-{
-
-}
-
-// a selector callback
-void HelloWorld::menuEffectComponentTestCallback(CCObject* pSender)
-{
-
-}
-
-// a selector callback
-void HelloWorld::menuUIComponentTestCallback(CCObject* pSender)
-{
-	CCComRender *pUIRender = static_cast<CCComRender*>(m_pGameScene->getChildByTag(10003)->getComponent("GUIComponent"));
-	UILayer *pUILayer = static_cast<UILayer*>(pUIRender->getNode());
-	UILoadingBar *pHPLoadingBar = static_cast<UILoadingBar*>(pUILayer->getWidgetByName("HP"));
-	pHPLoadingBar->setPercent(30);
-}
-
-// a selector callback
-void HelloWorld::menuAttributeComponentCallback(CCObject* pSender)
-{
-
-}
-
-// a selector callback
-void HelloWorld::menuBackgroundMusicComponentTestCallback(CCObject* pSender)
-{
-
+		HP -= 2.0f;
+	}
 }
