@@ -33,6 +33,9 @@ public:
 	bool ccTouchBegan(CCTouch *pTouch, CCEvent *pEvent);
 	void ccTouchMoved(CCTouch *pTouch, CCEvent *pEvent);
 	void ccTouchEnded(CCTouch *pTouch, CCEvent *pEvent);
+    
+    // a selector callback
+    void menuCloseCallback(CCObject* pSender);
 private:
 	CCArmature *m_pArmature;
 
