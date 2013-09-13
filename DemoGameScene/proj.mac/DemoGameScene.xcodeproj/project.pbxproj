@@ -176,10 +176,10 @@
 		8C583FAE169DB6D500F63A10 /* CCEditBoxImplMac.mm in Sources */ = {isa = PBXBuildFile; fileRef = 8C583FAC169DB6D500F63A10 /* CCEditBoxImplMac.mm */; };
 		F860A60417C710CF005BF4C9 /* libcocos2dx.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F860A60317C710C3005BF4C9 /* libcocos2dx.a */; };
 		F860A60B17C71204005BF4C9 /* libcurl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F860A60D17C71204005BF4C9 /* libcurl.a */; };
+		F895BDDD17E2F8D00049EB6D /* VisibleRect.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F895BDDB17E2F8D00049EB6D /* VisibleRect.cpp */; };
 		F8BADD2517E2DB6C007D1FFA /* building in Resources */ = {isa = PBXBuildFile; fileRef = F8BADD2117E2DB6C007D1FFA /* building */; };
 		F8BADD2617E2DB6C007D1FFA /* DemoGameScene.json in Resources */ = {isa = PBXBuildFile; fileRef = F8BADD2217E2DB6C007D1FFA /* DemoGameScene.json */; };
 		F8BADD2717E2DB6C007D1FFA /* img in Resources */ = {isa = PBXBuildFile; fileRef = F8BADD2317E2DB6C007D1FFA /* img */; };
-		F8BADD2817E2DB6C007D1FFA /* ui in Resources */ = {isa = PBXBuildFile; fileRef = F8BADD2417E2DB6C007D1FFA /* ui */; };
 		F8BADDC417E2DB7B007D1FFA /* CCArmatureAnimation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F8BADD2C17E2DB7B007D1FFA /* CCArmatureAnimation.cpp */; };
 		F8BADDC517E2DB7B007D1FFA /* CCProcessBase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F8BADD2E17E2DB7B007D1FFA /* CCProcessBase.cpp */; };
 		F8BADDC617E2DB7B007D1FFA /* CCTween.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F8BADD3017E2DB7B007D1FFA /* CCTween.cpp */; };
@@ -591,10 +591,11 @@
 		8C583FAC169DB6D500F63A10 /* CCEditBoxImplMac.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = CCEditBoxImplMac.mm; path = CCEditBox/CCEditBoxImplMac.mm; sourceTree = "<group>"; };
 		F860A5FE17C710C3005BF4C9 /* cocos2dx.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = cocos2dx.xcodeproj; path = "../../cocos2d-x/cocos2dx/proj.mac/cocos2dx.xcodeproj"; sourceTree = "<group>"; };
 		F860A60C17C71204005BF4C9 /* en */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = en; path = en.lproj/libcurl.a; sourceTree = "<group>"; };
+		F895BDDB17E2F8D00049EB6D /* VisibleRect.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = VisibleRect.cpp; path = ../Classes/VisibleRect.cpp; sourceTree = "<group>"; };
+		F895BDDC17E2F8D00049EB6D /* VisibleRect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VisibleRect.h; path = ../Classes/VisibleRect.h; sourceTree = "<group>"; };
 		F8BADD2117E2DB6C007D1FFA /* building */ = {isa = PBXFileReference; lastKnownFileType = folder; path = building; sourceTree = "<group>"; };
 		F8BADD2217E2DB6C007D1FFA /* DemoGameScene.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = DemoGameScene.json; sourceTree = "<group>"; };
 		F8BADD2317E2DB6C007D1FFA /* img */ = {isa = PBXFileReference; lastKnownFileType = folder; path = img; sourceTree = "<group>"; };
-		F8BADD2417E2DB6C007D1FFA /* ui */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ui; sourceTree = "<group>"; };
 		F8BADD2C17E2DB7B007D1FFA /* CCArmatureAnimation.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CCArmatureAnimation.cpp; sourceTree = "<group>"; };
 		F8BADD2D17E2DB7B007D1FFA /* CCArmatureAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCArmatureAnimation.h; sourceTree = "<group>"; };
 		F8BADD2E17E2DB7B007D1FFA /* CCProcessBase.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CCProcessBase.cpp; sourceTree = "<group>"; };
@@ -758,6 +759,8 @@
 		15AA9C4015B7EC450033D6C2 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				F895BDDB17E2F8D00049EB6D /* VisibleRect.cpp */,
+				F895BDDC17E2F8D00049EB6D /* VisibleRect.h */,
 				1AFAF8C616D3886000DB1158 /* AppDelegate.cpp */,
 				1AFAF8C716D3886000DB1158 /* AppDelegate.h */,
 				1AFAF8C816D3886000DB1158 /* HelloWorldScene.cpp */,
@@ -1362,7 +1365,6 @@
 				F8BADD2117E2DB6C007D1FFA /* building */,
 				F8BADD2217E2DB6C007D1FFA /* DemoGameScene.json */,
 				F8BADD2317E2DB6C007D1FFA /* img */,
-				F8BADD2417E2DB6C007D1FFA /* ui */,
 			);
 			name = Resources;
 			path = ../Resources;
@@ -1758,7 +1760,6 @@
 				F8BADD2517E2DB6C007D1FFA /* building in Resources */,
 				F8BADD2617E2DB6C007D1FFA /* DemoGameScene.json in Resources */,
 				F8BADD2717E2DB6C007D1FFA /* img in Resources */,
-				F8BADD2817E2DB6C007D1FFA /* ui in Resources */,
 				F8BADDFC17E2DB7B007D1FFA /* json_internalarray.inl in Resources */,
 				F8BADDFD17E2DB7B007D1FFA /* json_internalmap.inl in Resources */,
 				F8BADE0017E2DB7B007D1FFA /* json_valueiterator.inl in Resources */,
@@ -1986,6 +1987,7 @@
 				F8BADDFF17E2DB7B007D1FFA /* json_value.cpp in Sources */,
 				F8BADE0117E2DB7B007D1FFA /* json_writer.cpp in Sources */,
 				F8BADE0317E2DB7B007D1FFA /* CCSSceneReader.cpp in Sources */,
+				F895BDDD17E2F8D00049EB6D /* VisibleRect.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

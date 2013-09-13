@@ -244,6 +244,7 @@
 		F83070EB17E2DCBC0082F49F /* sconscript in Resources */ = {isa = PBXBuildFile; fileRef = F83070A717E2DCBC0082F49F /* sconscript */; };
 		F83070EC17E2DCBC0082F49F /* CCSSceneReader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F83070AB17E2DCBC0082F49F /* CCSSceneReader.cpp */; };
 		F860A61117C712FE005BF4C9 /* libcurl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F860A61017C712FE005BF4C9 /* libcurl.a */; };
+		F895BDC917E2F56D0049EB6D /* VisibleRect.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F895BDC717E2F56D0049EB6D /* VisibleRect.cpp */; };
 		F8AE527617C749A8009DAE24 /* libcocos2dx.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F8AE527317C7495D009DAE24 /* libcocos2dx.a */; };
 		F8BADE0C17E2DBD1007D1FFA /* ani in Resources */ = {isa = PBXBuildFile; fileRef = F8BADE0617E2DBD1007D1FFA /* ani */; };
 		F8BADE0D17E2DBD1007D1FFA /* ComponentTest.json in Resources */ = {isa = PBXBuildFile; fileRef = F8BADE0717E2DBD1007D1FFA /* ComponentTest.json */; };
@@ -740,6 +741,8 @@
 		F83070AC17E2DCBC0082F49F /* CCSSceneReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCSSceneReader.h; sourceTree = "<group>"; };
 		F860A5E617C70A1E005BF4C9 /* cocos2dx.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = cocos2dx.xcodeproj; path = "../../cocos2d-x/cocos2dx/proj.ios/cocos2dx.xcodeproj"; sourceTree = "<group>"; };
 		F860A61017C712FE005BF4C9 /* libcurl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcurl.a; path = "../../cocos2d-x/cocos2dx/platform/third_party/ios/libraries/libcurl.a"; sourceTree = "<group>"; };
+		F895BDC717E2F56D0049EB6D /* VisibleRect.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = VisibleRect.cpp; path = ../Classes/VisibleRect.cpp; sourceTree = "<group>"; };
+		F895BDC817E2F56D0049EB6D /* VisibleRect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VisibleRect.h; path = ../Classes/VisibleRect.h; sourceTree = "<group>"; };
 		F8BADE0617E2DBD1007D1FFA /* ani */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ani; sourceTree = "<group>"; };
 		F8BADE0717E2DBD1007D1FFA /* ComponentTest.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ComponentTest.json; sourceTree = "<group>"; };
 		F8BADE0817E2DBD1007D1FFA /* img */ = {isa = PBXFileReference; lastKnownFileType = folder; path = img; sourceTree = "<group>"; };
@@ -1256,6 +1259,8 @@
 		15AA9C4015B7EC450033D6C2 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				F895BDC717E2F56D0049EB6D /* VisibleRect.cpp */,
+				F895BDC817E2F56D0049EB6D /* VisibleRect.h */,
 				1AFAF8B316D35DE700DB1158 /* AppDelegate.cpp */,
 				1AFAF8B416D35DE700DB1158 /* AppDelegate.h */,
 				1AFAF8B516D35DE700DB1158 /* HelloWorldScene.cpp */,
@@ -2034,6 +2039,7 @@
 				F83070E817E2DCBC0082F49F /* json_value.cpp in Sources */,
 				F83070EA17E2DCBC0082F49F /* json_writer.cpp in Sources */,
 				F83070EC17E2DCBC0082F49F /* CCSSceneReader.cpp in Sources */,
+				F895BDC917E2F56D0049EB6D /* VisibleRect.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

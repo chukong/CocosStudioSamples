@@ -1,4 +1,5 @@
 #include "HelloWorldScene.h"
+#include "VisibleRect.h"
 #include "cocos-ext.h"
 
 USING_NS_CC;
@@ -48,7 +49,7 @@ bool HelloWorld::init()
 
     CCMenuItemFont *itemBack = CCMenuItemFont::create("End", this, menu_selector(HelloWorld::menuCloseCallback));
     itemBack->setColor(ccc3(255, 255, 255));
-    itemBack->setPosition(960 - 15, 30);
+    itemBack->setPosition(ccp(VisibleRect::rightBottom().x - 50, VisibleRect::rightBottom().y + 25));
     CCMenu *menuBack = CCMenu::create(itemBack, NULL);
     menuBack->setPosition(CCPointZero);
     menuBack->setZOrder(4);

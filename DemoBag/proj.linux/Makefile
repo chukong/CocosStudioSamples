@@ -4,6 +4,7 @@ INCLUDES = -I.. -I../Classes
 
 SOURCES = main.cpp \
         ../Classes/AppDelegate.cpp \
+        ../Classes/CocosGUIExamplesEquipScene.cpp \
         ../Classes/HelloWorldScene.cpp
 
 COCOS_ROOT = ../../cocos2d-x

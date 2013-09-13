@@ -180,6 +180,7 @@
 		D4EF949E15BD2D9600D803EB /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = D4EF949D15BD2D9600D803EB /* Icon-72.png */; };
 		D4EF94A015BD2D9800D803EB /* Icon-144.png in Resources */ = {isa = PBXBuildFile; fileRef = D4EF949F15BD2D9800D803EB /* Icon-144.png */; };
 		F860A61117C712FE005BF4C9 /* libcurl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F860A61017C712FE005BF4C9 /* libcurl.a */; };
+		F895BDBF17E2F4500049EB6D /* VisibleRect.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F895BDBD17E2F44F0049EB6D /* VisibleRect.cpp */; };
 		F8AE527617C749A8009DAE24 /* libcocos2dx.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F8AE527317C7495D009DAE24 /* libcocos2dx.a */; };
 		F8BADA6A17E2D763007D1FFA /* fishes in Resources */ = {isa = PBXBuildFile; fileRef = F8BADA6417E2D763007D1FFA /* fishes */; };
 		F8BADA6B17E2D763007D1FFA /* FishJoy2.json in Resources */ = {isa = PBXBuildFile; fileRef = F8BADA6517E2D763007D1FFA /* FishJoy2.json */; };
@@ -605,6 +606,8 @@
 		D4F9F37B12E54555005CA6D2 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = SOURCE_ROOT; };
 		F860A5E617C70A1E005BF4C9 /* cocos2dx.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = cocos2dx.xcodeproj; path = "../../cocos2d-x/cocos2dx/proj.ios/cocos2dx.xcodeproj"; sourceTree = "<group>"; };
 		F860A61017C712FE005BF4C9 /* libcurl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcurl.a; path = "../../cocos2d-x/cocos2dx/platform/third_party/ios/libraries/libcurl.a"; sourceTree = "<group>"; };
+		F895BDBD17E2F44F0049EB6D /* VisibleRect.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = VisibleRect.cpp; path = ../Classes/VisibleRect.cpp; sourceTree = "<group>"; };
+		F895BDBE17E2F44F0049EB6D /* VisibleRect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VisibleRect.h; path = ../Classes/VisibleRect.h; sourceTree = "<group>"; };
 		F8BADA6417E2D763007D1FFA /* fishes */ = {isa = PBXFileReference; lastKnownFileType = folder; path = fishes; sourceTree = "<group>"; };
 		F8BADA6517E2D763007D1FFA /* FishJoy2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = FishJoy2.json; sourceTree = "<group>"; };
 		F8BADA6617E2D763007D1FFA /* Images */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Images; sourceTree = "<group>"; };
@@ -1256,6 +1259,8 @@
 		15AA9C4015B7EC450033D6C2 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				F895BDBD17E2F44F0049EB6D /* VisibleRect.cpp */,
+				F895BDBE17E2F44F0049EB6D /* VisibleRect.h */,
 				1AFAF8B316D35DE700DB1158 /* AppDelegate.cpp */,
 				1AFAF8B416D35DE700DB1158 /* AppDelegate.h */,
 				1AFAF8B516D35DE700DB1158 /* HelloWorldScene.cpp */,
@@ -2034,6 +2039,7 @@
 				F8BADB4917E2D7AB007D1FFA /* json_value.cpp in Sources */,
 				F8BADB4B17E2D7AB007D1FFA /* json_writer.cpp in Sources */,
 				F8BADB4D17E2D7AB007D1FFA /* CCSSceneReader.cpp in Sources */,
+				F895BDBF17E2F4500049EB6D /* VisibleRect.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
