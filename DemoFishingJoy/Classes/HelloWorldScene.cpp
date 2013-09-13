@@ -1,4 +1,5 @@
 #include "HelloWorldScene.h"
+#include "VisibleRect.h"
 #include "cocos-ext.h"
 
 USING_NS_CC;
@@ -31,13 +32,16 @@ bool HelloWorld::init()
 
     CCNode *pFishJoyScene = CCSSceneReader::sharedSceneReader()->createNodeWithSceneFile("FishJoy2.json");
 	this->addChild(pFishJoyScene);
-    cocos2d::extension::UIActionManager::shareManager()->PlayActionByName("startMenu.json","Animation1");
+    cocos2d::extension::UIActionManager::shareManager()->PlayActionByName("startMenu_1.json","Animation1");
 
-	CCComRender *pUIRender = static_cast<CCComRender*>(pFishJoyScene->getChildByTag(10009)->getComponent("GUIComponent"));
-	UILayer *pUILayer = static_cast<UILayer*>(pUIRender->getRender());
-	UIButton *pButton = static_cast<UIButton*>(pUILayer->getWidgetByName("exit_button"));
-	pButton->addReleaseEvent(this, coco_releaseselector(HelloWorld::menuCloseCallback));
-	CCLOG("pButton name = %s", pButton->getName());
+	CCMenuItemFont *itemBack = CCMenuItemFont::create("End", this, menu_selector(HelloWorld::menuCloseCallback));
+    itemBack->setColor(ccc3(255, 255, 255));
+    itemBack->setPosition(ccp(VisibleRect::rightBottom().x - 50, VisibleRect::rightBottom().y + 25));
+    CCMenu *menuBack = CCMenu::create(itemBack, NULL);
+    menuBack->setPosition(CCPointZero);
+    menuBack->setZOrder(4);
+    
+    this->addChild(menuBack);
 
     return true;
 }
