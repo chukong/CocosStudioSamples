@@ -36,6 +36,7 @@ public:
     void touchBeganEvent(CCObject *pSender);
     void touchMovedEvent(CCObject *pSender);
     void touchEndedEvent(CCObject *pSender);
+    void touchCancelledEvent(CCObject *pSender);
 
 protected:
     UI_SCENE_CREATE_FUNC(UIButtonTest)
@@ -51,6 +52,7 @@ public:
     void touchBeganEvent(CCObject *pSender);
     void touchMovedEvent(CCObject *pSender);
     void touchEndedEvent(CCObject *pSender);
+    void touchCancelledEvent(CCObject *pSender);
     
 protected:
     UI_SCENE_CREATE_FUNC(UIButtonTest_Scale9)
@@ -66,6 +68,7 @@ public:
     void touchBeganEvent(CCObject *pSender);
     void touchMovedEvent(CCObject *pSender);
     void touchEndedEvent(CCObject *pSender);
+    void touchCancelledEvent(CCObject *pSender);
     
 protected:
     UI_SCENE_CREATE_FUNC(UIButtonTest_PressedAction)

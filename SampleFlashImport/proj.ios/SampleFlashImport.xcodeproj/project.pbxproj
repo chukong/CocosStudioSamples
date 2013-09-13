@@ -248,6 +248,12 @@
 		F82A80AC17E1776A0006C8AD /* CCSSceneReader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F82A806B17E1776A0006C8AD /* CCSSceneReader.cpp */; };
 		F860A61117C712FE005BF4C9 /* libcurl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F860A61017C712FE005BF4C9 /* libcurl.a */; };
 		F8AE527617C749A8009DAE24 /* libcocos2dx.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F8AE527317C7495D009DAE24 /* libcocos2dx.a */; };
+		F8F97C6317E29FA500E9BA6A /* Dragon.plist in Resources */ = {isa = PBXBuildFile; fileRef = F8F97C5D17E29FA500E9BA6A /* Dragon.plist */; };
+		F8F97C6417E29FA500E9BA6A /* Dragon.png in Resources */ = {isa = PBXBuildFile; fileRef = F8F97C5E17E29FA500E9BA6A /* Dragon.png */; };
+		F8F97C6517E29FA500E9BA6A /* Dragon.xml in Resources */ = {isa = PBXBuildFile; fileRef = F8F97C5F17E29FA500E9BA6A /* Dragon.xml */; };
+		F8F97C6617E29FA500E9BA6A /* robot.plist in Resources */ = {isa = PBXBuildFile; fileRef = F8F97C6017E29FA500E9BA6A /* robot.plist */; };
+		F8F97C6717E29FA500E9BA6A /* robot.png in Resources */ = {isa = PBXBuildFile; fileRef = F8F97C6117E29FA500E9BA6A /* robot.png */; };
+		F8F97C6817E29FA500E9BA6A /* robot.xml in Resources */ = {isa = PBXBuildFile; fileRef = F8F97C6217E29FA500E9BA6A /* robot.xml */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -740,6 +746,12 @@
 		F82A806C17E1776A0006C8AD /* CCSSceneReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCSSceneReader.h; sourceTree = "<group>"; };
 		F860A5E617C70A1E005BF4C9 /* cocos2dx.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = cocos2dx.xcodeproj; path = "../../cocos2d-x/cocos2dx/proj.ios/cocos2dx.xcodeproj"; sourceTree = "<group>"; };
 		F860A61017C712FE005BF4C9 /* libcurl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcurl.a; path = "../../cocos2d-x/cocos2dx/platform/third_party/ios/libraries/libcurl.a"; sourceTree = "<group>"; };
+		F8F97C5D17E29FA500E9BA6A /* Dragon.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Dragon.plist; sourceTree = "<group>"; };
+		F8F97C5E17E29FA500E9BA6A /* Dragon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Dragon.png; sourceTree = "<group>"; };
+		F8F97C5F17E29FA500E9BA6A /* Dragon.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Dragon.xml; sourceTree = "<group>"; };
+		F8F97C6017E29FA500E9BA6A /* robot.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = robot.plist; sourceTree = "<group>"; };
+		F8F97C6117E29FA500E9BA6A /* robot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = robot.png; sourceTree = "<group>"; };
+		F8F97C6217E29FA500E9BA6A /* robot.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = robot.xml; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1399,6 +1411,12 @@
 		78C7DDAA14EBA5050085D0C2 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				F8F97C5D17E29FA500E9BA6A /* Dragon.plist */,
+				F8F97C5E17E29FA500E9BA6A /* Dragon.png */,
+				F8F97C5F17E29FA500E9BA6A /* Dragon.xml */,
+				F8F97C6017E29FA500E9BA6A /* robot.plist */,
+				F8F97C6117E29FA500E9BA6A /* robot.png */,
+				F8F97C6217E29FA500E9BA6A /* robot.xml */,
 				1AFAF8B916D35E4900DB1158 /* CloseNormal.png */,
 				1AFAF8BA16D35E4900DB1158 /* CloseSelected.png */,
 				1AFAF8BB16D35E4900DB1158 /* HelloWorld.png */,
@@ -1799,6 +1817,12 @@
 				F82A80A617E1776A0006C8AD /* json_internalmap.inl in Resources */,
 				F82A80A917E1776A0006C8AD /* json_valueiterator.inl in Resources */,
 				F82A80AB17E1776A0006C8AD /* sconscript in Resources */,
+				F8F97C6317E29FA500E9BA6A /* Dragon.plist in Resources */,
+				F8F97C6417E29FA500E9BA6A /* Dragon.png in Resources */,
+				F8F97C6517E29FA500E9BA6A /* Dragon.xml in Resources */,
+				F8F97C6617E29FA500E9BA6A /* robot.plist in Resources */,
+				F8F97C6717E29FA500E9BA6A /* robot.png in Resources */,
+				F8F97C6817E29FA500E9BA6A /* robot.xml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

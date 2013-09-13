@@ -52,6 +52,7 @@ bool UIButtonTest::init()
         button->addPushDownEvent(this, coco_pushselector(UIButtonTest::touchBeganEvent));
         button->addMoveEvent(this, coco_moveselector(UIButtonTest::touchMovedEvent));
         button->addReleaseEvent(this, coco_releaseselector(UIButtonTest::touchEndedEvent));
+        button->addCancelEvent(this, coco_cancelselector(UIButtonTest::touchCancelledEvent));
         m_pUiLayer->addWidget(button);
 
         return true;
@@ -72,6 +73,11 @@ void UIButtonTest::touchMovedEvent(CCObject *pSender)
 void UIButtonTest::touchEndedEvent(CCObject *pSender)
 {
     m_pDisplayValueLabel->setText(CCString::createWithFormat("Touch Up")->getCString());
+}
+
+void UIButtonTest::touchCancelledEvent(CCObject *pSender)
+{
+    m_pDisplayValueLabel->setText(CCString::createWithFormat("Touch Canceld")->getCString());
 }
 
 
@@ -122,6 +128,7 @@ bool UIButtonTest_Scale9::init()
         button->addPushDownEvent(this, coco_pushselector(UIButtonTest_Scale9::touchBeganEvent));
         button->addMoveEvent(this, coco_moveselector(UIButtonTest_Scale9::touchMovedEvent));
         button->addReleaseEvent(this, coco_releaseselector(UIButtonTest_Scale9::touchEndedEvent));
+        button->addCancelEvent(this, coco_cancelselector(UIButtonTest_Scale9::touchCancelledEvent));
         m_pUiLayer->addWidget(button);
         
         return true;
@@ -142,6 +149,11 @@ void UIButtonTest_Scale9::touchMovedEvent(CCObject *pSender)
 void UIButtonTest_Scale9::touchEndedEvent(CCObject *pSender)
 {
     m_pDisplayValueLabel->setText(CCString::createWithFormat("Touch Up")->getCString());
+}
+
+void UIButtonTest_Scale9::touchCancelledEvent(CCObject *pSender)
+{
+    m_pDisplayValueLabel->setText(CCString::createWithFormat("Touch Canceld")->getCString());
 }
 
 // UIButtonTest_PressAction
@@ -188,6 +200,7 @@ bool UIButtonTest_PressedAction::init()
         button->addPushDownEvent(this, coco_pushselector(UIButtonTest::touchBeganEvent));
         button->addMoveEvent(this, coco_moveselector(UIButtonTest::touchMovedEvent));
         button->addReleaseEvent(this, coco_releaseselector(UIButtonTest::touchEndedEvent));
+        button->addCancelEvent(this, coco_cancelselector(UIButtonTest_PressedAction::touchCancelledEvent));
         m_pUiLayer->addWidget(button);
         
         return true;
@@ -208,4 +221,9 @@ void UIButtonTest_PressedAction::touchMovedEvent(CCObject *pSender)
 void UIButtonTest_PressedAction::touchEndedEvent(CCObject *pSender)
 {
     m_pDisplayValueLabel->setText(CCString::createWithFormat("Touch Up")->getCString());
+}
+
+void UIButtonTest_PressedAction::touchCancelledEvent(CCObject *pSender)
+{
+    m_pDisplayValueLabel->setText(CCString::createWithFormat("Touch Canceld")->getCString());
 }
