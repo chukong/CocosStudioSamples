@@ -104,5 +104,8 @@ void HelloWorld::update(float delta)
 		pMPLoadingBar->setPercent(HP);
 
 		HP -= 2.0f;
+        if (HP < 0.0f) {
+            unscheduleUpdate();
+        }
 	}
 }

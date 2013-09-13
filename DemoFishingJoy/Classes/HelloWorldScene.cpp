@@ -31,11 +31,11 @@ bool HelloWorld::init()
 
     CCNode *pFishJoyScene = CCSSceneReader::sharedSceneReader()->createNodeWithSceneFile("FishJoy2.json");
 	this->addChild(pFishJoyScene);
-    cocos2d::extension::UIActionManager::shareManager()->PlayActionByName("startMenu.json","Animation1");
+    cocos2d::extension::UIActionManager::shareManager()->PlayActionByName("startMenu_1.json","Animation1");
 
 	CCMenuItemFont *itemBack = CCMenuItemFont::create("End", this, menu_selector(HelloWorld::menuCloseCallback));
     itemBack->setColor(ccc3(255, 255, 255));
-    itemBack->setPosition(960 - 50, 25);
+    itemBack->setPosition(960 - 80, 25);
     CCMenu *menuBack = CCMenu::create(itemBack, NULL);
     menuBack->setPosition(CCPointZero);
     menuBack->setZOrder(4);
