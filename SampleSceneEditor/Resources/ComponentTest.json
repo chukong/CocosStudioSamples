@@ -43,7 +43,7 @@
       "__type": "ComGameObjectSurrogate:#EditorCommon.JsonModel",
       "classname": "CCNode",
       "name": "ui",
-      "canedit": true,
+      "canedit": false,
       "objecttag": 10003,
       "rotation": 0,
       "scalex": 0.926432133,
@@ -162,8 +162,8 @@
       "scalex": 1,
       "scaley": 1,
       "visible": 1,
-      "x": 241.5,
-      "y": 369.5,
+      "x": 343.5,
+      "y": 395.5,
       "zorder": 1,
       "gameobjects": [],
       "components": [
@@ -190,8 +190,8 @@
       "scalex": 1,
       "scaley": 1,
       "visible": 1,
-      "x": 271.5,
-      "y": 271.5,
+      "x": 189.5,
+      "y": 261.5,
       "zorder": 1,
       "gameobjects": [],
       "components": [
@@ -205,7 +205,7 @@
             "plistFile": null,
             "resourceType": 0
           },
-          "selectedactionname": "Animation0"
+          "selectedactionname": "Animation1"
         }
       ]
     },
@@ -293,41 +293,13 @@
           }
         }
       ]
-    },
-    {
-      "__type": "ComGameObjectSurrogate:#EditorCommon.JsonModel",
-      "classname": "CCNode",
-      "name": "Menu",
-      "canedit": true,
-      "objecttag": 10014,
-      "rotation": 0,
-      "scalex": 1,
-      "scaley": 1,
-      "visible": 1,
-      "x": 292,
-      "y": 156.5,
-      "zorder": 1,
-      "gameobjects": [],
-      "components": [
-        {
-          "__type": "ComGUIAdapterSurrogate:#EditorCommon.JsonModel.Component",
-          "classname": "GUIComponent",
-          "name": "GUIComponent",
-          "file": null,
-          "fileData": {
-            "path": "ui/Menu_ComTest/16_1.ExportJson",
-            "plistFile": null,
-            "resourceType": 0
-          }
-        }
-      ]
     }
   ],
   "CanvasSize": {
     "_height": 768,
     "_width": 1024
   },
-  "Version": "0.3.3.0",
+  "Version": "0.4.0.0",
   "components": [
     {
       "__type": "ComSceneSurrogate:#EditorCommon.JsonModel.Component",

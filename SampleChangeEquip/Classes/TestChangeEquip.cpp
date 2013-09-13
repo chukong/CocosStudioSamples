@@ -1,5 +1,8 @@
 #include "TestChangeEquip.h"
+#include "cocos2d.h"
 #include <math.h>
+
+using namespace cocos2d;
 
 using namespace std;
 
@@ -51,7 +54,8 @@ TestChangeEquip::~TestChangeEquip()
 void TestChangeEquip::onEnter()
 {
 	CCLayer::onEnter();
-	setTouchEnabled(true);
+    CCDirector::sharedDirector()->getTouchDispatcher()->addTargetedDelegate(this, -1, true);
+//	setTouchEnabled(true);
 
 	CCSize visibleSize = CCDirector::sharedDirector()->getVisibleSize();
 	CCSprite *bg = CCSprite::create("bg.jpg");
@@ -70,6 +74,28 @@ void TestChangeEquip::onEnter()
 
 	initUI();
 	initEquip();
+    
+    CCPoint origin = CCDirector::sharedDirector()->getVisibleOrigin();
+    
+    /////////////////////////////
+    // 2. add a menu item with "X" image, which is clicked to quit the program
+    //    you may modify it.
+    
+    
+    // add a "close" icon to exit the progress. it's an autorelease object
+    CCMenuItemImage *pCloseItem = CCMenuItemImage::create(
+                                                          "CloseNormal.png",
+                                                          "CloseSelected.png",
+                                                          this,
+                                                          menu_selector(TestChangeEquip::menuCloseCallback));
+    
+	pCloseItem->setPosition(ccp(origin.x + visibleSize.width - pCloseItem->getContentSize().width/2 ,
+                                origin.y + pCloseItem->getContentSize().height/2));
+    
+    // create menu, it's an autorelease object
+    CCMenu* pMenu = CCMenu::create(pCloseItem, NULL);
+    pMenu->setPosition(CCPointZero);
+    this->addChild(pMenu, 1);
 }
 
 void TestChangeEquip::initUI()
@@ -284,5 +310,19 @@ void TestChangeEquip::ccTouchEnded(CCTouch *pTouch, CCEvent *pEvent)
 
 	m_pSelectedGrid = m_pCurrentGrid = NULL;
 	m_pCurrentIcon = NULL;
+}
+
+// a selector callback
+void TestChangeEquip::menuCloseCallback(CCObject* pSender)
+{
+    CCArmatureDataManager::purge();
+	CCSSceneReader::sharedSceneReader()->purgeSceneReader();
+	cocos2d::extension::UIActionManager::shareManager()->purgeUIActionManager();
+	cocos2d::extension::UIHelper::instance()->purgeUIHelper();
+    CCDirector::sharedDirector()->end();
+    
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
+    exit(0);
+#endif
 }
 

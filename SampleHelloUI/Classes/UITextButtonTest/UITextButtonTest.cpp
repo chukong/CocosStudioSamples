@@ -53,6 +53,7 @@ bool UITextButtonTest::init()
         textButton->addPushDownEvent(this, coco_pushselector(UITextButtonTest::touchBeganEvent));
         textButton->addMoveEvent(this, coco_moveselector(UITextButtonTest::touchMovedEvent));
         textButton->addReleaseEvent(this, coco_releaseselector(UITextButtonTest::touchEndedEvent));
+        textButton->addCancelEvent(this, coco_cancelselector(UITextButtonTest::touchCancelledEvent));
         m_pUiLayer->addWidget(textButton);
         
         return true;
@@ -73,6 +74,11 @@ void UITextButtonTest::touchMovedEvent(CCObject *pSender)
 void UITextButtonTest::touchEndedEvent(CCObject *pSender)
 {
     m_pDisplayValueLabel->setText(CCString::createWithFormat("Touch Up")->getCString());
+}
+
+void UITextButtonTest::touchCancelledEvent(CCObject *pSender)
+{
+    m_pDisplayValueLabel->setText(CCString::createWithFormat("Touch Canceld")->getCString());
 }
 
 // UITextButtonTest_Scale9
@@ -119,9 +125,10 @@ bool UITextButtonTest_Scale9::init()
         textButton->setSize(CCSizeMake(180, textButton->getContentSize().height * 1.5f));
         textButton->setTitleText("Text Button scale9 render");
         textButton->setPosition(ccp(widgetSize.width / 2.0f, widgetSize.height / 2.0f));
-        textButton->addPushDownEvent(this, coco_pushselector(UITextButtonTest::touchBeganEvent));
-        textButton->addMoveEvent(this, coco_moveselector(UITextButtonTest::touchMovedEvent));
-        textButton->addReleaseEvent(this, coco_releaseselector(UITextButtonTest::touchEndedEvent));
+        textButton->addPushDownEvent(this, coco_pushselector(UITextButtonTest_Scale9::touchBeganEvent));
+        textButton->addMoveEvent(this, coco_moveselector(UITextButtonTest_Scale9::touchMovedEvent));
+        textButton->addReleaseEvent(this, coco_releaseselector(UITextButtonTest_Scale9::touchEndedEvent));
+        textButton->addCancelEvent(this, coco_cancelselector(UITextButtonTest_Scale9::touchCancelledEvent));
         m_pUiLayer->addWidget(textButton);
         
         return true;
@@ -142,4 +149,9 @@ void UITextButtonTest_Scale9::touchMovedEvent(CCObject *pSender)
 void UITextButtonTest_Scale9::touchEndedEvent(CCObject *pSender)
 {
     m_pDisplayValueLabel->setText(CCString::createWithFormat("Touch Up")->getCString());
+}
+
+void UITextButtonTest_Scale9::touchCancelledEvent(CCObject *pSender)
+{
+    m_pDisplayValueLabel->setText(CCString::createWithFormat("Touch Canceld")->getCString());
 }
