@@ -14,9 +14,9 @@
     {
       "__type": "ComGameObjectSurrogate:#EditorCommon.JsonModel",
       "classname": "CCNode",
-      "name": "background",
-      "canedit": false,
-      "objecttag": 10006,
+      "name": "bg",
+      "canedit": true,
+      "objecttag": 10003,
       "rotation": 0,
       "scalex": 1,
       "scaley": 1,
@@ -43,28 +43,28 @@
       "__type": "ComGameObjectSurrogate:#EditorCommon.JsonModel",
       "classname": "CCNode",
       "name": "ui",
-      "canedit": false,
-      "objecttag": 10003,
+      "canedit": true,
+      "objecttag": 10004,
       "rotation": 0,
-      "scalex": 0.926432133,
-      "scaley": 0.926432133,
+      "scalex": 1,
+      "scaley": 1,
       "visible": 1,
-      "x": 44,
-      "y": 28.25006103515625,
-      "zorder": 2,
+      "x": 0,
+      "y": 0,
+      "zorder": 1,
       "gameobjects": [
         {
           "__type": "ComGameObjectSurrogate:#EditorCommon.JsonModel",
           "classname": "CCNode",
-          "name": "naruto",
+          "name": "narto",
           "canedit": true,
-          "objecttag": 10004,
+          "objecttag": 10005,
           "rotation": 0,
           "scalex": 0.5,
           "scaley": 0.5,
           "visible": 1,
-          "x": 60,
-          "y": 724,
+          "x": 60.000003814697266,
+          "y": 722.3333740234375,
           "zorder": 1,
           "gameobjects": [],
           "components": [
@@ -74,7 +74,7 @@
               "name": "CCSprite",
               "file": null,
               "fileData": {
-                "path": "img/naruto.png",
+                "path": "img/narto.png",
                 "plistFile": null,
                 "resourceType": 0
               }
@@ -84,15 +84,15 @@
         {
           "__type": "ComGameObjectSurrogate:#EditorCommon.JsonModel",
           "classname": "CCNode",
-          "name": "sasuke",
+          "name": "sauke",
           "canedit": true,
-          "objecttag": 10005,
+          "objecttag": 10006,
           "rotation": 0,
           "scalex": -0.5,
           "scaley": 0.5,
           "visible": 1,
-          "x": 966,
-          "y": 723,
+          "x": 962.666748046875,
+          "y": 722,
           "zorder": 1,
           "gameobjects": [],
           "components": [
@@ -102,7 +102,7 @@
               "name": "CCSprite",
               "file": null,
               "fileData": {
-                "path": "img/sasuke.png",
+                "path": "img/sauke.png",
                 "plistFile": null,
                 "resourceType": 0
               }
@@ -127,72 +127,16 @@
     {
       "__type": "ComGameObjectSurrogate:#EditorCommon.JsonModel",
       "classname": "CCNode",
-      "name": "fire0",
-      "canedit": true,
-      "objecttag": 10010,
-      "rotation": 0,
-      "scalex": 1,
-      "scaley": 1,
-      "visible": 1,
-      "x": 679.5,
-      "y": 335.5,
-      "zorder": 1,
-      "gameobjects": [],
-      "components": [
-        {
-          "__type": "ComParticleSystemSurrogate:#EditorCommon.JsonModel.Component",
-          "classname": "CCParticleSystemQuad",
-          "name": "CCParticleSystemQuad",
-          "file": null,
-          "fileData": {
-            "path": "particle/1-buff.plist",
-            "plistFile": null,
-            "resourceType": 0
-          }
-        }
-      ]
-    },
-    {
-      "__type": "ComGameObjectSurrogate:#EditorCommon.JsonModel",
-      "classname": "CCNode",
-      "name": "fire1",
-      "canedit": true,
-      "objecttag": 10009,
-      "rotation": 0,
-      "scalex": 1,
-      "scaley": 1,
-      "visible": 1,
-      "x": 343.5,
-      "y": 395.5,
-      "zorder": 1,
-      "gameobjects": [],
-      "components": [
-        {
-          "__type": "ComParticleSystemSurrogate:#EditorCommon.JsonModel.Component",
-          "classname": "CCParticleSystemQuad",
-          "name": "CCParticleSystemQuad",
-          "file": null,
-          "fileData": {
-            "path": "particle/1-buff.plist",
-            "plistFile": null,
-            "resourceType": 0
-          }
-        }
-      ]
-    },
-    {
-      "__type": "ComGameObjectSurrogate:#EditorCommon.JsonModel",
-      "classname": "CCNode",
-      "name": "naruto",
+      "name": "narto",
       "canedit": true,
       "objecttag": 10007,
       "rotation": 0,
       "scalex": 1,
       "scaley": 1,
       "visible": 1,
-      "x": 189.5,
-      "y": 261.5,
-      "zorder": 1,
+      "x": 252.49992370605469,
+      "y": 252.33332824707031,
+      "zorder": 2,
       "gameobjects": [],
       "components": [
         {
@@ -205,23 +149,23 @@
             "plistFile": null,
             "resourceType": 0
           },
-          "selectedactionname": "Animation1"
+          "selectedactionname": "Animation0"
         }
       ]
     },
     {
       "__type": "ComGameObjectSurrogate:#EditorCommon.JsonModel",
       "classname": "CCNode",
-      "name": "Sasuke",
+      "name": "sauke",
       "canedit": true,
       "objecttag": 10008,
       "rotation": 0,
       "scalex": 1,
       "scaley": 1,
       "visible": 1,
-      "x": 853.5,
-      "y": 279.5,
-      "zorder": 1,
+      "x": 847.50006103515625,
+      "y": 257.33331298828125,
+      "zorder": 2,
       "gameobjects": [],
       "components": [
         {
@@ -241,15 +185,43 @@
     {
       "__type": "ComGameObjectSurrogate:#EditorCommon.JsonModel",
       "classname": "CCNode",
+      "name": "fire1",
+      "canedit": true,
+      "objecttag": 10009,
+      "rotation": 0,
+      "scalex": 0.8,
+      "scaley": 1,
+      "visible": 1,
+      "x": 930.83343505859375,
+      "y": 132.33328247070313,
+      "zorder": 3,
+      "gameobjects": [],
+      "components": [
+        {
+          "__type": "ComParticleSystemSurrogate:#EditorCommon.JsonModel.Component",
+          "classname": "CCParticleSystemQuad",
+          "name": "CCParticleSystemQuad",
+          "file": null,
+          "fileData": {
+            "path": "particle/1-buff.plist",
+            "plistFile": null,
+            "resourceType": 0
+          }
+        }
+      ]
+    },
+    {
+      "__type": "ComGameObjectSurrogate:#EditorCommon.JsonModel",
+      "classname": "CCNode",
       "name": "fire2",
       "canedit": true,
-      "objecttag": 10012,
+      "objecttag": 10010,
       "rotation": 0,
       "scalex": 1,
       "scaley": 1,
       "visible": 1,
-      "x": 936.5,
-      "y": 79.5,
+      "x": 339.16665649414062,
+      "y": 350.6666259765625,
       "zorder": 1,
       "gameobjects": [],
       "components": [
@@ -271,13 +243,41 @@
       "classname": "CCNode",
       "name": "fire3",
       "canedit": true,
+      "objecttag": 10011,
+      "rotation": 0,
+      "scalex": 1,
+      "scaley": 1,
+      "visible": 1,
+      "x": 224.16665649414063,
+      "y": 118.99995422363281,
+      "zorder": 3,
+      "gameobjects": [],
+      "components": [
+        {
+          "__type": "ComParticleSystemSurrogate:#EditorCommon.JsonModel.Component",
+          "classname": "CCParticleSystemQuad",
+          "name": "CCParticleSystemQuad",
+          "file": null,
+          "fileData": {
+            "path": "particle/1-buff.plist",
+            "plistFile": null,
+            "resourceType": 0
+          }
+        }
+      ]
+    },
+    {
+      "__type": "ComGameObjectSurrogate:#EditorCommon.JsonModel",
+      "classname": "CCNode",
+      "name": "fire4",
+      "canedit": true,
       "objecttag": 10012,
       "rotation": 0,
       "scalex": 1,
       "scaley": 1,
       "visible": 1,
-      "x": 229.5,
-      "y": 115.5,
+      "x": 675.83331298828125,
+      "y": 308.99996948242188,
       "zorder": 1,
       "gameobjects": [],
       "components": [
@@ -305,7 +305,7 @@
       "__type": "ComSceneSurrogate:#EditorCommon.JsonModel.Component",
       "classname": "CCScene",
       "name": "CCScene",
-      "scenename": "ComponentTest"
+      "scenename": "chrosfighters"
     },
     {
       "__type": "ComSimpleAudioSurrogate:#EditorCommon.JsonModel.Component",
@@ -313,11 +313,11 @@
       "name": "CCBackgroundAudio",
       "file": null,
       "fileData": {
-        "path": "sound/arena.mp3",
+        "path": null,
         "plistFile": null,
         "resourceType": 0
       },
-      "loop": 1
+      "loop": 0
     }
   ]
 }
