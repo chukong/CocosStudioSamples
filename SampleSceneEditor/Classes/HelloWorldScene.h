@@ -19,7 +19,10 @@ public:
     
     void menuAttackCallback(cocos2d::CCObject* pSender);
 
-	void animationEvent(CCArmature *pArmature,
+	void animationEvent1(CCArmature *pArmature,
+		MovementEventType movementType, const char *movementID);
+
+	void animationEvent2(CCArmature *pArmature,
 		MovementEventType movementType, const char *movementID);
 
 	virtual void update(float delta);
@@ -32,7 +35,7 @@ private:
 
 	bool m_bStart;
 
-	float HP;
+	float m_fPercent;
 };
 
 #endif // __HELLOWORLD_SCENE_H__
