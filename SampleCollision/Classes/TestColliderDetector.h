@@ -23,7 +23,6 @@ public:
     
 	virtual void onEnter();
 	virtual void onExit();
-	virtual std::string title();
 	virtual void draw();
 	virtual void update(float delta);
     

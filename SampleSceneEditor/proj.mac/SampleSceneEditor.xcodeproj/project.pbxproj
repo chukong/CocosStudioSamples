@@ -175,7 +175,6 @@
 		8C583FAD169DB6D500F63A10 /* CCEditBox.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8C583FA8169DB6D500F63A10 /* CCEditBox.cpp */; };
 		8C583FAE169DB6D500F63A10 /* CCEditBoxImplMac.mm in Sources */ = {isa = PBXBuildFile; fileRef = 8C583FAC169DB6D500F63A10 /* CCEditBoxImplMac.mm */; };
 		F83070F517E2DE840082F49F /* ani in Resources */ = {isa = PBXBuildFile; fileRef = F83070EF17E2DE840082F49F /* ani */; };
-		F83070F617E2DE840082F49F /* ComponentTest.json in Resources */ = {isa = PBXBuildFile; fileRef = F83070F017E2DE840082F49F /* ComponentTest.json */; };
 		F83070F717E2DE840082F49F /* img in Resources */ = {isa = PBXBuildFile; fileRef = F83070F117E2DE840082F49F /* img */; };
 		F83070F817E2DE840082F49F /* particle in Resources */ = {isa = PBXBuildFile; fileRef = F83070F217E2DE840082F49F /* particle */; };
 		F83070F917E2DE840082F49F /* sound in Resources */ = {isa = PBXBuildFile; fileRef = F83070F317E2DE840082F49F /* sound */; };
@@ -247,6 +246,7 @@
 		F860A60417C710CF005BF4C9 /* libcocos2dx.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F860A60317C710C3005BF4C9 /* libcocos2dx.a */; };
 		F860A60B17C71204005BF4C9 /* libcurl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F860A60D17C71204005BF4C9 /* libcurl.a */; };
 		F895BDCF17E2F6190049EB6D /* VisibleRect.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F895BDCD17E2F6190049EB6D /* VisibleRect.cpp */; };
+		F8A44BC817E85DE600D81D1B /* chrosfighters.json in Resources */ = {isa = PBXBuildFile; fileRef = F8A44BC717E85DE600D81D1B /* chrosfighters.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -593,7 +593,6 @@
 		8C583FAB169DB6D500F63A10 /* CCEditBoxImplMac.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CCEditBoxImplMac.h; path = CCEditBox/CCEditBoxImplMac.h; sourceTree = "<group>"; };
 		8C583FAC169DB6D500F63A10 /* CCEditBoxImplMac.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = CCEditBoxImplMac.mm; path = CCEditBox/CCEditBoxImplMac.mm; sourceTree = "<group>"; };
 		F83070EF17E2DE840082F49F /* ani */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ani; sourceTree = "<group>"; };
-		F83070F017E2DE840082F49F /* ComponentTest.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ComponentTest.json; sourceTree = "<group>"; };
 		F83070F117E2DE840082F49F /* img */ = {isa = PBXFileReference; lastKnownFileType = folder; path = img; sourceTree = "<group>"; };
 		F83070F217E2DE840082F49F /* particle */ = {isa = PBXFileReference; lastKnownFileType = folder; path = particle; sourceTree = "<group>"; };
 		F83070F317E2DE840082F49F /* sound */ = {isa = PBXFileReference; lastKnownFileType = folder; path = sound; sourceTree = "<group>"; };
@@ -737,6 +736,7 @@
 		F860A60C17C71204005BF4C9 /* en */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = en; path = en.lproj/libcurl.a; sourceTree = "<group>"; };
 		F895BDCD17E2F6190049EB6D /* VisibleRect.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = VisibleRect.cpp; path = ../Classes/VisibleRect.cpp; sourceTree = "<group>"; };
 		F895BDCE17E2F6190049EB6D /* VisibleRect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VisibleRect.h; path = ../Classes/VisibleRect.h; sourceTree = "<group>"; };
+		F8A44BC717E85DE600D81D1B /* chrosfighters.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = chrosfighters.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1368,8 +1368,8 @@
 		78C7DDAA14EBA5050085D0C2 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				F8A44BC717E85DE600D81D1B /* chrosfighters.json */,
 				F83070EF17E2DE840082F49F /* ani */,
-				F83070F017E2DE840082F49F /* ComponentTest.json */,
 				F83070F117E2DE840082F49F /* img */,
 				F83070F217E2DE840082F49F /* particle */,
 				F83070F317E2DE840082F49F /* sound */,
@@ -1767,7 +1767,6 @@
 				41BC70E715BF81A5006A0A6C /* Icon.icns in Resources */,
 				15C157DA168315B300D239F2 /* CMakeLists.txt in Resources */,
 				F83070F517E2DE840082F49F /* ani in Resources */,
-				F83070F617E2DE840082F49F /* ComponentTest.json in Resources */,
 				F83070F717E2DE840082F49F /* img in Resources */,
 				F83070F817E2DE840082F49F /* particle in Resources */,
 				F83070F917E2DE840082F49F /* sound in Resources */,
@@ -1776,6 +1775,7 @@
 				F83071CF17E2DE960082F49F /* json_internalmap.inl in Resources */,
 				F83071D217E2DE960082F49F /* json_valueiterator.inl in Resources */,
 				F83071D417E2DE960082F49F /* sconscript in Resources */,
+				F8A44BC817E85DE600D81D1B /* chrosfighters.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

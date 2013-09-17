@@ -245,9 +245,9 @@
 		F83070EC17E2DCBC0082F49F /* CCSSceneReader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F83070AB17E2DCBC0082F49F /* CCSSceneReader.cpp */; };
 		F860A61117C712FE005BF4C9 /* libcurl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F860A61017C712FE005BF4C9 /* libcurl.a */; };
 		F895BDC917E2F56D0049EB6D /* VisibleRect.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F895BDC717E2F56D0049EB6D /* VisibleRect.cpp */; };
+		F8A44BC317E85DC400D81D1B /* chrosfighters.json in Resources */ = {isa = PBXBuildFile; fileRef = F8A44BC217E85DC400D81D1B /* chrosfighters.json */; };
 		F8AE527617C749A8009DAE24 /* libcocos2dx.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F8AE527317C7495D009DAE24 /* libcocos2dx.a */; };
 		F8BADE0C17E2DBD1007D1FFA /* ani in Resources */ = {isa = PBXBuildFile; fileRef = F8BADE0617E2DBD1007D1FFA /* ani */; };
-		F8BADE0D17E2DBD1007D1FFA /* ComponentTest.json in Resources */ = {isa = PBXBuildFile; fileRef = F8BADE0717E2DBD1007D1FFA /* ComponentTest.json */; };
 		F8BADE0E17E2DBD1007D1FFA /* img in Resources */ = {isa = PBXBuildFile; fileRef = F8BADE0817E2DBD1007D1FFA /* img */; };
 		F8BADE0F17E2DBD1007D1FFA /* particle in Resources */ = {isa = PBXBuildFile; fileRef = F8BADE0917E2DBD1007D1FFA /* particle */; };
 		F8BADE1017E2DBD1007D1FFA /* sound in Resources */ = {isa = PBXBuildFile; fileRef = F8BADE0A17E2DBD1007D1FFA /* sound */; };
@@ -743,8 +743,8 @@
 		F860A61017C712FE005BF4C9 /* libcurl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcurl.a; path = "../../cocos2d-x/cocos2dx/platform/third_party/ios/libraries/libcurl.a"; sourceTree = "<group>"; };
 		F895BDC717E2F56D0049EB6D /* VisibleRect.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = VisibleRect.cpp; path = ../Classes/VisibleRect.cpp; sourceTree = "<group>"; };
 		F895BDC817E2F56D0049EB6D /* VisibleRect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VisibleRect.h; path = ../Classes/VisibleRect.h; sourceTree = "<group>"; };
+		F8A44BC217E85DC400D81D1B /* chrosfighters.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = chrosfighters.json; sourceTree = "<group>"; };
 		F8BADE0617E2DBD1007D1FFA /* ani */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ani; sourceTree = "<group>"; };
-		F8BADE0717E2DBD1007D1FFA /* ComponentTest.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ComponentTest.json; sourceTree = "<group>"; };
 		F8BADE0817E2DBD1007D1FFA /* img */ = {isa = PBXFileReference; lastKnownFileType = folder; path = img; sourceTree = "<group>"; };
 		F8BADE0917E2DBD1007D1FFA /* particle */ = {isa = PBXFileReference; lastKnownFileType = folder; path = particle; sourceTree = "<group>"; };
 		F8BADE0A17E2DBD1007D1FFA /* sound */ = {isa = PBXFileReference; lastKnownFileType = folder; path = sound; sourceTree = "<group>"; };
@@ -1410,8 +1410,8 @@
 		78C7DDAA14EBA5050085D0C2 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				F8A44BC217E85DC400D81D1B /* chrosfighters.json */,
 				F8BADE0617E2DBD1007D1FFA /* ani */,
-				F8BADE0717E2DBD1007D1FFA /* ComponentTest.json */,
 				F8BADE0817E2DBD1007D1FFA /* img */,
 				F8BADE0917E2DBD1007D1FFA /* particle */,
 				F8BADE0A17E2DBD1007D1FFA /* sound */,
@@ -1807,7 +1807,6 @@
 				D446FD6E16102124000ADA7B /* Default@2x.png in Resources */,
 				15A3D9961682F7F9002FB0C5 /* CMakeLists.txt in Resources */,
 				F8BADE0C17E2DBD1007D1FFA /* ani in Resources */,
-				F8BADE0D17E2DBD1007D1FFA /* ComponentTest.json in Resources */,
 				F8BADE0E17E2DBD1007D1FFA /* img in Resources */,
 				F8BADE0F17E2DBD1007D1FFA /* particle in Resources */,
 				F8BADE1017E2DBD1007D1FFA /* sound in Resources */,
@@ -1816,6 +1815,7 @@
 				F83070E617E2DCBC0082F49F /* json_internalmap.inl in Resources */,
 				F83070E917E2DCBC0082F49F /* json_valueiterator.inl in Resources */,
 				F83070EB17E2DCBC0082F49F /* sconscript in Resources */,
+				F8A44BC317E85DC400D81D1B /* chrosfighters.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
