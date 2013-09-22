@@ -177,12 +177,6 @@
 		F860A60417C710CF005BF4C9 /* libcocos2dx.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F860A60317C710C3005BF4C9 /* libcocos2dx.a */; };
 		F860A60B17C71204005BF4C9 /* libcurl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F860A60D17C71204005BF4C9 /* libcurl.a */; };
 		F895BDC417E2F4FD0049EB6D /* VisibleRect.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F895BDC217E2F4FD0049EB6D /* VisibleRect.cpp */; };
-		F8A44BB917E85D1300D81D1B /* fishes in Resources */ = {isa = PBXBuildFile; fileRef = F8A44BB317E85D1300D81D1B /* fishes */; };
-		F8A44BBA17E85D1300D81D1B /* FishJoy2.json in Resources */ = {isa = PBXBuildFile; fileRef = F8A44BB417E85D1300D81D1B /* FishJoy2.json */; };
-		F8A44BBB17E85D1300D81D1B /* Images in Resources */ = {isa = PBXBuildFile; fileRef = F8A44BB517E85D1300D81D1B /* Images */; };
-		F8A44BBC17E85D1300D81D1B /* Misc in Resources */ = {isa = PBXBuildFile; fileRef = F8A44BB617E85D1300D81D1B /* Misc */; };
-		F8A44BBD17E85D1300D81D1B /* Particles in Resources */ = {isa = PBXBuildFile; fileRef = F8A44BB717E85D1300D81D1B /* Particles */; };
-		F8A44BBE17E85D1300D81D1B /* startMenu_1 in Resources */ = {isa = PBXBuildFile; fileRef = F8A44BB817E85D1300D81D1B /* startMenu_1 */; };
 		F8BADBEB17E2D827007D1FFA /* CCArmatureAnimation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F8BADB5317E2D827007D1FFA /* CCArmatureAnimation.cpp */; };
 		F8BADBEC17E2D827007D1FFA /* CCProcessBase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F8BADB5517E2D827007D1FFA /* CCProcessBase.cpp */; };
 		F8BADBED17E2D827007D1FFA /* CCTween.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F8BADB5717E2D827007D1FFA /* CCTween.cpp */; };
@@ -247,6 +241,12 @@
 		F8BADC2817E2D827007D1FFA /* json_writer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F8BADBE317E2D827007D1FFA /* json_writer.cpp */; };
 		F8BADC2917E2D827007D1FFA /* sconscript in Resources */ = {isa = PBXBuildFile; fileRef = F8BADBE517E2D827007D1FFA /* sconscript */; };
 		F8BADC2A17E2D827007D1FFA /* CCSSceneReader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F8BADBE917E2D827007D1FFA /* CCSSceneReader.cpp */; };
+		F8BADC3117E2D830007D1FFA /* fishes in Resources */ = {isa = PBXBuildFile; fileRef = F8BADC2B17E2D830007D1FFA /* fishes */; };
+		F8BADC3217E2D830007D1FFA /* FishJoy2.json in Resources */ = {isa = PBXBuildFile; fileRef = F8BADC2C17E2D830007D1FFA /* FishJoy2.json */; };
+		F8BADC3317E2D830007D1FFA /* Images in Resources */ = {isa = PBXBuildFile; fileRef = F8BADC2D17E2D830007D1FFA /* Images */; };
+		F8BADC3417E2D830007D1FFA /* Misc in Resources */ = {isa = PBXBuildFile; fileRef = F8BADC2E17E2D830007D1FFA /* Misc */; };
+		F8BADC3517E2D830007D1FFA /* Particles in Resources */ = {isa = PBXBuildFile; fileRef = F8BADC2F17E2D830007D1FFA /* Particles */; };
+		F8BADC3617E2D830007D1FFA /* startMenu in Resources */ = {isa = PBXBuildFile; fileRef = F8BADC3017E2D830007D1FFA /* startMenu */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -596,12 +596,6 @@
 		F860A60C17C71204005BF4C9 /* en */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = en; path = en.lproj/libcurl.a; sourceTree = "<group>"; };
 		F895BDC217E2F4FD0049EB6D /* VisibleRect.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = VisibleRect.cpp; path = ../Classes/VisibleRect.cpp; sourceTree = "<group>"; };
 		F895BDC317E2F4FD0049EB6D /* VisibleRect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VisibleRect.h; path = ../Classes/VisibleRect.h; sourceTree = "<group>"; };
-		F8A44BB317E85D1300D81D1B /* fishes */ = {isa = PBXFileReference; lastKnownFileType = folder; path = fishes; sourceTree = "<group>"; };
-		F8A44BB417E85D1300D81D1B /* FishJoy2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = FishJoy2.json; sourceTree = "<group>"; };
-		F8A44BB517E85D1300D81D1B /* Images */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Images; sourceTree = "<group>"; };
-		F8A44BB617E85D1300D81D1B /* Misc */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Misc; sourceTree = "<group>"; };
-		F8A44BB717E85D1300D81D1B /* Particles */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Particles; sourceTree = "<group>"; };
-		F8A44BB817E85D1300D81D1B /* startMenu_1 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = startMenu_1; sourceTree = "<group>"; };
 		F8BADB5317E2D827007D1FFA /* CCArmatureAnimation.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CCArmatureAnimation.cpp; sourceTree = "<group>"; };
 		F8BADB5417E2D827007D1FFA /* CCArmatureAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCArmatureAnimation.h; sourceTree = "<group>"; };
 		F8BADB5517E2D827007D1FFA /* CCProcessBase.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CCProcessBase.cpp; sourceTree = "<group>"; };
@@ -737,6 +731,12 @@
 		F8BADBE717E2D827007D1FFA /* writer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = writer.h; sourceTree = "<group>"; };
 		F8BADBE917E2D827007D1FFA /* CCSSceneReader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CCSSceneReader.cpp; sourceTree = "<group>"; };
 		F8BADBEA17E2D827007D1FFA /* CCSSceneReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCSSceneReader.h; sourceTree = "<group>"; };
+		F8BADC2B17E2D830007D1FFA /* fishes */ = {isa = PBXFileReference; lastKnownFileType = folder; path = fishes; sourceTree = "<group>"; };
+		F8BADC2C17E2D830007D1FFA /* FishJoy2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = FishJoy2.json; sourceTree = "<group>"; };
+		F8BADC2D17E2D830007D1FFA /* Images */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Images; sourceTree = "<group>"; };
+		F8BADC2E17E2D830007D1FFA /* Misc */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Misc; sourceTree = "<group>"; };
+		F8BADC2F17E2D830007D1FFA /* Particles */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Particles; sourceTree = "<group>"; };
+		F8BADC3017E2D830007D1FFA /* startMenu */ = {isa = PBXFileReference; lastKnownFileType = folder; path = startMenu; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1368,12 +1368,12 @@
 		78C7DDAA14EBA5050085D0C2 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				F8A44BB317E85D1300D81D1B /* fishes */,
-				F8A44BB417E85D1300D81D1B /* FishJoy2.json */,
-				F8A44BB517E85D1300D81D1B /* Images */,
-				F8A44BB617E85D1300D81D1B /* Misc */,
-				F8A44BB717E85D1300D81D1B /* Particles */,
-				F8A44BB817E85D1300D81D1B /* startMenu_1 */,
+				F8BADC2B17E2D830007D1FFA /* fishes */,
+				F8BADC2C17E2D830007D1FFA /* FishJoy2.json */,
+				F8BADC2D17E2D830007D1FFA /* Images */,
+				F8BADC2E17E2D830007D1FFA /* Misc */,
+				F8BADC2F17E2D830007D1FFA /* Particles */,
+				F8BADC3017E2D830007D1FFA /* startMenu */,
 			);
 			name = Resources;
 			path = ../Resources;
@@ -1770,12 +1770,12 @@
 				F8BADC2417E2D827007D1FFA /* json_internalmap.inl in Resources */,
 				F8BADC2717E2D827007D1FFA /* json_valueiterator.inl in Resources */,
 				F8BADC2917E2D827007D1FFA /* sconscript in Resources */,
-				F8A44BB917E85D1300D81D1B /* fishes in Resources */,
-				F8A44BBA17E85D1300D81D1B /* FishJoy2.json in Resources */,
-				F8A44BBB17E85D1300D81D1B /* Images in Resources */,
-				F8A44BBC17E85D1300D81D1B /* Misc in Resources */,
-				F8A44BBD17E85D1300D81D1B /* Particles in Resources */,
-				F8A44BBE17E85D1300D81D1B /* startMenu_1 in Resources */,
+				F8BADC3117E2D830007D1FFA /* fishes in Resources */,
+				F8BADC3217E2D830007D1FFA /* FishJoy2.json in Resources */,
+				F8BADC3317E2D830007D1FFA /* Images in Resources */,
+				F8BADC3417E2D830007D1FFA /* Misc in Resources */,
+				F8BADC3517E2D830007D1FFA /* Particles in Resources */,
+				F8BADC3617E2D830007D1FFA /* startMenu in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

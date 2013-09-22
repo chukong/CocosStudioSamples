@@ -30,7 +30,7 @@ bool HelloWorld::init()
         return false;
     }
     
-	CCNode *pGameScene = CCSSceneReader::sharedSceneReader()->createNodeWithSceneFile("DemoGameScene.json");
+	CCNode *pGameScene = CCSSceneReader::sharedSceneReader()->createNodeWithSceneFile("RPGGame.json");
 	this->addChild(pGameScene);
     
     CCMenuItemFont *itemBack = CCMenuItemFont::create("End", this, menu_selector(HelloWorld::menuCloseCallback));
