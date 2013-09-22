@@ -16,13 +16,8 @@ public:
     static cocos2d::CCScene* scene();
    
 	void menuCloseCallback(cocos2d::CCObject* pSender);
-    
-    void menuAttackCallback(cocos2d::CCObject* pSender);
 
-	void animationEvent1(CCArmature *pArmature,
-		MovementEventType movementType, const char *movementID);
-
-	void animationEvent2(CCArmature *pArmature,
+	void animationEvent(CCArmature *pArmature,
 		MovementEventType movementType, const char *movementID);
 
 	virtual void update(float delta);
@@ -33,9 +28,12 @@ public:
 private:
 	cocos2d::CCNode *m_pGameScene;
 
-	bool m_bStart;
-
-	float m_fPercent;
+	float m_fTime;
+	bool  m_bStart;
+	bool  m_bDead;
+	float m_fPercentage;
+	float m_fSpeed;
+	float m_fAttackDis;
 };
 
 #endif // __HELLOWORLD_SCENE_H__

@@ -29,23 +29,22 @@ bool HelloWorld::init()
     {
         return false;
     }
+	m_fTime = 0.0f;
 	m_bStart = false;
-	m_fPercent = 100.0f;
+	m_bDead = false;
+	m_fPercentage = 100.0f;
+	m_fSpeed = 4.0f;
+	m_fAttackDis = 120.0f;
 
 	m_pGameScene = NULL;
     
-	CCNode *pGameScene = CCSSceneReader::sharedSceneReader()->createNodeWithSceneFile("chrosfighters.json");
+	CCNode *pGameScene = CCSSceneReader::sharedSceneReader()->createNodeWithSceneFile("FightScene.json");
 	m_pGameScene = pGameScene;
 	this->addChild(pGameScene);
 
-	CCArmature *pArmature = (CCArmature*)(m_pGameScene->getChildByTag(10007)->getComponent("CCArmature")->getNode());
-	pArmature->getAnimation()->play("Animation0");
-
-	CCComRender *pUIRender = static_cast<CCComRender*>(pGameScene->getChildByTag(10004)->getComponent("GUIComponent"));
-	UILayer *pUILayer = static_cast<UILayer*>(pUIRender->getNode());
-
-	UIButton *pExitButton = static_cast<UIButton*>(pUILayer->getWidgetByName("Attack_Button"));
-	pExitButton->addReleaseEvent(this, coco_releaseselector(HelloWorld::menuAttackCallback));
+	CCArmature *pArmature = (CCArmature*)(m_pGameScene->getChildByTag(10005)->getComponent("CCArmature")->getNode());
+	pArmature->getAnimation()->play("run");
+	m_bStart = true;
 
     CCMenuItemFont *itemBack = CCMenuItemFont::create("End", this, menu_selector(HelloWorld::menuCloseCallback));
     itemBack->setColor(ccc3(255, 255, 255));
@@ -55,6 +54,8 @@ bool HelloWorld::init()
     menuBack->setZOrder(4);
     
     this->addChild(menuBack);
+
+	scheduleUpdate();
 
     return true;
 }
@@ -71,67 +72,51 @@ void HelloWorld::menuCloseCallback(CCObject* pSender)
 #endif
 }
 
-void HelloWorld::menuAttackCallback(cocos2d::CCObject* pSender)
-{
-    CCArmature *pArmature = (CCArmature*)(m_pGameScene->getChildByTag(10007)->getComponent("CCArmature")->getNode());
-	pArmature->getAnimation()->play("Animation1");
-	pArmature->getAnimation()->setMovementEventCallFunc(this,
-                                                        movementEvent_selector(HelloWorld::animationEvent1));
-}
-
-void HelloWorld::animationEvent1(CCArmature *pArmature,
+void HelloWorld::animationEvent(CCArmature *pArmature,
 					MovementEventType movementType, const char *movementID)
 {
+	CCArmature *pEnemy = (CCArmature*)(m_pGameScene->getChildByTag(10006)->getComponent("CCArmature")->getNode());
+
 	if (movementType == COMPLETE)
 	{
-		CCArmature *pArmature = (CCArmature*)(m_pGameScene->getChildByTag(10008)->getComponent("CCArmature")->getNode());
-		pArmature->getAnimation()->play("Animation1");
-		pArmature->getAnimation()->setMovementEventCallFunc(this,
-			movementEvent_selector(HelloWorld::animationEvent2));
-		m_bStart = true;
-		scheduleUpdate();
+		pEnemy->getAnimation()->play("death");
+		pArmature->getAnimation()->setMovementEventCallFunc(NULL, NULL);
+		m_bDead = true;
 	}
-}
-
-void HelloWorld::animationEvent2(CCArmature *pArmature,
-								 MovementEventType movementType, const char *movementID)
-{
-	if (movementType == COMPLETE)
-	{
-		CCComRender *pUIRender = static_cast<CCComRender*>(m_pGameScene->getChildByTag(10004)->getComponent("GUIComponent"));
-		UILayer *pUILayer = static_cast<UILayer*>(pUIRender->getNode());
-		UILoadingBar *pHPLoadingBar = static_cast<UILoadingBar*>(pUILayer->getWidgetByName("HP1"));
-		UILoadingBar *pMPLoadingBar = static_cast<UILoadingBar*>(pUILayer->getWidgetByName("Chakras1"));
-		pHPLoadingBar->setPercent(m_fPercent);
-		pMPLoadingBar->setPercent(m_fPercent);
-
-		CCArmature *pArmature = NULL;
-		pArmature = (CCArmature*)(m_pGameScene->getChildByTag(10008)->getComponent("CCArmature")->getNode());
-		pArmature->getAnimation()->play("Animation0");
-
-	    pArmature = (CCArmature*)(m_pGameScene->getChildByTag(10007)->getComponent("CCArmature")->getNode());
-		pArmature->getAnimation()->play("Animation0");
 	
-	}
 }
 
 void HelloWorld::update(float delta)
 {
-	if (m_bStart)
+	if(m_bStart)
 	{
-		CCComRender *pUIRender = static_cast<CCComRender*>(m_pGameScene->getChildByTag(10004)->getComponent("GUIComponent"));
-		UILayer *pUILayer = static_cast<UILayer*>(pUIRender->getNode());
-		UILoadingBar *pHPLoadingBar = static_cast<UILoadingBar*>(pUILayer->getWidgetByName("HP1"));
-		UILoadingBar *pMPLoadingBar = static_cast<UILoadingBar*>(pUILayer->getWidgetByName("Chakras1"));
+		CCArmature *pHero = (CCArmature*)(m_pGameScene->getChildByTag(10005)->getComponent("CCArmature")->getNode());
+		pHero->getParent()->setPositionX(pHero->getParent()->getPositionX() + m_fSpeed);
+		CCArmature *pEnemy = (CCArmature*)(m_pGameScene->getChildByTag(10006)->getComponent("CCArmature")->getNode());
 
-		pHPLoadingBar->setPercent(m_fPercent);
-		pMPLoadingBar->setPercent(m_fPercent);
-
-		m_fPercent -= 2.0f;
-        if (m_fPercent < 0.0f) {
+		if(ccpDistance(ccp(pHero->getParent()->getPositionX(), 0), ccp(pEnemy->getParent()->getPositionX(), 0)) < m_fAttackDis)
+		{	
+			pHero->getAnimation()->play("attack");
+			pHero->getAnimation()->setMovementEventCallFunc(this,
+                                                        movementEvent_selector(HelloWorld::animationEvent));
 			m_bStart = false;
-			m_fPercent = 100.0f;
+		}
+	}
+
+	if(m_bDead)
+	{
+		CCComRender *pUIRender = static_cast<CCComRender*>(m_pGameScene->getChildByTag(10007)->getComponent("GUIComponent"));
+		UILayer *pUILayer = static_cast<UILayer*>(pUIRender->getNode());
+		UILoadingBar *pHPLoadingBar = static_cast<UILoadingBar*>(pUILayer->getWidgetByName("hp02_LoadingBar"));
+		UILoadingBar *pMPLoadingBar = static_cast<UILoadingBar*>(pUILayer->getWidgetByName("mp02_LoadingBar"));
+
+		pHPLoadingBar->setPercent(m_fPercentage);
+		pMPLoadingBar->setPercent(m_fPercentage);
+
+		m_fPercentage -= 2.0f;
+        if (m_fPercentage < 0.0f) {
             unscheduleUpdate();
         }
 	}
+	
 }
