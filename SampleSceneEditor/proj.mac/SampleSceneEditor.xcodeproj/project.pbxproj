@@ -167,6 +167,12 @@
 		1AB87043175E0AFA005D39BF /* CCSkeletonAnimation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1AB87040175E0AFA005D39BF /* CCSkeletonAnimation.cpp */; };
 		1AFAF8CA16D3886000DB1158 /* AppDelegate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1AFAF8C616D3886000DB1158 /* AppDelegate.cpp */; };
 		1AFAF8CB16D3886000DB1158 /* HelloWorldScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1AFAF8C816D3886000DB1158 /* HelloWorldScene.cpp */; };
+		37875F8C17EF572B0050A749 /* ani in Resources */ = {isa = PBXBuildFile; fileRef = 37875F8617EF572B0050A749 /* ani */; };
+		37875F8D17EF572B0050A749 /* FightScene.json in Resources */ = {isa = PBXBuildFile; fileRef = 37875F8717EF572B0050A749 /* FightScene.json */; };
+		37875F8E17EF572B0050A749 /* img in Resources */ = {isa = PBXBuildFile; fileRef = 37875F8817EF572B0050A749 /* img */; };
+		37875F8F17EF572B0050A749 /* particle in Resources */ = {isa = PBXBuildFile; fileRef = 37875F8917EF572B0050A749 /* particle */; };
+		37875F9017EF572B0050A749 /* sound in Resources */ = {isa = PBXBuildFile; fileRef = 37875F8A17EF572B0050A749 /* sound */; };
+		37875F9117EF572B0050A749 /* ui in Resources */ = {isa = PBXBuildFile; fileRef = 37875F8B17EF572B0050A749 /* ui */; };
 		41BC70E415BF81A5006A0A6C /* AppController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 41BC70DA15BF81A5006A0A6C /* AppController.mm */; };
 		41BC70E515BF81A5006A0A6C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 41BC70DC15BF81A5006A0A6C /* InfoPlist.strings */; };
 		41BC70E615BF81A5006A0A6C /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41BC70DE15BF81A5006A0A6C /* MainMenu.xib */; };
@@ -174,12 +180,6 @@
 		41BC70E815BF81A5006A0A6C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 41BC70E115BF81A5006A0A6C /* main.m */; };
 		8C583FAD169DB6D500F63A10 /* CCEditBox.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8C583FA8169DB6D500F63A10 /* CCEditBox.cpp */; };
 		8C583FAE169DB6D500F63A10 /* CCEditBoxImplMac.mm in Sources */ = {isa = PBXBuildFile; fileRef = 8C583FAC169DB6D500F63A10 /* CCEditBoxImplMac.mm */; };
-		F83070F517E2DE840082F49F /* ani in Resources */ = {isa = PBXBuildFile; fileRef = F83070EF17E2DE840082F49F /* ani */; };
-		F83070F617E2DE840082F49F /* ComponentTest.json in Resources */ = {isa = PBXBuildFile; fileRef = F83070F017E2DE840082F49F /* ComponentTest.json */; };
-		F83070F717E2DE840082F49F /* img in Resources */ = {isa = PBXBuildFile; fileRef = F83070F117E2DE840082F49F /* img */; };
-		F83070F817E2DE840082F49F /* particle in Resources */ = {isa = PBXBuildFile; fileRef = F83070F217E2DE840082F49F /* particle */; };
-		F83070F917E2DE840082F49F /* sound in Resources */ = {isa = PBXBuildFile; fileRef = F83070F317E2DE840082F49F /* sound */; };
-		F83070FA17E2DE840082F49F /* ui in Resources */ = {isa = PBXBuildFile; fileRef = F83070F417E2DE840082F49F /* ui */; };
 		F830719617E2DE960082F49F /* CCArmatureAnimation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F83070FE17E2DE960082F49F /* CCArmatureAnimation.cpp */; };
 		F830719717E2DE960082F49F /* CCProcessBase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F830710017E2DE960082F49F /* CCProcessBase.cpp */; };
 		F830719817E2DE960082F49F /* CCTween.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F830710217E2DE960082F49F /* CCTween.cpp */; };
@@ -579,6 +579,12 @@
 		1AFAF8C816D3886000DB1158 /* HelloWorldScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = HelloWorldScene.cpp; path = ../Classes/HelloWorldScene.cpp; sourceTree = "<group>"; };
 		1AFAF8C916D3886000DB1158 /* HelloWorldScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HelloWorldScene.h; path = ../Classes/HelloWorldScene.h; sourceTree = "<group>"; };
 		1D6058910D05DD3D006BFB54 /* SampleSceneEditor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SampleSceneEditor.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		37875F8617EF572B0050A749 /* ani */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ani; sourceTree = "<group>"; };
+		37875F8717EF572B0050A749 /* FightScene.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = FightScene.json; sourceTree = "<group>"; };
+		37875F8817EF572B0050A749 /* img */ = {isa = PBXFileReference; lastKnownFileType = folder; path = img; sourceTree = "<group>"; };
+		37875F8917EF572B0050A749 /* particle */ = {isa = PBXFileReference; lastKnownFileType = folder; path = particle; sourceTree = "<group>"; };
+		37875F8A17EF572B0050A749 /* sound */ = {isa = PBXFileReference; lastKnownFileType = folder; path = sound; sourceTree = "<group>"; };
+		37875F8B17EF572B0050A749 /* ui */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ui; sourceTree = "<group>"; };
 		41BC70D915BF81A5006A0A6C /* AppController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppController.h; sourceTree = SOURCE_ROOT; };
 		41BC70DA15BF81A5006A0A6C /* AppController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = AppController.mm; sourceTree = SOURCE_ROOT; };
 		41BC70DD15BF81A5006A0A6C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = InfoPlist.strings; sourceTree = "<group>"; };
@@ -592,12 +598,6 @@
 		8C583FAA169DB6D500F63A10 /* CCEditBoxImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CCEditBoxImpl.h; path = CCEditBox/CCEditBoxImpl.h; sourceTree = "<group>"; };
 		8C583FAB169DB6D500F63A10 /* CCEditBoxImplMac.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CCEditBoxImplMac.h; path = CCEditBox/CCEditBoxImplMac.h; sourceTree = "<group>"; };
 		8C583FAC169DB6D500F63A10 /* CCEditBoxImplMac.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = CCEditBoxImplMac.mm; path = CCEditBox/CCEditBoxImplMac.mm; sourceTree = "<group>"; };
-		F83070EF17E2DE840082F49F /* ani */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ani; sourceTree = "<group>"; };
-		F83070F017E2DE840082F49F /* ComponentTest.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ComponentTest.json; sourceTree = "<group>"; };
-		F83070F117E2DE840082F49F /* img */ = {isa = PBXFileReference; lastKnownFileType = folder; path = img; sourceTree = "<group>"; };
-		F83070F217E2DE840082F49F /* particle */ = {isa = PBXFileReference; lastKnownFileType = folder; path = particle; sourceTree = "<group>"; };
-		F83070F317E2DE840082F49F /* sound */ = {isa = PBXFileReference; lastKnownFileType = folder; path = sound; sourceTree = "<group>"; };
-		F83070F417E2DE840082F49F /* ui */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ui; sourceTree = "<group>"; };
 		F83070FE17E2DE960082F49F /* CCArmatureAnimation.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CCArmatureAnimation.cpp; sourceTree = "<group>"; };
 		F83070FF17E2DE960082F49F /* CCArmatureAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCArmatureAnimation.h; sourceTree = "<group>"; };
 		F830710017E2DE960082F49F /* CCProcessBase.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CCProcessBase.cpp; sourceTree = "<group>"; };
@@ -1368,12 +1368,12 @@
 		78C7DDAA14EBA5050085D0C2 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				F83070EF17E2DE840082F49F /* ani */,
-				F83070F017E2DE840082F49F /* ComponentTest.json */,
-				F83070F117E2DE840082F49F /* img */,
-				F83070F217E2DE840082F49F /* particle */,
-				F83070F317E2DE840082F49F /* sound */,
-				F83070F417E2DE840082F49F /* ui */,
+				37875F8617EF572B0050A749 /* ani */,
+				37875F8717EF572B0050A749 /* FightScene.json */,
+				37875F8817EF572B0050A749 /* img */,
+				37875F8917EF572B0050A749 /* particle */,
+				37875F8A17EF572B0050A749 /* sound */,
+				37875F8B17EF572B0050A749 /* ui */,
 			);
 			name = Resources;
 			path = ../Resources;
@@ -1766,16 +1766,16 @@
 				41BC70E615BF81A5006A0A6C /* MainMenu.xib in Resources */,
 				41BC70E715BF81A5006A0A6C /* Icon.icns in Resources */,
 				15C157DA168315B300D239F2 /* CMakeLists.txt in Resources */,
-				F83070F517E2DE840082F49F /* ani in Resources */,
-				F83070F617E2DE840082F49F /* ComponentTest.json in Resources */,
-				F83070F717E2DE840082F49F /* img in Resources */,
-				F83070F817E2DE840082F49F /* particle in Resources */,
-				F83070F917E2DE840082F49F /* sound in Resources */,
-				F83070FA17E2DE840082F49F /* ui in Resources */,
 				F83071CE17E2DE960082F49F /* json_internalarray.inl in Resources */,
 				F83071CF17E2DE960082F49F /* json_internalmap.inl in Resources */,
 				F83071D217E2DE960082F49F /* json_valueiterator.inl in Resources */,
 				F83071D417E2DE960082F49F /* sconscript in Resources */,
+				37875F8C17EF572B0050A749 /* ani in Resources */,
+				37875F8D17EF572B0050A749 /* FightScene.json in Resources */,
+				37875F8E17EF572B0050A749 /* img in Resources */,
+				37875F8F17EF572B0050A749 /* particle in Resources */,
+				37875F9017EF572B0050A749 /* sound in Resources */,
+				37875F9117EF572B0050A749 /* ui in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
