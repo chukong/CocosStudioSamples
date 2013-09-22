@@ -167,6 +167,10 @@
 		1AB87043175E0AFA005D39BF /* CCSkeletonAnimation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1AB87040175E0AFA005D39BF /* CCSkeletonAnimation.cpp */; };
 		1AFAF8CA16D3886000DB1158 /* AppDelegate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1AFAF8C616D3886000DB1158 /* AppDelegate.cpp */; };
 		1AFAF8CB16D3886000DB1158 /* HelloWorldScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1AFAF8C816D3886000DB1158 /* HelloWorldScene.cpp */; };
+		37875F6217EF55960050A749 /* buildings in Resources */ = {isa = PBXBuildFile; fileRef = 37875F5E17EF55960050A749 /* buildings */; };
+		37875F6317EF55960050A749 /* envir in Resources */ = {isa = PBXBuildFile; fileRef = 37875F5F17EF55960050A749 /* envir */; };
+		37875F6417EF55960050A749 /* particle in Resources */ = {isa = PBXBuildFile; fileRef = 37875F6017EF55960050A749 /* particle */; };
+		37875F6517EF55960050A749 /* RPGGame.json in Resources */ = {isa = PBXBuildFile; fileRef = 37875F6117EF55960050A749 /* RPGGame.json */; };
 		41BC70E415BF81A5006A0A6C /* AppController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 41BC70DA15BF81A5006A0A6C /* AppController.mm */; };
 		41BC70E515BF81A5006A0A6C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 41BC70DC15BF81A5006A0A6C /* InfoPlist.strings */; };
 		41BC70E615BF81A5006A0A6C /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41BC70DE15BF81A5006A0A6C /* MainMenu.xib */; };
@@ -177,9 +181,6 @@
 		F860A60417C710CF005BF4C9 /* libcocos2dx.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F860A60317C710C3005BF4C9 /* libcocos2dx.a */; };
 		F860A60B17C71204005BF4C9 /* libcurl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F860A60D17C71204005BF4C9 /* libcurl.a */; };
 		F895BDDD17E2F8D00049EB6D /* VisibleRect.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F895BDDB17E2F8D00049EB6D /* VisibleRect.cpp */; };
-		F8BADD2517E2DB6C007D1FFA /* building in Resources */ = {isa = PBXBuildFile; fileRef = F8BADD2117E2DB6C007D1FFA /* building */; };
-		F8BADD2617E2DB6C007D1FFA /* DemoGameScene.json in Resources */ = {isa = PBXBuildFile; fileRef = F8BADD2217E2DB6C007D1FFA /* DemoGameScene.json */; };
-		F8BADD2717E2DB6C007D1FFA /* img in Resources */ = {isa = PBXBuildFile; fileRef = F8BADD2317E2DB6C007D1FFA /* img */; };
 		F8BADDC417E2DB7B007D1FFA /* CCArmatureAnimation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F8BADD2C17E2DB7B007D1FFA /* CCArmatureAnimation.cpp */; };
 		F8BADDC517E2DB7B007D1FFA /* CCProcessBase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F8BADD2E17E2DB7B007D1FFA /* CCProcessBase.cpp */; };
 		F8BADDC617E2DB7B007D1FFA /* CCTween.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F8BADD3017E2DB7B007D1FFA /* CCTween.cpp */; };
@@ -576,6 +577,10 @@
 		1AFAF8C816D3886000DB1158 /* HelloWorldScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = HelloWorldScene.cpp; path = ../Classes/HelloWorldScene.cpp; sourceTree = "<group>"; };
 		1AFAF8C916D3886000DB1158 /* HelloWorldScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HelloWorldScene.h; path = ../Classes/HelloWorldScene.h; sourceTree = "<group>"; };
 		1D6058910D05DD3D006BFB54 /* DemoGameScene.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DemoGameScene.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		37875F5E17EF55960050A749 /* buildings */ = {isa = PBXFileReference; lastKnownFileType = folder; path = buildings; sourceTree = "<group>"; };
+		37875F5F17EF55960050A749 /* envir */ = {isa = PBXFileReference; lastKnownFileType = folder; path = envir; sourceTree = "<group>"; };
+		37875F6017EF55960050A749 /* particle */ = {isa = PBXFileReference; lastKnownFileType = folder; path = particle; sourceTree = "<group>"; };
+		37875F6117EF55960050A749 /* RPGGame.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = RPGGame.json; sourceTree = "<group>"; };
 		41BC70D915BF81A5006A0A6C /* AppController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppController.h; sourceTree = SOURCE_ROOT; };
 		41BC70DA15BF81A5006A0A6C /* AppController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = AppController.mm; sourceTree = SOURCE_ROOT; };
 		41BC70DD15BF81A5006A0A6C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = InfoPlist.strings; sourceTree = "<group>"; };
@@ -593,9 +598,6 @@
 		F860A60C17C71204005BF4C9 /* en */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = en; path = en.lproj/libcurl.a; sourceTree = "<group>"; };
 		F895BDDB17E2F8D00049EB6D /* VisibleRect.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = VisibleRect.cpp; path = ../Classes/VisibleRect.cpp; sourceTree = "<group>"; };
 		F895BDDC17E2F8D00049EB6D /* VisibleRect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VisibleRect.h; path = ../Classes/VisibleRect.h; sourceTree = "<group>"; };
-		F8BADD2117E2DB6C007D1FFA /* building */ = {isa = PBXFileReference; lastKnownFileType = folder; path = building; sourceTree = "<group>"; };
-		F8BADD2217E2DB6C007D1FFA /* DemoGameScene.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = DemoGameScene.json; sourceTree = "<group>"; };
-		F8BADD2317E2DB6C007D1FFA /* img */ = {isa = PBXFileReference; lastKnownFileType = folder; path = img; sourceTree = "<group>"; };
 		F8BADD2C17E2DB7B007D1FFA /* CCArmatureAnimation.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CCArmatureAnimation.cpp; sourceTree = "<group>"; };
 		F8BADD2D17E2DB7B007D1FFA /* CCArmatureAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCArmatureAnimation.h; sourceTree = "<group>"; };
 		F8BADD2E17E2DB7B007D1FFA /* CCProcessBase.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CCProcessBase.cpp; sourceTree = "<group>"; };
@@ -1362,9 +1364,10 @@
 		78C7DDAA14EBA5050085D0C2 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				F8BADD2117E2DB6C007D1FFA /* building */,
-				F8BADD2217E2DB6C007D1FFA /* DemoGameScene.json */,
-				F8BADD2317E2DB6C007D1FFA /* img */,
+				37875F5E17EF55960050A749 /* buildings */,
+				37875F5F17EF55960050A749 /* envir */,
+				37875F6017EF55960050A749 /* particle */,
+				37875F6117EF55960050A749 /* RPGGame.json */,
 			);
 			name = Resources;
 			path = ../Resources;
@@ -1757,13 +1760,14 @@
 				41BC70E615BF81A5006A0A6C /* MainMenu.xib in Resources */,
 				41BC70E715BF81A5006A0A6C /* Icon.icns in Resources */,
 				15C157DA168315B300D239F2 /* CMakeLists.txt in Resources */,
-				F8BADD2517E2DB6C007D1FFA /* building in Resources */,
-				F8BADD2617E2DB6C007D1FFA /* DemoGameScene.json in Resources */,
-				F8BADD2717E2DB6C007D1FFA /* img in Resources */,
 				F8BADDFC17E2DB7B007D1FFA /* json_internalarray.inl in Resources */,
 				F8BADDFD17E2DB7B007D1FFA /* json_internalmap.inl in Resources */,
 				F8BADE0017E2DB7B007D1FFA /* json_valueiterator.inl in Resources */,
 				F8BADE0217E2DB7B007D1FFA /* sconscript in Resources */,
+				37875F6217EF55960050A749 /* buildings in Resources */,
+				37875F6317EF55960050A749 /* envir in Resources */,
+				37875F6417EF55960050A749 /* particle in Resources */,
+				37875F6517EF55960050A749 /* RPGGame.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
