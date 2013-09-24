@@ -81,7 +81,7 @@ bool MyContactFilter::collideByZOrder()
 		enemyZorder = enemy->getZOrder();
 	}
 	
-	if(abs(playerZorder - enemyZorder)<=30) return true;
+	if(abs(playerZorder-10 - enemyZorder)<=30) return true;
 	else return false;
 
 }

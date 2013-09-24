@@ -66,8 +66,6 @@ void Bag::initArmature()
 	armature->setPosition(ccp(CCDirector::sharedDirector()->getVisibleSize().width * 0.28,
 		CCDirector::sharedDirector()->getVisibleSize().height * 0.55));
 
-	UIWidget* root = dynamic_cast<UIWidget*>(uiLayer->getWidgetByName("ImageView"));
-
 	UIWidget* armatureWidget = UIWidget::create();
 	uiLayer->addWidget(armatureWidget);
 	armatureWidget->addCCNode(armature);
@@ -162,7 +160,7 @@ void Bag::touchEvent(CCObject* pSender,TouchEventType type)
 
 void Bag::touchBeganEvent(UIWidget* pEquip)
 {
-	startWidget = (UIWidget*)pEquip->getParent();
+	startGrid = (UIWidget*)pEquip->getParent();
 	
 	pEquip->retain();
 	pEquip->removeFromParent();
@@ -184,10 +182,31 @@ void Bag::touchEndedEvent(UIWidget* pEquip)
 	UIPanel* bagPanel = dynamic_cast<UIPanel*>(uiLayer->getWidgetByName("bagpanel"));
 	UIPanel* playerPanel = dynamic_cast<UIPanel*>(uiLayer->getWidgetByName("playerpanel"));
 
-	if(hitTestPanel(bagPanel,pEquip)) return;
-	if(hitTestPanel(playerPanel,pEquip)) return;
+	if(hitTestPanel(bagPanel,pEquip))
+    {
+        if (targetGrid->getChildren()->count()>0)
+        {
+            UIWidget* originEquip = (UIWidget*)targetGrid->getChildren()->objectAtIndex(0);
+            changeParent(startGrid, originEquip);
+            if(startGrid->getTag() >= 100) changeEquip(originEquip, startGrid);
+        }
+        else if(startGrid->getTag()>=100) unequipEquip();
+        changeParent(targetGrid, pEquip);
+        return;
+    }
+	if(hitTestPanel(playerPanel,pEquip))
+    {
+        if (targetGrid->getChildren()->count()>0)
+        {
+            UIWidget* originEquip = (UIWidget*)targetGrid->getChildren()->objectAtIndex(0);
+            changeParent(startGrid, originEquip);
+        }
+        changeParent(targetGrid, pEquip);
+        changeEquip(pEquip, targetGrid);
+        return;
+    }
 
-	changeParent(startWidget,pEquip);
+	changeParent(startGrid,pEquip);
 
 }
 bool Bag::hitTestPanel(UIPanel* pPanel,UIWidget* pEquip)
@@ -199,19 +218,11 @@ bool Bag::hitTestPanel(UIPanel* pPanel,UIWidget* pEquip)
 
 		if(grid->hitTest(pEquip->getPosition()))
 		{
-			if(!equipAndGridInSameType(pEquip,grid)) continue;
-
-			if(grid->getChildren()->count()>0) 
-				swapEquipGrid((UIWidget*)grid->getChildren()->objectAtIndex(0),pEquip);
-			else 
-			{
-				changeParent(grid,pEquip);
-				//if gird is a baggird and startWidget is a equip grid ,unequip euip
-				if((startWidget->getTag()>= 100)&&(grid->getTag()<100)) unequipEquip();
-			}
-			
-
-			return true;
+			if(equipAndGridInSameType(pEquip,grid))
+            {
+                targetGrid = grid;
+                return true;
+            }
 		}
 	}
 	return false;
@@ -219,36 +230,35 @@ bool Bag::hitTestPanel(UIPanel* pPanel,UIWidget* pEquip)
 bool Bag::equipAndGridInSameType(UIWidget* pEquip,UIWidget* pGrid)
 {
 	int gridType = pGrid->getTag()*0.01;
-	//pGrid is bagGrid
-	if(pGrid->getTag() < 100) return true;
-	else
-	{
-		if(gridType == (int(pEquip->getTag()*0.01)))
-		{
-			if((gridType == EQUIP_TYPE_SKILL) ||
-				(gridType ==	EQUIP_TYPE_SHIELD) ||
-					(gridType ==EQUIP_TYPE_OTHER));
-			else
-			{
-				changeEquip(pEquip,pGrid);
-			}
-			return true;
-		}
-	}
+	//pGrid is bagGrid and have no children
+	if((pGrid->getTag() < 100)&&(!pGrid->getChildren()->count())) return true;
+    //pgrid and startGrid is baggrid
+    else if((pGrid->getTag() <100)&&(startGrid->getTag() <100)) return true;
+    //pGrid and equip in same type
+	else if(gridType == (int(pEquip->getTag()*0.01))) return true;
+    else if(pGrid->getChildren()->count())
+    {
+        int originEquipType = ((UIWidget*) pGrid->getChildren()->objectAtIndex(0))->getTag()*0.01;
+        int newEquip = pEquip->getTag()*0.01;
+        if(originEquipType == newEquip) return true;
+    }
 	return false;
 }
 
 void Bag::swapEquipGrid(UIWidget* pExistEquip,UIWidget* newEquip)
 {
-
 	UIWidget* parentGrid = (UIWidget*)pExistEquip->getParent();	
-
-	changeParent(startWidget,pExistEquip);
+	changeParent(startGrid,pExistEquip);
 	changeParent(parentGrid,newEquip);
 }
 
 void Bag::changeEquip(UIWidget* pWeapon,UIWidget* pGrid)
 {
+    int equipType = pGrid->getTag()/100;
+    if (equipType == EQUIP_TYPE_SKILL) return;
+    if (equipType == EQUIP_TYPE_SHIELD) return;
+    if (equipType == EQUIP_TYPE_OTHER) return;
+
 	CCString* weaponName = CCString::createWithFormat("%stex.png",pWeapon->getName());
 	CCString* boneName = CCString::createWithFormat("%sbone",pGrid->getName());
 
@@ -258,8 +268,8 @@ void Bag::changeEquip(UIWidget* pWeapon,UIWidget* pGrid)
 }
 void Bag::unequipEquip()
 {
-	int equipType = startWidget->getTag() * 0.01;
-	CCString* boneName = CCString::createWithFormat("%sbone",startWidget->getName());
+	int equipType = startGrid->getTag() * 0.01;
+	CCString* boneName = CCString::createWithFormat("%sbone",startGrid->getName());
 	switch (equipType)
 	{
 	case EQUIP_TYPE_WEAPON:
@@ -274,7 +284,7 @@ void Bag::unequipEquip()
 		break;
 	default:
 		{
-			CCString* equipName = CCString::createWithFormat("%s0tex.png",startWidget->getName());
+			CCString* equipName = CCString::createWithFormat("%s0tex.png",startGrid->getName());
 			CCSkin* equipDefaultSkin = CCSkin::createWithSpriteFrameName(equipName->getCString());
 			armature->getBone(boneName->getCString())->addDisplay(equipDefaultSkin,0);
 			break;
@@ -296,13 +306,14 @@ void Bag::changeParent(UIWidget* pGrid,UIWidget* pEquip)
 
 void Bag::closeCallback(CCObject* pSender)
 {
-	CCArmatureDataManager::purge();
-	CCSSceneReader::sharedSceneReader()->purgeSceneReader();
-	UIActionManager::shareManager()->purgeUIActionManager();
-	UIHelper::instance()->purgeUIHelper();
+	cocos2d::extension::CCArmatureDataManager::purge();
+	cocos2d::extension::CCSSceneReader::sharedSceneReader()->purgeSceneReader();
+	cocos2d::extension::ActionManager::shareManager()->purgeActionManager();
+	cocos2d::extension::UIHelper::instance()->purgeUIHelper();
+#if (CC_TARGET_PLATFORM != CC_PLATFORM_ANDROID)
     CCDirector::sharedDirector()->end();
-    
-#if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
+#endif
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS || CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
     exit(0);
 #endif
 }

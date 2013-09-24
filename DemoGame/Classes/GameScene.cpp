@@ -238,7 +238,16 @@ bool GameOverScene::init()
 
 void GameOverScene::menuCloseCallback(CCObject* pSender)
 {
-	CCDirector::sharedDirector()->end();
+    cocos2d::extension::CCArmatureDataManager::purge();
+    cocos2d::extension::CCSSceneReader::sharedSceneReader()->purgeSceneReader();
+    cocos2d::extension::ActionManager::shareManager()->purgeActionManager();
+	cocos2d::extension::UIHelper::instance()->purgeUIHelper();
+#if (CC_TARGET_PLATFORM != CC_PLATFORM_ANDROID)
+    CCDirector::sharedDirector()->end();
+#endif
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS || CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
+    exit(0);
+#endif
 }
 
 VictoryScene* VictoryScene::create()

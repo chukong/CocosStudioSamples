@@ -42,7 +42,8 @@ private:
 		cocos2d::extension::UIWidget* pEquip);
 
 	cocos2d::extension::UILayer* uiLayer;
-	cocos2d::extension::UIWidget* startWidget;
+	cocos2d::extension::UIWidget* startGrid;
+    cocos2d::extension::UIWidget* targetGrid;
 	cocos2d::extension::CCArmature* armature;
 };
 

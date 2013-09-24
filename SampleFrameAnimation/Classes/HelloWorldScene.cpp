@@ -115,13 +115,14 @@ bool HelloWorld::init()
 
 void HelloWorld::menuCloseCallback(CCObject* pSender)
 {
-    cocos2d::extension::CCArmatureDataManager::purge();
+	cocos2d::extension::CCArmatureDataManager::purge();
 	cocos2d::extension::CCSSceneReader::sharedSceneReader()->purgeSceneReader();
-	cocos2d::extension::UIActionManager::shareManager()->purgeUIActionManager();
+	cocos2d::extension::ActionManager::shareManager()->purgeActionManager();
 	cocos2d::extension::UIHelper::instance()->purgeUIHelper();
+#if (CC_TARGET_PLATFORM != CC_PLATFORM_ANDROID)
     CCDirector::sharedDirector()->end();
-
-#if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
+#endif
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS || CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
     exit(0);
 #endif
 }
