@@ -20,10 +20,10 @@ public:
     // implement the "static node()" method manually
     CREATE_FUNC(HelloWorld);
 private:
-	cocos2d::extension::CCArmature* dragon;
-	cocos2d::extension::CCArmature* robot;
-	int countDragon;
-	int countRobot;
+	cocos2d::extension::CCArmature* tauren;
+	cocos2d::extension::CCArmature* hero;
+	int countTauren;
+	int countHero;
 
 };
 

@@ -230,7 +230,7 @@ void TestColliderDetector::destroyCPBody(cpBody *body)
 
 void TestColliderDetector::onExit()
 {
-	destroyCPBody(armature2->getCPBody());
+	destroyCPBody(armature2->getBody());
 	destroyCPBody(bullet->getCPBody());
     
 	cpSpaceFree(space);
@@ -278,7 +278,7 @@ void TestColliderDetector::initWorld()
     //! define armature2's body,get shape from armature data
 	body = cpBodyNew(INFINITY, INFINITY);
 	cpSpaceAddBody(space, body);
-	armature2->setCPBody(body);
+	armature2->setBody(body);
     
 	shape = body->shapeList_private;
 	while(shape){
