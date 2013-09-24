@@ -41,18 +41,10 @@ public:
     virtual void onEnter();
     virtual void onExit();
     
-    /*
-	virtual void runThisTest();    	
-    
-    void toCocosGUIScene(CCObject* pSender);
-    void toCocosGUIExamplesStartScene(CCObject* pSender);
-    void toCocosGUIExamplesEquipScene(CCObject* pSender);
-     */
     // a selector callback
-    void menuCloseCallback(CCObject* pSender);
+    void menuCloseCallback(CCObject* pSender, TouchEventType type);
     
-    void attachWithIMEEvent(CCObject* pSender);
-    void detachWithIMEEvent(CCObject* pSender);
+    void textFieldEvent(CCObject* pSender, TextFiledEventType type);    
     
 protected:
     UILayer* m_pUILayer;

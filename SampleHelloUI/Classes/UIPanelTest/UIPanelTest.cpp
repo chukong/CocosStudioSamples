@@ -52,10 +52,10 @@ bool UIPanelTest::init()
         button->setPosition(ccp(button->getSize().width / 2, layout->getSize().height - button->getSize().height / 2));
         layout->addChild(button);
         
-        UITextButton* textButton = UITextButton::create();
+        UIButton* textButton = UIButton::create();
         textButton->setTouchEnabled(true);
         textButton->loadTextures("cocosgui/backtotopnormal.png", "cocosgui/backtotoppressed.png", "");
-        textButton->setTitleText("Text Button");
+        textButton->setText("Text Button");
         textButton->setPosition(ccp(layout->getSize().width / 2, layout->getSize().height / 2));
         layout->addChild(textButton);
         
@@ -118,10 +118,10 @@ bool UIPanelTest_Color::init()
         button->setPosition(ccp(button->getSize().width / 2, layout->getSize().height - button->getSize().height / 2));
         layout->addChild(button);
         
-        UITextButton* textButton = UITextButton::create();
+        UIButton* textButton = UIButton::create();
         textButton->setTouchEnabled(true);
         textButton->loadTextures("cocosgui/backtotopnormal.png", "cocosgui/backtotoppressed.png", "");
-        textButton->setTitleText("Text Button");
+        textButton->setText("Text Button");
         textButton->setPosition(ccp(layout->getSize().width / 2, layout->getSize().height / 2));
         layout->addChild(textButton);
         
@@ -183,10 +183,10 @@ bool UIPanelTest_Gradient::init()
         button->setPosition(ccp(button->getSize().width / 2, layout->getSize().height - button->getSize().height / 2));
         layout->addChild(button);
         
-        UITextButton* textButton = UITextButton::create();
+        UIButton* textButton = UIButton::create();
         textButton->setTouchEnabled(true);
         textButton->loadTextures("cocosgui/backtotopnormal.png", "cocosgui/backtotoppressed.png", "");
-        textButton->setTitleText("Text Button");
+        textButton->setText("Text Button");
         textButton->setPosition(ccp(layout->getSize().width / 2, layout->getSize().height / 2));
         layout->addChild(textButton);
         
@@ -248,10 +248,10 @@ bool UIPanelTest_BackGroundImage::init()
         button->setPosition(ccp(button->getSize().width / 2, layout->getSize().height - button->getSize().height / 2));
         layout->addChild(button);
         
-        UITextButton* textButton = UITextButton::create();
+        UIButton* textButton = UIButton::create();
         textButton->setTouchEnabled(true);
         textButton->loadTextures("cocosgui/backtotopnormal.png", "cocosgui/backtotoppressed.png", "");
-        textButton->setTitleText("Text Button");
+        textButton->setText("Text Button");
         textButton->setPosition(ccp(layout->getSize().width / 2, layout->getSize().height / 2));
         layout->addChild(textButton);
         
@@ -313,10 +313,10 @@ bool UIPanelTest_BackGroundImage_Scale9::init()
         button->setPosition(ccp(button->getSize().width / 2, layout->getSize().height - button->getSize().height / 2));
         layout->addChild(button);
         
-        UITextButton* textButton = UITextButton::create();
+        UIButton* textButton = UIButton::create();
         textButton->setTouchEnabled(true);
         textButton->loadTextures("cocosgui/backtotopnormal.png", "cocosgui/backtotoppressed.png", "");
-        textButton->setTitleText("Text Button");
+        textButton->setText("Text Button");
         textButton->setPosition(ccp(layout->getSize().width / 2, layout->getSize().height / 2));
         layout->addChild(textButton);
         
@@ -362,6 +362,7 @@ bool UIPanelTest_Layout_Linear_Vertical::init()
         
         // Create the layout
         Layout* layout = Layout::create();
+        layout->setLayoutType(LAYOUT_LINEAR_VERTICAL);
         layout->setSize(CCSizeMake(280, 150));        
         CCSize backgroundSize = background->getSize();
         layout->setPosition(ccp((widgetSize.width - backgroundSize.width) / 2 +
@@ -382,10 +383,10 @@ bool UIPanelTest_Layout_Linear_Vertical::init()
         lp1->setMargin(UIMargin(0, 5, 0, 10));
         
         
-        UITextButton* textButton = UITextButton::create();
+        UIButton* textButton = UIButton::create();
         textButton->setTouchEnabled(true);
         textButton->loadTextures("cocosgui/backtotopnormal.png", "cocosgui/backtotoppressed.png", "");
-        textButton->setTitleText("Text Button");
+        textButton->setText("Text Button");
         layout->addChild(textButton);
         
         LinearLayoutParameter* lp2 = LinearLayoutParameter::create();
@@ -407,9 +408,7 @@ bool UIPanelTest_Layout_Linear_Vertical::init()
         lp3->setMargin(UIMargin(0, 10, 0, 10));
         
         
-        LinearVerticalLayoutExecutant* exe = LinearVerticalLayoutExecutant::create();
-        layout->setLayoutExecutant(exe);
-        exe->doLayout();
+        layout->doLayout();
         
         return true;
     }
@@ -446,6 +445,7 @@ bool UIPanelTest_Layout_Linear_Horizontal::init()
         
         // Create the layout
         Layout* layout = Layout::create();
+        layout->setLayoutType(LAYOUT_LINEAR_HORIZONTAL);
         layout->setClippingEnabled(true);
         layout->setSize(CCSizeMake(280, 150));        
         CCSize backgroundSize = background->getSize();
@@ -466,10 +466,10 @@ bool UIPanelTest_Layout_Linear_Horizontal::init()
         lp1->setMargin(UIMargin(0, 10, 0, 10));
         
         
-        UITextButton* textButton = UITextButton::create();
+        UIButton* textButton = UIButton::create();
         textButton->setTouchEnabled(true);
         textButton->loadTextures("cocosgui/backtotopnormal.png", "cocosgui/backtotoppressed.png", "");
-        textButton->setTitleText("Text Button");
+        textButton->setText("Text Button");
         layout->addChild(textButton);
         
         LinearLayoutParameter* lp2 = LinearLayoutParameter::create();
@@ -489,11 +489,8 @@ bool UIPanelTest_Layout_Linear_Horizontal::init()
         button_scale9->setLayoutParameter(lp3);
         lp3->setGravity(LINEAR_GRAVITY_CENTER_VERTICAL);
         lp3->setMargin(UIMargin(0, 10, 0, 10));
-        
-        
-        LinearHorizontalLayoutExecutant* exe = LinearHorizontalLayoutExecutant::create();
-        layout->setLayoutExecutant(exe);
-        exe->doLayout();
+                        
+        layout->doLayout();
         
         return true;
     }
@@ -530,6 +527,7 @@ bool UIPanelTest_Layout_Relative::init()
         
         // Create the layout
         Layout* layout = Layout::create();
+        layout->setLayoutType(LAYOUT_RELATIVE);
         layout->setSize(CCSizeMake(280, 150));
         layout->setBackGroundColorType(LAYOUT_COLOR_SOLID);
         layout->setBackGroundColor(ccGREEN);
@@ -551,10 +549,10 @@ bool UIPanelTest_Layout_Relative::init()
 //        rp1->setMargin(UIMargin(0, 10, 0, 10));
         
         
-        UITextButton* textButton = UITextButton::create();
+        UIButton* textButton = UIButton::create();
         textButton->setTouchEnabled(true);
         textButton->loadTextures("cocosgui/backtotopnormal.png", "cocosgui/backtotoppressed.png", "");
-        textButton->setTitleText("Text Button");
+        textButton->setText("Text Button");
         layout->addChild(textButton);
         
         RelativeLayoutParameter* rp2 = RelativeLayoutParameter::create();
@@ -572,11 +570,8 @@ bool UIPanelTest_Layout_Relative::init()
         RelativeLayoutParameter* rp3 = RelativeLayoutParameter::create();
         textButton->setLayoutParameter(rp3);
         rp3->setAlign(RELATIVE_ALIGN_PARENT_RIGHT);
-        
-        
-        RelativeLayoutExecutant* exe = RelativeLayoutExecutant::create();
-        layout->setLayoutExecutant(exe);        
-        exe->doLayout();
+                        
+        layout->doLayout();
         
         return true;
     }

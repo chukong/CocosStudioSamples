@@ -48,34 +48,15 @@ void CocosGUIExamplesPageScene::onEnter()
     label->setFontName(font);
     label->setFontSize(32);
     label->setAnchorPoint(ccp(0.5f, -1));
-    label->setPosition(ccp(winSize.width / 2.0f, winSize.height / 2.0f + label->getContentSize().height * 1.5));
+    label->setPosition(ccp(winSize.width / 2.0f, winSize.height / 2.0f + label->getSize().height * 1.5));
     m_pUILayer->addWidget(label);
-    
-    /*
-    // left button
-    UIButton* left_button = UIButton::create();
-    left_button->setTouchEnable(true);
-    left_button->loadTextures("cocosgui/UITest/b1.png", "cocosgui/UITest/b2.png", "");
-    float left_button_width = left_button->getContentSize().width;
-    left_button->setPosition(ccp(left_button_width - left_button_width / 2, m_pUILayer->getContentSize().height / 2));
-    left_button->addReleaseEvent(this, coco_releaseselector(CocosGUIExamplesPageScene::toCocosGUIExamplesMapScene));
-    m_pUILayer->addWidget(left_button);
-    
-    // right button
-    UIButton* right_button = UIButton::create();
-    right_button->setTouchEnable(true);
-    right_button->loadTextures("cocosgui/UITest/f1.png", "cocosgui/UITest/f2.png", "");
-    right_button->setPosition(ccp(m_pUILayer->getContentSize().width - right_button->getContentSize().width / 2, m_pUILayer->getContentSize().height / 2));
-    right_button->addReleaseEvent(this, coco_releaseselector(CocosGUIExamplesPageScene::toCocosGUIExamplesPageSpecialScene));
-    m_pUILayer->addWidget(right_button);
-     */
     
     // exit button
     UIButton* exit_button = UIButton::create();
     exit_button->setTouchEnabled(true);
     exit_button->loadTextures("CloseNormal.png", "CloseSelected.png", "");
-    exit_button->setPosition(ccp(m_pUILayer->getContentSize().width - exit_button->getContentSize().width, exit_button->getContentSize().height));
-    exit_button->addReleaseEvent(this, coco_releaseselector(CocosGUIExamplesPageScene::menuCloseCallback));
+    exit_button->setPosition(ccp(m_pUILayer->getContentSize().width - exit_button->getSize().width, exit_button->getSize().height));
+    exit_button->addTouchEventListener(this, toucheventselector(CocosGUIExamplesPageScene::menuCloseCallback));
     m_pUILayer->addWidget(exit_button);
 }
 
@@ -85,40 +66,22 @@ void CocosGUIExamplesPageScene::onExit()
     
     CCSSceneReader::sharedSceneReader()->purgeSceneReader();
     UIHelper::purgeUIHelper();
-    UIActionManager::purgeUIActionManager();
+	cocos2d::extension::ActionManager::shareManager()->purgeActionManager();
     
     CCScene::onExit();
 }
 
-void CocosGUIExamplesPageScene::menuCloseCallback(CCObject* pSender)
+void CocosGUIExamplesPageScene::menuCloseCallback(CCObject* pSender, TouchEventType type)
 {
-    CCDirector::sharedDirector()->end();
-    
+    if (type == TOUCH_EVENT_ENDED)
+    {
+        CCDirector::sharedDirector()->end();
+        
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
-    exit(0);
+        exit(0);
 #endif
+    }
 }
-
-/*
-void CocosGUIExamplesPageScene::runThisTest()
-{
-    CCDirector::sharedDirector()->replaceScene(this);
-}
-
-void CocosGUIExamplesPageScene::toCocosGUIExamplesMapScene(CCObject *pSender)
-{
-    CocosGUIExamplesMapScene* pScene = new CocosGUIExamplesMapScene();
-    pScene->runThisTest();
-    pScene->release();    
-}
-
-void CocosGUIExamplesPageScene::toCocosGUIExamplesPageSpecialScene(CCObject *pSender)
-{
-    CocosGUIExamplesPageSpecialScene* pScene = new CocosGUIExamplesPageSpecialScene();
-    pScene->runThisTest();
-    pScene->release();
-}
- */
 
 void CocosGUIExamplesPageScene::PageInit()
 {
@@ -132,27 +95,27 @@ void CocosGUIExamplesPageScene::PageInit()
     // page view add to page layout
     UIPageView* pageView = UIPageView::create();
     pageView->setTouchEnabled(true);
-    pageView->setSize(page_layout->getContentSize());
+    pageView->setSize(page_layout->getSize());
     
     // layout add to page view
     for (int i = 0; i < 4; ++i)
     {
         Layout* layout = Layout::create();
-        layout->setSize(pageView->getContentSize());
+        layout->setSize(pageView->getSize());
         
         UIImageView* imageView = UIImageView::create();
         imageView->setTouchEnabled(true);
         imageView->loadTexture(page_image_textures[i]);
-        imageView->setPosition(ccp(layout->getContentSize().width / 2, layout->getContentSize().height / 2));
+        imageView->setPosition(ccp(layout->getSize().width / 2, layout->getSize().height / 2));
         layout->addChild(imageView);                
         
         pageView->addPage(layout);
-    }    
-    pageView->addPageTurningEvent(this, coco_PageView_PageTurning_selector(CocosGUIExamplesPageScene::pageTurningEvent));
+    }
+    pageView->addEventListener(this, pagevieweventselector(CocosGUIExamplesPageScene::pageViewEvent));    
     page_layout->addChild(pageView);
 }
 
-void CocosGUIExamplesPageScene::pageTurningEvent(CCObject* pSender)
+void CocosGUIExamplesPageScene::pageViewEvent(CCObject *pSender, PageViewEventType type)
 {
     UIPageView* pageView = dynamic_cast<UIPageView*>(pSender);
     int page = pageView->getPage() + 1;
@@ -170,7 +133,7 @@ void CocosGUIExamplesPageScene::pageTurningEvent(CCObject* pSender)
     {
         UIWidget* child = dynamic_cast<UIWidget*>(page_alert_bottom_layout->getChildren()->objectAtIndex(i));
         child->setVisible(false);
-    }    
+    }
     UIImageView* page_imageview = dynamic_cast<UIImageView*>(page_root->getChildByName(CCString::createWithFormat("page_%d_imageview", page)->getCString()));
     page_imageview->setVisible(true);
 }

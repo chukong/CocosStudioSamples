@@ -32,7 +32,14 @@
 USING_NS_CC;
 USING_NS_CC_EXT;
 
-#define WEAPON_ITEM_LAYOUT_TAG                           2100
+#define WEAPON_ITEM_LAYOUT_TAG  1
+
+#define SHOP_ITEM_LAYOUT_TAG        100
+#define RANKING_ITEM_LAYOUT_TAG     200
+
+#define COUPON_MAX                  300
+#define BINDING_MAX                 400
+#define MEDAL_MAX                   500
 
 class CocosGUIExamplesWeaponScene : public CCScene
 {        
@@ -43,32 +50,27 @@ public:
     virtual void onEnter();
     virtual void onExit();
     
-//    virtual void runThisTest();
-    
 protected:
     // a selector callback
-    void menuCloseCallback(CCObject* pSender);
-    /*
-    void toCocosGUIExamplesEquipScene(CCObject* pSender);
-    void toCocosGUIExamplesMapScene(CCObject* pSender);
-     */
+    void menuCloseCallback(CCObject* pSender, TouchEventType type);
     
-    // weapon introduce
-    void WeaponInit();
-    void create();
+    // shop
+    void ShopInit();
     
-    void itemTouch(CCObject* pObject);
-    void itemShowDetail(UIWidget* widget);
-    
-    void close(CCObject* pObject);
-    
-    void BuyInit();
-    void BuyLogic(CCObject* pSender);
-    void BuyCanel(CCObject* pSender);
-    void BuyOk(CCObject* pSender);
+    // popup
+    void popupInit();
+    void popupClose(CCObject* pSender, TouchEventType type);
+    void popupLogic(CCObject* pSender, TouchEventType type);
+    void popupCalculate(CCObject* pSender, TouchEventType type);    
     
 protected:
-    UILayer* m_pUILayer;        
+    UILayer* m_pUILayer;
+    
+    int m_nIndex;
+    int m_nCount;
+    int m_nCoupon;
+    int m_nBinding;
+    int m_nMedal;
 };
 
 #endif /* defined(__TestCpp__CocosGUIExamplesWeaponScene__) */
