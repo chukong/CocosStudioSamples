@@ -53,24 +53,22 @@ bool HelloWorld::init()
     /////////////////////////////
     // init info
 	setTouchEnabled(true);
-	countDragon = 0;
-	countRobot = 0;
+	countTauren = 0;
+	countHero = 0;
 	//load armature data
-	CCArmatureDataManager::sharedArmatureDataManager()->addArmatureFileInfo("Dragon.png","Dragon.plist","Dragon.xml");
-	CCArmatureDataManager::sharedArmatureDataManager()->addArmatureFileInfo("robot.png","robot.plist","robot.xml");
-	//createa dragon flash armature
-	dragon = CCArmature::create("Dragon");
-	dragon->setPosition(ccp(visibleSize.width * 0.7,visibleSize.height * 0.5 -150));
-	dragon->getAnimation()->playByIndex(0);
-	dragon->getAnimation()->setSpeedScale(0.3);
-	dragon->setScale(0.7);
-	this->addChild(dragon,1);
-	//create robot flash armature
-	robot = CCArmature::create("robot");
-	robot->setPosition(ccp(visibleSize.width * 0.3,visibleSize.height * 0.5));
-	robot->getAnimation()->playByIndex(0);
-	robot->setScale(0.8);
-	this->addChild(robot,1);
+	CCArmatureDataManager::sharedArmatureDataManager()->addArmatureFileInfo("tauren.png","tauren.plist","tauren.xml");
+	CCArmatureDataManager::sharedArmatureDataManager()->addArmatureFileInfo("girl.png","girl.plist","girl.xml");
+	//createa tauren flash armature
+	tauren = CCArmature::create("tauren");
+	tauren->setPosition(ccp(visibleSize.width * 0.7,visibleSize.height * 0.5));
+	tauren->getAnimation()->playByIndex(0);
+	tauren->setScale(0.7);
+	this->addChild(tauren,1);
+	//create hero flash armature
+	hero = CCArmature::create("girl");
+	hero->setPosition(ccp(visibleSize.width * 0.3,visibleSize.height * 0.5));
+	hero->getAnimation()->playByIndex(0);
+	this->addChild(hero,1);
 	
 
     // create and initialize a label
@@ -87,13 +85,13 @@ bool HelloWorld::init()
 bool HelloWorld::ccTouchBegan(CCTouch *pTouch, CCEvent *pEvent)
 {
 	//change animation index
-	countDragon++;
-	countDragon = countDragon % dragon->getAnimation()->getMovementCount();
-	countRobot++;
-	countRobot = countRobot % robot->getAnimation()->getMovementCount();
+	countTauren++;
+	countTauren = countTauren % tauren->getAnimation()->getMovementCount();
+	countHero++;
+	countHero = countHero % hero->getAnimation()->getMovementCount();
 	//set change to armature
-	dragon->getAnimation()->playByIndex(countDragon);
-	robot->getAnimation()->playByIndex(countRobot);
+	tauren->getAnimation()->playByIndex(countTauren);
+	hero->getAnimation()->playByIndex(countHero);
 	return false;
 }
 
