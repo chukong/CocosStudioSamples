@@ -34,7 +34,7 @@ bool HelloWorld::init()
 	this->addChild(pGameScene);
     
     CCMenuItemFont *itemBack = CCMenuItemFont::create("End", this, menu_selector(HelloWorld::menuCloseCallback));
-    itemBack->setColor(ccc3(0, 0, 0));
+    itemBack->setColor(ccc3(255, 255, 255));
     itemBack->setPosition(ccp(VisibleRect::rightBottom().x - 50, VisibleRect::rightBottom().y + 25));
     CCMenu *menuBack = CCMenu::create(itemBack, NULL);
     menuBack->setPosition(CCPointZero);
