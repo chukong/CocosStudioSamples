@@ -1,5 +1,5 @@
 #include "HelloWorldScene.h"
-#include "TestChangeEquip.h"
+#include "Bag.h"
 
 USING_NS_CC;
 
@@ -28,11 +28,9 @@ bool HelloWorld::init()
         return false;
     }
     
-   
-	////////////////////////////////////////
-	TestChangeEquip* changeEquipTest = new TestChangeEquip();
-	this->addChild(changeEquipTest);
-	////////////////////////////////////////
+	Bag* bag = Bag::create();
+	this->addChild(bag);
+
     
     return true;
 }

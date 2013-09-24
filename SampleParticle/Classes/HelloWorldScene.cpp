@@ -1,6 +1,9 @@
 #include "HelloWorldScene.h"
-#include "ParticleCowboy.h"
-USING_NS_CC;
+#include "cocos2d.h"
+#include "cocos-ext.h"
+
+using namespace cocos2d;
+using namespace cocos2d::extension;
 
 CCScene* HelloWorld::scene()
 {
@@ -51,19 +54,14 @@ bool HelloWorld::init()
 
     /////////////////////////////
     // 3. add your codes below...
-	ParticleCowboy* cowboy = new ParticleCowboy();
-	addChild(cowboy,1);
+	
+	CCArmatureDataManager::sharedArmatureDataManager()->addArmatureFileInfo("hero/Hero.ExportJson");
+	CCArmature* armature = CCArmature::create("Hero");
+	armature->getAnimation()->play("attack");
+	armature->setScale(1.5);
+	armature->setPosition(ccp(visibleSize.width*0.25, visibleSize.height*0.25));
 
-
-    // add "HelloWorld" splash screen"
-    CCSprite* pSprite = CCSprite::create("list_enemy.png");
-
-    // position the sprite on the center of the screen
-    pSprite->setPosition(ccp(visibleSize.width/2 + origin.x, visibleSize.height/2 + origin.y));
-    pSprite->setScaleX(visibleSize.width / 500);
-    pSprite->setScaleY(visibleSize.height/391);
-    // add the sprite as a child to this layer
-    this->addChild(pSprite, 0);
+	addChild(armature);
     
     return true;
 }

@@ -16,7 +16,7 @@
 
 class ContactListener;
 
-class TestColliderDetector : public CCLayer
+class TestColliderDetector : public cocos2d::CCLayer
 {
 public:
 	~TestColliderDetector();
