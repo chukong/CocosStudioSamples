@@ -31,7 +31,7 @@ bool AppDelegate::applicationDidFinishLaunching() {
 		pDirector->setContentScaleFactor(resourceSize.height/designSize.height);
 	}
 
-	CCEGLView::sharedOpenGLView()->setDesignResolutionSize(designSize.width, designSize.height, kResolutionNoBorder);
+	CCEGLView::sharedOpenGLView()->setDesignResolutionSize(designSize.width, designSize.height, kResolutionShowAll);
 	
     // turn on display FPS
     pDirector->setDisplayStats(true);
