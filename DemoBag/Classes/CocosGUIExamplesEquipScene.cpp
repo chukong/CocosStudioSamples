@@ -62,7 +62,7 @@ void CocosGUIExamplesEquipScene::onExit()
     
     CCSSceneReader::sharedSceneReader()->purgeSceneReader();
     UIHelper::purgeUIHelper();
-    UIActionManager::purgeUIActionManager();
+	cocos2d::extension::ActionManager::shareManager()->purgeActionManager();
     
     CCScene::onExit();
 }

@@ -43,19 +43,13 @@ public:
     virtual void onEnter();
     virtual void onExit();
     
-//    virtual void runThisTest();
-    
 protected:
     // a selector callback
-    void menuCloseCallback(CCObject* pSender);
-    /*
-    void toCocosGUIExamplesMapScene(CCObject* pSender);
-    void toCocosGUIExamplesPageSpecialScene(CCObject* pSender);
-     */
+    void menuCloseCallback(CCObject* pSender, TouchEventType type);
     
     // page
     void PageInit();
-    void pageTurningEvent(CCObject* pSender);
+    void pageViewEvent(CCObject* pSender, PageViewEventType type);
     
 protected:
     UILayer* m_pUILayer;

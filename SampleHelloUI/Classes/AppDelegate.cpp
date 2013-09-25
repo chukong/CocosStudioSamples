@@ -24,19 +24,6 @@ bool AppDelegate::applicationDidFinishLaunching() {
     
     CCSize designSize = CCSizeMake(480, 320);
     
-    CCFileUtils* pFileUtils = CCFileUtils::sharedFileUtils();
-    
-    /*
-    if (screenSize.height > 320)
-    {
-        CCSize resourceSize = screenSize;
-        std::vector<std::string> searchPaths;
-        searchPaths.push_back("hd");
-        pFileUtils->setSearchPaths(searchPaths);
-        pDirector->setContentScaleFactor(resourceSize.height/designSize.height);
-    }
-     */
-    
     CCEGLView::sharedOpenGLView()->setDesignResolutionSize(designSize.width, designSize.height, kResolutionShowAll);
      
 	

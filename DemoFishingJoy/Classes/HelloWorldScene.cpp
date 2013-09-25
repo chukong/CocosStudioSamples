@@ -32,7 +32,7 @@ bool HelloWorld::init()
 
     CCNode *pFishJoyScene = CCSSceneReader::sharedSceneReader()->createNodeWithSceneFile("FishJoy2.json");
 	this->addChild(pFishJoyScene);
-    cocos2d::extension::UIActionManager::shareManager()->PlayActionByName("startMenu_1.json","Animation1");
+    cocos2d::extension::ActionManager::shareManager()->playActionByName("startMenu_1.json","Animation1");
 
 	CCMenuItemFont *itemBack = CCMenuItemFont::create("End", this, menu_selector(HelloWorld::menuCloseCallback));
     itemBack->setColor(ccc3(255, 255, 255));
@@ -51,7 +51,7 @@ void HelloWorld::menuCloseCallback(CCObject* pSender)
 {
 	CCArmatureDataManager::purge();
 	CCSSceneReader::sharedSceneReader()->purgeSceneReader();
-	cocos2d::extension::UIActionManager::shareManager()->purgeUIActionManager();
+	cocos2d::extension::ActionManager::shareManager()->purgeActionManager();
 	cocos2d::extension::UIHelper::instance()->purgeUIHelper();
 
     CCDirector::sharedDirector()->end();

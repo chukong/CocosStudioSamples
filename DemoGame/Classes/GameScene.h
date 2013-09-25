@@ -6,7 +6,6 @@
 #include "PhysicalWorld.h"
 #include "EnemyListBuilder.h"
 
-
 class GameScene	: public cocos2d::CCScene
 {
 public:
@@ -18,7 +17,7 @@ public:
 	void menuPopSceneCallback(CCObject* pSender);
 
 };
-
+#if ENABLE_PHYSICS_BOX2D_DETECT
 class StageBasic : public cocos2d::CCLayer
 {
 public:
@@ -44,7 +43,9 @@ protected:
 	cocos2d::CCLayer* stageLayer;
 	Player* player;
 	EnemyListBuilder* enemyBuilder;
+#if ENABLE_PHYSICS_BOX2D_DETECT
 	PhysicalWorld* physicalWorld;
+#endif
 };
 
 class StageOne : public StageBasic
@@ -82,6 +83,6 @@ public:
 	virtual bool init();
 
 };
-
+#endif
 
 #endif

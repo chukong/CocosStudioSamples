@@ -20,7 +20,6 @@ public:
 
 	// a selector game stage 2
 	void menuStageTwoCallback(CCObject* pSender);
-
     // implement the "static node()" method manually
     CREATE_FUNC(HelloWorld);
 };

@@ -4,7 +4,7 @@ INCLUDES = -I.. -I../Classes
 
 SOURCES = main.cpp \
         ../Classes/AppDelegate.cpp \
-        ../Classes/HelloWorldScene.cpp	\
+        ../Classes/HelloWorldScene.cpp \
 	../Classes/UIScene.cpp \
 	../Classes/UISceneManager.cpp \
 	../Classes/UIButtonTest/UIButtonTest.cpp \
@@ -23,7 +23,8 @@ SOURCES = main.cpp \
 	../Classes/UISliderTest/UISliderTest.cpp \
 	../Classes/UITextAreaTest/UITextAreaTest.cpp \
 	../Classes/UITextButtonTest/UITextButtonTest.cpp \
-	../Classes/UITextFieldTest/UITextFieldTest.cpp \
+	../Classes/UITextFieldTest/UITextFieldTest.cpp 
+
 COCOS_ROOT = ../../cocos2d-x
 include $(COCOS_ROOT)/cocos2dx/proj.linux/cocos2dx.mk
 

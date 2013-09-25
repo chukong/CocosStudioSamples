@@ -1,6 +1,8 @@
 #include "HelloWorldScene.h"
-#include "GameScene.h"
 #include "cocos-ext.h"
+
+#include "GameScene.h"
+
 USING_NS_CC;
 using namespace cocos2d::extension;
 
@@ -44,7 +46,7 @@ bool HelloWorld::init()
 
     return true;
 #else
-	CCLabelTTF *pLabel = CCLabelTTF::create("Should define CC_ENABLE_BOX2D_INTEGRATION=1\n to run this test case",
+	CCLabelTTF *pLabel = CCLabelTTF::create("Should define CC_ENABLE_BOX2D_INTEGRATION=1\n for more please read Readme",
                                             "Arial",
                                             18);
     CCSize size = CCDirector::sharedDirector()->getWinSize();
@@ -54,7 +56,6 @@ bool HelloWorld::init()
 	return true;
 #endif
 }
-
 void HelloWorld::menuStartGameCallback(CCObject* pSender)
 {
 	GameScene* stageOne = GameScene::create(1);
@@ -66,7 +67,6 @@ void HelloWorld::menuStageTwoCallback(CCObject* pSender)
 	GameScene* stageTwo = GameScene::create(2);
 	CCDirector::sharedDirector()->pushScene(stageTwo);
 }
-
 
 void HelloWorld::menuCloseCallback(CCObject* pSender)
 {
