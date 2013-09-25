@@ -3,7 +3,7 @@
 
 using namespace cocos2d;
 using namespace cocos2d::extension;
-
+#if ENABLE_PHYSICS_BOX2D_DETECT
 GameScene* GameScene::create(int stage)
 {
 	GameScene *pRet = new GameScene();
@@ -71,7 +71,6 @@ void StageBasic::menuTestCallback(CCObject* sender)
 
 bool StageBasic::initWorld()
 {
-	
 	physicalWorld = PhysicalWorld::create(enemyBuilder);
 	stageLayer->addChild(physicalWorld,2);
 	//set stageLayer follow player's armature
@@ -303,3 +302,18 @@ bool VictoryScene::init()
     } while (0);
     return bRet;
 }
+
+#else
+GameScene* GameScene::create(int stage)
+{
+    return NULL;
+}
+bool GameScene::init(int stage)
+{
+    
+}
+void GameScene::menuPopSceneCallback(cocos2d::CCObject *pSender)
+{
+}
+
+#endif
