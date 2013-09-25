@@ -53,6 +53,20 @@ bool HelloWorld::init()
     pLabel->setPosition(ccp(size.width/2, size.height/2));
     
     addChild(pLabel);
+	
+	CCMenuItemImage *pCloseItem = CCMenuItemImage::create(
+                                        "CloseNormal.png",
+                                        "CloseSelected.png",
+                                        this,
+                                        menu_selector(HelloWorld::menuCloseCallback));
+    
+	pCloseItem->setPosition(ccp(CCDirector::sharedDirector()->getVisibleSize().width*0.9 ,
+                                CCDirector::sharedDirector()->getVisibleSize().height*0.1));
+
+    // create menu, it's an autorelease object
+    CCMenu* pMenu = CCMenu::create(pCloseItem, NULL);
+    pMenu->setPosition(CCPointZero);
+    this->addChild(pMenu, 1);
 	return true;
 #endif
 }
