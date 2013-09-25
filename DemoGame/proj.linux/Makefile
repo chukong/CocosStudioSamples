@@ -4,7 +4,17 @@ INCLUDES = -I.. -I../Classes
 
 SOURCES = main.cpp \
         ../Classes/AppDelegate.cpp \
-        ../Classes/HelloWorldScene.cpp
+        ../Classes/HelloWorldScene.cpp \
+	../../Classes/include/CCJoyStick.cpp	\
+	../../Classes/include/GLES-Render.cpp	\
+	../../Classes/ColliderToolKits.cpp	\
+	../../Classes/Enemy.cpp	\
+	../../Classes/EnemyListBuilder.cpp	\
+	../../Classes/GameScene.cpp	\
+	../../Classes/MyController.cpp	\
+	../../Classes/PhysicalWorld.cpp	\
+	../../Classes/Player.cpp	\
+	../../Classes/PlayerHeadUI.cpp
 
 COCOS_ROOT = ../../cocos2d-x
 include $(COCOS_ROOT)/cocos2dx/proj.linux/cocos2dx.mk

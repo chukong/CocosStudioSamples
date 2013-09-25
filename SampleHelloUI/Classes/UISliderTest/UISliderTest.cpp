@@ -52,7 +52,7 @@ bool UISliderTest::init()
         slider->loadSlidBallTextures("cocosgui/sliderThumb.png", "cocosgui/sliderThumb.png", "");
         slider->loadProgressBarTexture("cocosgui/sliderProgress.png");
         slider->setPosition(ccp(widgetSize.width / 2.0f, widgetSize.height / 2.0f));
-        slider->addPercentChangedEvent(this, coco_percentchangedselector(UISliderTest::percentChangedEvent));
+        slider->addEventListener(this, sliderpercentchangedselector(UISliderTest::sliderEvent));
         m_pUiLayer->addWidget(slider);
         
         return true;
@@ -60,11 +60,21 @@ bool UISliderTest::init()
     return false;
 }
 
-void UISliderTest::percentChangedEvent(CCObject *pSender)
+void UISliderTest::sliderEvent(CCObject *pSender, SliderEventType type)
 {
-    UISlider* slider = dynamic_cast<UISlider*>(pSender);
-    int percent = slider->getPercent();
-    m_pDisplayValueLabel->setText(CCString::createWithFormat("Percent %d", percent)->getCString());
+    switch (type)
+    {
+        case cocos2d::extension::SLIDER_PERCENTCHANGED:
+        {
+            UISlider* slider = dynamic_cast<UISlider*>(pSender);
+            int percent = slider->getPercent();
+            m_pDisplayValueLabel->setText(CCString::createWithFormat("Percent %d", percent)->getCString());
+        }
+            break;
+            
+        default:
+            break;
+    }
 }
 
 // UISliderTest_Scale9
@@ -105,7 +115,7 @@ bool UISliderTest_Scale9::init()
         
         // Create the slider
         UISlider* slider = UISlider::create();
-        slider->setTouchEnabled(true);
+        slider->setTouchEnabled(true);        
         slider->loadBarTexture("cocosgui/sliderTrack2.png");
         slider->loadSlidBallTextures("cocosgui/sliderThumb.png", "cocosgui/sliderThumb.png", "");
         slider->loadProgressBarTexture("cocosgui/slider_bar_active_9patch.png");
@@ -113,7 +123,7 @@ bool UISliderTest_Scale9::init()
         slider->setCapInsets(CCRectMake(0, 0, 0, 0));
         slider->setSize(CCSizeMake(250, 10));
         slider->setPosition(ccp(widgetSize.width / 2.0f, widgetSize.height / 2.0f));
-        slider->addPercentChangedEvent(this, coco_percentchangedselector(UISliderTest_Scale9::percentChangedEvent));
+        slider->addEventListener(this, sliderpercentchangedselector(UISliderTest_Scale9::sliderEvent));
         m_pUiLayer->addWidget(slider);
         
         return true;
@@ -121,9 +131,19 @@ bool UISliderTest_Scale9::init()
     return false;
 }
 
-void UISliderTest_Scale9::percentChangedEvent(CCObject *pSender)
+void UISliderTest_Scale9::sliderEvent(CCObject *pSender, SliderEventType type)
 {
-    UISlider* slider = dynamic_cast<UISlider*>(pSender);
-    int percent = slider->getPercent();
-    m_pDisplayValueLabel->setText(CCString::createWithFormat("Percent %d", percent)->getCString());
+    switch (type)
+    {
+        case SLIDER_PERCENTCHANGED:
+        {
+            UISlider* slider = dynamic_cast<UISlider*>(pSender);
+            int percent = slider->getPercent();
+            m_pDisplayValueLabel->setText(CCString::createWithFormat("Percent %d", percent)->getCString());
+        }
+            break;
+            
+        default:
+            break;
+    }
 }

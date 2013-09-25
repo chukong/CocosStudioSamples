@@ -42,7 +42,7 @@ bool UILoadingBarTest_Left::init()
         // Create the loading bar
         UILoadingBar* loadingBar = UILoadingBar::create();
         loadingBar->setName("LoadingBar");
-        loadingBar->setTexture("cocosgui/sliderProgress.png");        
+        loadingBar->loadTexture("cocosgui/sliderProgress.png");        
         loadingBar->setPercent(0);
         
         loadingBar->setPosition(ccp(widgetSize.width / 2.0f, widgetSize.height / 2.0f + loadingBar->getSize().height / 4.0f));
@@ -65,22 +65,31 @@ void UILoadingBarTest_Left::update(float delta)
     loadingBar->setPercent(m_nCount);
 }
 
-void UILoadingBarTest_Left::previousCallback(CCObject* sender)
+void UILoadingBarTest_Left::previousCallback(CCObject* sender, TouchEventType type)
 {
-	unscheduleUpdate();
-	UIScene::previousCallback(sender);
+    if (type == TOUCH_EVENT_ENDED)
+    {
+        unscheduleUpdate();
+        UIScene::previousCallback(sender, type);
+    }
 }
 
-void UILoadingBarTest_Left::restartCallback(CCObject* sender)
+void UILoadingBarTest_Left::restartCallback(CCObject* sender, TouchEventType type)
 {
-	unscheduleUpdate();
-	UIScene::restartCallback(sender);
+    if (type == TOUCH_EVENT_ENDED)
+    {
+        unscheduleUpdate();
+        UIScene::restartCallback(sender, type);
+    }
 }
 
-void UILoadingBarTest_Left::nextCallback(CCObject* sender)
+void UILoadingBarTest_Left::nextCallback(CCObject* sender, TouchEventType type)
 {
-	unscheduleUpdate();
-	UIScene::nextCallback(sender);
+    if (type == TOUCH_EVENT_ENDED)
+    {
+        unscheduleUpdate();
+        UIScene::nextCallback(sender, type);
+    }
 }
 
 // UILoadingBarTest_Right
@@ -116,7 +125,7 @@ bool UILoadingBarTest_Right::init()
         // Create the loading bar
         UILoadingBar* loadingBar = UILoadingBar::create();
         loadingBar->setName("LoadingBar");
-        loadingBar->setTexture("cocosgui/sliderProgress.png");
+        loadingBar->loadTexture("cocosgui/sliderProgress.png");
         loadingBar->setDirection(LoadingBarTypeRight);
         loadingBar->setPercent(0);
         
@@ -140,22 +149,31 @@ void UILoadingBarTest_Right::update(float delta)
     loadingBar->setPercent(m_nCount);
 }
 
-void UILoadingBarTest_Right::previousCallback(CCObject* sender)
+void UILoadingBarTest_Right::previousCallback(CCObject* sender, TouchEventType type)
 {
-	unscheduleUpdate();
-	UIScene::previousCallback(sender);
+    if (type == TOUCH_EVENT_ENDED)
+    {
+        unscheduleUpdate();
+        UIScene::previousCallback(sender, type);
+    }
 }
 
-void UILoadingBarTest_Right::restartCallback(CCObject* sender)
+void UILoadingBarTest_Right::restartCallback(CCObject* sender, TouchEventType type)
 {
-	unscheduleUpdate();
-	UIScene::restartCallback(sender);
+    if (type == TOUCH_EVENT_ENDED)
+    {
+        unscheduleUpdate();
+        UIScene::restartCallback(sender, type);
+    }
 }
 
-void UILoadingBarTest_Right::nextCallback(CCObject* sender)
+void UILoadingBarTest_Right::nextCallback(CCObject* sender, TouchEventType type)
 {
-	unscheduleUpdate();
-	UIScene::nextCallback(sender);
+    if (type == TOUCH_EVENT_ENDED)
+    {
+        unscheduleUpdate();
+        UIScene::nextCallback(sender, type);
+    }
 }
 
 // UILoadingBarTest_Left_Scale9
@@ -181,7 +199,7 @@ bool UILoadingBarTest_Left_Scale9::init()
         
         // Add the alert
         UILabel *alert = UILabel::create();
-        alert->setText("LoadingBar Scale9 Render");
+        alert->setText("LoadingBar");
         alert->setFontName(font_UILoadingBarTest);
         alert->setFontSize(30);
         alert->setColor(ccc3(159, 168, 176));
@@ -191,7 +209,7 @@ bool UILoadingBarTest_Left_Scale9::init()
         // Create the loading bar
         UILoadingBar* loadingBar = UILoadingBar::create();
         loadingBar->setName("LoadingBar");
-        loadingBar->setTexture("cocosgui/slider_bar_active_9patch.png");
+        loadingBar->loadTexture("cocosgui/slider_bar_active_9patch.png");
         loadingBar->setScale9Enabled(true);
         loadingBar->setCapInsets(CCRectMake(0, 0, 0, 0));
         loadingBar->setSize(CCSizeMake(300, 30));
@@ -217,22 +235,31 @@ void UILoadingBarTest_Left_Scale9::update(float delta)
     loadingBar->setPercent(m_nCount);
 }
 
-void UILoadingBarTest_Left_Scale9::previousCallback(CCObject* sender)
+void UILoadingBarTest_Left_Scale9::previousCallback(CCObject* sender, TouchEventType type)
 {
-	unscheduleUpdate();
-	UIScene::previousCallback(sender);
+    if (type == TOUCH_EVENT_ENDED)
+    {
+        unscheduleUpdate();
+        UIScene::previousCallback(sender, type);
+    }
 }
 
-void UILoadingBarTest_Left_Scale9::restartCallback(CCObject* sender)
+void UILoadingBarTest_Left_Scale9::restartCallback(CCObject* sender, TouchEventType type)
 {
-	unscheduleUpdate();
-	UIScene::restartCallback(sender);
+    if (type == TOUCH_EVENT_ENDED)
+    {
+        unscheduleUpdate();
+        UIScene::restartCallback(sender, type);
+    }
 }
 
-void UILoadingBarTest_Left_Scale9::nextCallback(CCObject* sender)
+void UILoadingBarTest_Left_Scale9::nextCallback(CCObject* sender, TouchEventType type)
 {
-	unscheduleUpdate();
-	UIScene::nextCallback(sender);
+    if (type == TOUCH_EVENT_ENDED)
+    {
+        unscheduleUpdate();
+        UIScene::nextCallback(sender, type);
+    }
 }
 
 // UILoadingBarTest_Right_Scale9
@@ -258,7 +285,7 @@ bool UILoadingBarTest_Right_Scale9::init()
         
         // Add the alert
         UILabel *alert = UILabel::create();
-        alert->setText("LoadingBar Scale9 Render");
+        alert->setText("LoadingBar");
         alert->setFontName(font_UILoadingBarTest);
         alert->setFontSize(30);
         alert->setColor(ccc3(159, 168, 176));
@@ -268,7 +295,7 @@ bool UILoadingBarTest_Right_Scale9::init()
         // Create the loading bar
         UILoadingBar* loadingBar = UILoadingBar::create();
         loadingBar->setName("LoadingBar");
-        loadingBar->setTexture("cocosgui/slider_bar_active_9patch.png");
+        loadingBar->loadTexture("cocosgui/slider_bar_active_9patch.png");
         loadingBar->setScale9Enabled(true);
         loadingBar->setCapInsets(CCRectMake(0, 0, 0, 0));
         loadingBar->setSize(CCSizeMake(300, 30));
@@ -295,20 +322,29 @@ void UILoadingBarTest_Right_Scale9::update(float delta)
     loadingBar->setPercent(m_nCount);
 }
 
-void UILoadingBarTest_Right_Scale9::previousCallback(CCObject* sender)
+void UILoadingBarTest_Right_Scale9::previousCallback(CCObject* sender, TouchEventType type)
 {
-	unscheduleUpdate();
-	UIScene::previousCallback(sender);
+    if (type == TOUCH_EVENT_ENDED)
+    {
+        unscheduleUpdate();
+        UIScene::previousCallback(sender, type);
+    }
 }
 
-void UILoadingBarTest_Right_Scale9::restartCallback(CCObject* sender)
+void UILoadingBarTest_Right_Scale9::restartCallback(CCObject* sender, TouchEventType type)
 {
-	unscheduleUpdate();
-	UIScene::restartCallback(sender);
+    if (type == TOUCH_EVENT_ENDED)
+    {
+        unscheduleUpdate();
+        UIScene::restartCallback(sender, type);
+    }
 }
 
-void UILoadingBarTest_Right_Scale9::nextCallback(CCObject* sender)
+void UILoadingBarTest_Right_Scale9::nextCallback(CCObject* sender, TouchEventType type)
 {
-	unscheduleUpdate();
-	UIScene::nextCallback(sender);
+    if (type == TOUCH_EVENT_ENDED)
+    {
+        unscheduleUpdate();
+        UIScene::nextCallback(sender, type);
+    }
 }

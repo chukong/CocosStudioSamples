@@ -50,25 +50,6 @@ static CCScene* sceneWithTitle(const char * title) \
     return pScene; \
 }
 
-//#define UI_SCENE_CREATE_FUNC(UIScene) \
-//public: \
-//static CCScene* sceneWithTitle(const char * title) \
-//{ \
-//    CCScene* pScene = CCScene::create(); \
-//    UIScene* uiLayer = new UIScene(); \
-//    if (uiLayer && uiLayer->init()) \
-//    { \
-//        uiLayer->autorelease(); \
-//        uiLayer->getSceneTitleLabel()->setString(title); \
-//        pScene->addChild(uiLayer); \
-//    } \
-//    else \
-//    { \
-//        CC_SAFE_DELETE(uiLayer); \
-//    } \
-//    return pScene; \
-//}
-
 class UIScene : public CCLayer
 {
 public:
@@ -76,12 +57,9 @@ public:
     ~UIScene();
     bool init();
     // Menu Callbacks
-    virtual void previousCallback(CCObject* sender);
-    virtual void restartCallback(CCObject* sender);
-    virtual void nextCallback(CCObject* sender);
-    
-    /** Title label of the scene. */
-//    CC_SYNTHESIZE_RETAIN(CCLabelTTF*, m_pSceneTitleLabel, SceneTitleLabel)
+    virtual void previousCallback(CCObject* sender, TouchEventType type);
+    virtual void restartCallback(CCObject* sender, TouchEventType type);
+    virtual void nextCallback(CCObject* sender, TouchEventType type);
     
     CC_SYNTHESIZE_READONLY(UILabel*, m_pSceneTitle, SceneTitle)
     
@@ -89,7 +67,7 @@ public:
     
 protected:
     // a selector callback
-    void menuCloseCallback(CCObject* pSender);
+    void menuCloseCallback(CCObject* pSender, TouchEventType type);
     
 protected:
     UILayer *m_pUiLayer;

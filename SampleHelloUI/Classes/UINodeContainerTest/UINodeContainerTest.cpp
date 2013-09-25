@@ -47,13 +47,13 @@ bool UINodeContainerTest::init()
         m_pUiLayer->addWidget(alert);
         
         // Create the ui node container
-        UINodeContainer* nodeContainer = UINodeContainer::create();
-        nodeContainer->setPosition(ccp(widgetSize.width / 2.0f, widgetSize.height / 2.0f));
-        m_pUiLayer->addWidget(nodeContainer);
+        UIWidget* widget = UIWidget::create();
+        widget->setPosition(ccp(widgetSize.width / 2.0f, widgetSize.height / 2.0f));
+        m_pUiLayer->addWidget(widget);
         
         CCSprite* sprite = CCSprite::create("cocosgui/ccicon.png");
         sprite->setPosition(ccp(0, sprite->boundingBox().size.height / 4));
-        nodeContainer->addCCNode(sprite);
+        widget->addCCNode(sprite);
         
         return true;
     }

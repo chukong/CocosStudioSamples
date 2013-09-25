@@ -12,7 +12,8 @@ AppDelegate::~AppDelegate()
 {
 }
 
-bool AppDelegate::applicationDidFinishLaunching() {
+bool AppDelegate::applicationDidFinishLaunching()
+{
     // initialize director
     CCDirector* pDirector = CCDirector::sharedDirector();
     CCEGLView* pEGLView = CCEGLView::sharedOpenGLView();
@@ -24,6 +25,7 @@ bool AppDelegate::applicationDidFinishLaunching() {
     CCSize designSize = CCSizeMake(480, 320);
     
     CCFileUtils* pFileUtils = CCFileUtils::sharedFileUtils();
+    
     
     if (screenSize.height > 320)
     {

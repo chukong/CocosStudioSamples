@@ -5,7 +5,7 @@ using namespace cocos2d;
 using namespace cocos2d::extension;
 
 #define GLES_DEBUG_DRAW 1
-
+#if ENABLE_PHYSICS_BOX2D_DETECT
 PhysicalWorld* PhysicalWorld::create(EnemyListBuilder* pBuilder,
 		Player* pPlayer)
 {
@@ -285,5 +285,5 @@ PhysicalWorld::~PhysicalWorld(void)
 	CC_SAFE_DELETE(contactListener);
 	CC_SAFE_DELETE(debugDraw);
 }
-
+#endif
 

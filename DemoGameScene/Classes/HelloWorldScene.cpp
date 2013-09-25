@@ -49,7 +49,7 @@ void HelloWorld::menuCloseCallback(CCObject* pSender)
 {
 	CCArmatureDataManager::purge();
 	CCSSceneReader::sharedSceneReader()->purgeSceneReader();
-	cocos2d::extension::UIActionManager::shareManager()->purgeUIActionManager();
+	cocos2d::extension::ActionManager::shareManager()->purgeActionManager();
 	cocos2d::extension::UIHelper::instance()->purgeUIHelper();
 
     CCDirector::sharedDirector()->end();

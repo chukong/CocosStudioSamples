@@ -26,7 +26,7 @@ bool UITextAreaTest::init()
         m_pUiLayer->addWidget(alert);        
         
         // Create the text area
-        UITextArea* textArea = UITextArea::create();
+        UILabel* textArea = UILabel::create();
         textArea->setTextAreaSize(CCSizeMake(280, 150));
         textArea->setTextHorizontalAlignment(kCCTextAlignmentCenter);
         textArea->setText("TextArea widget can line wrap");

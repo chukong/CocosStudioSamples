@@ -43,23 +43,17 @@ public:
     virtual void onEnter();
     virtual void onExit();
     
-//    virtual void runThisTest();
-    
 protected:
     // a selector callback
-    void menuCloseCallback(CCObject* pSender);
-    /*
-    void toCocosGUIExamplesWeaponScene(CCObject* pSender);
-    void toCocosGUIExamplesPageScene(CCObject* pSender);
-     */
+    void menuCloseCallback(CCObject* pSender, TouchEventType type);
     
     // map
     void MapInit();
-    void buildTouchEvent(CCObject* pSender);
+    void buildTouchEvent(CCObject* pSender, TouchEventType type);
     
     // map alert
     void MapAlertInit();
-    void MapAlertClose(CCObject* pSender);
+    void MapAlertClose(CCObject* pSender, TouchEventType type);
     
 protected:
     UILayer* m_pUILayer;

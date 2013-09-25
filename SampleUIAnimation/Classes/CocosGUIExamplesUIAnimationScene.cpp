@@ -1,3 +1,5 @@
+
+
 #include "CocosGUIExamplesUIAnimationScene.h"
 
 CocosGUIExamplesUIAnimationScene::CocosGUIExamplesUIAnimationScene()
@@ -20,53 +22,53 @@ void CocosGUIExamplesUIAnimationScene::onEnter()
     
     UIAnimationInit();
     
-    
-    // text button to start animation
-    UITextButton* start_textbutton = UITextButton::create();
-    start_textbutton->setTouchEnabled(true);
-    start_textbutton->setTitleText("Start UIAnimation");
-    start_textbutton->loadTextures("cocosgui/backtotoppressed.png", "cocosgui/backtotopnormal.png", "");
-    start_textbutton->setScale9Enabled(true);
-    start_textbutton->setSize(CCSizeMake(start_textbutton->getContentSize().width * 1.3, start_textbutton->getContentSize().height));
-    start_textbutton->setPosition(ccp(m_pUILayer->getContentSize().width / 2, start_textbutton->getContentSize().height - start_textbutton->getContentSize().height / 4));
-    start_textbutton->addReleaseEvent(this, coco_releaseselector(CocosGUIExamplesUIAnimationScene::startUIAnimation));
-    m_pUILayer->addWidget(start_textbutton);
-    
     // exit button
     UIButton* exit_button = UIButton::create();
     exit_button->setTouchEnabled(true);
     exit_button->loadTextures("CloseNormal.png", "CloseSelected.png", "");
     exit_button->setPosition(ccp(m_pUILayer->getContentSize().width - exit_button->getContentSize().width, exit_button->getContentSize().height));
-    exit_button->addReleaseEvent(this, coco_releaseselector(CocosGUIExamplesUIAnimationScene::menuCloseCallback));
+    exit_button->addTouchEventListener(this, toucheventselector(CocosGUIExamplesUIAnimationScene::menuCloseCallback));    
     m_pUILayer->addWidget(exit_button);
 }
 
 void CocosGUIExamplesUIAnimationScene::onExit()
 {
     m_pUILayer->removeFromParent();
+    
+    CCSSceneReader::sharedSceneReader()->purgeSceneReader();
+    UIHelper::purgeUIHelper();
+	cocos2d::extension::ActionManager::shareManager()->purgeActionManager();
+    
     CCScene::onExit();
 }
 
-void CocosGUIExamplesUIAnimationScene::menuCloseCallback(CCObject* pSender)
+void CocosGUIExamplesUIAnimationScene::menuCloseCallback(CCObject* pSender, TouchEventType type)
 {
-	cocos2d::extension::CCSSceneReader::sharedSceneReader()->purgeSceneReader();
-	cocos2d::extension::UIActionManager::shareManager()->purgeUIActionManager();
-	cocos2d::extension::UIHelper::instance()->purgeUIHelper();
-    CCDirector::sharedDirector()->end();
-    
+    if (type == TOUCH_EVENT_ENDED)
+    {
+        CCDirector::sharedDirector()->end();
+        
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
-    exit(0);
+        exit(0);
 #endif
+    }
 }
 
 void CocosGUIExamplesUIAnimationScene::UIAnimationInit()
 {
     // ui animation root from json
-    Layout* uianimation_root = dynamic_cast<Layout*>(CCUIHELPER->createWidgetFromJsonFile("cocosgui/gui_examples/UIAction_1/UIAction_1.json"));
+    Layout* uianimation_root = dynamic_cast<Layout*>(CCUIHELPER->createWidgetFromJsonFile("cocosgui/gui_examples/SampleUIAnimation/SampleUIAnimation.json"));
     m_pUILayer->addWidget(uianimation_root);
+    
+    // TextButton button
+    UIButton* button = static_cast<UIButton*>(m_pUILayer->getWidgetByName("TextButton"));
+    button->addTouchEventListener(this, toucheventselector(CocosGUIExamplesUIAnimationScene::startUIAnimation));
 }
 
-void CocosGUIExamplesUIAnimationScene::startUIAnimation(CCObject *pSender)
+void CocosGUIExamplesUIAnimationScene::startUIAnimation(CCObject* pSender, TouchEventType type)
 {
-    UIActionManager::shareManager()->PlayActionByName("UIAction_1.json", "Animation1");
+    if (type == TOUCH_EVENT_ENDED)
+    {
+		cocos2d::extension::ActionManager::shareManager()->playActionByName("SampleUIAnimation.json", "Animation1");        
+    }
 }
