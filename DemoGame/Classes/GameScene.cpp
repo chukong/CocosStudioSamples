@@ -310,7 +310,7 @@ GameScene* GameScene::create(int stage)
 }
 bool GameScene::init(int stage)
 {
-    
+    return false;
 }
 void GameScene::menuPopSceneCallback(cocos2d::CCObject *pSender)
 {
