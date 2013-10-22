@@ -35,12 +35,20 @@ void TestColliderDetector::onEnter()
 	armature2->setScaleY(0.2f);
 	armature2->setPosition(ccp(CCDirector::sharedDirector()->getVisibleSize().width * 0.8, CCDirector::sharedDirector()->getVisibleSize().height * 0.5));
 	addChild(armature2);
-	
+
+#if SHOW_CONTOUE_DATA
+	body = armature2->getBone("Layer122");
+	draw = CCDrawNode::create();
+	this->addChild(draw,10);
+	bullet = CCSprite::createWithSpriteFrameName("25.png");
+	addChild(bullet);
+#else
 	//! add a CCPhysicsSprite,will show in FrameEvent
 	bullet = CCPhysicsSprite::createWithSpriteFrameName("25.png");
 	addChild(bullet);
     
 	initWorld();
+#endif
 }
 
 void TestColliderDetector::onFrameEvent(CCBone *bone, const char *evt, int originFrameIndex, int currentFrameIndex)
@@ -54,9 +62,38 @@ void TestColliderDetector::onFrameEvent(CCBone *bone, const char *evt, int origi
 	bullet->runAction(CCMoveBy::create(2.5f, ccp(CCDirector::sharedDirector()->getVisibleSize().width, 0)));
 }
 
+#if SHOW_CONTOUE_DATA
+
+void TestColliderDetector::update(float delta)
+{
+	CCArray* colliderList = body->getColliderBodyList();
+	CCObject* object = NULL;
+	CCARRAY_FOREACH(colliderList,object)
+	{
+        ColliderBody *colliderBody = (ColliderBody *)object;
+        CCContourData *contourData = colliderBody->getContourData();
+
+		CCPoint points[4];
+		for(int i = 0;i<contourData->vertexList.count();i++)
+		{
+			CCContourVertex2* vertex = (CCContourVertex2*)(contourData->vertexList.objectAtIndex(i));
+			points[i].x = vertex->x;
+			points[i].y = vertex->y;
+			CCLog("%f %f",vertex->x,vertex->y);
+		}
+		draw->drawPolygon(points,4,ccc4f(0.0,0.0,0.0,0.0),4,ccc4f(1.0,1.0,1.0,1.0));
+		draw->setAdditionalTransform(body->nodeToWorldTransform());
+	}
+}
+
+void TestColliderDetector::onExit()
+{
+	CCLayer::onExit();
+}
 
 
-#if ENABLE_PHYSICS_BOX2D_DETECT
+
+#elif ENABLE_PHYSICS_BOX2D_DETECT
 
 class Contact
 {

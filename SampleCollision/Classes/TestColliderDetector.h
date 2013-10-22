@@ -4,7 +4,11 @@
 #include "cocos2d.h"
 #include "cocos-ext.h"
 
-#if ENABLE_PHYSICS_BOX2D_DETECT
+#define SHOW_CONTOUE_DATA 1
+
+#if SHOW_CONTOUE_DATA
+
+#elif ENABLE_PHYSICS_BOX2D_DETECT
 #include "GLES-Render.h"
 #include "Box2D/Box2D.h"
 #elif ENABLE_PHYSICS_CHIPMUNK_DETECT
@@ -12,7 +16,28 @@
 #endif
 
 
-#if ENABLE_PHYSICS_BOX2D_DETECT
+#if SHOW_CONTOUE_DATA
+
+class TestColliderDetector : public cocos2d::CCLayer
+{
+public:
+	~TestColliderDetector();
+    
+	virtual void onEnter();
+	virtual void onExit();
+	virtual void update(float delta);
+    
+	void onFrameEvent(cocos2d::extension::CCBone *bone, const char *evt, int originFrameIndex, int currentFrameIndex);
+
+	cocos2d::extension::CCArmature *armature;
+	cocos2d::extension::CCArmature *armature2;
+	cocos2d::CCSprite* bullet;
+	cocos2d::CCDrawNode* draw;
+	cocos2d::extension::CCBone* body;
+};
+
+
+#elif ENABLE_PHYSICS_BOX2D_DETECT
 
 class ContactListener;
 
