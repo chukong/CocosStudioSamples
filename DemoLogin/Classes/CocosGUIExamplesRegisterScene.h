@@ -48,7 +48,7 @@ public:
     
 protected:
     UILayer* m_pUILayer;
-    Layout* m_pLayout;
+    UILayout* m_pLayout;
 };
 
 #endif /* defined(__TestCpp__CocosGUIExamplesRegisterScene__) */

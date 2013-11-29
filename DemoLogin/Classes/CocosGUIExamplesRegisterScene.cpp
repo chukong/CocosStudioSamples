@@ -23,11 +23,11 @@ void CocosGUIExamplesRegisterScene::onEnter()
     addChild(m_pUILayer);
     
     // register root from json
-    m_pLayout = dynamic_cast<Layout*>(CCUIHELPER->createWidgetFromJsonFile("cocosgui/gui_examples/DemoLogin/DemoLogin.json"));
+    m_pLayout = dynamic_cast<UILayout*>(GUIReader::shareReader()->widgetFromJsonFile("cocosgui/gui_examples/DemoLogin/DemoLogin.json"));
     m_pUILayer->addWidget(m_pLayout);
     
     UITextField* comfirm_textfield = static_cast<UITextField*>(m_pUILayer->getWidgetByName("confirm_TextField"));
-    comfirm_textfield->addEventListener(this, textfieldeventselector(CocosGUIExamplesRegisterScene::textFieldEvent));
+    comfirm_textfield->addEventListenerTextField(this, textfieldeventselector(CocosGUIExamplesRegisterScene::textFieldEvent));
     
     // close button
     UIButton* close_button = static_cast<UIButton*>(m_pUILayer->getWidgetByName("close_Button"));
@@ -38,8 +38,8 @@ void CocosGUIExamplesRegisterScene::onExit()
 {
     m_pUILayer->removeFromParent();
     
-    CCSSceneReader::sharedSceneReader()->purgeSceneReader();
-    UIHelper::purgeUIHelper();
+    SceneReader::sharedSceneReader()->purgeSceneReader();
+    GUIReader::shareReader()->purgeGUIReader();
 	cocos2d::extension::ActionManager::shareManager()->purgeActionManager();
     
     CCScene::onExit();

@@ -60,8 +60,8 @@ void CocosGUIExamplesEquipScene::onExit()
 {
     m_pUILayer->removeFromParent();
     
-    CCSSceneReader::sharedSceneReader()->purgeSceneReader();
-    UIHelper::purgeUIHelper();
+    SceneReader::sharedSceneReader()->purgeSceneReader();
+    GUIReader::shareReader()->purgeGUIReader();
 	cocos2d::extension::ActionManager::shareManager()->purgeActionManager();
     
     CCScene::onExit();
@@ -133,7 +133,7 @@ void CocosGUIExamplesEquipScene::EquipInit()
     //        
     
     // equip root from json
-    Layout* equipe_root =dynamic_cast<Layout*>(CCUIHELPER->createWidgetFromJsonFile("cocosgui/gui_examples/equip_1/equip_1.json"));
+    Layout* equipe_root =dynamic_cast<Layout*>(GUIReader::shareReader()->widgetFromJsonFile("cocosgui/gui_examples/equip_1/equip_1.json"));
     equipe_root->setTag(EQUIP_LAYOUT_TAG_ROOT);
     m_pUILayer->addWidget(equipe_root);        
     
