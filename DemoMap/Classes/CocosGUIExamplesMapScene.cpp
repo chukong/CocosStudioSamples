@@ -44,8 +44,8 @@ void CocosGUIExamplesMapScene::onExit()
 {
     m_pUILayer->removeFromParent();
     
-    CCSSceneReader::sharedSceneReader()->purgeSceneReader();
-    UIHelper::purgeUIHelper();
+    SceneReader::sharedSceneReader()->purgeSceneReader();
+    GUIReader::shareReader()->purgeGUIReader();
 	cocos2d::extension::ActionManager::shareManager()->purgeActionManager();
     
     CCScene::onExit();
@@ -66,7 +66,7 @@ void CocosGUIExamplesMapScene::menuCloseCallback(CCObject* pSender, TouchEventTy
 void CocosGUIExamplesMapScene::MapInit()
 {
     // map root from json
-    Layout* map_root = static_cast<Layout*>(CCUIHELPER->createWidgetFromJsonFile("cocosgui/gui_examples/DemoMap/DemoMap.json"));
+    Layout* map_root = static_cast<Layout*>(GUIReader::shareReader()->widgetFromJsonFile("cocosgui/gui_examples/DemoMap/DemoMap.json"));
     m_pUILayer->addWidget(map_root);    
     
     // build button on map root

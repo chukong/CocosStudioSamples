@@ -185,3 +185,70 @@ bool UIScrollViewTest_Horizontal::init()
     
     return false;
 }
+
+// UIScrollViewTest_Both
+UIScrollViewTest_Both::UIScrollViewTest_Both()
+: m_pDisplayValueLabel(NULL)
+{
+    
+}
+
+UIScrollViewTest_Both::~UIScrollViewTest_Both()
+{
+}
+
+bool UIScrollViewTest_Both::init()
+{
+    if (UIScene::init())
+    {
+        CCSize widgetSize = m_pWidget->getSize();;
+        
+        // Add a label in which the dragpanel events will be displayed
+        m_pDisplayValueLabel = UILabel::create();
+        m_pDisplayValueLabel->setText("Move by any direction");
+        m_pDisplayValueLabel->setFontName(font_UIScrollViewTest);
+        m_pDisplayValueLabel->setFontSize(32);
+        m_pDisplayValueLabel->setAnchorPoint(ccp(0.5f, -1));
+        m_pDisplayValueLabel->setPosition(ccp(widgetSize.width / 2.0f, widgetSize.height / 2.0f + m_pDisplayValueLabel->getSize().height * 1.5f));
+        m_pUiLayer->addWidget(m_pDisplayValueLabel);
+        
+        // Add the alert
+        UILabel *alert = UILabel::create();
+        alert->setText("ScrollView both");
+        alert->setFontName(font_UIScrollViewTest);
+        alert->setFontSize(30);
+        alert->setColor(ccc3(159, 168, 176));
+        alert->setPosition(ccp(widgetSize.width / 2.0f, widgetSize.height / 2.0f - alert->getSize().height * 2.925));
+        m_pUiLayer->addWidget(alert);
+        
+        Layout *background = dynamic_cast<Layout*>(m_pUiLayer->getWidgetByName("background_Panel"));
+        
+        // Create the dragpanel
+        UIScrollView* scrollView = UIScrollView::create();
+        scrollView->setDirection(SCROLLVIEW_DIR_BOTH);
+        scrollView->setTouchEnabled(true);
+        scrollView->setBounceEnabled(true);
+        scrollView->setBackGroundImageScale9Enabled(true);
+        scrollView->setBackGroundImage("cocosgui/green_edit.png");
+        scrollView->setSize(CCSizeMake(210, 122.5));
+        CCSize backgroundSize = background->getContentSize();
+        scrollView->setPosition(ccp((widgetSize.width - backgroundSize.width) / 2 +
+                                    (backgroundSize.width - scrollView->getSize().width) / 2,
+                                    (widgetSize.height - backgroundSize.height) / 2 +
+                                    (backgroundSize.height - scrollView->getSize().height) / 2));
+        UIImageView* imageView = UIImageView::create();
+        imageView->setTouchEnabled(true);
+        imageView->loadTexture("cocosgui/b11.png");
+        scrollView->addChild(imageView);
+        
+        scrollView->setInnerContainerSize(imageView->getContentSize());
+        CCSize innerSize = scrollView->getInnerContainerSize();
+        imageView->setPosition(ccp(innerSize.width / 2, innerSize.height / 2));
+        
+        m_pUiLayer->addWidget(scrollView);
+        
+        return true;
+    }
+    
+    return false;
+}

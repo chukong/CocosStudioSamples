@@ -212,7 +212,7 @@ bool UILoadingBarTest_Left_Scale9::init()
         loadingBar->loadTexture("cocosgui/slider_bar_active_9patch.png");
         loadingBar->setScale9Enabled(true);
         loadingBar->setCapInsets(CCRectMake(0, 0, 0, 0));
-        loadingBar->setSize(CCSizeMake(300, 30));
+        loadingBar->setSize(CCSizeMake(300, loadingBar->getContentSize().height));
         loadingBar->setPercent(0);
         
         loadingBar->setPosition(ccp(widgetSize.width / 2.0f, widgetSize.height / 2.0f + loadingBar->getSize().height / 4.0f));
@@ -298,7 +298,7 @@ bool UILoadingBarTest_Right_Scale9::init()
         loadingBar->loadTexture("cocosgui/slider_bar_active_9patch.png");
         loadingBar->setScale9Enabled(true);
         loadingBar->setCapInsets(CCRectMake(0, 0, 0, 0));
-        loadingBar->setSize(CCSizeMake(300, 30));
+        loadingBar->setSize(CCSizeMake(300, loadingBar->getContentSize().height));
         loadingBar->setDirection(LoadingBarTypeRight);        
         loadingBar->setPercent(0);
         

@@ -35,8 +35,8 @@ void CocosGUIExamplesUIAnimationScene::onExit()
 {
     m_pUILayer->removeFromParent();
     
-    CCSSceneReader::sharedSceneReader()->purgeSceneReader();
-    UIHelper::purgeUIHelper();
+    SceneReader::sharedSceneReader()->purgeSceneReader();
+    GUIReader::shareReader()->purgeGUIReader();
 	cocos2d::extension::ActionManager::shareManager()->purgeActionManager();
     
     CCScene::onExit();
@@ -57,7 +57,7 @@ void CocosGUIExamplesUIAnimationScene::menuCloseCallback(CCObject* pSender, Touc
 void CocosGUIExamplesUIAnimationScene::UIAnimationInit()
 {
     // ui animation root from json
-    Layout* uianimation_root = dynamic_cast<Layout*>(CCUIHELPER->createWidgetFromJsonFile("cocosgui/gui_examples/SampleUIAnimation/SampleUIAnimation.json"));
+    Layout* uianimation_root = dynamic_cast<Layout*>(GUIReader::shareReader()->widgetFromJsonFile("cocosgui/gui_examples/SampleUIAnimation/SampleUIAnimation.json"));
     m_pUILayer->addWidget(uianimation_root);
     
     // TextButton button

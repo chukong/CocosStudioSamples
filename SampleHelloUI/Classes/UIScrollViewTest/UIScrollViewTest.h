@@ -51,4 +51,16 @@ protected:
     UILabel* m_pDisplayValueLabel;
 };
 
+class UIScrollViewTest_Both : public UIScene
+{
+public:
+    UIScrollViewTest_Both();
+    ~UIScrollViewTest_Both();
+    bool init();
+    
+protected:
+    UI_SCENE_CREATE_FUNC(UIScrollViewTest_Both)
+    UILabel* m_pDisplayValueLabel;
+};
+
 #endif /* defined(__TestCpp__UIScrollViewTest__) */

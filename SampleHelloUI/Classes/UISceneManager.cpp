@@ -16,8 +16,6 @@
 #include "UIPanelTest/UIPanelTest.h"
 #include "UIScrollViewTest/UIScrollViewTest.h"
 #include "UIPageViewTest/UIPageViewTest.h"
-#include "UIListViewTest/UIListViewTest.h"
-#include "UIDragPanelTest/UIDragPanelTest.h"
 #include "UINodeContainerTest/UINodeContainerTest.h"
 
 USING_NS_CC;
@@ -55,11 +53,8 @@ enum
 //    kUIPanelTest_Layout_Linear_Relative,
     kUIScrollViewTest_Vertical,
     kUIScrollViewTest_Horizontal,
+    kUIScrollViewTest_Both,
     kUIPageViewTest,
-    kUIListViewTest_Vertical,
-    kUIListViewTest_Horizontal,
-    kUIDragPanelTest,
-    kUIDragPanelTest_Bounce,
     kUINodeContainerTest,
     kUITestMax
 };
@@ -97,11 +92,8 @@ static const char* s_testArray[] =
 //    "UIPanelTest_Layout_Linear_Relative",
     "UIScrollViewTest_Vertical",
     "UIScrollViewTest_Horizontal",
+    "UIScrollViewTest_Both",
     "UIPageViewTest,",
-    "UIListViewTest_Vertical",
-    "UIListViewTest_Horizontal",
-    "UIDragPanelTest",
-    "UIDragPanelTest_Bounce",
     "UINodeContainerTest",
 };
 
@@ -249,20 +241,11 @@ CCScene *UISceneManager::currentUIScene()
         case kUIScrollViewTest_Horizontal:
             return UIScrollViewTest_Horizontal::sceneWithTitle(s_testArray[m_nCurrentUISceneId]);
             
+        case kUIScrollViewTest_Both:
+            return UIScrollViewTest_Both::sceneWithTitle(s_testArray[m_nCurrentUISceneId]);
+            
         case kUIPageViewTest:
-            return UIPageViewTest::sceneWithTitle(s_testArray[m_nCurrentUISceneId]);
-            
-        case kUIListViewTest_Vertical:
-            return UIListViewTest_Vertical::sceneWithTitle(s_testArray[m_nCurrentUISceneId]);
-            
-        case kUIListViewTest_Horizontal:
-            return UIListViewTest_Horizontal::sceneWithTitle(s_testArray[m_nCurrentUISceneId]);
-            
-        case kUIDragPanelTest:
-            return UIDragPanelTest::sceneWithTitle(s_testArray[m_nCurrentUISceneId]);
-            
-        case kUIDragPanelTest_Bounce:
-            return UIDragPanelTest_Bounce::sceneWithTitle(s_testArray[m_nCurrentUISceneId]);
+            return UIPageViewTest::sceneWithTitle(s_testArray[m_nCurrentUISceneId]);                    
             
         case kUINodeContainerTest:
             return UINodeContainerTest::sceneWithTitle(s_testArray[m_nCurrentUISceneId]);                    
