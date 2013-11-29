@@ -28,6 +28,7 @@ void CocosGUIExamplesEquipScene::onEnter()
     // equip initialize
     EquipInit();
     
+    
     /*
     // left button
     UIButton* left_button = UIButton::create();
