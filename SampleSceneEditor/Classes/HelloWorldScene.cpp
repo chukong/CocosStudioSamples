@@ -38,7 +38,7 @@ bool HelloWorld::init()
 
 	m_pGameScene = NULL;
     
-	CCNode *pGameScene = CCSSceneReader::sharedSceneReader()->createNodeWithSceneFile("FightScene.json");
+	CCNode *pGameScene = SceneReader::sharedSceneReader()->createNodeWithSceneFile("FightScene.json");
 	m_pGameScene = pGameScene;
 	this->addChild(pGameScene);
 
@@ -63,9 +63,9 @@ bool HelloWorld::init()
 void HelloWorld::menuCloseCallback(CCObject* pSender)
 {
 	CCArmatureDataManager::purge();
-	CCSSceneReader::sharedSceneReader()->purgeSceneReader();
+	SceneReader::sharedSceneReader()->purgeSceneReader();
 	cocos2d::extension::ActionManager::shareManager()->purgeActionManager();
-	cocos2d::extension::UIHelper::instance()->purgeUIHelper();
+    GUIReader::shareReader()->purgeGUIReader();
     CCDirector::sharedDirector()->end();
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
     exit(0);

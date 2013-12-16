@@ -30,7 +30,7 @@ bool HelloWorld::init()
         return false;
     }
 
-    CCNode *pFishJoyScene = CCSSceneReader::sharedSceneReader()->createNodeWithSceneFile("FishJoy2.json");
+    CCNode *pFishJoyScene = SceneReader::sharedSceneReader()->createNodeWithSceneFile("FishJoy2.json");
 	this->addChild(pFishJoyScene);
     cocos2d::extension::ActionManager::shareManager()->playActionByName("startMenu_1.json","Animation1");
 
@@ -50,9 +50,9 @@ bool HelloWorld::init()
 void HelloWorld::menuCloseCallback(CCObject* pSender)
 {
 	CCArmatureDataManager::purge();
-	CCSSceneReader::sharedSceneReader()->purgeSceneReader();
+	SceneReader::sharedSceneReader()->purgeSceneReader();
 	cocos2d::extension::ActionManager::shareManager()->purgeActionManager();
-	cocos2d::extension::UIHelper::instance()->purgeUIHelper();
+    GUIReader::shareReader()->purgeGUIReader();
 
     CCDirector::sharedDirector()->end();
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
