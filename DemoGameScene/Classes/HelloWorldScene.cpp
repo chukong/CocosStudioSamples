@@ -30,7 +30,7 @@ bool HelloWorld::init()
         return false;
     }
     
-	CCNode *pGameScene = CCSSceneReader::sharedSceneReader()->createNodeWithSceneFile("RPGGame.json");
+	CCNode *pGameScene = SceneReader::sharedSceneReader()->createNodeWithSceneFile("RPGGame.json");
 	this->addChild(pGameScene);
     
     CCMenuItemFont *itemBack = CCMenuItemFont::create("End", this, menu_selector(HelloWorld::menuCloseCallback));
@@ -48,9 +48,9 @@ bool HelloWorld::init()
 void HelloWorld::menuCloseCallback(CCObject* pSender)
 {
 	CCArmatureDataManager::purge();
-	CCSSceneReader::sharedSceneReader()->purgeSceneReader();
+	SceneReader::sharedSceneReader()->purgeSceneReader();
 	cocos2d::extension::ActionManager::shareManager()->purgeActionManager();
-	cocos2d::extension::UIHelper::instance()->purgeUIHelper();
+    GUIReader::shareReader()->purgeGUIReader();
 
     CCDirector::sharedDirector()->end();
 
