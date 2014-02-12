@@ -35,9 +35,9 @@ void CocosGUIExamplesUIAnimationScene::onExit()
 {
     m_pUILayer->removeFromParent();
     
-    SceneReader::sharedSceneReader()->purgeSceneReader();
-    GUIReader::shareReader()->purgeGUIReader();
-	cocos2d::extension::ActionManager::shareManager()->purgeActionManager();
+    SceneReader::sharedSceneReader()->purge();
+    GUIReader::shareReader()->purge();
+	cocos2d::extension::ActionManager::shareManager()->purge();
     
     CCScene::onExit();
 }

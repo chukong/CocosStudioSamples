@@ -22,35 +22,55 @@
  THE SOFTWARE.
  ****************************************************************************/
 
-#ifndef __TestCpp__UIDragPanelTest__
-#define __TestCpp__UIDragPanelTest__
+#ifndef __TestCpp__CocosGUIScene__
+#define __TestCpp__CocosGUIScene__
 
-#include "../UIScene.h"
+#include "cocos2d.h"
+#include "cocos-ext.h"
 
-class UIDragPanelTest : public UIScene
+using namespace cocos2d;
+using namespace cocos2d::extension;
+
+class CocosGUITestMainLayer : public CCLayer
 {
 public:
-    UIDragPanelTest();
-    ~UIDragPanelTest();
-    bool init();
-    void dragPanelEvent(CCObject* pSender, DragPanelEventType type);
-    
-protected:
-    UI_SCENE_CREATE_FUNC(UIDragPanelTest)
-    UILabel *m_pDisplayValueLabel;
+    virtual void onEnter();
+    void menuCallback(CCObject* pSender);
+    virtual void ccTouchesBegan(CCSet *pTouches, CCEvent *pEvent);
+    virtual void ccTouchesMoved(CCSet *pTouches, CCEvent *pEvent);
+private:
+    CCPoint m_tBeginPos;
+    CCMenu* m_pItemMenu;
 };
 
-class UIDragPanelTest_Bounce : public UIScene
+class CocosGUITestScene : public CCScene
 {
 public:
-    UIDragPanelTest_Bounce();
-    ~UIDragPanelTest_Bounce();
-    bool init();
-    void dragPanelEvent(CCObject* pSender, DragPanelEventType type);    
-    
-protected:
-    UI_SCENE_CREATE_FUNC(UIDragPanelTest_Bounce)
-    UILabel *m_pDisplayValueLabel;
+    virtual void onEnter();
+    virtual void runThisTest();
+    void BackCallback(CCObject* pSender);
 };
 
-#endif /* defined(__TestCpp__UIDragPanelTest__) */
+/*
+class CocosGUITestScene : public TestScene
+{
+public:
+	CocosGUITestScene(bool bPortrait = false);
+    virtual ~CocosGUITestScene();
+	virtual void runThisTest();
+    
+	// The CallBack for back to the main menu scene
+	virtual void MainMenuCallback(CCObject* pSender);    
+    
+    void load(CCObject* pSender, int count);
+    void loadTextureCallBack(CCObject *obj);
+    
+    void menuCallback(CCObject* pSender);
+    
+    CCLabelTTF* m_pLabel;
+    
+    CCMenu* m_pItemMenu;
+};
+ */
+
+#endif /* defined(__TestCpp__CocosGUIScene__) */

@@ -32,7 +32,7 @@ void CocosGUIExamplesMapScene::onEnter()
 {
     CCScene::onEnter();
     
-    m_pUILayer = UILayer::create();
+    m_pUILayer = TouchGroup::create();
     m_pUILayer->scheduleUpdate();
     addChild(m_pUILayer);
     
@@ -44,9 +44,9 @@ void CocosGUIExamplesMapScene::onExit()
 {
     m_pUILayer->removeFromParent();
     
-    SceneReader::sharedSceneReader()->purgeSceneReader();
-    GUIReader::shareReader()->purgeGUIReader();
-	cocos2d::extension::ActionManager::shareManager()->purgeActionManager();
+    SceneReader::sharedSceneReader()->purge();
+    GUIReader::shareReader()->purge();
+	cocos2d::extension::ActionManager::shareManager()->purge();
     
     CCScene::onExit();
 }
@@ -70,17 +70,18 @@ void CocosGUIExamplesMapScene::MapInit()
     m_pUILayer->addWidget(map_root);    
     
     // build button on map root
-    Layout* button_layout = static_cast<Layout*>(map_root->getChildByName("button_Panel"));
+    Layout* button_layout = static_cast<Layout*>(UIHelper::seekWidgetByName(map_root, "button_Panel"));
+//    Layout* button_layout = static_cast<Layout*>(map_root->getChildByName("button_Panel"));
     
     for (int i = 0; i < button_layout->getChildren()->count(); ++i)
     {
-        UIButton* build_button = static_cast<UIButton*>(button_layout->getChildren()->objectAtIndex(i));
+        Button* build_button = static_cast<Button*>(button_layout->getChildren()->objectAtIndex(i));
         build_button->setTag(MAP_BUTTON_TAG + i);
         build_button->addTouchEventListener(this, toucheventselector(CocosGUIExamplesMapScene::buildTouchEvent));
     }
     
     // back button
-    UIButton* back_button = static_cast<UIButton*>(m_pUILayer->getWidgetByName("back_Button"));
+    Button* back_button = static_cast<Button*>(m_pUILayer->getWidgetByName("back_Button"));
     back_button->addTouchEventListener(this, toucheventselector(CocosGUIExamplesMapScene::menuCloseCallback));    
 }
 
@@ -88,23 +89,23 @@ void CocosGUIExamplesMapScene::buildTouchEvent(CCObject *pSender, TouchEventType
 {
     if (type == TOUCH_EVENT_ENDED)
     {
-        UIButton* build_button = dynamic_cast<UIButton*>(pSender);
+        Button* build_button = dynamic_cast<Button*>(pSender);
         
         Layout* alert_panel = dynamic_cast<Layout*>(m_pUILayer->getWidgetByName("alert_Panel"));
         alert_panel->setVisible(true);
         
-        UIImageView* alert_imageview = dynamic_cast<UIImageView*>(alert_panel->getChildByName("alert_ImageView"));
+        ImageView* alert_imageview = dynamic_cast<ImageView*>(alert_panel->getChildByName("alert_ImageView"));
         int index = build_button->getTag() - MAP_BUTTON_TAG;
         alert_imageview->loadTexture(buildPngPaths[index]);
         
-        UILabel* alert_label = dynamic_cast<UILabel*>(alert_panel->getChildByName("alert_Label"));
+        gui::Label* alert_label = dynamic_cast<gui::Label*>(alert_panel->getChildByName("alert_Label"));
         alert_label->setColor(ccBLACK);
         alert_label->setTextHorizontalAlignment(kCCTextAlignmentCenter);
         alert_label->setTextVerticalAlignment(kCCVerticalTextAlignmentCenter);
         alert_label->setText(buildNames[index]);
         
         // drag panel
-        UIDragPanel* dragPanel = static_cast<UIDragPanel*>(m_pUILayer->getWidgetByName("DragPanel"));
+        ScrollView* dragPanel = static_cast<ScrollView*>(m_pUILayer->getWidgetByName("DragPanel"));
         dragPanel->setTouchEnabled(false);
         
         // build button on map root
@@ -112,7 +113,7 @@ void CocosGUIExamplesMapScene::buildTouchEvent(CCObject *pSender, TouchEventType
         CCObject* obj = NULL;
         CCARRAY_FOREACH(button_layout->getChildren(), obj)
         {
-            UIButton* build_button = static_cast<UIButton*>(obj);
+            Button* build_button = static_cast<Button*>(obj);
             build_button->setTouchEnabled(false);
         }
     }
@@ -123,7 +124,7 @@ void CocosGUIExamplesMapScene::MapAlertInit()
     // map alert from json
     Layout* alert_panel = static_cast<Layout*>(m_pUILayer->getWidgetByName("alert_Panel"));
     
-    UIButton* close_button = static_cast<UIButton*>(alert_panel->getChildByName("close_Button"));
+    Button* close_button = static_cast<Button*>(alert_panel->getChildByName("close_Button"));
     close_button->addTouchEventListener(this, toucheventselector(CocosGUIExamplesMapScene::MapAlertClose));
 }
 
@@ -135,7 +136,7 @@ void CocosGUIExamplesMapScene::MapAlertClose(CCObject* pSender, TouchEventType t
         map_alert_root->setVisible(false);
         
         // drag panel
-        UIDragPanel* dragPanel = static_cast<UIDragPanel*>(m_pUILayer->getWidgetByName("DragPanel"));
+        ScrollView* dragPanel = static_cast<ScrollView*>(m_pUILayer->getWidgetByName("DragPanel"));
         dragPanel->setTouchEnabled(true);
         
         // build button on map root
@@ -143,7 +144,7 @@ void CocosGUIExamplesMapScene::MapAlertClose(CCObject* pSender, TouchEventType t
         CCObject* obj = NULL;
         CCARRAY_FOREACH(button_layout->getChildren(), obj)
         {
-            UIButton* build_button = static_cast<UIButton*>(obj);
+            Button* build_button = static_cast<Button*>(obj);
             build_button->setTouchEnabled(true);
         }
     }

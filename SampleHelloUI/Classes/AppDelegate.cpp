@@ -1,6 +1,7 @@
 #include "AppDelegate.h"
 #include "HelloWorldScene.h"
 #include "UISceneManager.h"
+#include "CocosGUIScene.h"
 
 USING_NS_CC;
 
@@ -24,6 +25,17 @@ bool AppDelegate::applicationDidFinishLaunching() {
     
     CCSize designSize = CCSizeMake(480, 320);
     
+    CCFileUtils* pFileUtils = CCFileUtils::sharedFileUtils();
+    
+    if (screenSize.height > 320)
+    {
+        CCSize resourceSize = CCSizeMake(960, 640);
+        std::vector<std::string> searchPaths;
+        searchPaths.push_back("hd");
+        pFileUtils->setSearchPaths(searchPaths);
+        pDirector->setContentScaleFactor(resourceSize.height/designSize.height);
+    }
+    
     CCEGLView::sharedOpenGLView()->setDesignResolutionSize(designSize.width, designSize.height, kResolutionShowAll);
      
 	
@@ -34,9 +46,7 @@ bool AppDelegate::applicationDidFinishLaunching() {
     pDirector->setAnimationInterval(1.0 / 60);
 
     // create a scene. it's an autorelease object
-//    CCScene *pScene = HelloWorld::scene();
-    UISceneManager* pManager = UISceneManager::sharedUISceneManager();
-    CCScene* pScene = pManager->currentUIScene();
+    CocosGUITestScene* pScene = new CocosGUITestScene();
 
     // run
     pDirector->runWithScene(pScene);

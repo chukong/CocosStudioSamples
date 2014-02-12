@@ -31,6 +31,7 @@
 
 USING_NS_CC;
 USING_NS_CC_EXT;
+using namespace gui;
 
 #define WEAPON_ITEM_LAYOUT_TAG  1
 
@@ -64,7 +65,7 @@ protected:
     void popupCalculate(CCObject* pSender, TouchEventType type);    
     
 protected:
-    UILayer* m_pUILayer;
+    TouchGroup* m_pUILayer;
     
     int m_nIndex;
     int m_nCount;

@@ -31,6 +31,7 @@
 
 USING_NS_CC;
 USING_NS_CC_EXT;
+using namespace gui;
 
 class CocosGUIExamplesUIAnimationScene : public CCScene
 {

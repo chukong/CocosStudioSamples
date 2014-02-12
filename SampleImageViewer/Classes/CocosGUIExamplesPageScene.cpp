@@ -28,7 +28,7 @@ void CocosGUIExamplesPageScene::onEnter()
 {
     CCScene::onEnter();
     
-    m_pUILayer = UILayer::create();
+    m_pUILayer = TouchGroup::create();
     m_pUILayer->scheduleUpdate();
     addChild(m_pUILayer);
     
@@ -36,7 +36,7 @@ void CocosGUIExamplesPageScene::onEnter()
     
     CCSize winSize = CCDirector::sharedDirector()->getWinSize();
     
-    UILabel* label = UILabel::create();
+    gui::Label* label = gui::Label::create();
     label->setText("Move by horizontal direction");
     const char* font =
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
@@ -52,7 +52,7 @@ void CocosGUIExamplesPageScene::onEnter()
     m_pUILayer->addWidget(label);
     
     // exit button
-    UIButton* exit_button = UIButton::create();
+    Button* exit_button = Button::create();
     exit_button->setTouchEnabled(true);
     exit_button->loadTextures("CloseNormal.png", "CloseSelected.png", "");
     exit_button->setPosition(ccp(m_pUILayer->getContentSize().width - exit_button->getSize().width, exit_button->getSize().height));
@@ -64,9 +64,9 @@ void CocosGUIExamplesPageScene::onExit()
 {
     m_pUILayer->removeFromParent();
     
-    SceneReader::sharedSceneReader()->purgeSceneReader();
-    GUIReader::shareReader()->purgeGUIReader();
-	cocos2d::extension::ActionManager::shareManager()->purgeActionManager();
+    SceneReader::sharedSceneReader()->purge();
+    GUIReader::shareReader()->purge();
+	cocos2d::extension::ActionManager::shareManager()->purge();
     
     CCScene::onExit();
 }
@@ -93,7 +93,7 @@ void CocosGUIExamplesPageScene::PageInit()
     Layout* page_layout = dynamic_cast<Layout*>(page_root->getChildByName("page_panel"));
     
     // page view add to page layout
-    UIPageView* pageView = UIPageView::create();
+    PageView* pageView = PageView::create();
     pageView->setTouchEnabled(true);
     pageView->setSize(page_layout->getSize());
     
@@ -103,7 +103,7 @@ void CocosGUIExamplesPageScene::PageInit()
         Layout* layout = Layout::create();
         layout->setSize(pageView->getSize());
         
-        UIImageView* imageView = UIImageView::create();
+        ImageView* imageView = ImageView::create();
         imageView->setTouchEnabled(true);
         imageView->loadTexture(page_image_textures[i]);
         imageView->setPosition(ccp(layout->getSize().width / 2, layout->getSize().height / 2));
@@ -117,23 +117,23 @@ void CocosGUIExamplesPageScene::PageInit()
 
 void CocosGUIExamplesPageScene::pageViewEvent(CCObject *pSender, PageViewEventType type)
 {
-    UIPageView* pageView = dynamic_cast<UIPageView*>(pSender);
-    int page = pageView->getPage() + 1;
+    PageView* pageView = dynamic_cast<PageView*>(pSender);
+    int page = pageView->getCurPageIndex() + 1;
     
     Layout* page_root = dynamic_cast<Layout*>(m_pUILayer->getWidgetByName("page_root"));
     
     // set current page number for text
-    UILabel* page_alert_label = dynamic_cast<UILabel*>(page_root->getChildByName("page_alert_label"));
+    gui::Label* page_alert_label = dynamic_cast<gui::Label*>(UIHelper::seekWidgetByName(page_root, "page_alert_label"));
     page_alert_label->setText(CCString::createWithFormat("page %d", page)->getCString());
     
     // set current page for image
-    Layout* page_alert_bottom_layout = dynamic_cast<Layout*>(page_root->getChildByName("page_alert_bottom_panel"));
+    Layout* page_alert_bottom_layout = dynamic_cast<Layout*>(UIHelper::seekWidgetByName(page_root, "page_alert_bottom_panel"));
     int count = page_alert_bottom_layout->getChildren()->count();
     for (int i = count / 2; i < count; ++i)
     {
         UIWidget* child = dynamic_cast<UIWidget*>(page_alert_bottom_layout->getChildren()->objectAtIndex(i));
         child->setVisible(false);
     }
-    UIImageView* page_imageview = dynamic_cast<UIImageView*>(page_root->getChildByName(CCString::createWithFormat("page_%d_imageview", page)->getCString()));
+    ImageView* page_imageview = dynamic_cast<ImageView*>(UIHelper::seekWidgetByName(page_root, CCString::createWithFormat("page_%d_imageview", page)->getCString()));
     page_imageview->setVisible(true);
 }

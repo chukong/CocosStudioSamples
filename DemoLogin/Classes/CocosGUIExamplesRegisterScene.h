@@ -31,6 +31,7 @@
 
 USING_NS_CC;
 USING_NS_CC_EXT;
+using namespace gui;
 
 class CocosGUIExamplesRegisterScene : public CCScene
 {
@@ -47,8 +48,8 @@ public:
     void textFieldEvent(CCObject* pSender, TextFiledEventType type);    
     
 protected:
-    UILayer* m_pUILayer;
-    UILayout* m_pLayout;
+    TouchGroup* m_pUILayer;
+    Layout* m_pLayout;
 };
 
 #endif /* defined(__TestCpp__CocosGUIExamplesRegisterScene__) */
