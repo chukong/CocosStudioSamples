@@ -2,12 +2,6 @@
 
 #include "UILabelBMFontTest.h"
 
-const char* font_UILabelBMFontTest =
-#if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
-"Marker Felt";
-#else
-"cocosgui/Marker Felt.ttf";
-#endif
 
 // UILabelBMFontTest
 
@@ -17,9 +11,9 @@ bool UILabelBMFontTest::init()
     {
         CCSize widgetSize = m_pWidget->getSize();
         
-        UILabel *alert = UILabel::create();
+        UILabel* alert = UILabel::create();
         alert->setText("LabelBMFont");
-        alert->setFontName(font_UILabelBMFontTest);
+        alert->setFontName("Marker Felt");
         alert->setFontSize(30);
         alert->setColor(ccc3(159, 168, 176));
         alert->setPosition(ccp(widgetSize.width / 2.0f, widgetSize.height / 2.0f - alert->getSize().height * 1.75));

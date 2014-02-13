@@ -42,9 +42,13 @@ bool HelloWorld::init()
 	m_pGameScene = pGameScene;
 	this->addChild(pGameScene);
 
-	CCArmature *pArmature = (CCArmature*)(m_pGameScene->getChildByTag(10005)->getComponent("CCArmature")->getNode());
-	pArmature->getAnimation()->play("run");
-	m_bStart = true;
+    CCComRender *render = (CCComRender*)(m_pGameScene->getChildByTag(10005)->getComponent("CCArmature"));
+                                         
+    CCArmature *pArmature = (CCArmature*)(render->getNode());
+	
+    pArmature->getAnimation()->play("run");
+	
+    m_bStart = true;
 
     CCMenuItemFont *itemBack = CCMenuItemFont::create("End", this, menu_selector(HelloWorld::menuCloseCallback));
     itemBack->setColor(ccc3(255, 255, 255));
@@ -63,9 +67,9 @@ bool HelloWorld::init()
 void HelloWorld::menuCloseCallback(CCObject* pSender)
 {
 	CCArmatureDataManager::purge();
-	SceneReader::sharedSceneReader()->purgeSceneReader();
-	cocos2d::extension::ActionManager::shareManager()->purgeActionManager();
-    GUIReader::shareReader()->purgeGUIReader();
+	SceneReader::sharedSceneReader()->purge();
+	cocos2d::extension::ActionManager::shareManager()->purge();
+    GUIReader::shareReader()->purge();
     CCDirector::sharedDirector()->end();
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
     exit(0);
@@ -75,7 +79,8 @@ void HelloWorld::menuCloseCallback(CCObject* pSender)
 void HelloWorld::animationEvent(CCArmature *pArmature,
 					MovementEventType movementType, const char *movementID)
 {
-	CCArmature *pEnemy = (CCArmature*)(m_pGameScene->getChildByTag(10006)->getComponent("CCArmature")->getNode());
+    CCComRender *render = (CCComRender*)(m_pGameScene->getChildByTag(10006)->getComponent("CCArmature"));
+	CCArmature *pEnemy = (CCArmature*)(render->getNode());
 
 	if (movementType == COMPLETE)
 	{
@@ -90,9 +95,12 @@ void HelloWorld::update(float delta)
 {
 	if(m_bStart)
 	{
-		CCArmature *pHero = (CCArmature*)(m_pGameScene->getChildByTag(10005)->getComponent("CCArmature")->getNode());
+        CCComRender *pHeroRender = (CCComRender*)(m_pGameScene->getChildByTag(10005)->getComponent("CCArmature"));
+		CCArmature *pHero = (CCArmature*)(pHeroRender->getNode());
 		pHero->getParent()->setPositionX(pHero->getParent()->getPositionX() + m_fSpeed);
-		CCArmature *pEnemy = (CCArmature*)(m_pGameScene->getChildByTag(10006)->getComponent("CCArmature")->getNode());
+        
+        CCComRender *pEnemyRender = (CCComRender*)(m_pGameScene->getChildByTag(10006)->getComponent("CCArmature"));
+		CCArmature *pEnemy = (CCArmature*)(pEnemyRender->getNode());
 
 		if(ccpDistance(ccp(pHero->getParent()->getPositionX(), 0), ccp(pEnemy->getParent()->getPositionX(), 0)) < m_fAttackDis)
 		{	
@@ -106,9 +114,9 @@ void HelloWorld::update(float delta)
 	if(m_bDead)
 	{
 		CCComRender *pUIRender = static_cast<CCComRender*>(m_pGameScene->getChildByTag(10007)->getComponent("GUIComponent"));
-		UILayer *pUILayer = static_cast<UILayer*>(pUIRender->getNode());
-		UILoadingBar *pHPLoadingBar = static_cast<UILoadingBar*>(pUILayer->getWidgetByName("hp02_LoadingBar"));
-		UILoadingBar *pMPLoadingBar = static_cast<UILoadingBar*>(pUILayer->getWidgetByName("mp02_LoadingBar"));
+		cocos2d::gui::TouchGroup *pUILayer = static_cast<cocos2d::gui::TouchGroup*>(pUIRender->getNode());
+		cocos2d::gui::LoadingBar *pHPLoadingBar = static_cast<cocos2d::gui::LoadingBar*>(pUILayer->getWidgetByName("hp02_LoadingBar"));
+		cocos2d::gui::LoadingBar *pMPLoadingBar = static_cast<cocos2d::gui::LoadingBar*>(pUILayer->getWidgetByName("mp02_LoadingBar"));
 
 		pHPLoadingBar->setPercent(m_fPercentage);
 		pMPLoadingBar->setPercent(m_fPercentage);

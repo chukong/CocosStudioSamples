@@ -2,12 +2,6 @@
 
 #include "UILoadingBarTest.h"
 
-const char* font_UILoadingBarTest =
-#if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
-"Marker Felt";
-#else
-"cocosgui/Marker Felt.ttf";
-#endif
 
 // UILoadingBarTest_Left
 
@@ -32,8 +26,8 @@ bool UILoadingBarTest_Left::init()
         
         // Add the alert
         UILabel *alert = UILabel::create();
-        alert->setText("LoadingBar");
-        alert->setFontName(font_UILoadingBarTest);
+        alert->setText("LoadingBar left");
+        alert->setFontName("Marker Felt");
         alert->setFontSize(30);
         alert->setColor(ccc3(159, 168, 176));
         alert->setPosition(ccp(widgetSize.width / 2.0f, widgetSize.height / 2.0f - alert->getSize().height * 1.75));
@@ -115,8 +109,8 @@ bool UILoadingBarTest_Right::init()
         
         // Add the alert
         UILabel *alert = UILabel::create();
-        alert->setText("LoadingBar");
-        alert->setFontName(font_UILoadingBarTest);
+        alert->setText("LoadingBar right");
+        alert->setFontName("Marker Felt");
         alert->setFontSize(30);
         alert->setColor(ccc3(159, 168, 176));
         alert->setPosition(ccp(widgetSize.width / 2.0f, widgetSize.height / 2.0f - alert->getSize().height * 1.75));
@@ -199,11 +193,11 @@ bool UILoadingBarTest_Left_Scale9::init()
         
         // Add the alert
         UILabel *alert = UILabel::create();
-        alert->setText("LoadingBar");
-        alert->setFontName(font_UILoadingBarTest);
-        alert->setFontSize(30);
+        alert->setText("LoadingBar left scale9 render");
+        alert->setFontName("Marker Felt");
+        alert->setFontSize(20);
         alert->setColor(ccc3(159, 168, 176));
-        alert->setPosition(ccp(widgetSize.width / 2.0f, widgetSize.height / 2.0f - alert->getSize().height * 1.75));
+        alert->setPosition(ccp(widgetSize.width / 2.0f, widgetSize.height / 2.0f - alert->getSize().height * 2.7));
         m_pUiLayer->addWidget(alert);
         
         // Create the loading bar
@@ -212,7 +206,9 @@ bool UILoadingBarTest_Left_Scale9::init()
         loadingBar->loadTexture("cocosgui/slider_bar_active_9patch.png");
         loadingBar->setScale9Enabled(true);
         loadingBar->setCapInsets(CCRectMake(0, 0, 0, 0));
+        /*===*/
         loadingBar->setSize(CCSizeMake(300, loadingBar->getContentSize().height));
+        /*=*/
         loadingBar->setPercent(0);
         
         loadingBar->setPosition(ccp(widgetSize.width / 2.0f, widgetSize.height / 2.0f + loadingBar->getSize().height / 4.0f));
@@ -285,11 +281,11 @@ bool UILoadingBarTest_Right_Scale9::init()
         
         // Add the alert
         UILabel *alert = UILabel::create();
-        alert->setText("LoadingBar");
-        alert->setFontName(font_UILoadingBarTest);
-        alert->setFontSize(30);
+        alert->setText("LoadingBar right scale9 render");
+        alert->setFontName("Marker Felt");
+        alert->setFontSize(20);
         alert->setColor(ccc3(159, 168, 176));
-        alert->setPosition(ccp(widgetSize.width / 2.0f, widgetSize.height / 2.0f - alert->getSize().height * 1.75));
+        alert->setPosition(ccp(widgetSize.width / 2.0f, widgetSize.height / 2.0f - alert->getSize().height * 2.7));
         m_pUiLayer->addWidget(alert);
         
         // Create the loading bar
@@ -298,7 +294,9 @@ bool UILoadingBarTest_Right_Scale9::init()
         loadingBar->loadTexture("cocosgui/slider_bar_active_9patch.png");
         loadingBar->setScale9Enabled(true);
         loadingBar->setCapInsets(CCRectMake(0, 0, 0, 0));
+        /*===*/
         loadingBar->setSize(CCSizeMake(300, loadingBar->getContentSize().height));
+        /*=*/
         loadingBar->setDirection(LoadingBarTypeRight);        
         loadingBar->setPercent(0);
         

@@ -9,23 +9,24 @@ LOCAL_MODULE_FILENAME := libcocos2dcpp
 LOCAL_SRC_FILES := hellocpp/main.cpp \
                    ../../Classes/AppDelegate.cpp \
                    ../../Classes/HelloWorldScene.cpp \
-		    ../../Classes/UIScene.cpp \
-		    ../../Classes/UISceneManager.cpp \
-		    ../../Classes/UIButtonTest/UIButtonTest.cpp \
-		    ../../Classes/UICheckBoxTest/UICheckBoxTest.cpp \
-		    ../../Classes/UIImageViewTest/UIImageViewTest.cpp \
-		    ../../Classes/UILabelAtlasTest/UILabelAtlasTest.cpp \
-		    ../../Classes/UILabelBMFontTest/UILabelBMFontTest.cpp \
-		    ../../Classes/UILabelTest/UILabelTest.cpp \
-		    ../../Classes/UILoadingBarTest/UILoadingBarTest.cpp \
-		    ../../Classes/UINodeContainerTest/UINodeContainerTest.cpp \
-		    ../../Classes/UIPageViewTest/UIPageViewTest.cpp \
-		    ../../Classes/UIPanelTest/UIPanelTest.cpp \
-		    ../../Classes/UIScrollViewTest/UIScrollViewTest.cpp \
-		    ../../Classes/UISliderTest/UISliderTest.cpp \
-		    ../../Classes/UITextAreaTest/UITextAreaTest.cpp \
-		    ../../Classes/UITextButtonTest/UITextButtonTest.cpp \
-		    ../../Classes/UITextFieldTest/UITextFieldTest.cpp \
+		   ../../Classes/CocosGUIScene.cpp \
+		   ../../Classes/VisibleRect.cpp \
+		   ../../Classes/UIScene.cpp \
+		   ../../Classes/UISceneManager.cpp \
+		   ../../Classes/UIButtonTest/UIButtonTest.cpp \
+		   ../../Classes/UICheckBoxTest/UICheckBoxTest.cpp \
+		   ../../Classes/UIImageViewTest/UIImageViewTest.cpp \
+		   ../../Classes/UILabelAtlasTest/UILabelAtlasTest.cpp \
+		   ../../Classes/UILabelBMFontTest/UILabelBMFontTest.cpp \
+		   ../../Classes/UILabelTest/UILabelTest.cpp \
+		   ../../Classes/UILayoutTest/UILayoutTest.cpp \
+		   ../../Classes/UIListViewTest/UIListViewTest.cpp \
+		   ../../Classes/UILoadingBarTest/UILoadingBarTest.cpp \
+		   ../../Classes/UIPageViewTest/UIPageViewTest.cpp \
+		   ../../Classes/UIScrollViewTest/UIScrollViewTest.cpp \
+		   ../../Classes/UISliderTest/UISliderTest.cpp \
+		   ../../Classes/UITextFieldTest/UITextFieldTest.cpp \
+		   ../../Classes/UIWidgetAddNodeTest/UIWidgetAddNodeTest.cpp
 
 LOCAL_C_INCLUDES := $(LOCAL_PATH)/../../Classes
 

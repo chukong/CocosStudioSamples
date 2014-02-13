@@ -31,6 +31,7 @@
 
 USING_NS_CC;
 USING_NS_CC_EXT;
+using namespace gui;
 
 #define PAGE_PAGEVIEW_TAG                           1000
 
@@ -52,7 +53,7 @@ protected:
     void pageViewEvent(CCObject* pSender, PageViewEventType type);
     
 protected:
-    UILayer* m_pUILayer;
+    TouchGroup* m_pUILayer;
 };
 
 #endif /* defined(__TestCpp__CocosGUIExamplesPageScene__) */

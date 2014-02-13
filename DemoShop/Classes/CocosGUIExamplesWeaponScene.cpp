@@ -70,7 +70,7 @@ void CocosGUIExamplesWeaponScene::onEnter()
 {
     CCScene::onEnter();
     
-    m_pUILayer = UILayer::create();
+    m_pUILayer = TouchGroup::create();
     m_pUILayer->scheduleUpdate();
     addChild(m_pUILayer);
     
@@ -83,9 +83,9 @@ void CocosGUIExamplesWeaponScene::onExit()
 {
     m_pUILayer->removeFromParent();
     
-    SceneReader::sharedSceneReader()->purgeSceneReader();
-    GUIReader::shareReader()->purgeGUIReader();
-	cocos2d::extension::ActionManager::shareManager()->purgeActionManager();
+    SceneReader::sharedSceneReader()->purge();
+    GUIReader::shareReader()->purge();
+	cocos2d::extension::ActionManager::shareManager()->purge();
     
     CCScene::onExit();
 }
@@ -110,7 +110,7 @@ void CocosGUIExamplesWeaponScene::ShopInit()
     m_pUILayer->addWidget(shop_root);    
     
     // shop scrollview
-    UIScrollView* shop_scrollview = static_cast<UIScrollView*>(shop_root->getChildByName("shop_ScrollView"));
+    ScrollView* shop_scrollview = static_cast<ScrollView*>(shop_root->getChildByName("shop_ScrollView"));
     // shop scrollview children
     for (int i = 0; i < shop_scrollview->getChildren()->count(); ++i)
     {
@@ -118,12 +118,12 @@ void CocosGUIExamplesWeaponScene::ShopInit()
         shop_layout->setTag(SHOP_ITEM_LAYOUT_TAG + i);
         
         // buy button
-        UIButton* buy_button = static_cast<UIButton*>(shop_layout->getChildByName("buy_Button"));
+        Button* buy_button = static_cast<Button*>(shop_layout->getChildByName("buy_Button"));
         buy_button->addTouchEventListener(this, toucheventselector(CocosGUIExamplesWeaponScene::popupLogic));
     }
     
     // ranking scrollview
-    UIScrollView* ranking_scrollview = static_cast<UIScrollView*>(shop_root->getChildByName("ranking_ScrollView"));
+    ScrollView* ranking_scrollview = static_cast<ScrollView*>(shop_root->getChildByName("ranking_ScrollView"));
     // ranking scrollview children
     for (int i = 0; i < ranking_scrollview->getChildren()->count(); ++i)
     {
@@ -143,12 +143,12 @@ void CocosGUIExamplesWeaponScene::ShopInit()
         Layout* ranking_layout = static_cast<Layout*>(ranking_scrollview->getChildren()->objectAtIndex(i));
         
         // buy button
-        UIButton* buy_button = static_cast<UIButton*>(ranking_layout->getChildByName("buy_Button"));
+        Button* buy_button = static_cast<Button*>(ranking_layout->getChildByName("buy_Button"));
         buy_button->addTouchEventListener(this, toucheventselector(CocosGUIExamplesWeaponScene::popupLogic));
     }
     
     // back button
-    UIButton* back_button = static_cast<UIButton*>(shop_root->getChildByName("back_Button"));
+    Button* back_button = static_cast<Button*>(shop_root->getChildByName("back_Button"));
     back_button->addTouchEventListener(this, toucheventselector(CocosGUIExamplesWeaponScene::menuCloseCallback));
 }
 
@@ -159,36 +159,36 @@ void CocosGUIExamplesWeaponScene::popupInit()
     Layout* buy_layout = static_cast<Layout*>(m_pUILayer->getWidgetByName("buy_Panel"));
     
     // add button
-    UIButton* add_button = static_cast<UIButton*>(buy_layout->getChildByName("add_Button"));
+    Button* add_button = static_cast<Button*>(buy_layout->getChildByName("add_Button"));
     add_button->addTouchEventListener(this, toucheventselector(CocosGUIExamplesWeaponScene::popupCalculate));
     
     // sub button
-    UIButton* sub_button = static_cast<UIButton*>(buy_layout->getChildByName("sub_Button"));
+    Button* sub_button = static_cast<Button*>(buy_layout->getChildByName("sub_Button"));
     sub_button->addTouchEventListener(this, toucheventselector(CocosGUIExamplesWeaponScene::popupCalculate));
     
     // number labelatlas
-    UILabelAtlas* number_labelAtlas = static_cast<UILabelAtlas*>(buy_layout->getChildByName("number_LabelAtlas"));
+    LabelAtlas* number_labelAtlas = static_cast<LabelAtlas*>(buy_layout->getChildByName("number_LabelAtlas"));
     number_labelAtlas->setStringValue(CCString::createWithFormat("%d", m_nCount)->getCString());
     
     // coupon number labelatlas
-    UILabelAtlas* couponNumber_labelAtlas = static_cast<UILabelAtlas*>(buy_layout->getChildByName("coupon_number_LabelAtlas"));
+    LabelAtlas* couponNumber_labelAtlas = static_cast<LabelAtlas*>(buy_layout->getChildByName("coupon_number_LabelAtlas"));
     couponNumber_labelAtlas->setStringValue(CCString::createWithFormat("%d", m_nCoupon)->getCString());
     
     // binding number labelatlas
-    UILabelAtlas* bindingNumber_labelAtlas = static_cast<UILabelAtlas*>(buy_layout->getChildByName("binding_number_LabelAtlas"));
+    LabelAtlas* bindingNumber_labelAtlas = static_cast<LabelAtlas*>(buy_layout->getChildByName("binding_number_LabelAtlas"));
     bindingNumber_labelAtlas->setStringValue(CCString::createWithFormat("%d", m_nBinding)->getCString());
     
     // medal number labelatlas
-    UILabelAtlas* medalNumber_labelAtlas = static_cast<UILabelAtlas*>(buy_layout->getChildByName("medal_number_LabelAtlas"));
+    LabelAtlas* medalNumber_labelAtlas = static_cast<LabelAtlas*>(buy_layout->getChildByName("medal_number_LabelAtlas"));
     medalNumber_labelAtlas->setStringValue(CCString::createWithFormat("%d", m_nMedal)->getCString());
     
     // buy button
-    UIButton* buy_button = static_cast<UIButton*>(buy_layout->getChildByName("buy_Button"));
+    Button* buy_button = static_cast<Button*>(buy_layout->getChildByName("buy_Button"));
     buy_button->addTouchEventListener(this, toucheventselector(CocosGUIExamplesWeaponScene::popupClose));
     buy_button->setTouchEnabled(true);
     
     // close button
-    UIButton* close_button = static_cast<UIButton*>(buy_layout->getChildByName("close_Button"));
+    Button* close_button = static_cast<Button*>(buy_layout->getChildByName("close_Button"));
     close_button->addTouchEventListener(this, toucheventselector(CocosGUIExamplesWeaponScene::popupClose));
 }
 
@@ -203,26 +203,26 @@ void CocosGUIExamplesWeaponScene::popupClose(CCObject *pSender, TouchEventType t
         CCObject* obj = NULL;
         
         // shop scrollview
-        UIScrollView* shop_scrollview = static_cast<UIScrollView*>(m_pUILayer->getWidgetByName("shop_ScrollView"));
+        ScrollView* shop_scrollview = static_cast<ScrollView*>(m_pUILayer->getWidgetByName("shop_ScrollView"));
         // shop scrollview children
         CCARRAY_FOREACH(shop_scrollview->getChildren(), obj)
         {
             Layout* shop_layout = static_cast<Layout*>(obj);
             
             // buy button
-            UIButton* buy_button = static_cast<UIButton*>(shop_layout->getChildByName("buy_Button"));
+            Button* buy_button = static_cast<Button*>(shop_layout->getChildByName("buy_Button"));
             buy_button->setTouchEnabled(true);
         }
         
         // ranking scrollview
-        UIScrollView* ranking_scrollview = static_cast<UIScrollView*>(m_pUILayer->getWidgetByName("ranking_ScrollView"));
+        ScrollView* ranking_scrollview = static_cast<ScrollView*>(m_pUILayer->getWidgetByName("ranking_ScrollView"));
         // ranking scrollview children
         CCARRAY_FOREACH(ranking_scrollview->getChildren(), obj)
         {
             Layout* ranking_layout = static_cast<Layout*>(obj);
             
             // buy button
-            UIButton* buy_button = static_cast<UIButton*>(ranking_layout->getChildByName("buy_Button"));
+            Button* buy_button = static_cast<Button*>(ranking_layout->getChildByName("buy_Button"));
             buy_button->setTouchEnabled(true);
         }
     }
@@ -232,24 +232,24 @@ void CocosGUIExamplesWeaponScene::popupLogic(CCObject *pSender, TouchEventType t
 {
     if (type == TOUCH_EVENT_ENDED)
     {        
-        UIWidget* widget = static_cast<UIWidget*>(pSender);
-        UIWidget* parent = widget->getParent();
+        Widget* widget = static_cast<Widget*>(pSender);
+        Widget* parent = static_cast<Widget*>(widget->getParent());
         
         // buy layout
         Layout* buy_layout = static_cast<Layout*>(m_pUILayer->getWidgetByName("buy_Panel"));
         buy_layout->setVisible(true);
         
         // icon imageview
-        UIImageView* icon_imageview = static_cast<UIImageView*>(buy_layout->getChildByName("icon_ImageView"));
+        ImageView* icon_imageview = static_cast<ImageView*>(buy_layout->getChildByName("icon_ImageView"));
         // name labelBMFont
-        UILabelBMFont* name_labelBMFont = static_cast<UILabelBMFont*>(buy_layout->getChildByName("name_LabelBMFont"));
+        LabelBMFont* name_labelBMFont = static_cast<LabelBMFont*>(buy_layout->getChildByName("name_LabelBMFont"));
         // price unit labelBMFont
-        UILabelBMFont* priceUnit_labelBMFont = static_cast<UILabelBMFont*>(buy_layout->getChildByName("price_unit_LabelBMFont"));
+        LabelBMFont* priceUnit_labelBMFont = static_cast<LabelBMFont*>(buy_layout->getChildByName("price_unit_LabelBMFont"));
         // price labelBMFont
-        UILabelBMFont* price_labelBMFont = static_cast<UILabelBMFont*>(buy_layout->getChildByName("price_LabelBMFont"));
+        LabelBMFont* price_labelBMFont = static_cast<LabelBMFont*>(buy_layout->getChildByName("price_LabelBMFont"));
         
-        UIScrollView* shop_scrollview = static_cast<UIScrollView*>(m_pUILayer->getWidgetByName("shop_ScrollView"));
-        UIScrollView* ranking_scrollview = static_cast<UIScrollView*>(m_pUILayer->getWidgetByName("ranking_ScrollView"));
+        ScrollView* shop_scrollview = static_cast<ScrollView*>(m_pUILayer->getWidgetByName("shop_ScrollView"));
+        ScrollView* ranking_scrollview = static_cast<ScrollView*>(m_pUILayer->getWidgetByName("ranking_ScrollView"));
         int tag = parent->getTag();
         int index = 0;
         if (tag >= SHOP_ITEM_LAYOUT_TAG && tag <= shop_scrollview->getChildren()->count() + SHOP_ITEM_LAYOUT_TAG)
@@ -270,22 +270,22 @@ void CocosGUIExamplesWeaponScene::popupLogic(CCObject *pSender, TouchEventType t
         // reset buy property
         m_nCount = 0;
         // number labelatlas
-        UILabelAtlas* number_labelAtlas = static_cast<UILabelAtlas*>(buy_layout->getChildByName("number_LabelAtlas"));
+        LabelAtlas* number_labelAtlas = static_cast<LabelAtlas*>(buy_layout->getChildByName("number_LabelAtlas"));
         number_labelAtlas->setStringValue(CCString::createWithFormat("%d", m_nCount)->getCString());
         
         m_nCoupon = COUPON_MAX;
         m_nBinding = BINDING_MAX;
         m_nMedal = MEDAL_MAX;
         // coupon number labelatlas
-        UILabelAtlas* couponNumber_labelAtlas = static_cast<UILabelAtlas*>(buy_layout->getChildByName("coupon_number_LabelAtlas"));
+        LabelAtlas* couponNumber_labelAtlas = static_cast<LabelAtlas*>(buy_layout->getChildByName("coupon_number_LabelAtlas"));
         couponNumber_labelAtlas->setStringValue(CCString::createWithFormat("%d", m_nCoupon)->getCString());
         
         // binding number labelatlas
-        UILabelAtlas* bindingNumber_labelAtlas = static_cast<UILabelAtlas*>(buy_layout->getChildByName("binding_number_LabelAtlas"));
+        LabelAtlas* bindingNumber_labelAtlas = static_cast<LabelAtlas*>(buy_layout->getChildByName("binding_number_LabelAtlas"));
         bindingNumber_labelAtlas->setStringValue(CCString::createWithFormat("%d", m_nBinding)->getCString());
         
         // medal number labelatlas
-        UILabelAtlas* medalNumber_labelAtlas = static_cast<UILabelAtlas*>(buy_layout->getChildByName("medal_number_LabelAtlas"));
+        LabelAtlas* medalNumber_labelAtlas = static_cast<LabelAtlas*>(buy_layout->getChildByName("medal_number_LabelAtlas"));
         medalNumber_labelAtlas->setStringValue(CCString::createWithFormat("%d", m_nMedal)->getCString());
         
         
@@ -298,7 +298,7 @@ void CocosGUIExamplesWeaponScene::popupLogic(CCObject *pSender, TouchEventType t
             Layout* shop_layout = static_cast<Layout*>(obj);
             
             // buy button
-            UIButton* buy_button = static_cast<UIButton*>(shop_layout->getChildByName("buy_Button"));
+            Button* buy_button = static_cast<Button*>(shop_layout->getChildByName("buy_Button"));
             buy_button->setTouchEnabled(false);
         }
         
@@ -308,7 +308,7 @@ void CocosGUIExamplesWeaponScene::popupLogic(CCObject *pSender, TouchEventType t
             Layout* ranking_layout = static_cast<Layout*>(obj);
             
             // buy button
-            UIButton* buy_button = static_cast<UIButton*>(ranking_layout->getChildByName("buy_Button"));
+            Button* buy_button = static_cast<Button*>(ranking_layout->getChildByName("buy_Button"));
             buy_button->setTouchEnabled(false);
         }
     }
@@ -318,8 +318,8 @@ void CocosGUIExamplesWeaponScene::popupCalculate(CCObject *pSender, TouchEventTy
 {
     if (type == TOUCH_EVENT_ENDED)
     {
-        UIButton* button = static_cast<UIButton*>(pSender);
-        UIWidget* buy_layout = button->getParent();
+        Button* button = static_cast<Button*>(pSender);
+        Widget* buy_layout = static_cast<Widget*>(button->getParent());
         
         int price = shop_prices[m_nIndex];
         if (strcmp(button->getName(), "add_Button") == 0)   // add
@@ -371,19 +371,19 @@ void CocosGUIExamplesWeaponScene::popupCalculate(CCObject *pSender, TouchEventTy
         }
         
         // number labelatlas
-        UILabelAtlas* number_labelAtlas = static_cast<UILabelAtlas*>(buy_layout->getChildByName("number_LabelAtlas"));
+        LabelAtlas* number_labelAtlas = static_cast<LabelAtlas*>(buy_layout->getChildByName("number_LabelAtlas"));
         number_labelAtlas->setStringValue(CCString::createWithFormat("%d", m_nCount)->getCString());
         
         // coupon number labelatlas
-        UILabelAtlas* couponNumber_labelAtlas = static_cast<UILabelAtlas*>(buy_layout->getChildByName("coupon_number_LabelAtlas"));
+        LabelAtlas* couponNumber_labelAtlas = static_cast<LabelAtlas*>(buy_layout->getChildByName("coupon_number_LabelAtlas"));
         couponNumber_labelAtlas->setStringValue(CCString::createWithFormat("%d", m_nCoupon)->getCString());
         
         // binding number labelatlas
-        UILabelAtlas* bindingNumber_labelAtlas = static_cast<UILabelAtlas*>(buy_layout->getChildByName("binding_number_LabelAtlas"));
+        LabelAtlas* bindingNumber_labelAtlas = static_cast<LabelAtlas*>(buy_layout->getChildByName("binding_number_LabelAtlas"));
         bindingNumber_labelAtlas->setStringValue(CCString::createWithFormat("%d", m_nBinding)->getCString());
         
         // medal number labelatlas
-        UILabelAtlas* medalNumber_labelAtlas = static_cast<UILabelAtlas*>(buy_layout->getChildByName("medal_number_LabelAtlas"));
+        LabelAtlas* medalNumber_labelAtlas = static_cast<LabelAtlas*>(buy_layout->getChildByName("medal_number_LabelAtlas"));
         medalNumber_labelAtlas->setStringValue(CCString::createWithFormat("%d", m_nMedal)->getCString());
     }
 }

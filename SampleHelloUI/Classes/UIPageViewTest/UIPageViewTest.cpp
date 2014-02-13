@@ -2,12 +2,6 @@
 
 #include "UIPageViewTest.h"
 
-const char* font_UIPageViewTest =
-#if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
-"Marker Felt";
-#else
-"cocosgui/Marker Felt.ttf";
-#endif
 
 // UIPageViewTest
 UIPageViewTest::UIPageViewTest()
@@ -29,7 +23,7 @@ bool UIPageViewTest::init()
         // Add a label in which the dragpanel events will be displayed
         m_pDisplayValueLabel = UILabel::create();
         m_pDisplayValueLabel->setText("Move by horizontal direction");
-        m_pDisplayValueLabel->setFontName(font_UIPageViewTest);
+        m_pDisplayValueLabel->setFontName("Marker Felt");
         m_pDisplayValueLabel->setFontSize(32);
         m_pDisplayValueLabel->setAnchorPoint(ccp(0.5f, -1));
         m_pDisplayValueLabel->setPosition(ccp(widgetSize.width / 2.0f, widgetSize.height / 2.0f + m_pDisplayValueLabel->getContentSize().height * 1.5));
@@ -38,13 +32,13 @@ bool UIPageViewTest::init()
         // Add the black background
         UILabel *alert = UILabel::create();
         alert->setText("PageView");
-        alert->setFontName(font_UIPageViewTest);
+        alert->setFontName("Marker Felt");
         alert->setFontSize(30);
         alert->setColor(ccc3(159, 168, 176));
-        alert->setPosition(ccp(widgetSize.width / 2.0f, widgetSize.height / 2.0f - alert->getSize().height * 2.925));
+        alert->setPosition(ccp(widgetSize.width / 2.0f, widgetSize.height / 2.0f - alert->getSize().height * 3.075));
         m_pUiLayer->addWidget(alert);
         
-        Layout *background = dynamic_cast<Layout*>(m_pUiLayer->getWidgetByName("background_Panel"));
+        UILayout *background = dynamic_cast<UILayout*>(m_pUiLayer->getWidgetByName("background_Panel"));
         
         // Create the page view
         UIPageView* pageView = UIPageView::create();
@@ -58,7 +52,7 @@ bool UIPageViewTest::init()
         
         for (int i = 0; i < 3; ++i)
         {
-            Layout* layout = Layout::create();
+            UILayout* layout = UILayout::create();
             layout->setSize(CCSizeMake(240, 130));
             
             UIImageView* imageView = UIImageView::create();
@@ -71,7 +65,7 @@ bool UIPageViewTest::init()
             
             UILabel* label = UILabel::create();
             label->setText(CCString::createWithFormat("page %d", (i + 1))->getCString());
-            label->setFontName(font_UIPageViewTest);
+            label->setFontName("Marker Felt");
             label->setFontSize(30);
             label->setColor(ccc3(192, 192, 192));
             label->setPosition(ccp(layout->getSize().width / 2, layout->getSize().height / 2));
@@ -96,7 +90,7 @@ void UIPageViewTest::pageViewEvent(CCObject *pSender, PageViewEventType type)
         {
             UIPageView* pageView = dynamic_cast<UIPageView*>(pSender);
             
-            m_pDisplayValueLabel->setText(CCString::createWithFormat("page = %d", pageView->getPage() + 1)->getCString());
+            m_pDisplayValueLabel->setText(CCString::createWithFormat("page = %d", pageView->getCurPageIndex() + 1)->getCString());
         }
             break;
             

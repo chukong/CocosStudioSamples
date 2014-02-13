@@ -42,6 +42,7 @@
 
 USING_NS_CC;
 USING_NS_CC_EXT;
+using namespace gui;
 
 class CocosGUIExamplesEquipScene : public CCScene
 {
@@ -56,7 +57,7 @@ public:
     
 protected:
     // a selector callback
-    void menuCloseCallback(CCObject* pSender);
+    void menuCloseCallback(CCObject* pSender, TouchEventType type);
     /*
     void toCocosGUIExamplesRegisterScene(CCObject* pSender);
     void toCocosGUIExamplesWeaponScene(CCObject* pSender);
@@ -69,11 +70,9 @@ protected:
     void createWeapons();                               // EquipCreateWeapons
     void createPets();                                  // EquipCreatePets
     
-    void switchBtnCallBack(CCObject* pSender);          // EquipSwitchBtnCallBack
+    void switchBtnCallBack(CCObject* pSender, TouchEventType type);          // EquipSwitchBtnCallBack
     
-    void touch(CCObject* pSender);                      // EquipTouch
-    void move(CCObject* pSender);                       // EquipMove
-    void drop(CCObject* pSender);                       // EquipDrop
+    void touch(CCObject* pSender, TouchEventType type);                      // EquipTouch    
     
     void backOver(CCObject* pObject);                   // EquipBackOver
     
@@ -89,7 +88,7 @@ protected:
     };
     
 protected:
-    UILayer* m_pUILayer;
+    TouchGroup* m_pUILayer;
     
     // equip
     EQUIP_TYPE m_eEquipType;
@@ -116,7 +115,7 @@ protected:
     
     CCPoint widgetLastWorldSpace;
     CCPoint widgetLastNodeSpace;
-    UIWidget* lastWidgetParent;
+    Widget* lastWidgetParent;
 };
 
 #endif /* defined(__TestCpp__CocosGUIExamplesEquipScene__) */

@@ -51,6 +51,7 @@ protected:
     UILabel* m_pDisplayValueLabel;
 };
 
+/*===*/
 class UIScrollViewTest_Both : public UIScene
 {
 public:
@@ -62,5 +63,30 @@ protected:
     UI_SCENE_CREATE_FUNC(UIScrollViewTest_Both)
     UILabel* m_pDisplayValueLabel;
 };
+
+class UIScrollViewTest_ScrollToPercentBothDirection : public UIScene
+{
+public:
+    UIScrollViewTest_ScrollToPercentBothDirection();
+    ~UIScrollViewTest_ScrollToPercentBothDirection();
+    bool init();
+    
+protected:
+    UI_SCENE_CREATE_FUNC(UIScrollViewTest_ScrollToPercentBothDirection)
+    UILabel* m_pDisplayValueLabel;
+};
+
+class UIScrollViewTest_ScrollToPercentBothDirection_Bounce : public UIScene
+{
+public:
+    UIScrollViewTest_ScrollToPercentBothDirection_Bounce();
+    ~UIScrollViewTest_ScrollToPercentBothDirection_Bounce();
+    bool init();
+    
+protected:
+    UI_SCENE_CREATE_FUNC(UIScrollViewTest_ScrollToPercentBothDirection_Bounce)
+    UILabel* m_pDisplayValueLabel;
+};
+/*=*/
 
 #endif /* defined(__TestCpp__UIScrollViewTest__) */

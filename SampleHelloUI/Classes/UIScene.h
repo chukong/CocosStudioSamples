@@ -30,6 +30,7 @@
 
 USING_NS_CC;
 USING_NS_CC_EXT;
+using namespace gui;
 
 #define UI_SCENE_CREATE_FUNC(UIScene) \
 public: \
@@ -57,21 +58,19 @@ public:
     ~UIScene();
     bool init();
     // Menu Callbacks
+    void toCocosGUITestScene(CCObject* sender, TouchEventType type);
     virtual void previousCallback(CCObject* sender, TouchEventType type);
     virtual void restartCallback(CCObject* sender, TouchEventType type);
     virtual void nextCallback(CCObject* sender, TouchEventType type);
     
+    /** Title label of the scene.*/
     CC_SYNTHESIZE_READONLY(UILabel*, m_pSceneTitle, SceneTitle)
-    
+        
     UI_SCENE_CREATE_FUNC(UIScene);
     
 protected:
-    // a selector callback
-    void menuCloseCallback(CCObject* pSender, TouchEventType type);
-    
-protected:
     UILayer *m_pUiLayer;
-    Layout *m_pWidget;
+    UILayout *m_pWidget;
 };
 
 #endif /* defined(__TestCpp__UIScene__) */
