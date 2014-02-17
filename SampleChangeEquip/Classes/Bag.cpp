@@ -1,7 +1,11 @@
 #include "Bag.h"
 
-using namespace cocos2d;
-using namespace cocos2d::extension;
+
+
+USING_NS_CC;
+USING_NS_CC_EXT;
+using namespace gui;
+
 
 enum
 {
@@ -47,14 +51,16 @@ bool Bag::init()
 }
 void Bag::initUILayer()
 {
-	UIWidget* widget = dynamic_cast<Layout*>(CCUIHELPER->
-		createWidgetFromJsonFile("SampleChangeEquip_UI_1/SampleChangeEquip_UI_1.ExportJson"));
+	//UIWidget* widget = dynamic_cast<Layout*>(CCUIHELPER->
+	//	createWidgetFromJsonFile("SampleChangeEquip_UI_1/SampleChangeEquip_UI_1.ExportJson"));
+	UIWidget* widget = dynamic_cast<Layout*>(GUIReader::shareReader()->widgetFromJsonFile("SampleChangeEquip_UI_1/SampleChangeEquip_UI_1.ExportJson"));
 	uiLayer = UILayer::create();
 	uiLayer->addWidget(widget);
 	this->addChild(uiLayer);
 
 	UIWidget* closeButton = dynamic_cast<UIWidget*>(uiLayer->getWidgetByName("closebutton"));
-	closeButton->addPushDownEvent(this,coco_pushselector(Bag::closeCallback));
+	closeButton->addTouchEventListener(this,toucheventselector(Bag::closeCallback));
+	
 }
 void Bag::initArmature()
 {
@@ -68,7 +74,7 @@ void Bag::initArmature()
 
 	UIWidget* armatureWidget = UIWidget::create();
 	uiLayer->addWidget(armatureWidget);
-	armatureWidget->addCCNode(armature);
+	armatureWidget->addNode(armature);
 
 	initArmatureOriginEquips();
 }
@@ -304,12 +310,13 @@ void Bag::changeParent(UIWidget* pGrid,UIWidget* pEquip)
 
 
 
-void Bag::closeCallback(CCObject* pSender)
+void Bag::closeCallback(CCObject* pSender,TouchEventType type)
 {
 	cocos2d::extension::CCArmatureDataManager::purge();
-	cocos2d::extension::CCSSceneReader::sharedSceneReader()->purgeSceneReader();
-	cocos2d::extension::ActionManager::shareManager()->purgeActionManager();
-	cocos2d::extension::UIHelper::instance()->purgeUIHelper();
+	cocos2d::extension::ActionManager::shareManager()->purge();
+	cocos2d::extension::SceneReader::sharedSceneReader()->purge();
+	cocos2d::extension::GUIReader::shareReader()->purge();
+	CCDirector::sharedDirector()->end();
 #if (CC_TARGET_PLATFORM != CC_PLATFORM_ANDROID)
     CCDirector::sharedDirector()->end();
 #endif

@@ -8,11 +8,13 @@
 
 #include "Player.h"
 
+
 Player::Player(CCNode* playerNode)
 :CCObject()
 {
     this->playerNode = playerNode;
-    CCArmature* animationNode = (CCArmature*)playerNode->getComponent("CCArmature")->getNode();
+    CCComRender* comRender = static_cast<CCComRender*>(playerNode->getComponent("CCArmature"));
+	CCArmature *animationNode = static_cast<CCArmature*>(comRender->getNode());
     this->animation = animationNode->getAnimation();
     this->animation->setMovementEventCallFunc(this, movementEvent_selector(Player::onAnimationEvent));
     currentState = IDLE;
