@@ -5,6 +5,8 @@
 #include "cocos-ext.h"
 #include "Player.h"
 
+using namespace cocos2d::gui;
+
 class PlayerHeadUI : public cocos2d::CCLayer
 {
 public:
@@ -23,7 +25,7 @@ private:
 
 	void setHPBarPercent(int percent);
 
-	cocos2d::extension::UILayer* uiLayer;
+	UILayer* uiLayer;
 
 	Player* player;
 	int playerLifeRecorder;

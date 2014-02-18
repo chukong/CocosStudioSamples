@@ -93,7 +93,6 @@ void HelloWorld::menuCloseCallback(CCObject* pSender)
 	cocos2d::extension::ActionManager::shareManager()->purge();
 	cocos2d::extension::SceneReader::sharedSceneReader()->purge();
 	GUIReader::shareReader()->purge();
-	CCDirector::sharedDirector()->end();
 
 #if (CC_TARGET_PLATFORM != CC_PLATFORM_ANDROID)
     CCDirector::sharedDirector()->end();

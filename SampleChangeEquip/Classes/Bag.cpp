@@ -316,7 +316,6 @@ void Bag::closeCallback(CCObject* pSender,TouchEventType type)
 	cocos2d::extension::ActionManager::shareManager()->purge();
 	cocos2d::extension::SceneReader::sharedSceneReader()->purge();
 	cocos2d::extension::GUIReader::shareReader()->purge();
-	CCDirector::sharedDirector()->end();
 #if (CC_TARGET_PLATFORM != CC_PLATFORM_ANDROID)
     CCDirector::sharedDirector()->end();
 #endif

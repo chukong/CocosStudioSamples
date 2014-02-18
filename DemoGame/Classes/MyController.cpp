@@ -55,7 +55,7 @@ UILayer* MyController::createButton()
 
 	UIButton* button = UIButton::create();
 
-	button->setTouchEnable(true);
+	button->setTouchEnabled(true);
 	button->loadTextures("ui/buttonrelease.png","ui/buttonpress.png","");
 	button->setPosition(ccp(0.9 * size.width,0.2 * size.height));
 	button->setScale(0.5);

@@ -2,6 +2,7 @@
 
 using namespace cocos2d;
 using namespace cocos2d::extension;
+using namespace gui;
 
 PlayerHeadUI::PlayerHeadUI(void):
 	uiLayer(NULL),player(NULL),
@@ -18,7 +19,9 @@ PlayerHeadUI::PlayerHeadUI(void):
 
 void PlayerHeadUI::initWidget()
 {
-	UIWidget* widget = dynamic_cast<Layout*>(CCUIHELPER->createWidgetFromJsonFile("uifiles/ui_1.ExportJson"));
+	//UIWidget* widget = dynamic_cast<Layout*>(CCUIHELPER->createWidgetFromJsonFile("uifiles/ui_1.ExportJson"));
+	UIWidget* widget = dynamic_cast<Layout*>(GUIReader::shareReader()->widgetFromJsonFile("uifiles/ui_1.ExportJson"));
+
 	widget->setScale(0.5);
 	widget->setPosition(ccp(0,160));
 	uiLayer->addWidget(widget);
