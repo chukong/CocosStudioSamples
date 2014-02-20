@@ -29,24 +29,7 @@ void CocosGUIExamplesEquipScene::onEnter()
     EquipInit();
     
     
-    /*
-    // left button
-    Button* left_button = Button::create();
-    left_button->setTouchEnabled(true);
-    left_button->loadTextures("cocosgui/UITest/b1.png", "cocosgui/UITest/b2.png", "");
-    float left_button_width = left_button->getContentSize().width;
-    left_button->setPosition(ccp(left_button_width - left_button_width / 2, m_pUILayer->getContentSize().height / 2));
-    left_button->addReleaseEvent(this, coco_releaseselector(CocosGUIExamplesEquipScene::toCocosGUIExamplesRegisterScene));
-    m_pUILayer->addWidget(left_button);
-    
-    // right button
-    Button* right_button = Button::create();
-    right_button->setTouchEnabled(true);
-    right_button->loadTextures("cocosgui/UITest/f1.png", "cocosgui/UITest/f2.png", "");
-    right_button->setPosition(ccp(m_pUILayer->getContentSize().width - right_button->getContentSize().width / 2, m_pUILayer->getContentSize().height / 2));
-    right_button->addReleaseEvent(this, coco_releaseselector(CocosGUIExamplesEquipScene::toCocosGUIExamplesWeaponScene));
-    m_pUILayer->addWidget(right_button);
-     */
+  
     
     // exit button
     Button* exit_button = Button::create();
