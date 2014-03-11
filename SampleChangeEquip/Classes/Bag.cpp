@@ -79,10 +79,10 @@ void Bag::initArmature()
 }
 void Bag::initArmatureOriginEquips()
 {
-	armature->getBone("beltbone")->changeDisplayWithndex(-1,true);
-	armature->getBone("necklacebone")->changeDisplayWithndex(-1,true);
-	armature->getBone("weaponbone")->changeDisplayWithndex(-1,true);
-	armature->getBone("helmetbone")->changeDisplayWithndex(-1,true);
+	armature->getBone("beltbone")->changeDisplayWithIndex(-1,true);
+	armature->getBone("necklacebone")->changeDisplayWithIndex(-1,true);
+	armature->getBone("weaponbone")->changeDisplayWithIndex(-1,true);
+	armature->getBone("helmetbone")->changeDisplayWithIndex(-1,true);
 }
 
 void Bag::initEquips()
@@ -269,7 +269,7 @@ void Bag::changeEquip(UIWidget* pWeapon,UIWidget* pGrid)
 
 	CCSkin* weaponSkin = CCSkin::createWithSpriteFrameName(weaponName->getCString());
 	armature->getBone(boneName->getCString())->addDisplay(weaponSkin,0);
-	armature->getBone(boneName->getCString())->changeDisplayWithndex(0,true);
+	armature->getBone(boneName->getCString())->changeDisplayWithIndex(0,true);
 }
 void Bag::unequipEquip()
 {
@@ -281,7 +281,7 @@ void Bag::unequipEquip()
 	case EQUIP_TYPE_BELT:
 	case EQUIP_TYPE_HELMET:
 	case EQUIP_TYPE_NECKLACE:
-		armature->getBone(boneName->getCString())->changeDisplayWithndex(-1,true);
+		armature->getBone(boneName->getCString())->changeDisplayWithIndex(-1,true);
 		break;
 	case	EQUIP_TYPE_SKILL:
 	case	EQUIP_TYPE_SHIELD:
