@@ -2,6 +2,10 @@
 
 #include "CocosGUIExamplesUIAnimationScene.h"
 
+USING_NS_CC;
+USING_NS_CC_EXT;
+using namespace ui;
+
 CocosGUIExamplesUIAnimationScene::CocosGUIExamplesUIAnimationScene()
 {
     CCScene::init();
@@ -16,7 +20,7 @@ void CocosGUIExamplesUIAnimationScene::onEnter()
 {
     CCScene::onEnter();
     
-    m_pUILayer = UILayer::create();
+    m_pUILayer = TouchGroup::create();
     m_pUILayer->scheduleUpdate();
     addChild(m_pUILayer);
     

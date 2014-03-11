@@ -29,11 +29,7 @@
 #include "cocos-ext.h"
 //#include "../../testBasic.h"
 
-USING_NS_CC;
-USING_NS_CC_EXT;
-using namespace gui;
-
-class CocosGUIExamplesUIAnimationScene : public CCScene
+class CocosGUIExamplesUIAnimationScene : public cocos2d::CCScene
 {
 public:
     CocosGUIExamplesUIAnimationScene();
@@ -44,13 +40,13 @@ public:
     
 protected:
     // a selector callback
-    void menuCloseCallback(CCObject* pSender, TouchEventType type);
+    void menuCloseCallback(cocos2d::CCObject* pSender, cocos2d::ui::TouchEventType type);
     
     void UIAnimationInit();
-    void startUIAnimation(CCObject* pSender, TouchEventType type);
+    void startUIAnimation(cocos2d::CCObject* pSender, cocos2d::ui::TouchEventType type);
     
 protected:
-    UILayer* m_pUILayer;
+    cocos2d::ui::TouchGroup* m_pUILayer;
 };
 
 #endif /* defined(__TestCpp__CocosGUIExamplesUIAnimationScene__) */

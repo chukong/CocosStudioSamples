@@ -40,11 +40,7 @@
 #define EQUIP_SWITCH_LAYOUT_BUTTON_TAG_WEAPONS           1006
 #define EQUIP_SWITCH_LAYOUT_BUTTON_TAG_PETS              1007
 
-USING_NS_CC;
-USING_NS_CC_EXT;
-using namespace gui;
-
-class CocosGUIExamplesEquipScene : public CCScene
+class CocosGUIExamplesEquipScene : public cocos2d::CCScene
 {
 public:
     CocosGUIExamplesEquipScene();
@@ -57,7 +53,7 @@ public:
     
 protected:
     // a selector callback
-    void menuCloseCallback(CCObject* pSender, TouchEventType type);
+    void menuCloseCallback(cocos2d::CCObject* pSender, cocos2d::ui::TouchEventType type);
     /*
     void toCocosGUIExamplesRegisterScene(CCObject* pSender);
     void toCocosGUIExamplesWeaponScene(CCObject* pSender);
@@ -70,13 +66,13 @@ protected:
     void createWeapons();                               // EquipCreateWeapons
     void createPets();                                  // EquipCreatePets
     
-    void switchBtnCallBack(CCObject* pSender, TouchEventType type);          // EquipSwitchBtnCallBack
+    void switchBtnCallBack(cocos2d::CCObject* pSender, cocos2d::ui::TouchEventType type);          // EquipSwitchBtnCallBack
     
-    void touch(CCObject* pSender, TouchEventType type);                      // EquipTouch    
+    void touch(cocos2d::CCObject* pSender, cocos2d::ui::TouchEventType type);                      // EquipTouch
     
-    void backOver(CCObject* pObject);                   // EquipBackOver
+    void backOver(cocos2d::CCObject* pObject);                   // EquipBackOver
     
-    void close(CCObject* pObject);                      // EquipClose
+    void close(cocos2d::CCObject* pObject);                      // EquipClose
     
 protected:
     enum EQUIP_TYPE
@@ -88,34 +84,34 @@ protected:
     };
     
 protected:
-    TouchGroup* m_pUILayer;
+    cocos2d::ui::TouchGroup* m_pUILayer;
     
     // equip
     EQUIP_TYPE m_eEquipType;
     
-    CCDictionary* m_dicBeUsedSlot;
-    CCDictionary* m_dicClothesSlot;
-    CCDictionary* m_dicWeaponsSlot;
-    CCDictionary* m_dicPetsSlot;
+    cocos2d::CCDictionary* m_dicBeUsedSlot;
+    cocos2d::CCDictionary* m_dicClothesSlot;
+    cocos2d::CCDictionary* m_dicWeaponsSlot;
+    cocos2d::CCDictionary* m_dicPetsSlot;
     
-    CCDictionary* m_dicClothes;
-    CCDictionary* m_dicWeapons;
-    CCDictionary* m_dicPets;
+    cocos2d::CCDictionary* m_dicClothes;
+    cocos2d::CCDictionary* m_dicWeapons;
+    cocos2d::CCDictionary* m_dicPets;
     
     int container_1_Zorder;
     int container_2_Zorder;
     int container_3_Zorder;
     
-    CCPoint container_1_Position;
-    CCPoint container_2_Position;
-    CCPoint container_3_Position;
+    cocos2d::CCPoint container_1_Position;
+    cocos2d::CCPoint container_2_Position;
+    cocos2d::CCPoint container_3_Position;
     
-    CCPoint movePoint;
-    CCPoint lastPoint;
+    cocos2d::CCPoint movePoint;
+    cocos2d::CCPoint lastPoint;
     
-    CCPoint widgetLastWorldSpace;
-    CCPoint widgetLastNodeSpace;
-    Widget* lastWidgetParent;
+    cocos2d::CCPoint widgetLastWorldSpace;
+    cocos2d::CCPoint widgetLastNodeSpace;
+    cocos2d::ui::Widget* lastWidgetParent;
 };
 
 #endif /* defined(__TestCpp__CocosGUIExamplesEquipScene__) */

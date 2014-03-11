@@ -2,6 +2,10 @@
 
 #include "CocosGUIExamplesWeaponScene.h"
 
+USING_NS_CC;
+USING_NS_CC_EXT;
+using namespace ui;
+
 
 const char* shop_textures[8] =
 {
@@ -241,12 +245,15 @@ void CocosGUIExamplesWeaponScene::popupLogic(CCObject *pSender, TouchEventType t
         
         // icon imageview
         ImageView* icon_imageview = static_cast<ImageView*>(buy_layout->getChildByName("icon_ImageView"));
-        // name labelBMFont
-        LabelBMFont* name_labelBMFont = static_cast<LabelBMFont*>(buy_layout->getChildByName("name_LabelBMFont"));
+        // name label
+        Label* name_text = static_cast<Label*>(buy_layout->getChildByName("name_Label"));
+//        LabelBMFont* name_labelBMFont = static_cast<LabelBMFont*>(buy_layout->getChildByName("name_LabelBMFont"));
         // price unit labelBMFont
-        LabelBMFont* priceUnit_labelBMFont = static_cast<LabelBMFont*>(buy_layout->getChildByName("price_unit_LabelBMFont"));
+        Label* priceUnit_text = static_cast<Label*>(buy_layout->getChildByName("price_unit_Label"));
+//        LabelBMFont* priceUnit_labelBMFont = static_cast<LabelBMFont*>(buy_layout->getChildByName("price_unit_LabelBMFont"));
         // price labelBMFont
-        LabelBMFont* price_labelBMFont = static_cast<LabelBMFont*>(buy_layout->getChildByName("price_LabelBMFont"));
+        Label* price_text = static_cast<Label*>(buy_layout->getChildByName("price_Label"));
+//        LabelBMFont* price_labelBMFont = static_cast<LabelBMFont*>(buy_layout->getChildByName("price_LabelBMFont"));
         
         ScrollView* shop_scrollview = static_cast<ScrollView*>(m_pUILayer->getWidgetByName("shop_ScrollView"));
         ScrollView* ranking_scrollview = static_cast<ScrollView*>(m_pUILayer->getWidgetByName("ranking_ScrollView"));
@@ -262,9 +269,9 @@ void CocosGUIExamplesWeaponScene::popupLogic(CCObject *pSender, TouchEventType t
         }
         m_nIndex = index;
         icon_imageview->loadTexture(shop_textures[index]);
-        name_labelBMFont->setText(shop_names[index]);
-        priceUnit_labelBMFont->setText(shop_price_units[index]);
-        price_labelBMFont->setText(CCString::createWithFormat("%d", shop_prices[index])->getCString());
+        name_text->setText(shop_names[index]);
+        priceUnit_text->setText(shop_price_units[index]);
+        price_text->setText(CCString::createWithFormat("%d", shop_prices[index])->getCString());
         
         
         // reset buy property

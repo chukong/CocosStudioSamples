@@ -28,6 +28,8 @@
                 "scalex": 1,
                 "scaley": 1,
                 "starttime": 1.77505913E+30,
+                "tweenParameter": [],
+                "tweenType": 0,
                 "visible": false
               },
               {
@@ -44,6 +46,8 @@
                 "scalex": 1,
                 "scaley": 1,
                 "starttime": 1.401298E-42,
+                "tweenParameter": [],
+                "tweenType": 0,
                 "visible": false
               },
               {
@@ -60,6 +64,8 @@
                 "scalex": 0.3,
                 "scaley": 1.6,
                 "starttime": 7.163279E-39,
+                "tweenParameter": [],
+                "tweenType": 0,
                 "visible": false
               },
               {
@@ -76,6 +82,8 @@
                 "scalex": 1,
                 "scaley": 1,
                 "starttime": 4.224576E-39,
+                "tweenParameter": [],
+                "tweenType": 0,
                 "visible": false
               },
               {
@@ -92,6 +100,8 @@
                 "scalex": 1,
                 "scaley": 1,
                 "starttime": 7.163279E-39,
+                "tweenParameter": [],
+                "tweenType": 0,
                 "visible": false
               },
               {
@@ -108,6 +118,8 @@
                 "scalex": 1,
                 "scaley": 1,
                 "starttime": 1.401298E-45,
+                "tweenParameter": [],
+                "tweenType": 0,
                 "visible": false
               },
               {
@@ -124,6 +136,8 @@
                 "scalex": -1,
                 "scaley": 0.9754356,
                 "starttime": 4.224576E-39,
+                "tweenParameter": [],
+                "tweenType": 0,
                 "visible": false
               },
               {
@@ -140,6 +154,8 @@
                 "scalex": 1,
                 "scaley": 0.9754356,
                 "starttime": 0,
+                "tweenParameter": [],
+                "tweenType": 0,
                 "visible": false
               },
               {
@@ -156,6 +172,8 @@
                 "scalex": -1,
                 "scaley": 0.9754356,
                 "starttime": 9.64289E-39,
+                "tweenParameter": [],
+                "tweenType": 0,
                 "visible": false
               }
             ]
@@ -166,30 +184,32 @@
       }
     ]
   },
+  "dataScale": 1,
   "designHeight": 320,
   "designWidth": 480,
   "textures": [],
-  "version": "1.1.0.0",
+  "version": "1.3.0.0",
   "widgetTree": {
     "classname": "Panel",
     "name": null,
     "children": [
       {
-        "classname": "TextButton",
+        "classname": "Button",
         "name": null,
         "children": [],
         "options": {
-          "__type": "ComGUITextButtonSurrogate:#EditorCommon.JsonModel.Component.GUI",
-          "classname": "TextButton",
+          "__type": "ButtonSurrogate:#EditorCommon.JsonModel.Component.GUI",
+          "classname": "Button",
           "name": "TextButton",
           "ZOrder": 2,
           "actiontag": 24,
           "anchorPointX": 0.5,
           "anchorPointY": 0.5,
-          "classType": null,
+          "classType": "Button",
           "colorB": 255,
           "colorG": 255,
           "colorR": 255,
+          "customProperty": "",
           "flipX": false,
           "flipY": false,
           "height": 30,
@@ -197,13 +217,13 @@
           "layoutParameter": null,
           "opacity": 255,
           "positionPercentX": 0.5,
-          "positionPercentY": 0.121874996,
+          "positionPercentY": 0.121875,
           "positionType": 0,
           "rotation": 0,
           "scaleX": 1,
           "scaleY": 1,
-          "sizePercentX": 0.21,
-          "sizePercentY": 0.0899999961,
+          "sizePercentX": 0.208333328,
+          "sizePercentY": 0.09375,
           "sizeType": 0,
           "tag": 4,
           "touchAble": true,
@@ -219,7 +239,7 @@
           "disabled": null,
           "disabledData": {
             "path": "backtotopnormal.png",
-            "plistFile": null,
+            "plistFile": "",
             "resourceType": 0
           },
           "fontName": "宋体",
@@ -228,13 +248,13 @@
           "normal": null,
           "normalData": {
             "path": "backtotopnormal.png",
-            "plistFile": null,
+            "plistFile": "",
             "resourceType": 0
           },
           "pressed": null,
           "pressedData": {
             "path": "backtotoppressed.png",
-            "plistFile": null,
+            "plistFile": "",
             "resourceType": 0
           },
           "scale9Enable": false,
@@ -251,17 +271,18 @@
         "name": null,
         "children": [],
         "options": {
-          "__type": "ComGUIImageViewSurrogate:#EditorCommon.JsonModel.Component.GUI",
+          "__type": "ImageViewSurrogate:#EditorCommon.JsonModel.Component.GUI",
           "classname": "ImageView",
           "name": "ImageView",
           "ZOrder": 1,
           "actiontag": 27,
           "anchorPointX": 0.5,
           "anchorPointY": 0.5,
-          "classType": null,
+          "classType": "ImageView",
           "colorB": 255,
           "colorG": 255,
           "colorR": 255,
+          "customProperty": "",
           "flipX": false,
           "flipY": false,
           "height": 84,
@@ -274,8 +295,8 @@
           "rotation": 0,
           "scaleX": 1,
           "scaleY": 1,
-          "sizePercentX": 0.16,
-          "sizePercentY": 0.26,
+          "sizePercentX": 0.158333331,
+          "sizePercentY": 0.2625,
           "sizeType": 0,
           "tag": 5,
           "touchAble": false,
@@ -291,7 +312,7 @@
           "fileName": null,
           "fileNameData": {
             "path": "CocoStudio_UIEditor.png",
-            "plistFile": null,
+            "plistFile": "",
             "resourceType": 0
           },
           "scale9Enable": false,
@@ -301,17 +322,18 @@
       }
     ],
     "options": {
-      "__type": "ComGUIPanelSurrogate:#EditorCommon.JsonModel.Component.GUI",
+      "__type": "PanelSurrogate:#EditorCommon.JsonModel.Component.GUI",
       "classname": "Panel",
       "name": "Panel",
       "ZOrder": 0,
       "actiontag": -1,
       "anchorPointX": 0,
       "anchorPointY": 0,
-      "classType": null,
+      "classType": "Panel",
       "colorB": 255,
       "colorG": 255,
       "colorR": 255,
+      "customProperty": "",
       "flipX": false,
       "flipY": false,
       "height": 320,
@@ -324,8 +346,8 @@
       "rotation": 0,
       "scaleX": 1,
       "scaleY": 1,
-      "sizePercentX": 0.01,
-      "sizePercentY": 0.01,
+      "sizePercentX": 0,
+      "sizePercentY": 0,
       "sizeType": 0,
       "tag": 4,
       "touchAble": false,
@@ -334,6 +356,7 @@
       "width": 480,
       "x": 0,
       "y": 0,
+      "adaptScreen": false,
       "backGroundImage": null,
       "backGroundImageData": null,
       "backGroundScale9Enable": false,

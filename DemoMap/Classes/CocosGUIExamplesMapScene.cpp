@@ -2,6 +2,10 @@
 
 #include "CocosGUIExamplesMapScene.h"
 
+USING_NS_CC;
+USING_NS_CC_EXT;
+using namespace ui;
+
 const char* buildPngPaths[4] =
 {
     "cocosgui/gui_examples/DemoMap/purple_ball1.png",
@@ -98,7 +102,7 @@ void CocosGUIExamplesMapScene::buildTouchEvent(CCObject *pSender, TouchEventType
         int index = build_button->getTag() - MAP_BUTTON_TAG;
         alert_imageview->loadTexture(buildPngPaths[index]);
         
-        gui::Label* alert_label = dynamic_cast<gui::Label*>(alert_panel->getChildByName("alert_Label"));
+        Label* alert_label = dynamic_cast<Label*>(alert_panel->getChildByName("alert_Label"));
         alert_label->setColor(ccBLACK);
         alert_label->setTextHorizontalAlignment(kCCTextAlignmentCenter);
         alert_label->setTextVerticalAlignment(kCCVerticalTextAlignmentCenter);

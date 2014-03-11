@@ -6,6 +6,10 @@
 #include "CocosGUIExamplesPageSpecialScene.h"
  */
 
+USING_NS_CC;
+USING_NS_CC_EXT;
+using namespace ui;
+
 const char* page_image_textures[4] =
 {
     "cocosgui/gui_examples/page_1/page_content/CocoStudio_AnimationEditor.png",
@@ -36,7 +40,7 @@ void CocosGUIExamplesPageScene::onEnter()
     
     CCSize winSize = CCDirector::sharedDirector()->getWinSize();
     
-    gui::Label* label = gui::Label::create();
+    Label* label = Label::create();
     label->setText("Move by horizontal direction");
     const char* font =
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
@@ -123,7 +127,7 @@ void CocosGUIExamplesPageScene::pageViewEvent(CCObject *pSender, PageViewEventTy
     Layout* page_root = dynamic_cast<Layout*>(m_pUILayer->getWidgetByName("page_root"));
     
     // set current page number for text
-    gui::Label* page_alert_label = dynamic_cast<gui::Label*>(UIHelper::seekWidgetByName(page_root, "page_alert_label"));
+    Label* page_alert_label = dynamic_cast<Label*>(UIHelper::seekWidgetByName(page_root, "page_alert_label"));
     page_alert_label->setText(CCString::createWithFormat("page %d", page)->getCString());
     
     // set current page for image
