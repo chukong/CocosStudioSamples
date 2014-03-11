@@ -114,9 +114,9 @@ void HelloWorld::update(float delta)
 	if(m_bDead)
 	{
 		CCComRender *pUIRender = static_cast<CCComRender*>(m_pGameScene->getChildByTag(10007)->getComponent("GUIComponent"));
-		cocos2d::gui::TouchGroup *pUILayer = static_cast<cocos2d::gui::TouchGroup*>(pUIRender->getNode());
-		cocos2d::gui::LoadingBar *pHPLoadingBar = static_cast<cocos2d::gui::LoadingBar*>(pUILayer->getWidgetByName("hp02_LoadingBar"));
-		cocos2d::gui::LoadingBar *pMPLoadingBar = static_cast<cocos2d::gui::LoadingBar*>(pUILayer->getWidgetByName("mp02_LoadingBar"));
+		cocos2d::ui::TouchGroup *pUILayer = static_cast<cocos2d::ui::TouchGroup*>(pUIRender->getNode());
+		cocos2d::ui::LoadingBar *pHPLoadingBar = static_cast<cocos2d::ui::LoadingBar*>(pUILayer->getWidgetByName("hp02_LoadingBar"));
+		cocos2d::ui::LoadingBar *pMPLoadingBar = static_cast<cocos2d::ui::LoadingBar*>(pUILayer->getWidgetByName("mp02_LoadingBar"));
 
 		pHPLoadingBar->setPercent(m_fPercentage);
 		pMPLoadingBar->setPercent(m_fPercentage);
