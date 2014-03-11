@@ -4,7 +4,7 @@
 #include "cocos2d.h"
 #include "Player.h"
 
-using namespace gui;
+using namespace ui;
 
 class HelloWorld : public cocos2d::CCLayer
 {
