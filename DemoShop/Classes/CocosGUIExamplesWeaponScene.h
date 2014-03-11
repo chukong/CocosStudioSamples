@@ -29,10 +29,6 @@
 #include "cocos-ext.h"
 //#include "../../testBasic.h"
 
-USING_NS_CC;
-USING_NS_CC_EXT;
-using namespace gui;
-
 #define WEAPON_ITEM_LAYOUT_TAG  1
 
 #define SHOP_ITEM_LAYOUT_TAG        100
@@ -42,7 +38,7 @@ using namespace gui;
 #define BINDING_MAX                 400
 #define MEDAL_MAX                   500
 
-class CocosGUIExamplesWeaponScene : public CCScene
+class CocosGUIExamplesWeaponScene : public cocos2d::CCScene
 {        
 public:
     CocosGUIExamplesWeaponScene();
@@ -53,19 +49,19 @@ public:
     
 protected:
     // a selector callback
-    void menuCloseCallback(CCObject* pSender, TouchEventType type);
+    void menuCloseCallback(cocos2d::CCObject* pSender, cocos2d::ui::TouchEventType type);
     
     // shop
     void ShopInit();
     
     // popup
     void popupInit();
-    void popupClose(CCObject* pSender, TouchEventType type);
-    void popupLogic(CCObject* pSender, TouchEventType type);
-    void popupCalculate(CCObject* pSender, TouchEventType type);    
+    void popupClose(cocos2d::CCObject* pSender, cocos2d::ui::TouchEventType type);
+    void popupLogic(cocos2d::CCObject* pSender, cocos2d::ui::TouchEventType type);
+    void popupCalculate(cocos2d::CCObject* pSender, cocos2d::ui::TouchEventType type);
     
 protected:
-    TouchGroup* m_pUILayer;
+    cocos2d::ui::TouchGroup* m_pUILayer;
     
     int m_nIndex;
     int m_nCount;

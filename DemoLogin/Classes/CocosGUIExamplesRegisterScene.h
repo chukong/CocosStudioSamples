@@ -29,11 +29,7 @@
 #include "cocos-ext.h"
 //#include "../../testBasic.h"
 
-USING_NS_CC;
-USING_NS_CC_EXT;
-using namespace gui;
-
-class CocosGUIExamplesRegisterScene : public CCScene
+class CocosGUIExamplesRegisterScene : public cocos2d::CCScene
 {
 public:
     CocosGUIExamplesRegisterScene(bool bPortrait = false);
@@ -43,13 +39,13 @@ public:
     virtual void onExit();
     
     // a selector callback
-    void menuCloseCallback(CCObject* pSender, TouchEventType type);
+    void menuCloseCallback(cocos2d::CCObject* pSender, cocos2d::ui::TouchEventType type);
     
-    void textFieldEvent(CCObject* pSender, TextFiledEventType type);    
+    void textFieldEvent(cocos2d::CCObject* pSender, cocos2d::ui::TextFiledEventType type);
     
 protected:
-    TouchGroup* m_pUILayer;
-    Layout* m_pLayout;
+    cocos2d::ui::TouchGroup* m_pUILayer;
+    cocos2d::ui::Layout* m_pLayout;
 };
 
 #endif /* defined(__TestCpp__CocosGUIExamplesRegisterScene__) */

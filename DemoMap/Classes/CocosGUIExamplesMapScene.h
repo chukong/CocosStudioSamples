@@ -29,13 +29,9 @@
 #include "cocos-ext.h"
 //#include "../../testBasic.h"
 
-USING_NS_CC;
-USING_NS_CC_EXT;
-using namespace gui;
-
 #define MAP_BUTTON_TAG                           1000
 
-class CocosGUIExamplesMapScene : public CCScene
+class CocosGUIExamplesMapScene : public cocos2d::CCScene
 {
 public:
     CocosGUIExamplesMapScene();
@@ -46,18 +42,18 @@ public:
     
 protected:
     // a selector callback
-    void menuCloseCallback(CCObject* pSender, TouchEventType type);
+    void menuCloseCallback(cocos2d::CCObject* pSender, cocos2d::ui::TouchEventType type);
     
     // map
     void MapInit();
-    void buildTouchEvent(CCObject* pSender, TouchEventType type);
+    void buildTouchEvent(cocos2d::CCObject* pSender, cocos2d::ui::TouchEventType type);
     
     // map alert
     void MapAlertInit();
-    void MapAlertClose(CCObject* pSender, TouchEventType type);
+    void MapAlertClose(cocos2d::CCObject* pSender, cocos2d::ui::TouchEventType type);
     
 protected:
-    TouchGroup* m_pUILayer;
+    cocos2d::ui::TouchGroup* m_pUILayer;
 };
 
 #endif /* defined(__TestCpp__CocosGUIExamplesMapScene__) */

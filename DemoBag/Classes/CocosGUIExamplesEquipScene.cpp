@@ -7,6 +7,10 @@
 #include "CocosGUIExamplesWeaponScene.h"
  */
 
+USING_NS_CC;
+USING_NS_CC_EXT;
+using namespace ui;
+
 CocosGUIExamplesEquipScene::CocosGUIExamplesEquipScene()
 {
     CCScene::init();
@@ -320,7 +324,7 @@ void CocosGUIExamplesEquipScene::createClothes()
         CCARRAY_FOREACH(clothes_layout->getChildren(), obj)
         {
             Widget* slot = dynamic_cast<Widget*>(obj);
-            slot->setCascadeColorEnabled(false);
+//            slot->setCascadeColorEnabled(false);
             if (slot->boundingBox().containsPoint(jacket_iv->getPosition()))
             {
                 jacket_iv->setPosition(CCPointZero);
@@ -364,7 +368,7 @@ void CocosGUIExamplesEquipScene::createClothes()
         CCARRAY_FOREACH(clothes_layout->getChildren(), obj)
         {
             Widget* slot = dynamic_cast<Widget*>(obj);
-            slot->setCascadeColorEnabled(false);
+//            slot->setCascadeColorEnabled(false);
             if (slot->boundingBox().containsPoint(kimono_iv->getPosition()))
             {
                 kimono_iv->setPosition(CCPointZero);
@@ -419,7 +423,7 @@ void CocosGUIExamplesEquipScene::createWeapons()
         CCARRAY_FOREACH(weapons_panel->getChildren(), obj)
         {
             Widget* slot = dynamic_cast<Widget*>(obj);
-            slot->setCascadeColorEnabled(false);
+//            slot->setCascadeColorEnabled(false);
             if (slot->boundingBox().containsPoint(sword_iv->getPosition()))
             {
                 sword_iv->setPosition(CCPointZero);
@@ -463,7 +467,7 @@ void CocosGUIExamplesEquipScene::createWeapons()
         CCARRAY_FOREACH(weapons_panel->getChildren(), obj)
         {
             Widget* slot = dynamic_cast<Widget*>(obj);
-            slot->setCascadeColorEnabled(false);
+//            slot->setCascadeColorEnabled(false);
             if (slot->boundingBox().containsPoint(arrow_iv->getPosition()))
             {
                 arrow_iv->setPosition(CCPointZero);
@@ -503,7 +507,7 @@ void CocosGUIExamplesEquipScene::createWeapons()
         CCARRAY_FOREACH(weapons_panel->getChildren(), obj)
         {
             Widget* slot = dynamic_cast<Widget*>(obj);
-            slot->setCascadeColorEnabled(false);
+//            slot->setCascadeColorEnabled(false);
             if (slot->boundingBox().containsPoint(bomb_iv->getPosition()))
             {
                 bomb_iv->setPosition(CCPointZero);
@@ -554,7 +558,7 @@ void CocosGUIExamplesEquipScene::createPets()
         CCARRAY_FOREACH(pets_layout->getChildren(), obj)
         {
             Widget* slot = dynamic_cast<Widget*>(obj);
-            slot->setCascadeColorEnabled(false);            
+//            slot->setCascadeColorEnabled(false);
             if (slot->boundingBox().containsPoint(dragon_iv->getPosition()))
             {
                 dragon_iv->setPosition(CCPointZero);
@@ -594,7 +598,7 @@ void CocosGUIExamplesEquipScene::createPets()
         CCARRAY_FOREACH(pets_layout->getChildren(), obj)
         {
             Widget* slot = dynamic_cast<Widget*>(obj);
-            slot->setCascadeColorEnabled(false);
+//            slot->setCascadeColorEnabled(false);
             if (slot->boundingBox().containsPoint(crab_iv->getPosition()))
             {
                 crab_iv->setPosition(CCPointZero);

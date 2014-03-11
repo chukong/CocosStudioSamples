@@ -29,13 +29,9 @@
 #include "cocos-ext.h"
 //#include "../../testBasic.h"
 
-USING_NS_CC;
-USING_NS_CC_EXT;
-using namespace gui;
-
 #define PAGE_PAGEVIEW_TAG                           1000
 
-class CocosGUIExamplesPageScene : public CCScene
+class CocosGUIExamplesPageScene : public cocos2d::CCScene
 {
 public:
     CocosGUIExamplesPageScene();
@@ -46,14 +42,14 @@ public:
     
 protected:
     // a selector callback
-    void menuCloseCallback(CCObject* pSender, TouchEventType type);
+    void menuCloseCallback(cocos2d::CCObject* pSender, cocos2d::ui::TouchEventType type);
     
     // page
     void PageInit();
-    void pageViewEvent(CCObject* pSender, PageViewEventType type);
+    void pageViewEvent(cocos2d::CCObject* pSender, cocos2d::ui::PageViewEventType type);
     
 protected:
-    TouchGroup* m_pUILayer;
+    cocos2d::ui::TouchGroup* m_pUILayer;
 };
 
 #endif /* defined(__TestCpp__CocosGUIExamplesPageScene__) */
