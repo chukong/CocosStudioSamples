@@ -4,6 +4,8 @@
 #include "cocos2d.h"
 #include "Player.h"
 
+using namespace gui;
+
 class HelloWorld : public cocos2d::CCLayer
 {
 private:

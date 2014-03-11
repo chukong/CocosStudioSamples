@@ -26,13 +26,14 @@ public:
 	virtual void onEnter();
 	virtual void onExit();
 	virtual void update(float delta);
+	virtual void draw();
     
 	void onFrameEvent(cocos2d::extension::CCBone *bone, const char *evt, int originFrameIndex, int currentFrameIndex);
 
 	cocos2d::extension::CCArmature *armature;
 	cocos2d::extension::CCArmature *armature2;
 	cocos2d::CCSprite* bullet;
-	cocos2d::CCDrawNode* draw;
+	cocos2d::CCDrawNode* draw2;
 	cocos2d::extension::CCBone* body;
 };
 

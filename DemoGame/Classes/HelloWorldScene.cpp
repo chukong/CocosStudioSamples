@@ -85,9 +85,10 @@ void HelloWorld::menuStageTwoCallback(CCObject* pSender)
 void HelloWorld::menuCloseCallback(CCObject* pSender)
 {
 	cocos2d::extension::CCArmatureDataManager::purge();
-	cocos2d::extension::CCSSceneReader::sharedSceneReader()->purgeSceneReader();
-	cocos2d::extension::ActionManager::shareManager()->purgeActionManager();
-	cocos2d::extension::UIHelper::instance()->purgeUIHelper();
+	cocos2d::extension::ActionManager::shareManager()->purge();
+	cocos2d::extension::SceneReader::sharedSceneReader()->purge();
+	cocos2d::extension::GUIReader::shareReader()->purge();
+
 #if (CC_TARGET_PLATFORM != CC_PLATFORM_ANDROID)
     CCDirector::sharedDirector()->end();
 #endif

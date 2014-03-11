@@ -53,7 +53,8 @@ bool HelloWorld::init()
 
     /////////////////////////////
     // 3. add your codes below...
-    CCNode* gameScene = CCSSceneReader::sharedSceneReader()->createNodeWithSceneFile("DemoCowboy.json");
+    /*CCNode* gameScene = CCSSceneReader::sharedSceneReader()->createNodeWithSceneFile("DemoCowboy.json");*/
+	CCNode* gameScene = SceneReader::sharedSceneReader()->createNodeWithSceneFile("DemoCowboy.json");
     addChild(gameScene);
     
     //Create player
@@ -62,7 +63,8 @@ bool HelloWorld::init()
     
     //Assign callbacks to the buttons
     CCNode* uiNode = gameScene->getChildByTag(10005);
-    UILayer* ui = (UILayer*)uiNode->getComponent("GUIComponent")->getNode();
+	 CCComRender *render = static_cast<CCComRender*>(uiNode->getComponent("GUIComponent"));
+    UILayer* ui = (UILayer*)render->getNode();
     
     UIButton* btnLeft = (UIButton*)ui->getWidgetByName("LeftButton");
     btnLeft->addTouchEventListener(this, toucheventselector(HelloWorld::onMoveLeft));
@@ -71,7 +73,7 @@ bool HelloWorld::init()
     btnRight->addTouchEventListener(this, toucheventselector(HelloWorld::onMoveRight));
     
     UIButton* btnFire = (UIButton*)ui->getWidgetByName("FireButton");
-//    btnFire->addReleaseEvent(this, coco_releaseselector(HelloWorld::onFire));
+
     btnFire->addTouchEventListener(this, toucheventselector(HelloWorld::onFire));
     
     //Enable update loop

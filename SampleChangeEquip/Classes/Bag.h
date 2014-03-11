@@ -12,38 +12,38 @@ public:
 	virtual ~Bag(void);
 
 	void touchEvent(cocos2d::CCObject* pSender,
-		cocos2d::extension::TouchEventType type);
-	void closeCallback(cocos2d::CCObject* pSender);
+		cocos2d::gui::TouchEventType type);
+	void closeCallback(cocos2d::CCObject* pSender, cocos2d::gui::TouchEventType type);
 private:
-	void touchBeganEvent(cocos2d::extension::UIWidget* pEquip);
-    void touchMoveEvent(cocos2d::extension::UIWidget* pEquip);
-    void touchEndedEvent(cocos2d::extension::UIWidget* pEquip);
+	void touchBeganEvent(cocos2d::gui::UIWidget* pEquip);
+    void touchMoveEvent(cocos2d::gui::UIWidget* pEquip);
+    void touchEndedEvent(cocos2d::gui::UIWidget* pEquip);
 	void initUILayer();
 	void initArmature();
 	void initArmatureOriginEquips();
 	void initEquips();
-	void initEquipID(cocos2d::extension::UIWidget* pEeuip,int type,int num);
-	cocos2d::extension::UIWidget* getBagGrid(int count);
+	void initEquipID(cocos2d::gui::UIWidget* pEeuip,int type,int num);
+	cocos2d::gui::UIWidget* getBagGrid(int count);
 
 	void initPlayerEquipGrid();
 
-	bool hitTestPanel(cocos2d::extension::UIPanel* pPanel,
-		cocos2d::extension::UIWidget* pEquip);
-	bool equipAndGridInSameType(cocos2d::extension::UIWidget* pEquip,
-		cocos2d::extension::UIWidget* pGrid);
-	void swapEquipGrid(cocos2d::extension::UIWidget* pExistEquip,
-		cocos2d::extension::UIWidget* newEquip);
+	bool hitTestPanel(cocos2d::gui::UIPanel* pPanel,
+		cocos2d::gui::UIWidget* pEquip);
+	bool equipAndGridInSameType(cocos2d::gui::UIWidget* pEquip,
+		cocos2d::gui::UIWidget* pGrid);
+	void swapEquipGrid(cocos2d::gui::UIWidget* pExistEquip,
+		cocos2d::gui::UIWidget* newEquip);
 
-	void changeEquip(cocos2d::extension::UIWidget* pWeapon,
-		cocos2d::extension::UIWidget* pGrid);
+	void changeEquip(cocos2d::gui::UIWidget* pWeapon,
+		cocos2d::gui::UIWidget* pGrid);
 	void unequipEquip();
 
-	void changeParent(cocos2d::extension::UIWidget* pGrid,
-		cocos2d::extension::UIWidget* pEquip);
+	void changeParent(cocos2d::gui::UIWidget* pGrid,
+		cocos2d::gui::UIWidget* pEquip);
 
-	cocos2d::extension::UILayer* uiLayer;
-	cocos2d::extension::UIWidget* startGrid;
-    cocos2d::extension::UIWidget* targetGrid;
+	cocos2d::gui::UILayer* uiLayer;
+	cocos2d::gui::UIWidget* startGrid;
+    cocos2d::gui::UIWidget* targetGrid;
 	cocos2d::extension::CCArmature* armature;
 };
 

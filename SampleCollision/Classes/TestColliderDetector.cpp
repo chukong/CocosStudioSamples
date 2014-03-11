@@ -38,8 +38,8 @@ void TestColliderDetector::onEnter()
 
 #if SHOW_CONTOUE_DATA
 	body = armature2->getBone("Layer122");
-	draw = CCDrawNode::create();
-	this->addChild(draw,10);
+	draw2 = CCDrawNode::create();
+	this->addChild(draw2,10);
 	bullet = CCSprite::createWithSpriteFrameName("25.png");
 	addChild(bullet);
 #else
@@ -65,25 +65,56 @@ void TestColliderDetector::onFrameEvent(CCBone *bone, const char *evt, int origi
 #if SHOW_CONTOUE_DATA
 
 void TestColliderDetector::update(float delta)
-{
-	CCArray* colliderList = body->getColliderBodyList();
-	CCObject* object = NULL;
-	CCARRAY_FOREACH(colliderList,object)
-	{
-        ColliderBody *colliderBody = (ColliderBody *)object;
-        CCContourData *contourData = colliderBody->getContourData();
+{armature2->setVisible(true);
 
-		CCPoint points[4];
-		for(int i = 0;i<contourData->vertexList.count();i++)
-		{
-			CCContourVertex2* vertex = (CCContourVertex2*)(contourData->vertexList.objectAtIndex(i));
-			points[i].x = vertex->x;
-			points[i].y = vertex->y;
-			CCLog("%f %f",vertex->x,vertex->y);
-		}
-		draw->drawPolygon(points,4,ccc4f(0.0,0.0,0.0,0.0),4,ccc4f(1.0,1.0,1.0,1.0));
-		draw->setAdditionalTransform(body->nodeToWorldTransform());
-	}
+    CCRect rect = bullet->boundingBox();
+
+    // This code is just telling how to get the vertex.
+    // For a more accurate collider detection, you need to implemente yourself.
+    CCDictElement *element = NULL;
+    CCDictionary *dict = armature2->getBoneDic();
+    CCDICT_FOREACH(dict, element)
+    {
+        CCBone *bone = static_cast<CCBone*>(element->getObject());
+        CCArray *bodyList = bone->getColliderBodyList();
+
+        CCObject *object = NULL;
+        CCARRAY_FOREACH(bodyList, object)
+        {
+            ColliderBody *body = static_cast<ColliderBody*>(object);
+            CCArray *vertexList = body->getCalculatedVertexList();
+
+            float minx, miny, maxx, maxy = 0;
+            int length = vertexList->count();
+            for (int i = 0; i<length; i++)
+            {
+                CCContourVertex2 *vertex = static_cast<CCContourVertex2*>(vertexList->objectAtIndex(i));
+                if (i == 0)
+                {
+                  minx = maxx = vertex->x;
+                  miny = maxy = vertex->y;
+                }
+                else
+                {
+                    minx = vertex->x < minx ? vertex->x : minx;
+                    miny = vertex->y < miny ? vertex->y : miny;
+                    maxx = vertex->x > maxx ? vertex->x : maxx;
+                    maxy = vertex->y > maxy ? vertex->y : maxy;
+                }
+            }
+            CCRect temp = CCRectMake(minx, miny, maxx - minx, maxy - miny);
+
+            if (temp.intersectsRect(rect))
+            {
+                armature2->setVisible(false);
+            }
+        }
+    }
+}
+
+void TestColliderDetector::draw()
+{
+	armature2->drawContour();
 }
 
 void TestColliderDetector::onExit()
