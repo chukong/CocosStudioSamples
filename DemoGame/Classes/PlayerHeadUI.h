@@ -5,7 +5,7 @@
 #include "cocos-ext.h"
 #include "Player.h"
 
-using namespace cocos2d::gui;
+using namespace cocos2d::ui;
 
 class PlayerHeadUI : public cocos2d::CCLayer
 {
