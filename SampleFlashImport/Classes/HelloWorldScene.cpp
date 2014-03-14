@@ -56,8 +56,8 @@ bool HelloWorld::init()
 	countTauren = 0;
 	countHero = 0;
 	//load armature data
-	CCArmatureDataManager::sharedArmatureDataManager()->addArmatureFileInfo("tauren.png","tauren.plist","tauren.xml");
-	CCArmatureDataManager::sharedArmatureDataManager()->addArmatureFileInfo("girl.png","girl.plist","girl.xml");
+	CCArmatureDataManager::sharedArmatureDataManager()->addArmatureFileInfo("tauren0.png","tauren0.plist","tauren.ExportJson");
+	CCArmatureDataManager::sharedArmatureDataManager()->addArmatureFileInfo("girl0.png","girl0.plist","girl.ExportJson");
 	//createa tauren flash armature
 	tauren = CCArmature::create("tauren");
 	tauren->setPosition(ccp(visibleSize.width * 0.7,visibleSize.height * 0.5));
