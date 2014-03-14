@@ -61,13 +61,13 @@ bool HelloWorld::init()
 	//createa tauren flash armature
 	tauren = CCArmature::create("tauren");
 	tauren->setPosition(ccp(visibleSize.width * 0.7,visibleSize.height * 0.5));
-	tauren->getAnimation()->playByIndex(0);
+	tauren->getAnimation()->playWithIndex(0);
 	tauren->setScale(0.7);
 	this->addChild(tauren,1);
 	//create hero flash armature
 	hero = CCArmature::create("girl");
 	hero->setPosition(ccp(visibleSize.width * 0.3,visibleSize.height * 0.5));
-	hero->getAnimation()->playByIndex(0);
+	hero->getAnimation()->playWithIndex(0);
 	this->addChild(hero,1);
 	
 
@@ -90,8 +90,8 @@ bool HelloWorld::ccTouchBegan(CCTouch *pTouch, CCEvent *pEvent)
 	countHero++;
 	countHero = countHero % hero->getAnimation()->getMovementCount();
 	//set change to armature
-	tauren->getAnimation()->playByIndex(countTauren);
-	hero->getAnimation()->playByIndex(countHero);
+	tauren->getAnimation()->playWithIndex(countTauren);
+	hero->getAnimation()->playWithIndex(countHero);
 	return false;
 }
 

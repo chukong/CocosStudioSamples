@@ -21,11 +21,11 @@ public:
 	void bindPlayer(Player* pPlayer);
 private:
 	CCJoystick* createJoystick();
-	cocos2d::gui::UILayer* createButton();
+	cocos2d::ui::UILayer* createButton();
     /**
      *  call back for button
      */
-    void touchEvent(cocos2d::CCObject* pSender,cocos2d::gui::TouchEventType type);
+    void touchEvent(cocos2d::CCObject* pSender,cocos2d::ui::TouchEventType type);
 	void bindPlayerStateMachine();
 
 	Player* player;

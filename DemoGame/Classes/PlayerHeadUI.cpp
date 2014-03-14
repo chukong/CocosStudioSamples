@@ -2,7 +2,7 @@
 
 using namespace cocos2d;
 using namespace cocos2d::extension;
-using namespace gui;
+using namespace cocos2d::ui;
 
 PlayerHeadUI::PlayerHeadUI(void):
 	uiLayer(NULL),player(NULL),
