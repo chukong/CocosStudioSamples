@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		15B693B618D2FDFD00A5ED98 /* fonts in Resources */ = {isa = PBXBuildFile; fileRef = 15B693AD18D2FDFD00A5ED98 /* fonts */; };
+		15B693B718D2FDFD00A5ED98 /* girl.ExportJson in Resources */ = {isa = PBXBuildFile; fileRef = 15B693AE18D2FDFD00A5ED98 /* girl.ExportJson */; };
+		15B693B818D2FDFD00A5ED98 /* girl0.plist in Resources */ = {isa = PBXBuildFile; fileRef = 15B693AF18D2FDFD00A5ED98 /* girl0.plist */; };
+		15B693B918D2FDFD00A5ED98 /* girl0.png in Resources */ = {isa = PBXBuildFile; fileRef = 15B693B018D2FDFD00A5ED98 /* girl0.png */; };
+		15B693BA18D2FDFD00A5ED98 /* HelloWorld.png in Resources */ = {isa = PBXBuildFile; fileRef = 15B693B118D2FDFD00A5ED98 /* HelloWorld.png */; };
+		15B693BB18D2FDFD00A5ED98 /* tauren.ExportJson in Resources */ = {isa = PBXBuildFile; fileRef = 15B693B218D2FDFD00A5ED98 /* tauren.ExportJson */; };
+		15B693BC18D2FDFD00A5ED98 /* tauren0.plist in Resources */ = {isa = PBXBuildFile; fileRef = 15B693B318D2FDFD00A5ED98 /* tauren0.plist */; };
+		15B693BD18D2FDFD00A5ED98 /* tauren0.png in Resources */ = {isa = PBXBuildFile; fileRef = 15B693B418D2FDFD00A5ED98 /* tauren0.png */; };
 		15C157431683159E00D239F2 /* b2BroadPhase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 15C156CF1683159D00D239F2 /* b2BroadPhase.cpp */; };
 		15C157441683159E00D239F2 /* b2CollideCircle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 15C156D11683159D00D239F2 /* b2CollideCircle.cpp */; };
 		15C157451683159E00D239F2 /* b2CollideEdge.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 15C156D21683159D00D239F2 /* b2CollideEdge.cpp */; };
@@ -249,12 +257,6 @@
 		D5F306C418CEE6AD005699B7 /* TriggerObj.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D5F3067C18CEE6AD005699B7 /* TriggerObj.cpp */; };
 		D5F306C518CEE6D7005699B7 /* libcocos2dx.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F860A60317C710C3005BF4C9 /* libcocos2dx.a */; };
 		F860A60B17C71204005BF4C9 /* libcurl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F860A60D17C71204005BF4C9 /* libcurl.a */; };
-		F8B7ED2C17F074DC007FDDCF /* girl.plist in Resources */ = {isa = PBXBuildFile; fileRef = F8B7ED2617F074DC007FDDCF /* girl.plist */; };
-		F8B7ED2D17F074DC007FDDCF /* girl.png in Resources */ = {isa = PBXBuildFile; fileRef = F8B7ED2717F074DC007FDDCF /* girl.png */; };
-		F8B7ED2E17F074DC007FDDCF /* girl.xml in Resources */ = {isa = PBXBuildFile; fileRef = F8B7ED2817F074DC007FDDCF /* girl.xml */; };
-		F8B7ED2F17F074DC007FDDCF /* tauren.plist in Resources */ = {isa = PBXBuildFile; fileRef = F8B7ED2917F074DC007FDDCF /* tauren.plist */; };
-		F8B7ED3017F074DC007FDDCF /* tauren.png in Resources */ = {isa = PBXBuildFile; fileRef = F8B7ED2A17F074DC007FDDCF /* tauren.png */; };
-		F8B7ED3117F074DC007FDDCF /* tauren.xml in Resources */ = {isa = PBXBuildFile; fileRef = F8B7ED2B17F074DC007FDDCF /* tauren.xml */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -275,6 +277,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		15B693AD18D2FDFD00A5ED98 /* fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = fonts; sourceTree = "<group>"; };
+		15B693AE18D2FDFD00A5ED98 /* girl.ExportJson */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = girl.ExportJson; sourceTree = "<group>"; };
+		15B693AF18D2FDFD00A5ED98 /* girl0.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = girl0.plist; sourceTree = "<group>"; };
+		15B693B018D2FDFD00A5ED98 /* girl0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = girl0.png; sourceTree = "<group>"; };
+		15B693B118D2FDFD00A5ED98 /* HelloWorld.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HelloWorld.png; sourceTree = "<group>"; };
+		15B693B218D2FDFD00A5ED98 /* tauren.ExportJson */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = tauren.ExportJson; sourceTree = "<group>"; };
+		15B693B318D2FDFD00A5ED98 /* tauren0.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = tauren0.plist; sourceTree = "<group>"; };
+		15B693B418D2FDFD00A5ED98 /* tauren0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tauren0.png; sourceTree = "<group>"; };
 		15C156CD1683159D00D239F2 /* Box2D.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Box2D.h; sourceTree = "<group>"; };
 		15C156CF1683159D00D239F2 /* b2BroadPhase.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = b2BroadPhase.cpp; sourceTree = "<group>"; };
 		15C156D01683159D00D239F2 /* b2BroadPhase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = b2BroadPhase.h; sourceTree = "<group>"; };
@@ -769,12 +779,6 @@
 		D5F3067D18CEE6AD005699B7 /* TriggerObj.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TriggerObj.h; sourceTree = "<group>"; };
 		F860A5FE17C710C3005BF4C9 /* cocos2dx.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = cocos2dx.xcodeproj; path = "../../cocos2d-x/cocos2dx/proj.mac/cocos2dx.xcodeproj"; sourceTree = "<group>"; };
 		F860A60C17C71204005BF4C9 /* en */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = en; path = en.lproj/libcurl.a; sourceTree = "<group>"; };
-		F8B7ED2617F074DC007FDDCF /* girl.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = girl.plist; sourceTree = "<group>"; };
-		F8B7ED2717F074DC007FDDCF /* girl.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = girl.png; sourceTree = "<group>"; };
-		F8B7ED2817F074DC007FDDCF /* girl.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = girl.xml; sourceTree = "<group>"; };
-		F8B7ED2917F074DC007FDDCF /* tauren.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = tauren.plist; sourceTree = "<group>"; };
-		F8B7ED2A17F074DC007FDDCF /* tauren.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tauren.png; sourceTree = "<group>"; };
-		F8B7ED2B17F074DC007FDDCF /* tauren.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = tauren.xml; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1404,12 +1408,14 @@
 		78C7DDAA14EBA5050085D0C2 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				F8B7ED2617F074DC007FDDCF /* girl.plist */,
-				F8B7ED2717F074DC007FDDCF /* girl.png */,
-				F8B7ED2817F074DC007FDDCF /* girl.xml */,
-				F8B7ED2917F074DC007FDDCF /* tauren.plist */,
-				F8B7ED2A17F074DC007FDDCF /* tauren.png */,
-				F8B7ED2B17F074DC007FDDCF /* tauren.xml */,
+				15B693AD18D2FDFD00A5ED98 /* fonts */,
+				15B693AE18D2FDFD00A5ED98 /* girl.ExportJson */,
+				15B693AF18D2FDFD00A5ED98 /* girl0.plist */,
+				15B693B018D2FDFD00A5ED98 /* girl0.png */,
+				15B693B118D2FDFD00A5ED98 /* HelloWorld.png */,
+				15B693B218D2FDFD00A5ED98 /* tauren.ExportJson */,
+				15B693B318D2FDFD00A5ED98 /* tauren0.plist */,
+				15B693B418D2FDFD00A5ED98 /* tauren0.png */,
 				1AFAF8C016D3884900DB1158 /* CloseNormal.png */,
 				1AFAF8C116D3884900DB1158 /* CloseSelected.png */,
 			);
@@ -1954,16 +1960,18 @@
 			files = (
 				41BC70E515BF81A5006A0A6C /* InfoPlist.strings in Resources */,
 				41BC70E615BF81A5006A0A6C /* MainMenu.xib in Resources */,
+				15B693BB18D2FDFD00A5ED98 /* tauren.ExportJson in Resources */,
 				41BC70E715BF81A5006A0A6C /* Icon.icns in Resources */,
 				15C157DA168315B300D239F2 /* CMakeLists.txt in Resources */,
+				15B693BD18D2FDFD00A5ED98 /* tauren0.png in Resources */,
 				1AFAF8C316D3884900DB1158 /* CloseNormal.png in Resources */,
+				15B693BC18D2FDFD00A5ED98 /* tauren0.plist in Resources */,
+				15B693B718D2FDFD00A5ED98 /* girl.ExportJson in Resources */,
+				15B693B918D2FDFD00A5ED98 /* girl0.png in Resources */,
 				1AFAF8C416D3884900DB1158 /* CloseSelected.png in Resources */,
-				F8B7ED2C17F074DC007FDDCF /* girl.plist in Resources */,
-				F8B7ED2D17F074DC007FDDCF /* girl.png in Resources */,
-				F8B7ED2E17F074DC007FDDCF /* girl.xml in Resources */,
-				F8B7ED2F17F074DC007FDDCF /* tauren.plist in Resources */,
-				F8B7ED3017F074DC007FDDCF /* tauren.png in Resources */,
-				F8B7ED3117F074DC007FDDCF /* tauren.xml in Resources */,
+				15B693B818D2FDFD00A5ED98 /* girl0.plist in Resources */,
+				15B693BA18D2FDFD00A5ED98 /* HelloWorld.png in Resources */,
+				15B693B618D2FDFD00A5ED98 /* fonts in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

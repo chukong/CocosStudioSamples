@@ -292,9 +292,11 @@ CCScene *UISceneManager::currentUIScene()
             
         case kUITextFieldTest_Password:
             return UITextFieldTest_Password::sceneWithTitle(s_testArray[m_nCurrentUISceneId]);
-            
+        
+        /*
         case kUITextFieldTest_LineWrap:
             return UITextFieldTest_LineWrap::sceneWithTitle(s_testArray[m_nCurrentUISceneId]);
+         */
             
         case kUILayoutTest:
             return UILayoutTest::sceneWithTitle(s_testArray[m_nCurrentUISceneId]);

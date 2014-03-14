@@ -49,7 +49,7 @@ bool KnightEnemy::init(CCPoint startPostion,
 
 	CCArmatureDataManager::sharedArmatureDataManager()->addArmatureFileInfo("armature/hero/Hero.ExportJson");
 	enemyArmature = CCArmature::create("Hero");
-	enemyArmature->getAnimation()->playByIndex(1);
+	enemyArmature->getAnimation()->playWithIndex(1);
 
 	hitPoints = HP;
 	enemyArmature->setPosition(startPostion);
@@ -104,7 +104,7 @@ bool RobotEnemy::init(CCPoint startPostion,
 	CCArmatureDataManager::sharedArmatureDataManager()->addArmatureFileInfo("armature/monster/MonsterEnemy.ExportJson");
 
 	enemyArmature = CCArmature::create("MonsterEnemy");
-	enemyArmature->getAnimation()->playByIndex(1);
+	enemyArmature->getAnimation()->playWithIndex(1);
 
 	hitPoints = HP;
 	enemyArmature->setPosition(startPostion);

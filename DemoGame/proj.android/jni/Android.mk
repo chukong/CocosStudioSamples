@@ -16,12 +16,14 @@ LOCAL_SRC_FILES := hellocpp/main.cpp \
 		   ../../Classes/EnemyListBuilder.cpp	\
 		   ../../Classes/GameScene.cpp	\
 		   ../../Classes/MyController.cpp	\
-		   ../../Classes/PhysicalWorld.cpp	\
 		   ../../Classes/Player.cpp	\
-		   ../../Classes/PlayerHeadUI.cpp
+		   ../../Classes/PlayerHeadUI.cpp \
+		   ../../Classes/PhysicalWorld.cpp	\
 
 
-LOCAL_C_INCLUDES := $(LOCAL_PATH)/../../Classes
+LOCAL_C_INCLUDES := $(LOCAL_PATH)/../../Classes \
+	       $(LOCAL_PATH)/../../../cocos2d-x/extensions \
+	       $(LOCAL_PATH)/../../../cocos2d-x/extensions\physics_nodes
 
 LOCAL_WHOLE_STATIC_LIBRARIES += cocos2dx_static
 LOCAL_WHOLE_STATIC_LIBRARIES += cocosdenshion_static

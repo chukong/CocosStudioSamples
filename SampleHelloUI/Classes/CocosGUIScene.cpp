@@ -199,7 +199,7 @@ void CocosGUITestMainLayer::menuCallback(CCObject* pSender)
         {
             pManager->setCurrentUISceneId(kUITextFieldTest);
             pManager->setMinUISceneId(kUITextFieldTest);
-            pManager->setMaxUISceneId(kUITextFieldTest_LineWrap);
+            pManager->setMaxUISceneId(kUITextFieldTest_Password);
         }
             break;
             
