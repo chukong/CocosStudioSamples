@@ -165,7 +165,7 @@ void UIListViewExTest_Vertical::selectedItemEvent(CCObject *pSender, ListViewEve
 {
     switch (type)
     {
-        case LISTVIEW_ONSELECTEDITEM:
+        case LISTVIEW_ONSELECTEDITEM_END:
         {
             UIListView* listViewEx = static_cast<UIListView*>(pSender);
             CCLOG("select child index = %d", listViewEx->getCurSelectedIndex());
@@ -323,7 +323,7 @@ bool UIListViewExTest_Horizontal::init()
         
         // remove item by index
         items_count = items->count();
-        listView->removeItem(items_count - 1);        
+        listView->removeItem(items_count - 1);
         
         // set all items layout gravity
         listView->setGravity(LISTVIEW_GRAVITY_CENTER_VERTICAL);
@@ -341,7 +341,7 @@ void UIListViewExTest_Horizontal::selectedItemEvent(CCObject *pSender, ListViewE
 {
     switch (type)
     {
-        case LISTVIEW_ONSELECTEDITEM:
+        case LISTVIEW_ONSELECTEDITEM_END:
             {
                 UIListView* listViewEx = static_cast<UIListView*>(pSender);
                 CCLOG("select child index = %d", listViewEx->getCurSelectedIndex());

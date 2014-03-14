@@ -272,6 +272,7 @@ void UITextFieldTest_Password::textFieldEvent(CCObject *pSender, TextFiledEventT
 }
 
 
+/*
 // UITextFieldTest_LineWrap
 UITextFieldTest_LineWrap::UITextFieldTest_LineWrap()
 : m_pDisplayValueLabel(NULL)
@@ -369,3 +370,4 @@ void UITextFieldTest_LineWrap::textFieldEvent(CCObject *pSender, TextFiledEventT
             break;
     }
 }
+ */

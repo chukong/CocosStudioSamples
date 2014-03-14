@@ -66,6 +66,7 @@ protected:
     UILabel* m_pDisplayValueLabel;
 };
 
+/*
 class UITextFieldTest_LineWrap : public UIScene
 {
 public:
@@ -78,4 +79,5 @@ protected:
     UI_SCENE_CREATE_FUNC(UITextFieldTest_LineWrap)
     UILabel* m_pDisplayValueLabel;
 };
+ */
 #endif /* defined(__TestCpp__UITextFieldTest__) */
