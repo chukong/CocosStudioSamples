@@ -38,6 +38,10 @@ bool AppDelegate::applicationDidFinishLaunching() {
         searchPaths.push_back("hd");
         pFileUtils->setSearchPaths(searchPaths);
         pDirector->setContentScaleFactor(resourceSize.height/designSize.height);
+    } else {
+        std::vector<std::string> searchPaths;
+        searchPaths.push_back("sd");
+        pFileUtils->setSearchPaths(searchPaths);
     }
     
     CCEGLView::sharedOpenGLView()->setDesignResolutionSize(designSize.width, designSize.height, kResolutionShowAll);

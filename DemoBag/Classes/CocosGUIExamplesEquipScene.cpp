@@ -129,7 +129,7 @@ void CocosGUIExamplesEquipScene::EquipInit()
     //        
     
     // equip root from json
-    Layout* equipe_root =dynamic_cast<Layout*>(GUIReader::shareReader()->widgetFromJsonFile("cocosgui/gui_examples/equip_1/equip_1.json"));
+    Layout* equipe_root = dynamic_cast<Layout*>(cocostudio::animation::NodeCache::getInstance()->createNode("equip_1.json"));
     equipe_root->setTag(EQUIP_LAYOUT_TAG_ROOT);
     m_pUILayer->addWidget(equipe_root);        
     
@@ -205,7 +205,7 @@ void CocosGUIExamplesEquipScene::EquipInit()
     // actor
     ImageView* wallBG_iv = dynamic_cast<ImageView*>(up_layout->getChildByName("wall"));
     ImageView* wal_iv = ImageView::create();
-    wal_iv->loadTexture("cocosgui/gui_examples/equip_1/equip/eg/1.png");
+    wal_iv->loadTexture("equip/eg/1.png");
     wal_iv->setAnchorPoint(ccp(0.5, 0.5));
     float wal_x = wallBG_iv->getSize().width / 2.04;
     float wal_y = wallBG_iv->getSize().height / 2.4;
@@ -216,7 +216,7 @@ void CocosGUIExamplesEquipScene::EquipInit()
     // original clothes be used slot
     ImageView* originalClothesSlot_iv = dynamic_cast<ImageView*>(up_layout->getChildByName("1"));
     ImageView* originalClothes_iv = ImageView::create();
-    originalClothes_iv->loadTexture("cocosgui/gui_examples/equip_1/equip/eg/6.png");
+    originalClothes_iv->loadTexture("equip/eg/6.png");
     originalClothesSlot_iv->addChild(originalClothes_iv);
     m_dicBeUsedSlot->setObject(originalClothesSlot_iv, originalClothesSlot_iv->getName());
     
@@ -294,9 +294,9 @@ void CocosGUIExamplesEquipScene::createClothes()
     // jacket
     const char* jacket_png[columnMax] =
     {
-        "cocosgui/gui_examples/equip_1/equip/eg/3.png",
-        "cocosgui/gui_examples/equip_1/equip/eg/4.png",
-        "cocosgui/gui_examples/equip_1/equip/eg/5.png",
+        "equip/eg/3.png",
+        "equip/eg/4.png",
+        "equip/eg/5.png",
     };
     const char* jacket_name[columnMax] =
     {
@@ -339,9 +339,9 @@ void CocosGUIExamplesEquipScene::createClothes()
     // kimono
     const char* kimono_png[columnMax] =
     {
-        "cocosgui/gui_examples/equip_1/equip/eg/8.png",
-        "cocosgui/gui_examples/equip_1/equip/eg/10.png",
-        "cocosgui/gui_examples/equip_1/equip/eg/9.png",
+        "equip/eg/8.png",
+        "equip/eg/10.png",
+        "equip/eg/9.png",
     };
     const char* kimono_name[columnMax] =
     {
@@ -395,9 +395,9 @@ void CocosGUIExamplesEquipScene::createWeapons()
     const short swordAmount = 3;
     const char* sword_png[swordAmount] =
     {
-        "cocosgui/gui_examples/equip_1/equip/eg/train.png",
-        "cocosgui/gui_examples/equip_1/equip/eg/research.png",
-        "cocosgui/gui_examples/equip_1/equip/eg/upgrade.png",
+        "equip/eg/train.png",
+        "equip/eg/research.png",
+        "equip/eg/upgrade.png",
     };
     const char* sword_name[swordAmount] =
     {
@@ -439,9 +439,9 @@ void CocosGUIExamplesEquipScene::createWeapons()
     const short arrowAmount = 3;
     const char* arrow_png[arrowAmount] =
     {
-        "cocosgui/gui_examples/equip_1/equip/eg/shop_shield_1.png",
-        "cocosgui/gui_examples/equip_1/equip/eg/shop_shield_2.png",
-        "cocosgui/gui_examples/equip_1/equip/eg/shop_shield_3.png",
+        "equip/eg/shop_shield_1.png",
+        "equip/eg/shop_shield_2.png",
+        "equip/eg/shop_shield_3.png",
     };
     const char* arrow_name[arrowAmount] =
     {
@@ -483,7 +483,7 @@ void CocosGUIExamplesEquipScene::createWeapons()
     const short bombAmount = 1;
     const char* bomb_png[bombAmount] =
     {
-        "cocosgui/gui_examples/equip_1/equip/eg/sell.png",
+        "equip/eg/sell.png",
     };
     const char* bomb_name[bombAmount] =
     {
@@ -534,7 +534,7 @@ void CocosGUIExamplesEquipScene::createPets()
     const short dragonAmount = 1;
     const char* dragon_png[dragonAmount] =
     {
-        "cocosgui/gui_examples/equip_1/equip/eg/7.png",
+        "equip/eg/7.png",
     };
     const char* dragon_name[dragonAmount] =
     {
@@ -574,7 +574,7 @@ void CocosGUIExamplesEquipScene::createPets()
     const short crabAmount = 1;
     const char* crab_png[crabAmount] =
     {
-        "cocosgui/gui_examples/equip_1/equip/eg/crab.png",
+        "equip/eg/crab.png",
     };
     const char* crab_name[crabAmount] =
     {
