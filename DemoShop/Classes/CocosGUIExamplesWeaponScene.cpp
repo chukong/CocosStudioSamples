@@ -110,10 +110,10 @@ void CocosGUIExamplesWeaponScene::menuCloseCallback(CCObject* pSender, TouchEven
 void CocosGUIExamplesWeaponScene::ShopInit()
 {
     // shop Layout from json
-    Layout* shop_root = static_cast<Layout*>(cocostudio::animation::NodeCache::getInstance()->createNode("cocosgui/gui_examples/DemoShop/DemoShop.json"));
+    Layout* shop_root = static_cast<Layout*>(cocostudio::timeline::NodeReader::getInstance()->createNode("cocosgui/gui_examples/DemoShop/DemoShop.json"));
     m_pUILayer->addWidget(shop_root);    
     
-    // shop scrollview
+    // shop 
     ScrollView* shop_scrollview = static_cast<ScrollView*>(shop_root->getChildByName("shop_ScrollView"));
     // shop scrollview children
     for (int i = 0; i < shop_scrollview->getChildren()->count(); ++i)
