@@ -129,7 +129,7 @@ void CocosGUIExamplesEquipScene::EquipInit()
     //        
     
     // equip root from json
-    Layout* equipe_root = dynamic_cast<Layout*>(cocostudio::animation::NodeCache::getInstance()->createNode("equip_1.json"));
+    Layout* equipe_root = dynamic_cast<Layout*>(cocostudio::timeline::NodeReader::getInstance()->createNode("equip_1.json"));
     equipe_root->setTag(EQUIP_LAYOUT_TAG_ROOT);
     m_pUILayer->addWidget(equipe_root);        
     
