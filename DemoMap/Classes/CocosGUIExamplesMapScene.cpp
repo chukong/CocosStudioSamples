@@ -70,7 +70,7 @@ void CocosGUIExamplesMapScene::menuCloseCallback(CCObject* pSender, TouchEventTy
 void CocosGUIExamplesMapScene::MapInit()
 {
     // map root from json
-    Layout* map_root = static_cast<Layout*>(cocostudio::animation::NodeCache::getInstance()->createNode("cocosgui/gui_examples/DemoMap/DemoMap.json"));
+    Layout* map_root = static_cast<Layout*>(cocostudio::timeline::NodeReader::getInstance()->createNode("cocosgui/gui_examples/DemoMap/DemoMap.json"));
     m_pUILayer->addWidget(map_root);    
     
     // build button on map root
