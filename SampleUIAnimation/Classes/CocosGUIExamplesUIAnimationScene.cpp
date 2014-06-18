@@ -73,6 +73,6 @@ void CocosGUIExamplesUIAnimationScene::startUIAnimation(CCObject* pSender, Touch
 {
     if (type == TOUCH_EVENT_ENDED)
     {
-		cocos2d::extension::ActionManager::shareManager()->playActionByName("SampleUIAnimation.json", "Animation1");        
+		cocos2d::extension::ActionManager::shareManager()->playActionByName("cocosgui/gui_examples/SampleUIAnimation/SampleUIAnimation.json", "Animation1");        
     }
 }
