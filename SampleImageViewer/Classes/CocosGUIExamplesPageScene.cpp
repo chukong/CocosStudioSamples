@@ -90,7 +90,7 @@ void CocosGUIExamplesPageScene::menuCloseCallback(CCObject* pSender, TouchEventT
 void CocosGUIExamplesPageScene::PageInit()
 {
     // page root from json
-    Layout* page_root = dynamic_cast<Layout*>(GUIReader::shareReader()->widgetFromJsonFile("cocosgui/gui_examples/page_1/page_1.json"));
+    Layout* page_root = dynamic_cast<Layout*>(cocostudio::timeline::NodeReader::getInstance()->createNode("cocosgui/gui_examples/page_1/page_1.json"));
     m_pUILayer->addWidget(page_root);
     
     // page layout
