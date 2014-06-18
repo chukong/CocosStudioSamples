@@ -61,7 +61,7 @@ void CocosGUIExamplesUIAnimationScene::menuCloseCallback(CCObject* pSender, Touc
 void CocosGUIExamplesUIAnimationScene::UIAnimationInit()
 {
     // ui animation root from json
-    Layout* uianimation_root = dynamic_cast<Layout*>(GUIReader::shareReader()->widgetFromJsonFile("cocosgui/gui_examples/SampleUIAnimation/SampleUIAnimation.json"));
+    Layout* uianimation_root = dynamic_cast<Layout*>(cocostudio::timeline::NodeReader::getInstance()->createNode("cocosgui/gui_examples/SampleUIAnimation/SampleUIAnimation.json"));
     m_pUILayer->addWidget(uianimation_root);
     
     // TextButton button
