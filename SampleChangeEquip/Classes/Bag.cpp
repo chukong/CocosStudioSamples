@@ -52,7 +52,7 @@ void Bag::initUILayer()
 {
 	//UIWidget* widget = dynamic_cast<Layout*>(CCUIHELPER->
 	//	createWidgetFromJsonFile("SampleChangeEquip_UI_1/SampleChangeEquip_UI_1.ExportJson"));
-	UIWidget* widget = dynamic_cast<Layout*>(GUIReader::shareReader()->widgetFromJsonFile("SampleChangeEquip_UI_1/SampleChangeEquip_UI_1.ExportJson"));
+	UIWidget* widget = dynamic_cast<Layout*>(cocostudio::timeline::NodeReader::getInstance()->createNode("SampleChangeEquip_UI_1/SampleChangeEquip_UI_1.ExportJson"));
 	uiLayer = UILayer::create();
 	uiLayer->addWidget(widget);
 	this->addChild(uiLayer);
