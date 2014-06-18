@@ -23,7 +23,7 @@ bool UIScene::init()
         m_pUiLayer = UILayer::create();
         addChild(m_pUiLayer);
         
-        m_pWidget = dynamic_cast<UILayout*>(GUIReader::shareReader()->widgetFromJsonFile("cocosgui/UITest/UITest.json"));
+        m_pWidget = dynamic_cast<UILayout*>(cocostudio::timeline::NodeReader::getInstance()->createNode("cocosgui/UITest/UITest.json"));
         m_pUiLayer->addWidget(m_pWidget);
         CCSize screenSize = CCDirector::sharedDirector()->getWinSize();
         CCSize rootSize = m_pWidget->getSize();
