@@ -27,7 +27,7 @@ void CocosGUIExamplesRegisterScene::onEnter()
     addChild(m_pUILayer);
     
     // register root from json
-    m_pLayout = dynamic_cast<Layout*>(GUIReader::shareReader()->widgetFromJsonFile("cocosgui/gui_examples/DemoLogin/DemoLogin.json"));
+    m_pLayout = dynamic_cast<Layout*>(cocostudio::timeline::NodeReader::getInstance()->createNode("cocosgui/gui_examples/DemoLogin/DemoLogin.json"));
     m_pUILayer->addWidget(m_pLayout);
     
     TextField* comfirm_textfield = static_cast<TextField*>(m_pUILayer->getWidgetByName("confirm_TextField"));
