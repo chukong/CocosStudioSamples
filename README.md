@@ -1,7 +1,9 @@
-Samples for Cocos Studio 1.x
+CocoStudioSamples
+For CocosStudio 1.x, Based on Cocos2d-x 2.x
 =================
 
   - DemoBag: Inventory UI Demo
+  - DemoCowboyGame: Animation Demo
   - DemoFishingJoy: Main Menu UI Demo
   - DemoGame: Simple Demo game with physics enabled
   - DemoGameScene:	Game Scene Demo
