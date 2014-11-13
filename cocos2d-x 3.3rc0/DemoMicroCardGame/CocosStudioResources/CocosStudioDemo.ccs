@@ -1,0 +1,581 @@
+<Solution>
+  <PropertyGroup Name="CocosStudioDemo" Version="2.0.0.0" Type="CocosStudio" />
+  <SolutionFolder>
+    <Group ctype="ResourceGroup">
+      <RootFolder Name=".">
+        <Project Name="MainScreen.csd" />
+        <Project Name="AltarScene.csd" />
+        <Project Name="Battle.csd" />
+        <Project Name="BattleBottom.csd" />
+        <Project Name="BattleLayer.csd" />
+        <Project Name="BattleResult.csd" />
+        <Project Name="BattleScene.csd" />
+        <Project Name="BattleTop.csd" />
+        <Project Name="captain_jack.csd" />
+        <Project Name="cat_queen.csd" />
+        <Project Name="fx_vic.csd" />
+        <Project Name="generalshark.csd" />
+        <Project Name="huchey.csd" />
+        <Project Name="jones.csd" />
+        <Project Name="LevelSelection.csd" />
+        <Project Name="Login.csd" />
+        <Project Name="MissionPoint.csd" />
+        <Project Name="MissionSandBackground.csd" />
+        <Project Name="MissionSelection.csd" />
+        <Project Name="MissionSelectBackground.csd" />
+        <Project Name="pharaoh.csd" />
+        <Project Name="DifficultySelection.csd" />
+        <Project Name="Setting.csd" />
+        <Project Name="tentacle.csd" />
+        <Project Name="Inventory.csd" />
+        <Project Name="InventoryItem.csd" />
+        <Project Name="StepAnimation.csd" />
+        <Project Name="MainMenu.csd" />
+        <Project Name="PlayerStats.csd" />
+        <Folder Name="AltarScene">
+          <File Name="AltarScene.csb" />
+          <Image Name="bg_tree01.png" />
+          <Image Name="bg_tree02.png" />
+          <Image Name="bg_tree03.png" />
+          <Image Name="guard01.png" />
+          <Image Name="guard02.png" />
+          <Image Name="lv1-1.PNG" />
+          <Image Name="lv10_3.png" />
+          <Image Name="lv10_5.png" />
+          <Image Name="lv10_chengqiang.png" />
+          <Image Name="lv10_fangzi.png" />
+          <Image Name="lv10_fangzi_down.png" />
+          <Image Name="lv10_tielian.png" />
+          <Image Name="lv1qiang.png" />
+          <Image Name="lv2-1.PNG" />
+          <Image Name="lv2-2.PNG" />
+          <Image Name="lv2_3.png" />
+          <Image Name="lv3-1.png" />
+          <Image Name="lv3_1(lv4_1).png" />
+          <Image Name="lv4-1.png" />
+          <Image Name="lv5-1.png" />
+          <Image Name="lv5_1.png" />
+          <Image Name="lv6_1.png" />
+          <Image Name="lv9_1.png" />
+          <Image Name="LV9_4.png" />
+          <Image Name="staging.png" />
+        </Folder>
+        <Folder Name="Inventory">
+          <Image Name="BaB14.png" />
+          <Image Name="BaB148.png" />
+          <Image Name="BaB149.png" />
+          <Image Name="BaB15.png" />
+          <Image Name="BaB151.png" />
+          <Image Name="BaB159.png" />
+          <Image Name="BaB161.png" />
+          <Image Name="BaB17.png" />
+          <Image Name="BaB18.png" />
+          <Image Name="BaB77.png" />
+          <Image Name="charalockedbg.png" />
+          <Image Name="ic_egyviper_blue.png" />
+          <Image Name="rolebg.png" />
+        </Folder>
+        <Folder Name="BattleResult">
+          <Image Name="BR01.png" />
+          <Image Name="BR11.png" />
+          <Image Name="BR12.png" />
+          <Image Name="BR13.png" />
+          <Image Name="BR16.png" />
+          <Image Name="BR17.png" />
+          <Image Name="BR18.png" />
+          <Image Name="BR19.png" />
+          <Image Name="BR20.png" />
+          <Image Name="BR21.png" />
+          <Image Name="BR22.png" />
+          <Audio Name="victory.mp3" />
+        </Folder>
+        <Folder Name="BattleScene">
+          <Folder Name="sandbg">
+            <TmxFile Name="sand.tmx" />
+          </Folder>
+          <Image Name="BS01.png" />
+          <Image Name="BS02.png" />
+          <Image Name="BS03.png" />
+          <Image Name="BS04.png" />
+          <Image Name="BS05.png" />
+          <Image Name="BS06.png" />
+          <Image Name="BS08.png" />
+          <Image Name="BS09.png" />
+          <Image Name="BS10.png" />
+          <Image Name="BS11.png" />
+          <Image Name="BS12.png" />
+          <Image Name="BS13.png" />
+          <Image Name="BS14.png" />
+        </Folder>
+        <Folder Name="captain_jack_png">
+          <Image Name="captain_jack_arm_left.png" />
+          <Image Name="captain_jack_arm_right.png" />
+          <Image Name="captain_jack_body.png" />
+          <Image Name="captain_jack_foot_left.png" />
+          <Image Name="captain_jack_foot_right.png" />
+          <Image Name="captain_jack_hair.png" />
+          <Image Name="captain_jack_hand_gun_left.png" />
+          <Image Name="captain_jack_hand_knife_right.png" />
+          <Image Name="captain_jack_head1.png" />
+          <Image Name="captain_jack_head2.png" />
+          <Image Name="captain_jack_head3.png" />
+          <Image Name="captain_jack_head4.png" />
+          <Image Name="captain_jack_head5.png" />
+          <Image Name="captain_jack_head6.png" />
+          <Image Name="captain_jack_leg_left.png" />
+          <Image Name="captain_jack_leg_right.png" />
+          <Image Name="captain_jack_pants.png" />
+          <Image Name="captain_jack_sb_00031.png" />
+          <Image Name="captain_jack_sb_00033.png" />
+          <Image Name="captain_jack_sb_00035.png" />
+          <Image Name="pirate_bqqh_00031.png" />
+          <Image Name="pirate_bqqh_00032.png" />
+          <Image Name="pirate_bqqh_00033.png" />
+          <Image Name="pirate_bqqh_00034.png" />
+          <Image Name="pirate_bqqh_00043.png" />
+          <Image Name="pirate_bqqh_00044.png" />
+          <Image Name="pirate_bqqh_00045.png" />
+          <Image Name="pirate_bqqh_00046.png" />
+          <Image Name="pirate_bqqh_00055.png" />
+          <Image Name="captain_jack_shape_0.png" />
+        </Folder>
+        <Folder Name="cat_queen_png">
+          <Image Name="0_00010.png" />
+          <Image Name="10_00018.png" />
+          <Image Name="1_00010.png" />
+          <Image Name="2_00010.png" />
+          <Image Name="3_00000.png" />
+          <Image Name="3_00001.png" />
+          <Image Name="3_00002.png" />
+          <Image Name="3_00003.png" />
+          <Image Name="4_00009.png" />
+          <Image Name="5_00008.png" />
+          <Image Name="5_00010.png" />
+          <Image Name="5_00012.png" />
+          <Image Name="5_00014.png" />
+          <Image Name="monster4_0_0000_00006.png" />
+          <Image Name="monster4_0_0000_00007.png" />
+          <Image Name="monster4_0_0000_00008.png" />
+          <Image Name="monster4_0_0000_00009.png" />
+          <Image Name="monster4_0_0000_00010.png" />
+          <Image Name="monster4_0_0000_00012.png" />
+          <Image Name="monster4_0_0000_00013.png" />
+          <Image Name="monster4_0_0000_00017.png" />
+          <Image Name="monster4_0_0000_00018.png" />
+          <Image Name="monster4_0_0000_00022.png" />
+          <Image Name="monster4_0_0000_00023.png" />
+          <Image Name="monster4_0_0000_00027.png" />
+          <Image Name="monster4_0_0000_00028.png" />
+          <Image Name="monster4_arm_left.png" />
+          <Image Name="monster4_arm_right.png" />
+          <Image Name="monster4_body.png" />
+          <Image Name="monster4_foot_left.png" />
+          <Image Name="monster4_foot_right.png" />
+          <Image Name="monster4_hand_left.png" />
+          <Image Name="monster4_hand_right.png" />
+          <Image Name="monster4_hat.png" />
+          <Image Name="monster4_head.png" />
+          <Image Name="monster4_skirt.png" />
+          <Image Name="monster4_tail.png" />
+        </Folder>
+        <Folder Name="Common">
+          <Image Name="Cn01.png" />
+          <Image Name="Cn02.png" />
+          <Image Name="Cn03.png" />
+          <Image Name="Cn04.png" />
+          <Image Name="Cn05.png" />
+          <Image Name="Cn06.png" />
+          <Image Name="Cn07.png" />
+          <Image Name="Cn08.png" />
+          <Image Name="Cn09.png" />
+          <Image Name="Cn10.png" />
+          <Image Name="Cn11.png" />
+          <Image Name="Cn12.png" />
+          <Image Name="Cn14.png" />
+          <Image Name="Cn15.png" />
+          <Image Name="Cn16.png" />
+          <Image Name="Cn17.png" />
+          <Image Name="Cn19.png" />
+          <Image Name="Cn20.png" />
+          <Image Name="Cn21.png" />
+        </Folder>
+        <Folder Name="DifficultySelection">
+          <Image Name="DS01.png" />
+          <Image Name="DS02.png" />
+          <Image Name="DS03.png" />
+          <Image Name="DS05.png" />
+          <Image Name="DS07.png" />
+          <Image Name="DS08.png" />
+          <Image Name="DS09.png" />
+          <Image Name="DS10.png" />
+          <Image Name="DS11.png" />
+          <Image Name="DS12.png" />
+          <Image Name="DS13.png" />
+          <Image Name="DS15.png" />
+          <Image Name="DS16.png" />
+        </Folder>
+        <Folder Name="generalshark_png">
+          <Image Name="2_00000.png" />
+          <Image Name="2_00001.png" />
+          <Image Name="2_00003.png" />
+          <Image Name="2_00004.png" />
+          <Image Name="boss_body.png" />
+          <Image Name="boss_mouth_1.png" />
+          <Image Name="boss_mouth_2.png" />
+          <Image Name="cha.png" />
+          <Image Name="generalshark_body_2.png" />
+          <Image Name="generalshark_body_3.png" />
+          <Image Name="generalshark_left_arm1.png" />
+          <Image Name="generalshark_left_arm2.png" />
+          <Image Name="generalshark_left_armbu.png" />
+          <Image Name="generalshark_left_foot.png" />
+          <Image Name="generalshark_left_hand.png" />
+          <Image Name="generalshark_left_leg1.png" />
+          <Image Name="generalshark_right_arm2.png" />
+          <Image Name="generalshark_right_arm3.png" />
+          <Image Name="generalshark_right_arm4.png" />
+          <Image Name="generalshark_right_armbian2.png" />
+          <Image Name="generalshark_right_arm_1.png" />
+          <Image Name="generalshark_right_arm_bian1.png" />
+          <Image Name="generalshark_right_foot.png" />
+          <Image Name="generalshark_right_leg.png" />
+          <Image Name="generalshark_weapon.png" />
+          <Image Name="generalshark_weapon1.png" />
+          <Image Name="guangya.png" />
+          <Image Name="hong.png" />
+          <Image Name="lala.png" />
+        </Folder>
+        <Folder Name="huchey_png">
+          <Image Name="0_00003.png" />
+          <Image Name="0_00004.png" />
+          <Image Name="0_00005.png" />
+          <Image Name="0_00006.png" />
+          <Image Name="0_00007.png" />
+          <Image Name="0_00008.png" />
+          <Image Name="5_00005.png" />
+          <Image Name="5_00007.png" />
+          <Image Name="5_00009.png" />
+          <Image Name="6_00005.png" />
+          <Image Name="6_00006.png" />
+          <Image Name="6_00007.png" />
+          <Image Name="6_00009.png" />
+          <Image Name="6_00011.png" />
+          <Image Name="6_00012.png" />
+          <Image Name="7_00012.png" />
+          <Image Name="7_00014.png" />
+          <Image Name="7_00016.png" />
+          <Image Name="7_00018.png" />
+          <Image Name="7_00020.png" />
+          <Image Name="8_00010.png" />
+          <Image Name="8_00013.png" />
+          <Image Name="8_00015.png" />
+          <Image Name="8_00016.png" />
+          <Image Name="8_00017.png" />
+          <Image Name="gebo1.png" />
+          <Image Name="gebo2.png" />
+          <Image Name="gebo3.png" />
+          <Image Name="huchey_hair_01.png" />
+          <Image Name="huchey_hair_02.png" />
+          <Image Name="huchey_hair_03.png" />
+          <Image Name="huchey_hair_04.png" />
+          <Image Name="huchey_hair_05.png" />
+          <Image Name="huchey_head.png" />
+          <Image Name="huchey_left_arm.png" />
+          <Image Name="huchey_left_leg.png" />
+          <Image Name="huchey_right_arm.png" />
+          <Image Name="huchey_right_leg.png" />
+          <Image Name="shenti1.png" />
+          <Image Name="shenti2.png" />
+          <Image Name="shou2.png" />
+          <Image Name="tou1.png" />
+          <Image Name="tou2.png" />
+          <Image Name="touafa1.png" />
+          <Image Name="toufa2.png" />
+          <Image Name="toufa3.png" />
+          <Image Name="toufa4.png" />
+          <Image Name="toufa5.png" />
+        </Folder>
+        <Folder Name="jones_png">
+          <Image Name="2_00000.png" />
+          <Image Name="2_00001.png" />
+          <Image Name="2_00002.png" />
+          <Image Name="2_00003.png" />
+          <Image Name="2_00004.png" />
+          <Image Name="2_00006.png" />
+          <Image Name="2_00007.png" />
+          <Image Name="2_00008.png" />
+          <Image Name="2_00009.png" />
+          <Image Name="2_00011.png" />
+          <Image Name="2_00012.png" />
+          <Image Name="2_00013.png" />
+          <Image Name="2_00014.png" />
+          <Image Name="jones_4_00000.png" />
+          <Image Name="jones_4_00002.png" />
+          <Image Name="jones_4_00004.png" />
+          <Image Name="jones_4_00006.png" />
+          <Image Name="monster_6_21_00006.png" />
+          <Image Name="monster_6_21_00007.png" />
+          <Image Name="monster_6_21_00009.png" />
+          <Image Name="monster_6_arm_left.png" />
+          <Image Name="monster_6_arm_right.png" />
+          <Image Name="monster_6_body.png" />
+          <Image Name="monster_6_foot_left.png" />
+          <Image Name="monster_6_foot_right.png" />
+          <Image Name="monster_6_hand_left.png" />
+          <Image Name="monster_6_hand_right.png" />
+          <Image Name="monster_6_hand_right_1.png" />
+          <Image Name="monster_6_hat.png" />
+          <Image Name="monster_6_head.png" />
+          <Image Name="monster_6_pantst.png" />
+          <Image Name="monster_6_smoke.png" />
+          <Image Name="jones_shape_0.png" />
+        </Folder>
+        <Folder Name="LevelSelection">
+          <Image Name="LS01.png" />
+          <Image Name="LS02.png" />
+          <Image Name="LS03.png" />
+          <Image Name="LS04.png" />
+          <Image Name="LS05.png" />
+          <Image Name="LS06.png" />
+          <Image Name="LS07.png" />
+          <Image Name="LS08.png" />
+          <Image Name="LS09.png" />
+          <Image Name="LS10.png" />
+          <Image Name="LS12.png" />
+          <Image Name="LS13.png" />
+          <Image Name="LS14.png" />
+          <Image Name="LS11.png" />
+        </Folder>
+        <Folder Name="Login">
+          <Image Name="LI07.jpg" />
+          <Image Name="BaS31.png" />
+          <Image Name="BaS32.png" />
+          <Image Name="Frd11.png" />
+          <Image Name="LI01.png" />
+          <Image Name="LI02.png" />
+        </Folder>
+        <Folder Name="MainMenu">
+          <Image Name="MM01.png" />
+          <Image Name="MM02.png" />
+          <Image Name="MM03.png" />
+          <Image Name="MM04.png" />
+          <Image Name="MM05.png" />
+          <Image Name="MM06.png" />
+          <Image Name="MM07.png" />
+          <Image Name="MM08.png" />
+          <Image Name="MM09.png" />
+          <Image Name="MM10.png" />
+          <Image Name="MM12.png" />
+          <Image Name="MM13.png" />
+          <Image Name="MM14.png" />
+          <Image Name="MM15.png" />
+          <Image Name="MM16.png" />
+          <Image Name="MM17.png" />
+          <Image Name="MM18.png" />
+          <Image Name="MM19.png" />
+          <Image Name="MM20.png" />
+          <Image Name="MM21.png" />
+          <Image Name="MM22.png" />
+          <Image Name="MM23.png" />
+          <Image Name="MM24.png" />
+        </Folder>
+        <Folder Name="Setting">
+          <Image Name="BaS07.png" />
+          <Image Name="BaS08.png" />
+          <Image Name="BaS09.png" />
+          <Image Name="BaS10.png" />
+          <Image Name="BaS11.png" />
+          <Image Name="BaS17.png" />
+          <Image Name="DnE10.png" />
+          <Image Name="DnE15.png" />
+          <Image Name="pvpangle03.png" />
+          <Image Name="pvpangle04.png" />
+          <Image Name="pvpangle05.png" />
+          <Image Name="pvpangle06.png" />
+          <Image Name="PvPMsgBoard.png" />
+          <Image Name="Star026.png" />
+          <Image Name="Star026_2.png" />
+        </Folder>
+        <Folder Name="tentacle_png">
+          <Image Name="100.png" />
+          <Image Name="101.png" />
+          <Image Name="102.png" />
+          <Image Name="103.png" />
+          <Image Name="104.png" />
+          <Image Name="105.png" />
+          <Image Name="106.png" />
+          <Image Name="107.png" />
+          <Image Name="108.png" />
+          <Image Name="200.png" />
+          <Image Name="201.png" />
+          <Image Name="202.png" />
+          <Image Name="203.png" />
+          <Image Name="300.png" />
+          <Image Name="301.png" />
+          <Image Name="302.png" />
+          <Image Name="303.png" />
+          <Image Name="304.png" />
+          <Image Name="400.png" />
+          <Image Name="401.png" />
+          <Image Name="402.png" />
+          <Image Name="403.png" />
+          <Image Name="shitou01.png" />
+          <Image Name="shitou02.png" />
+          <Image Name="yanjiang.png" />
+          <Image Name="yanjianggai.png" />
+        </Folder>
+        <Folder Name="fx_vic_png">
+          <Image Name="1.png" />
+          <Image Name="b01(50).png" />
+          <Image Name="b02(50).png" />
+          <Image Name="g(50).png" />
+          <Image Name="g02(25)_00000.png" />
+          <Image Name="g03(25)_00000.png" />
+          <Image Name="g04(25).png" />
+          <Image Name="g05(25)_00000_00000.png" />
+          <Image Name="lanqizi.png" />
+          <Image Name="li.png" />
+          <Image Name="qz_00000.png" />
+          <Image Name="sheng.png" />
+          <Image Name="x(50).png" />
+          <Image Name="youjian.png" />
+          <Image Name="zuojian.png" />
+        </Folder>
+        <Folder Name="pharaoh_png">
+          <Image Name="001.png" />
+          <Image Name="002.png" />
+          <Image Name="003.png" />
+          <Image Name="004.png" />
+          <Image Name="005.png" />
+          <Image Name="006.png" />
+          <Image Name="007.png" />
+          <Image Name="monster_0_002.png" />
+          <Image Name="monster_0_003.png" />
+          <Image Name="monster_0_newhls_00003.png" />
+          <Image Name="monster_0_newhls_00004.png" />
+          <Image Name="monster_0_newhls_00005.png" />
+          <Image Name="monster_0_newhls_00006.png" />
+          <Image Name="pharaoh_arm_right_01.png" />
+          <Image Name="pharaoh_arm_right_02.png" />
+          <Image Name="pharaoh_arm__left_01.png" />
+          <Image Name="pharaoh_arm__left_02.png" />
+          <Image Name="pharaoh_belt.png" />
+          <Image Name="pharaoh_body.png" />
+          <Image Name="pharaoh_foot_left.png" />
+          <Image Name="pharaoh_foot_righ.png" />
+          <Image Name="pharaoh_hand_left.png" />
+          <Image Name="pharaoh_hand_magic-wand.png" />
+          <Image Name="pharaoh_head.png" />
+          <Image Name="pharaoh_pants.png" />
+        </Folder>
+        <Folder Name="MissionSelect">
+          <PlistImageFolder PListFile="EgyptRes.plist" LastPlistWriteTime="2014-10-20T21:42:50+08:00" LastImageWriteTime="2014-10-20T21:42:50+08:00" Name=".EgyptRes_PList.Dir">
+            <PlistImageFile Name="gap01.png" Key="gap01.png" />
+            <PlistImageFile Name="gap02.png" Key="gap02.png" />
+            <PlistImageFile Name="gap03.png" Key="gap03.png" />
+            <PlistImageFile Name="gap04.png" Key="gap04.png" />
+            <PlistImageFile Name="gap05.png" Key="gap05.png" />
+            <PlistImageFile Name="gap06.png" Key="gap06.png" />
+            <PlistImageFile Name="grass01.png" Key="grass01.png" />
+            <PlistImageFile Name="grass02.png" Key="grass02.png" />
+            <PlistImageFile Name="grass03.png" Key="grass03.png" />
+            <PlistImageFile Name="grass04.png" Key="grass04.png" />
+            <PlistImageFile Name="grass05.png" Key="grass05.png" />
+            <PlistImageFile Name="grass06.png" Key="grass06.png" />
+            <PlistImageFile Name="lake.PNG" Key="lake.PNG" />
+            <PlistImageFile Name="lg01.png" Key="lg01.png" />
+            <PlistImageFile Name="lg02.png" Key="lg02.png" />
+            <PlistImageFile Name="lg03.png" Key="lg03.png" />
+            <PlistImageFile Name="lg04.PNG" Key="lg04.PNG" />
+            <PlistImageFile Name="manm01.png" Key="manm01.png" />
+            <PlistImageFile Name="manm02.png" Key="manm02.png" />
+            <PlistImageFile Name="manm03.png" Key="manm03.png" />
+            <PlistImageFile Name="manm04.png" Key="manm04.png" />
+            <PlistImageFile Name="manm05.png" Key="manm05.png" />
+            <PlistImageFile Name="mount_01.png" Key="mount_01.png" />
+            <PlistImageFile Name="mount_02.png" Key="mount_02.png" />
+            <PlistImageFile Name="mount_03.png" Key="mount_03.png" />
+            <PlistImageFile Name="mount_04.png" Key="mount_04.png" />
+            <PlistImageFile Name="mount_05.png" Key="mount_05.png" />
+            <PlistImageFile Name="mount_06.png" Key="mount_06.png" />
+            <PlistImageFile Name="river01.png" Key="river01.png" />
+            <PlistImageFile Name="river02.png" Key="river02.png" />
+            <PlistImageFile Name="river03.png" Key="river03.png" />
+            <PlistImageFile Name="river04.png" Key="river04.png" />
+            <PlistImageFile Name="rock01.png" Key="rock01.png" />
+            <PlistImageFile Name="rock02.png" Key="rock02.png" />
+            <PlistImageFile Name="rock03.png" Key="rock03.png" />
+            <PlistImageFile Name="rock04.png" Key="rock04.png" />
+            <PlistImageFile Name="rock05.png" Key="rock05.png" />
+            <PlistImageFile Name="rock06.png" Key="rock06.png" />
+            <PlistImageFile Name="rock07.png" Key="rock07.png" />
+            <PlistImageFile Name="rock08.png" Key="rock08.png" />
+            <PlistImageFile Name="rock09.png" Key="rock09.png" />
+            <PlistImageFile Name="rock10.png" Key="rock10.png" />
+            <PlistImageFile Name="skeleton.png" Key="skeleton.png" />
+            <PlistImageFile Name="struc01.png" Key="struc01.png" />
+            <PlistImageFile Name="struc02_02.png" Key="struc02_02.png" />
+            <PlistImageFile Name="struc02_05.png" Key="struc02_05.png" />
+            <PlistImageFile Name="struc02_07.png" Key="struc02_07.png" />
+            <PlistImageFile Name="struc02_09.png" Key="struc02_09.png" />
+            <PlistImageFile Name="struc02_11.png" Key="struc02_11.png" />
+            <PlistImageFile Name="struc02_13.png" Key="struc02_13.png" />
+            <PlistImageFile Name="struc02_15.png" Key="struc02_15.png" />
+            <PlistImageFile Name="struc02_16.png" Key="struc02_16.png" />
+            <PlistImageFile Name="struc02_17.png" Key="struc02_17.png" />
+            <PlistImageFile Name="struc02_18.png" Key="struc02_18.png" />
+            <PlistImageFile Name="struc02_19.png" Key="struc02_19.png" />
+            <PlistImageFile Name="tower01_02.png" Key="tower01_02.png" />
+            <PlistImageFile Name="tower01_05.png" Key="tower01_05.png" />
+            <PlistImageFile Name="tower01_08.png" Key="tower01_08.png" />
+            <PlistImageFile Name="tower01_10.png" Key="tower01_10.png" />
+            <PlistImageFile Name="tower01_12.png" Key="tower01_12.png" />
+            <PlistImageFile Name="tower01_15.png" Key="tower01_15.png" />
+            <PlistImageFile Name="tower02.png" Key="tower02.png" />
+            <PlistImageFile Name="tower03_01.png" Key="tower03_01.png" />
+            <PlistImageFile Name="tower03_02.png" Key="tower03_02.png" />
+            <PlistImageFile Name="tower03_04.png" Key="tower03_04.png" />
+            <PlistImageFile Name="tower03_07.png" Key="tower03_07.png" />
+            <PlistImageFile Name="tower04_02.png" Key="tower04_02.png" />
+            <PlistImageFile Name="tower04_05.png" Key="tower04_05.png" />
+            <PlistImageFile Name="tower04_06.png" Key="tower04_06.png" />
+            <PlistImageFile Name="tower04_09.png" Key="tower04_09.png" />
+            <PlistImageFile Name="tower04_10.png" Key="tower04_10.png" />
+            <PlistImageFile Name="tower04_12.png" Key="tower04_12.png" />
+            <PlistImageFile Name="tower04_14.png" Key="tower04_14.png" />
+            <PlistImageFile Name="tree01-s.png" Key="tree01-s.png" />
+            <PlistImageFile Name="tree01.png" Key="tree01.png" />
+            <PlistImageFile Name="tree02.png" Key="tree02.png" />
+            <PlistImageFile Name="tree03.png" Key="tree03.png" />
+            <PlistImageFile Name="tree04.png" Key="tree04.png" />
+            <PlistImageFile Name="tree05.png" Key="tree05.png" />
+            <PlistImageFile Name="tree06.png" Key="tree06.png" />
+          </PlistImageFolder>
+          <PlistImageFolder PListFile="fx_starshining.plist" LastPlistWriteTime="2014-10-20T21:42:50+08:00" LastImageWriteTime="2014-10-20T21:42:50+08:00" Name=".fx_starshining_PList.Dir">
+            <PlistImageFile Name="fx_starshining_cell-bong_light.png" Key="fx_starshining_cell-bong_light.png" />
+            <PlistImageFile Name="fx_starshining_cell-bong_light_light.png" Key="fx_starshining_cell-bong_light_light.png" />
+            <PlistImageFile Name="fx_starshining_cell-dian.png" Key="fx_starshining_cell-dian.png" />
+            <PlistImageFile Name="fx_starshining_cell-g07_00000.png" Key="fx_starshining_cell-g07_00000.png" />
+            <PlistImageFile Name="fx_starshining_cell-xingxing.png" Key="fx_starshining_cell-xingxing.png" />
+            <PlistImageFile Name="fx_starshining_cell-xingxing1.png" Key="fx_starshining_cell-xingxing1.png" />
+          </PlistImageFolder>
+          <PlistImageFolder PListFile="map_board.plist" LastPlistWriteTime="2014-10-20T21:42:50+08:00" LastImageWriteTime="2014-10-20T21:42:50+08:00" Name=".map_board_PList.Dir">
+            <PlistImageFile Name="Atlantis_map_bg_l.png" Key="Atlantis_map_bg_l.png" />
+            <PlistImageFile Name="Atlantis_map_bg_r.png" Key="Atlantis_map_bg_r.png" />
+            <PlistImageFile Name="Egypt_map_bg_l.png" Key="Egypt_map_bg_l.png" />
+            <PlistImageFile Name="Egypt_map_bg_r.png" Key="Egypt_map_bg_r.png" />
+            <PlistImageFile Name="Indian_map_bg_l.png" Key="Indian_map_bg_l.png" />
+            <PlistImageFile Name="Indian_map_bg_r.png" Key="Indian_map_bg_r.png" />
+            <PlistImageFile Name="Qintomb_map_bg_l.png" Key="Qintomb_map_bg_l.png" />
+            <PlistImageFile Name="Qintomb_map_bg_r.png" Key="Qintomb_map_bg_r.png" />
+          </PlistImageFolder>
+          <Image Name="foot.png" />
+          <Image Name="MS01.png" />
+          <Image Name="MS02.png" />
+          <Image Name="MS03.png" />
+          <Image Name="MS04.png" />
+        </Folder>
+      </RootFolder>
+    </Group>
+  </SolutionFolder>
+</Solution>
