@@ -1,0 +1,573 @@
+{
+  "armature_data": [
+    {
+      "strVersion": "1.0.0.0",
+      "version": 1.0,
+      "name": "EquipArmature",
+      "bone_data": [
+        {
+          "name": "Layer15",
+          "parent": "",
+          "x": 0.37906408309936523,
+          "y": -18.032403945922852,
+          "z": 2,
+          "cX": 1.0,
+          "cY": 1.0,
+          "kX": 0.0,
+          "kY": 0.0,
+          "arrow_x": -4.1604042053222656E-05,
+          "arrow_y": -2.2495805751532316E-07,
+          "effectbyskeleton": true,
+          "display_data": [
+            {
+              "name": "armature.png",
+              "displayType": 0,
+              "skin_data": [
+                {
+                  "x": -5.763481,
+                  "y": 25.7247086,
+                  "cX": 0.5,
+                  "cY": 0.5,
+                  "kX": 0.0,
+                  "kY": 0.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "beltbone",
+          "parent": "Layer15",
+          "x": -2.8790645599365234,
+          "y": -56.125679016113281,
+          "z": 7,
+          "cX": 1.0,
+          "cY": 1.0,
+          "kX": 0.0,
+          "kY": 0.0,
+          "arrow_x": 0.0,
+          "arrow_y": 0.0,
+          "effectbyskeleton": true,
+          "display_data": [
+            {
+              "name": "belt0tex.png",
+              "displayType": 0,
+              "skin_data": [
+                {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "cX": 0.5,
+                  "cY": 0.5,
+                  "kX": 0.0,
+                  "kY": 0.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "glovebone",
+          "parent": "Layer15",
+          "x": -3.879058837890625,
+          "y": -25.125669479370117,
+          "z": 6,
+          "cX": 1.0,
+          "cY": 1.0,
+          "kX": 0.0,
+          "kY": 0.0,
+          "arrow_x": 0.0,
+          "arrow_y": 0.0,
+          "effectbyskeleton": true,
+          "display_data": [
+            {
+              "name": "glove0tex.png",
+              "displayType": 0,
+              "skin_data": [
+                {
+                  "x": -1.0,
+                  "y": 1.0,
+                  "cX": 0.5,
+                  "cY": 0.5,
+                  "kX": 0.0,
+                  "kY": 0.0
+                }
+              ]
+            },
+            {
+              "name": "glove1tex.png",
+              "displayType": 0,
+              "skin_data": [
+                {
+                  "x": -1.0,
+                  "y": 1.0,
+                  "cX": 0.5,
+                  "cY": 0.5,
+                  "kX": 0.0,
+                  "kY": 0.0
+                }
+              ]
+            },
+            {
+              "name": "glove2tex.png",
+              "displayType": 0,
+              "skin_data": [
+                {
+                  "x": -1.0,
+                  "y": 1.0,
+                  "cX": 0.5,
+                  "cY": 0.5,
+                  "kX": 0.0,
+                  "kY": 0.0
+                }
+              ]
+            },
+            {
+              "name": "glove3tex.png",
+              "displayType": 0,
+              "skin_data": [
+                {
+                  "x": -1.0,
+                  "y": 1.0,
+                  "cX": 0.5,
+                  "cY": 0.5,
+                  "kX": 0.0,
+                  "kY": 0.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "helmetbone",
+          "parent": "Layer15",
+          "x": -9.6703300476074219,
+          "y": 197.58242797851563,
+          "z": 5,
+          "cX": 1.0,
+          "cY": 1.0,
+          "kX": 0.0,
+          "kY": 0.0,
+          "arrow_x": 1.0967254638671875E-05,
+          "arrow_y": -3.9206395740620792E-05,
+          "effectbyskeleton": true,
+          "display_data": [
+            {
+              "name": "helmet0tex.png",
+              "displayType": 0,
+              "skin_data": [
+                {
+                  "x": 3.02758455,
+                  "y": -48.56099,
+                  "cX": 0.5,
+                  "cY": 0.5,
+                  "kX": 0.0,
+                  "kY": 0.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "necklacebone",
+          "parent": "Layer15",
+          "x": -4.1758232116699219,
+          "y": 54.725273132324219,
+          "z": 4,
+          "cX": 1.0,
+          "cY": 1.0,
+          "kX": 0.0,
+          "kY": 0.0,
+          "arrow_x": 2.8491020202636719E-05,
+          "arrow_y": 1.3126482372172177E-05,
+          "effectbyskeleton": true,
+          "display_data": [
+            {
+              "name": "necklace0tex.png",
+              "displayType": 0,
+              "skin_data": [
+                {
+                  "x": 0.6099243,
+                  "y": -1.19831467,
+                  "cX": 0.5,
+                  "cY": 0.5,
+                  "kX": 0.0,
+                  "kY": 0.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "armourbone",
+          "parent": "Layer15",
+          "x": -3.770604133605957,
+          "y": 56.222518920898438,
+          "z": 3,
+          "cX": 1.0,
+          "cY": 1.0,
+          "kX": 0.0,
+          "kY": 0.0,
+          "arrow_x": -6.5565109252929688E-06,
+          "arrow_y": -4.2425046558491886E-05,
+          "effectbyskeleton": true,
+          "display_data": [
+            {
+              "name": "armour0tex.png",
+              "displayType": 0,
+              "skin_data": [
+                {
+                  "x": -1.697751,
+                  "y": -24.49509,
+                  "cX": 0.5,
+                  "cY": 0.5,
+                  "kX": 0.0,
+                  "kY": 0.0
+                }
+              ]
+            },
+            {
+              "name": "armour1tex.png",
+              "displayType": 0,
+              "skin_data": [
+                {
+                  "x": -1.697751,
+                  "y": -24.49509,
+                  "cX": 0.5,
+                  "cY": 0.5,
+                  "kX": 0.0,
+                  "kY": 0.0
+                }
+              ]
+            },
+            {
+              "name": "armour3tex.png",
+              "displayType": 0,
+              "skin_data": [
+                {
+                  "x": -1.697751,
+                  "y": -24.49509,
+                  "cX": 0.5,
+                  "cY": 0.5,
+                  "kX": 0.0,
+                  "kY": 0.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "weaponbone",
+          "parent": "",
+          "x": 15.989015579223633,
+          "y": 21.964242935180664,
+          "z": 1,
+          "cX": 1.0,
+          "cY": 1.0,
+          "kX": 2.23631263,
+          "kY": -2.23631263,
+          "arrow_x": 91.4059066772461,
+          "arrow_y": 1.890998100861907E-05,
+          "effectbyskeleton": true,
+          "display_data": [
+            {
+              "name": "weapon0tex.png",
+              "displayType": 0,
+              "skin_data": [
+                {
+                  "x": 25.331274,
+                  "y": -2.66397476,
+                  "cX": 0.6,
+                  "cY": 0.6,
+                  "kX": 3.95079613,
+                  "kY": -3.95079613
+                }
+              ]
+            },
+            {
+              "name": "weapon1tex.png",
+              "displayType": 0,
+              "skin_data": [
+                {
+                  "x": 11.1805782,
+                  "y": 4.026142,
+                  "cX": 0.6,
+                  "cY": 0.6,
+                  "kX": 3.95079613,
+                  "kY": -3.95079613
+                }
+              ]
+            },
+            {
+              "name": "weapon2tex.png",
+              "displayType": 0,
+              "skin_data": [
+                {
+                  "x": 25.331274,
+                  "y": -2.66397476,
+                  "cX": 0.6,
+                  "cY": 0.6,
+                  "kX": 3.95079613,
+                  "kY": -3.95079613
+                }
+              ]
+            },
+            {
+              "name": "weapon3tex.png",
+              "displayType": 0,
+              "skin_data": [
+                {
+                  "x": 25.331274,
+                  "y": -2.66397476,
+                  "cX": 0.5,
+                  "cY": 0.5,
+                  "kX": 3.95079613,
+                  "kY": -3.95079613
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "animation_data": [
+    {
+      "name": "EquipArmature",
+      "mov_data": [
+        {
+          "name": "Animation1",
+          "dr": 0,
+          "lp": true,
+          "to": 0,
+          "drTW": 0,
+          "twE": 0,
+          "sc": 1.0,
+          "mov_bone_data": [
+            {
+              "name": "beltbone",
+              "dl": 0.0,
+              "frame_data": [
+                {
+                  "dI": 0,
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0,
+                  "cX": 1.0,
+                  "cY": 1.0,
+                  "kX": 0.0,
+                  "kY": 0.0,
+                  "fi": 0,
+                  "twE": 0,
+                  "tweenFrame": true
+                }
+              ]
+            },
+            {
+              "name": "glovebone",
+              "dl": 0.0,
+              "frame_data": [
+                {
+                  "dI": 0,
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0,
+                  "cX": 1.0,
+                  "cY": 1.0,
+                  "kX": 0.0,
+                  "kY": 0.0,
+                  "fi": 0,
+                  "twE": 0,
+                  "tweenFrame": true
+                }
+              ]
+            },
+            {
+              "name": "helmetbone",
+              "dl": 0.0,
+              "frame_data": [
+                {
+                  "dI": 0,
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0,
+                  "cX": 1.0,
+                  "cY": 1.0,
+                  "kX": 0.0,
+                  "kY": 0.0,
+                  "fi": 0,
+                  "twE": 0,
+                  "tweenFrame": true
+                }
+              ]
+            },
+            {
+              "name": "necklacebone",
+              "dl": 0.0,
+              "frame_data": [
+                {
+                  "dI": 0,
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0,
+                  "cX": 1.0,
+                  "cY": 1.0,
+                  "kX": 0.0,
+                  "kY": 0.0,
+                  "fi": 0,
+                  "twE": 0,
+                  "tweenFrame": true
+                }
+              ]
+            },
+            {
+              "name": "armourbone",
+              "dl": 0.0,
+              "frame_data": [
+                {
+                  "dI": 0,
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0,
+                  "cX": 1.0,
+                  "cY": 1.0,
+                  "kX": 0.0,
+                  "kY": 0.0,
+                  "fi": 0,
+                  "twE": 0,
+                  "tweenFrame": true
+                }
+              ]
+            },
+            {
+              "name": "Layer15",
+              "dl": 0.0,
+              "frame_data": [
+                {
+                  "dI": 0,
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0,
+                  "cX": 1.0,
+                  "cY": 1.0,
+                  "kX": 0.0,
+                  "kY": 0.0,
+                  "fi": 0,
+                  "twE": 0,
+                  "tweenFrame": true
+                }
+              ]
+            },
+            {
+              "name": "weaponbone",
+              "dl": 0.0,
+              "frame_data": [
+                {
+                  "dI": 0,
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0,
+                  "cX": 1.0,
+                  "cY": 1.0,
+                  "kX": -5.004677E-16,
+                  "kY": 5.004677E-16,
+                  "fi": 0,
+                  "twE": 0,
+                  "tweenFrame": true
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "texture_data": [
+    {
+      "name": "armature",
+      "width": 640.0,
+      "height": 960.0,
+      "pX": 0.5,
+      "pY": 0.5
+    },
+    {
+      "name": "armour0tex",
+      "width": 351.0,
+      "height": 208.0,
+      "pX": 0.5,
+      "pY": 0.5
+    },
+    {
+      "name": "helmet0tex",
+      "width": 300.0,
+      "height": 302.0,
+      "pX": 0.5,
+      "pY": 0.5
+    },
+    {
+      "name": "necklace0tex",
+      "width": 186.0,
+      "height": 178.0,
+      "pX": 0.5,
+      "pY": 0.5
+    },
+    {
+      "name": "weapon3tex",
+      "width": 640.0,
+      "height": 960.0,
+      "pX": 0.5,
+      "pY": 0.5
+    },
+    {
+      "name": "belt0tex",
+      "width": 290.0,
+      "height": 147.0,
+      "pX": 0.5,
+      "pY": 0.5
+    },
+    {
+      "name": "armour1tex",
+      "width": 0.0,
+      "height": 0.0,
+      "pX": 0.5,
+      "pY": 0.5
+    },
+    {
+      "name": "armour3tex",
+      "width": 0.0,
+      "height": 0.0,
+      "pX": 0.5,
+      "pY": 0.5
+    },
+    {
+      "name": "glove0tex",
+      "width": 596.0,
+      "height": 215.0,
+      "pX": 0.5,
+      "pY": 0.5
+    },
+    {
+      "name": "glove1tex",
+      "width": 0.0,
+      "height": 0.0,
+      "pX": 0.5,
+      "pY": 0.5
+    },
+    {
+      "name": "glove2tex",
+      "width": 0.0,
+      "height": 0.0,
+      "pX": 0.5,
+      "pY": 0.5
+    },
+    {
+      "name": "glove3tex",
+      "width": 596.0,
+      "height": 215.0,
+      "pX": 0.5,
+      "pY": 0.5
+    }
+  ],
+  "config_file_path": [
+    "EquipArmature0.plist"
+  ]
+}

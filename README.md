@@ -1,7 +1,5 @@
-CocoStudioSamples
+Samples for Cocos Studio 1.x
 =================
-
-This are the samples for CocoStudio
 
   - DemoBag: Inventory UI Demo
   - DemoFishingJoy: Main Menu UI Demo
@@ -21,8 +19,3 @@ This are the samples for CocoStudio
   - SampleSceneEditor: Game Scene Demo
   - SampleUIAnimation: UI Animation Demo
 
-
-How to compile
---------------
-	cd CocoStudioSamples
-	git submodule update --init
