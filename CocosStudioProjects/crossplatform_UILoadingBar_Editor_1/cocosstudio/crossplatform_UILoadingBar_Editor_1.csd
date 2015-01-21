@@ -1,5 +1,5 @@
 <GameProjectFile>
-  <PropertyGroup Type="Scene" Name="crossplatform_UILoadingBar_Editor_1" ID="25848ead-412c-4d99-a737-9312d4f0dfa4" Version="2.0.5.0" />
+  <PropertyGroup Type="Scene" Name="crossplatform_UILoadingBar_Editor_1" ID="25848ead-412c-4d99-a737-9312d4f0dfa4" Version="2.1.0.0" />
   <Content ctype="GameProjectContent">
     <Content>
       <Animation Duration="0" Speed="1.0000" />
@@ -71,7 +71,7 @@
                         <PrePosition X="0.0000" Y="0.0000" />
                         <PreSize X="1.0000" Y="0.5000" />
                         <Children>
-                          <NodeObjectData Name="LoadingBar_857" ActionTag="-1328828759" FrameEvent="" Tag="23" ObjectIndex="1" ProgressInfo="80" ProgressType="Right_To_Left" ctype="LoadingBarObjectData">
+                          <NodeObjectData Name="LoadingBar_857" ActionTag="-1328828759" FrameEvent="" Tag="23" ObjectIndex="1" ProgressType="Right_To_Left" ctype="LoadingBarObjectData">
                             <Position X="201.0000" Y="65.0000" />
                             <Scale ScaleX="1.0000" ScaleY="1.0000" />
                             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
@@ -105,7 +105,7 @@
                         <PrePosition X="0.0000" Y="0.5000" />
                         <PreSize X="1.0000" Y="0.5000" />
                         <Children>
-                          <NodeObjectData Name="LoadingBar_856" ActionTag="-638011383" FrameEvent="" Tag="22" ObjectIndex="2" ProgressInfo="80" ctype="LoadingBarObjectData">
+                          <NodeObjectData Name="LoadingBar_856" ActionTag="-638011383" FrameEvent="" Tag="22" ObjectIndex="2" ctype="LoadingBarObjectData">
                             <Position X="201.0000" Y="63.0000" />
                             <Scale ScaleX="1.0000" ScaleY="1.0000" />
                             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />

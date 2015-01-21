@@ -1,5 +1,5 @@
 <GameProjectFile>
-  <PropertyGroup Type="Scene" Name="crossplatform_UITextField_Editor_1" ID="25848ead-412c-4d99-a737-9312d4f0dfa4" Version="2.0.5.0" />
+  <PropertyGroup Type="Scene" Name="crossplatform_UITextField_Editor_1" ID="25848ead-412c-4d99-a737-9312d4f0dfa4" Version="2.1.0.0" />
   <Content ctype="GameProjectContent">
     <Content>
       <Animation Duration="0" Speed="1.0000" />
@@ -80,12 +80,12 @@
                             <PrePosition X="0.5000" Y="0.6235" />
                             <PreSize X="0.8636" Y="0.1588" />
                           </NodeObjectData>
-                          <NodeObjectData Name="Label_997" ActionTag="2008106303" FrameEvent="" Tag="18" ObjectIndex="6" FontSize="20" LabelText="nomal" ctype="TextObjectData">
+                          <NodeObjectData Name="Label_997" ActionTag="2008106303" FrameEvent="" Tag="18" ObjectIndex="6" FontSize="20" LabelText="normal" ctype="TextObjectData">
                             <Position X="66.0000" Y="69.0000" />
                             <Scale ScaleX="1.0000" ScaleY="1.0000" />
                             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                             <CColor A="255" R="255" G="255" B="255" />
-                            <Size X="50.0000" Y="20.0000" />
+                            <Size X="60.0000" Y="20.0000" />
                             <PrePosition X="0.5000" Y="0.4059" />
                             <PreSize X="0.0000" Y="0.0000" />
                           </NodeObjectData>

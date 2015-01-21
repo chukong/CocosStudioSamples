@@ -1,5 +1,5 @@
 <GameProjectFile>
-  <PropertyGroup Type="Scene" Name="MainScene" ID="5bc191c9-9426-4259-a170-43d7b3621874" Version="2.0.2.0" />
+  <PropertyGroup Type="Scene" Name="CustomWidgetCallbackBindTest" ID="5bc191c9-9426-4259-a170-43d7b3621874" Version="2.1.0.0" />
   <Content ctype="GameProjectContent">
     <Content>
       <Animation Duration="0" Speed="1.0000" />

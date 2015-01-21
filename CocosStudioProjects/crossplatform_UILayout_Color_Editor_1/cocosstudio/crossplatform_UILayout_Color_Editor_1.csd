@@ -1,5 +1,5 @@
 <GameProjectFile>
-  <PropertyGroup Type="Scene" Name="crossplatform_UILayout_Color_Editor_1" ID="25848ead-412c-4d99-a737-9312d4f0dfa4" Version="2.0.5.0" />
+  <PropertyGroup Type="Scene" Name="crossplatform_UILayout_Color_Editor_1" ID="25848ead-412c-4d99-a737-9312d4f0dfa4" Version="2.1.0.0" />
   <Content ctype="GameProjectContent">
     <Content>
       <Animation Duration="0" Speed="1.0000" />

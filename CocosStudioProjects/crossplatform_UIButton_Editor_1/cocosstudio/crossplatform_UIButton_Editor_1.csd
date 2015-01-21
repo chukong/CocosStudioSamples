@@ -1,5 +1,5 @@
 <GameProjectFile>
-  <PropertyGroup Type="Scene" Name="crossplatform_UIButton_Editor_1" ID="9db4ec5a-dcda-432c-b9ca-e342222e1a65" Version="2.0.2.0" />
+  <PropertyGroup Type="Scene" Name="crossplatform_UIButton_Editor_1" ID="9db4ec5a-dcda-432c-b9ca-e342222e1a65" Version="2.1.0.0" />
   <Content ctype="GameProjectContent">
     <Content>
       <Animation Duration="0" Speed="1.0000" />
@@ -80,7 +80,7 @@
                             <PrePosition X="0.4865" Y="0.7000" />
                             <PreSize X="0.0000" Y="0.0000" />
                             <TextColor A="255" R="65" G="65" B="70" />
-                            <DisabledFileData Type="Default" Path="Default/Button_Disable.png" />
+                            <DisabledFileData Type="Normal" Path="button_p.png" />
                             <PressedFileData Type="Normal" Path="button_p.png" />
                             <NormalFileData Type="Normal" Path="button_n.png" />
                           </NodeObjectData>
@@ -126,7 +126,7 @@
                             <PrePosition X="0.4955" Y="0.7000" />
                             <PreSize X="0.0000" Y="0.0000" />
                             <TextColor A="255" R="255" G="255" B="255" />
-                            <DisabledFileData Type="Default" Path="Default/Button_Disable.png" />
+                            <DisabledFileData Type="Normal" Path="button_p.png" />
                             <PressedFileData Type="Normal" Path="button_p.png" />
                             <NormalFileData Type="Normal" Path="button_n.png" />
                           </NodeObjectData>
@@ -154,7 +154,7 @@
                             <PrePosition X="0.6126" Y="0.7000" />
                             <PreSize X="0.8829" Y="0.4000" />
                             <TextColor A="255" R="65" G="65" B="70" />
-                            <DisabledFileData Type="Default" Path="Default/Button_Disable.png" />
+                            <DisabledFileData Type="Normal" Path="button_p.png" />
                             <PressedFileData Type="Normal" Path="button_p.png" />
                             <NormalFileData Type="Normal" Path="buttonHighlighted.png" />
                           </NodeObjectData>
